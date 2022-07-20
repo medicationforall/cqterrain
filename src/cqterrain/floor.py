@@ -1,17 +1,47 @@
 import cadquery as cq
 from cadqueryhelper import parts
 from cadqueryhelper import grid
+import math
 
 def make_floor(dim=[100, 100, 3]):
     return parts.make_cube(dim[0], dim[1], dim[2])
 
 def make_tile_floor(tile, dim=[100, 100, 3]):
-    print('make_tile_floor')
+    tile_width = 5
+    tile_length = 5
+    tile_height = 5
+    floor_width = dim[0]
+    floor_length = dim[1]
 
-    tile_grid = grid.make_grid(part=tile, dim = [6,6])
+
+    tile_meta = __resolve_tile_meta(tile)
+
+    if tile_meta and 'width' in tile_meta and 'length' in tile_meta:
+        tile_width = tile_meta['width']
+        tile_length = tile_meta['length']
+        tile_height = tile_meta['height']
+    else:
+        raise Exception('Could not resolve width and or length from tile metadata', tile_meta)
+
+    columns = math.floor(floor_width/tile_width)
+    rows = math.floor(floor_length/tile_length)
+
+
+    tile_grid = grid.make_grid(part=tile, dim = [tile_width, tile_length], columns = columns, rows = rows)
     floor = make_floor(dim)
+    comp_tile_grid = tile_grid.toCompound()
 
-    tile_grid.add(floor)
+    floor_assembly = cq.Assembly()
+    floor_assembly.add(comp_tile_grid, name="tiles", loc=cq.Location(cq.Vector(-40, -40, tile_height/2)))
+    floor_assembly.add(floor, name="floor")
+    comp_floor = floor_assembly.toCompound()
 
-    comp = tile_grid.toCompound()
-    return comp
+    cq.exporters.export(comp_floor,'out/grid_test.stl')
+    return comp_floor
+
+def __resolve_tile_meta(tile):
+    meta = None
+    tile_attributes = dir(tile)
+    if 'metadata' in tile_attributes:
+        meta = tile.metadata
+    return meta
