@@ -1,5 +1,5 @@
 import cadquery as cq
-from cadqueryhelper import parts
+from cadqueryhelper import shape
 
 def wall():
     print('stub wall')
