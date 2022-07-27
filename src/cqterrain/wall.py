@@ -6,7 +6,7 @@ import math
 def make_wall(length = 100, width = 3, height = 50):
     return shape.cube(length, width, height)
 
-def make_tile_wall(inside_tile=None, oustide_tile=None, length = 100, width = 3, height = 50):
+def make_tile_wall(inside_tile=None, outside_tile=None, length = 100, width = 3, height = 50):
     wall_part = make_wall(length = length, width = width, height = height)
 
     wall_assembly = cq.Assembly()
@@ -14,14 +14,33 @@ def make_tile_wall(inside_tile=None, oustide_tile=None, length = 100, width = 3,
 
     if inside_tile:
         print('found inside tile')
-        inside_meta = __resolve_tile_meta(tile)
+        inside_meta = __resolve_tile_meta(inside_tile)
         inside_width = inside_meta['width']
         inside_length = inside_meta['length']
         inside_height = inside_meta['height']
-        inside_columns = math.floor(width/inside_width)
+        inside_columns = math.floor(height/inside_width)
         inside_rows = math.floor(length/inside_length)
-        inside_grid = grid.make_grid(part=inside_tile, dim = [inside_width, inside_length], columns = columns, rows = rows)
-        wall_assembly.add(inside_grid, name="insideGrid")
+
+        print('inside tile meta', inside_meta, inside_columns, inside_rows)
+        inside_grid = grid.make_grid(part=inside_tile, dim = [inside_width, inside_length], columns = inside_columns, rows = inside_rows)
+        inside_grid = inside_grid.rotate((1, 0, 0), (0, 0, 0), -90)
+
+        wall_assembly.add(inside_grid, name="insideGrid" , loc=cq.Location(cq.Vector(0, -(width/2+inside_height/2), 0)))
+
+    if outside_tile:
+        print('found outside tile')
+        outside_meta = __resolve_tile_meta(outside_tile)
+        outside_width = outside_meta['width']
+        outside_length = outside_meta['length']
+        outside_height = outside_meta['height']
+        outside_columns = math.floor(height/outside_width)
+        outside_rows = math.floor(length/outside_length)
+
+        print('outside tile meta', outside_meta, outside_columns, outside_rows)
+        outside_grid = grid.make_grid(part=outside_tile, dim = [outside_width, outside_length], columns = outside_columns, rows = outside_rows)
+        outside_grid = outside_grid.rotate((1, 0, 0), (0, 0, 0), -90)
+
+        wall_assembly.add(outside_grid, name="outsideGrid" , loc=cq.Location(cq.Vector(0, (width/2+outside_height/2), 0)))
 
     comp_wall = wall_assembly.toCompound()
 

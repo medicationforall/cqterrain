@@ -4,9 +4,9 @@ from cadqueryhelper import shape
 
 cone = shape.cone()
 cube = shape.cube()
-cylinder = shape.cylinder(10, 20)
+cylinder = shape.cylinder(12, 20)
 
-f = floor.make_tile_floor(cylinder)
+f = floor.make_tile_floor(cylinder, width=200)
 workspace = cq.Workplane('XY')
 workspace.add(f)
 
