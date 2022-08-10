@@ -16,3 +16,11 @@ To install CQ Terrain directly from GitHub, run the following `pip` command:
 From the cloned cadqueryhelper directory run.
 
 	pip install ./
+
+
+## Running Example Scripts
+* From the root of the project run one of example scripts:
+
+``` bash
+C:\Users\<user>\home\3d\cqterrain>python ./example/stairs.py
+```
