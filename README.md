@@ -4,6 +4,11 @@ Generate 3d models of buildings / terrain using CadQuery
 ## Documentation
 * [Stairs](documentation/stairs.md)
 
+## Dependencies
+* [CadQuery 2.1](https://github.com/CadQuery/cadquery)
+* [cqMore](https://github.com/JustinSDK/cqMore)
+* [cadqueryhelper](https://github.com/medicationforall/cadqueryhelper)
+
 
 ### Installation
 To install CQ Terrain directly from GitHub, run the following `pip` command:
