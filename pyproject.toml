@@ -17,7 +17,13 @@ classifiers = [
     "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
 ]
+dependencies = [
+"cadquery==2.2.0b0",
+'cqmore @ git+https://github.com/JustinSDK/cqMore',
+'cadqueryhelper @ git+https://github.com/medicationforall/cadqueryhelper'
+]
+
 
 [project.urls]
-"Homepage" = "https://github.com/medicationforall/cqhelper"
-"Bug Tracker" = "https://github.com/medicationforall/cqhelper/issues"
+"Homepage" = "https://github.com/medicationforall/cqterrain"
+"Bug Tracker" = "https://github.com/medicationforall/cqterrain/issues"
