@@ -13,6 +13,18 @@ f = stairs.make_stairs(
     run = 5,
     stair_length_offset = 0,
     stair_height = 1,
+    rail_width = 4,
+    rail_height = 5,
+    step_overlap = 0
+)
+
+ex = stairs.make_stairs(
+    length = 30,
+    width = 10,
+    height = 30,
+    run = 5,
+    stair_length_offset = 0,
+    stair_height = 1,
     rail_width = 1,
     rail_height = 5
 )
