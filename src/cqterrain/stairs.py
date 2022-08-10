@@ -22,7 +22,7 @@ def __make_rail(length, height, run, rail_width, rail_height):
     comp_rail = rail_assembly.toCompound()
     return comp_rail
 
-def make_stairs(length=30, width=10, height=30,  run = 5, stair_length_offset=0, stair_height = 1, rail_width = 1, rail_height = 5, step_overlap=None):
+def make_stairs(length=30, width=10, height=30,  run = 5, stair_length_offset=0, stair_height = 1, stair_height_offset=0, rail_width = 1, rail_height = 5, step_overlap=None):
     stair_repeat = math.floor(length / (run + stair_length_offset))
     rise = (height - (stair_repeat * stair_height)) / stair_repeat
 
@@ -30,9 +30,9 @@ def make_stairs(length=30, width=10, height=30,  run = 5, stair_length_offset=0,
 
     if step_overlap == None:
         step_overlap = rail_width/2
-        
+
     step = shape.cube(length = run, width = (width-(rail_width*2) + (step_overlap*2)), height = stair_height)
-    steps = series.make_series(shape = step, size = stair_repeat, length_offset = stair_length_offset, height_offset = rise)
+    steps = series.make_series(shape = step, size = stair_repeat, length_offset = stair_length_offset, height_offset = rise+stair_height_offset)
 
     stair_assembly = cq.Assembly()
     stair_assembly.add(rail, name="r_rail", loc=cq.Location(cq.Vector(0, -1*(rail_width/2), 0)))
@@ -42,7 +42,7 @@ def make_stairs(length=30, width=10, height=30,  run = 5, stair_length_offset=0,
     comp_stairs = stair_assembly.toCompound()
 
     # center shape
-    ##comp_stairs = comp_stairs.translate((0,(width/2),0))
+    comp_stairs = comp_stairs.translate((0,(width/2),0))
 
     meta = {'type':'stairs', 'height':0, 'length':0, 'width':0}
     comp_stairs.metadata = meta

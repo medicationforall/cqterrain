@@ -1,23 +1,7 @@
-import cadquery as cq
-from cqterrain import stairs
-#from cadqueryhelper import shape
+import cadquery as cq # Main cadquery library.
+from cqterrain import stairs #Import stair generator code.
 
-#cone = shape.cone()
-#cube = shape.cube()
-#cylinder = shape.cylinder(12, 20)
-
-f = stairs.make_stairs(
-    length = 30,
-    width = 10,
-    height = 30,
-    run = 5,
-    stair_length_offset = 0,
-    stair_height = 1,
-    rail_width = 4,
-    rail_height = 5,
-    step_overlap = 0
-)
-
+# Make an instance of the stairs shape with the following parameters.
 ex = stairs.make_stairs(
     length = 30,
     width = 10,
@@ -25,14 +9,18 @@ ex = stairs.make_stairs(
     run = 5,
     stair_length_offset = 0,
     stair_height = 1,
+    stair_height_offset = 0,
     rail_width = 1,
     rail_height = 5
 )
 
+# Add the stairs to a workplane.
 workspace = cq.Workplane('XY')
-workspace.add(f)
+workspace.add(ex)
 
+# Write to stl file.
 cq.exporters.export(workspace,'out/stairs.stl')
 
-if f.metadata:
-    print(f.metadata)
+# Print metadata to console for debugging
+if ex.metadata:
+    print(ex.metadata)
