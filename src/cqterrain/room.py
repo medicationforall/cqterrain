@@ -1,30 +1,19 @@
 import cadquery as cq
 from cqterrain import floor, wall
 
-def make_room(length=50, width=100, height=50):
-    print('make room')
+def make_room(length=120, width=80, height=50, wall_width=3, floor_height=3, floor_padding=0):
     # make floor
-    r_floor = floor.make_floor(length, width)
-    r_height = r_floor.metadata['height']
-    r_width = r_floor.metadata['width']
-    r_length = r_floor.metadata['width']
-    # make walls
-    w1 = wall.make_wall()
-    w1_height = w1.metadata['height']
-    w1_width = w1.metadata['width']
+    r_floor, r_height, r_width, r_length = __make_floor(length, width, height=floor_height, padding=floor_padding)
 
-    w2 = wall.make_wall()
-    w2_height = w2.metadata['height']
-    w2_width = w2.metadata['width']
+    # make walls along the x axis
+    w1, w1_height, w1_width = __make_wall(length=r_length, width=wall_width, height=height)
+    w2, w2_height, w2_width = __make_wall(length=r_length, width=wall_width, height=height)
 
-    w3 = wall.make_wall()
-    w3_height = w3.metadata['height']
-    w3_width = w3.metadata['width']
+    # walls along the y axis
+    w3, w3_height, w3_width = __make_wall(length=r_width, width=wall_width, height=height)
     w3_rotated = w3.rotate((0, 0, 1), (0, 0, 0), -90)
 
-    w4 = wall.make_wall()
-    w4_height = w4.metadata['height']
-    w4_width = w4.metadata['width']
+    w4, w4_height, w4_width = __make_wall(length=r_width, width=wall_width, height=height)
     w4_rotated = w4.rotate((0, 0, 1), (0, 0, 0), -90)
 
     room_assembly = cq.Assembly()
@@ -35,4 +24,22 @@ def make_room(length=50, width=100, height=50):
     room_assembly.add(w4_rotated, name="wall4", loc=cq.Location(cq.Vector(-1*((r_length /2) - (w1_width /2)), 0, (w2_height /2)-(r_height/2))))
     comp_room = room_assembly.toCompound()
 
+    # zero out height
+    comp_room = comp_room.translate((0,0, floor_height/2))
+    comp_room = comp_room.translate((0,0, -1*(height/2)))
+
     return comp_room
+
+def __make_floor(length, width, height, padding):
+    padding = padding*2
+    r_floor = floor.make_floor(length, width, height)
+    r_height = r_floor.metadata['height']
+    r_width = r_floor.metadata['width'] - padding
+    r_length = r_floor.metadata['length'] - padding
+    return r_floor, r_height, r_width, r_length
+
+def __make_wall(length, width, height):
+    w = wall.make_wall(length, width, height)
+    w_height = w.metadata['height']
+    w_width = w.metadata['width']
+    return w, w_height, w_width

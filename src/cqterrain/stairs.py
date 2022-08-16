@@ -13,7 +13,7 @@ def __make_rail(length, height, run, rail_width, rail_height):
     rail_assembly.add(rail, name="r_rail", loc=cq.Location(cq.Vector(0, 0, 0)))
 
     if bookend_length > 0:
-        print('append rail ends')
+        #print('append rail ends')
         end = shape.cube(bookend_length, rail_width, rail_height)
         rail_assembly.add(end, name="top", loc=cq.Location(cq.Vector((rail_length/2)+(bookend_length/2), 0, (height/2)-(rail_height/2))))
         rail_assembly.add(end, name="bottom", loc=cq.Location(cq.Vector(-1*((rail_length/2)+(bookend_length/2)), 0, -1*((height/2)-(rail_height/2)))))
@@ -44,9 +44,8 @@ def make_stairs(length=30, width=10, height=30,  run = 5, stair_length_offset=0,
     # center shape
     comp_stairs = comp_stairs.translate((0,(width/2),0))
 
-    meta = {'type':'stairs', 'height':0, 'length':0, 'width':0}
+    meta = {'type':'stairs', 'height':height, 'length':length, 'width':width}
     comp_stairs.metadata = meta
 
-    # todo I need to center along the y axis
 
     return comp_stairs
