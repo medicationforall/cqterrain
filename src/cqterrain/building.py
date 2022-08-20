@@ -19,10 +19,8 @@ class Building:
         self._stories = stories
         self._room_height = height/stories
 
-        self.has_stairs = has_stairs
-        self.stair_type = 'wrap_exterior'
-        self.stair = {}
-        self.stair['rail_height']=5
+
+
 
         self.floors = [],
         self.staircase = []
@@ -32,6 +30,20 @@ class Building:
         self.room['wall_width'] = 3
         self.room['floor_height'] = 3
         self.room['floor_padding'] = 0
+
+        self.has_stairs = has_stairs
+        self.stair_type = 'wrap_exterior'
+
+        #make stair properties
+        self.stair = {}
+        self.stair['rail_height'] = 5
+        self.stair['width'] = 10
+        self.stair['run'] = 5
+        self.stair['stair_length_offset'] = 0
+        self.stair['stair_height'] = 1
+        self.stair['stair_height_offset'] = 0
+        self.stair['rail_width'] = 1
+        self.stair['step_overlap']=None
 
     @property
     def stories(self):
@@ -97,8 +109,15 @@ class Building:
 
             stair = stairs.make_stairs(
                 length = stair_length,
+                width = self.stair['width'],
                 height = stair_height,
-                rail_height = self.stair['rail_height']
+                run = self.stair['run'],
+                stair_length_offset = self.stair['stair_length_offset'],
+                stair_height = self.stair['stair_height'],
+                stair_height_offset = self.stair['stair_height_offset'],
+                rail_width = self.stair['rail_width'],
+                rail_height = self.stair['rail_height'],
+                step_overlap = self.stair['step_overlap']
             )
 
             stair_case_width = stair.metadata['width']
@@ -123,4 +142,4 @@ class Building:
                 building_assembly.add(stair_case, name=f"stair{i}", loc=cq.Location(cq.Vector(0, 0, 0)))
 
         comp_building = building_assembly.toCompound()
-        return comp_building
+        return comp_building#, building_assembly
