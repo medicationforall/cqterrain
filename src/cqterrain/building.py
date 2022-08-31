@@ -19,9 +19,6 @@ class Building:
         self._stories = stories
         self._room_height = height/stories
 
-
-
-
         self.floors = [],
         self.staircase = []
 
