@@ -1,7 +1,7 @@
 import cadquery as cq
 from cqterrain import floor, wall
 
-def make_room(length=120, width=80, height=50, wall_width=3, floor_height=3, floor_padding=0):
+def room(length=120, width=80, height=50, wall_width=3, floor_height=3, floor_padding=0):
     # make floor
     r_floor, r_height, r_width, r_length = __make_floor(length, width, height=floor_height, padding=floor_padding)
 

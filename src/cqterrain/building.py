@@ -1,7 +1,6 @@
 import cadquery as cq
 from cadqueryhelper import shape
-from cqterrain import room
-from cqterrain import stairs
+from cqterrain import stairs, room
 
 class Building:
     def __init__(
@@ -53,15 +52,15 @@ class Building:
 
 
     def make(self):
-        self.make_floors()
+        self.make_stories()
 
         if self.has_stairs:
             self.make_stairs()
 
-    def make_floors(self):
+    def make_stories(self):
         self.floors = []
         for i in range(self._stories):
-            floor = room.make_room(
+            floor = room.room(
                 self.length,
                 self.width,
                 height = self._room_height,
@@ -82,7 +81,7 @@ class Building:
             raise Exception('I don\'t recognize this stair type')
 
     def __make_wrap_exterior_stairs(self):
-        print('__make_wrap_exterior_stairs')
+        #print('__make_wrap_exterior_stairs')
         self.stairs = []
         for i in range(self._stories):
             stair_height = self._room_height
@@ -104,7 +103,7 @@ class Building:
                 z_offset = (i*self._room_height)+self.stair['rail_height']/2
 
 
-            stair = stairs.make_stairs(
+            stair = stairs.stairs(
                 length = stair_length,
                 width = self.stair['width'],
                 height = stair_height,

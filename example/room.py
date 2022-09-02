@@ -1,7 +1,7 @@
 import cadquery as cq
 from  cqterrain  import room
 
-ex = room.make_room(
+ex = room(
     length=104,
     width=79,
     height=40,

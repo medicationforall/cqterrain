@@ -6,7 +6,7 @@ import cadquery as cq # Main cadquery library.
 from cqterrain import stairs #Import stair generator code.
 
 # Make an instance of the stairs shape with the following parameters.
-ex = stairs.make_stairs(
+ex = stairs(
     length = 30,
     width = 10,
     height = 30,
@@ -63,7 +63,7 @@ The code above:
 ## Default
 
 ``` python
-ex = stairs.make_stairs(
+ex = stairs(
     length = 30,
     width = 10,
     height = 30,
@@ -80,7 +80,7 @@ ex = stairs.make_stairs(
 ## Ladder
 
 ``` python
-ex = stairs.make_stairs(
+ex = stairs(
     length = 10,
     width = 10,
     heigh t= 40,
@@ -97,7 +97,7 @@ ex = stairs.make_stairs(
 ## Grand
 
 ``` python
-ex = stairs.make_stairs(
+ex = stairs(
     length = 60,
     width = 20,
     height = 30,
@@ -114,7 +114,7 @@ ex = stairs.make_stairs(
 ## Small
 
 ``` python
-ex = stairs.make_stairs(
+ex = stairs(
     length = 10,
     width = 5,
     height = 10,
@@ -131,7 +131,7 @@ ex = stairs.make_stairs(
 ## Futuristic
 
 ``` python
-ex = stairs.make_stairs(
+ex = stairs(
     length =15,
     width = 15,
     height = 25,
@@ -149,7 +149,7 @@ ex = stairs.make_stairs(
 ## Overlap
 
 ``` python
-ex = stairs.make_stairs(
+ex = stairs(
     length = 30,
     width = 10,
     height = 30,

@@ -1,12 +1,11 @@
 import cadquery as cq
 from cqterrain import Building
-from cqterrain import room
 
 building = Building(
     length=50,
     width=60,
-    height=50,
-    stories=3
+    height=100,
+    stories=4
 )
 
 building.room['wall_width'] = 4
