@@ -3,11 +3,11 @@ from cadqueryhelper import shape
 from cadqueryhelper import grid
 import math
 
-def make_wall(length = 100, width = 3, height = 50):
+def wall(length = 100, width = 3, height = 50):
     return shape.cube(length, width, height)
 
-def make_tile_wall(inside_tile=None, outside_tile=None, length = 100, width = 3, height = 50):
-    wall_part = make_wall(length = length, width = width, height = height)
+def tile_wall(inside_tile=None, outside_tile=None, length = 100, width = 3, height = 50):
+    wall_part = wall(length = length, width = width, height = height)
 
     wall_assembly = cq.Assembly()
     wall_assembly.add(wall_part, name="wall")

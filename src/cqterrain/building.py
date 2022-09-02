@@ -1,6 +1,7 @@
 import cadquery as cq
 from cadqueryhelper import shape
-from cqterrain import stairs, room
+from .stairs import stairs
+from .room import room
 
 class Building:
     def __init__(
@@ -60,7 +61,7 @@ class Building:
     def make_stories(self):
         self.floors = []
         for i in range(self._stories):
-            floor = room.room(
+            floor = room(
                 self.length,
                 self.width,
                 height = self._room_height,
@@ -103,7 +104,7 @@ class Building:
                 z_offset = (i*self._room_height)+self.stair['rail_height']/2
 
 
-            stair = stairs.stairs(
+            stair = stairs(
                 length = stair_length,
                 width = self.stair['width'],
                 height = stair_height,

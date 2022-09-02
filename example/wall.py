@@ -1,7 +1,7 @@
 import cadquery as cq
 from cqterrain import wall
 
-part = wall.make_wall()
+part = wall()
 workspace = cq.Workplane('XY')
 workspace.add(part)
 

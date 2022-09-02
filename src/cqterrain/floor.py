@@ -3,7 +3,7 @@ from cadqueryhelper import shape
 from cadqueryhelper import grid
 import math
 
-def make_floor(length=100, width=100, height=3):
+def floor(length=100, width=100, height=3):
     work = shape.cube(length, width, height)
     meta = {'type':'floor', 'height':height , 'length':length, 'width':width}
     work.metadata = meta

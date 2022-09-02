@@ -1,5 +1,6 @@
 import cadquery as cq
-from cqterrain import floor, wall
+from .floor import floor
+from .wall import wall
 
 def room(length=120, width=80, height=50, wall_width=3, floor_height=3, floor_padding=0):
     # make floor
@@ -32,14 +33,14 @@ def room(length=120, width=80, height=50, wall_width=3, floor_height=3, floor_pa
 
 def __make_floor(length, width, height, padding):
     padding = padding*2
-    r_floor = floor.make_floor(length, width, height)
+    r_floor = floor(length, width, height)
     r_height = r_floor.metadata['height']
     r_width = r_floor.metadata['width'] - padding
     r_length = r_floor.metadata['length'] - padding
     return r_floor, r_height, r_width, r_length
 
 def __make_wall(length, width, height):
-    w = wall.make_wall(length, width, height)
+    w = wall(length, width, height)
     w_height = w.metadata['height']
     w_width = w.metadata['width']
     return w, w_height, w_width
