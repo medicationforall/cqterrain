@@ -1,7 +1,21 @@
+# Copyright 2022 James Adams
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 import cadquery as cq
 from cadqueryhelper import shape
 from .stairs import stairs
-from .room import room
+from .RoomClass import RoomClass
 
 class Building:
     def __init__(
@@ -27,6 +41,8 @@ class Building:
         self.room['wall_width'] = 3
         self.room['floor_height'] = 3
         self.room['floor_padding'] = 0
+        self.room['style'] = "office"
+        self.room['window_count'] = 1
 
         self.has_stairs = has_stairs
         self.stair_type = 'wrap_exterior'
@@ -61,14 +77,18 @@ class Building:
     def make_stories(self):
         self.floors = []
         for i in range(self._stories):
-            floor = room(
+            floor = RoomClass(
                 self.length,
                 self.width,
                 height = self._room_height,
                 wall_width = self.room['wall_width'],
                 floor_height = self.room['floor_height'],
-                floor_padding = self.room['floor_padding']
+                floor_padding = self.room['floor_padding'],
+                style = self.room['style'],
+                window_count = self.room['window_count']
             )
+
+            floor.make()
             self.floors.append(floor)
 
     def make_stairs(self):
@@ -132,7 +152,7 @@ class Building:
 
         # could be a series
         for i, floor in enumerate(self.floors):
-            building_assembly.add(floor, name=f"story{i}", loc=cq.Location(cq.Vector(0, 0, i*self._room_height)))
+            building_assembly.add(floor.build(), name=f"story{i}", loc=cq.Location(cq.Vector(0, 0, i*self._room_height)))
 
         if self.has_stairs:
             for i, stair_case in enumerate(self.stairs):
