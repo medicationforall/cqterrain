@@ -7,3 +7,4 @@ from .Door import Door
 from .floor import floor
 from .stairs import stairs
 from .wall import wall, tile_wall
+from .support import support
