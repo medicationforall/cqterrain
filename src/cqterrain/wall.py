@@ -11,61 +11,68 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
 import cadquery as cq
 from cadqueryhelper import shape
 from cadqueryhelper import grid
 import math
 
-def wall(length = 100, width = 3, height = 50):
-    return shape.cube(length, width, height)
+class Wall:
+    def __init__(self, length = 100, width = 3, height = 50, inside_tile=None, outside_tile=None):
+        self.length = length
+        self.width = width
+        self.height = height
+        self.inside_tile = inside_tile
+        self.outside_tile = outside_tile
 
-def tile_wall(inside_tile=None, outside_tile=None, length = 100, width = 3, height = 50):
-    wall_part = wall(length = length, width = width, height = height)
+        #make
+        self.wall = None
+        self.inside_grid = None
+        self.outside_grid  = None
+        self.inside_height = None
 
-    wall_assembly = cq.Assembly()
-    wall_assembly.add(wall_part, name="wall")
+    def make(self):
+        self.wall = shape.cube(self.length, self.width, self.height)
+        self.inside_grid, self.inside_height = self.__make_inside_tile_grid()
+        self.outside_grid, self.outside_height = self.__make_outside_tile_grid()
 
-    if inside_tile:
-        print('found inside tile')
-        inside_meta = __resolve_tile_meta(inside_tile)
-        inside_width = inside_meta['width']
-        inside_length = inside_meta['length']
-        inside_height = inside_meta['height']
-        inside_columns = math.floor(height/inside_width)
-        inside_rows = math.floor(length/inside_length)
+    def __make_inside_tile_grid(self):
+        if self.inside_tile:
+            bounds = self.inside_tile.val().BoundingBox()
+            inside_width = bounds.ylen
+            inside_length = bounds.xlen
+            inside_height = bounds.zlen
+            inside_columns = math.floor(self.height/inside_width)
+            inside_rows = math.floor(self.length/inside_length)
+            inside_grid = grid.make_grid(part=self.inside_tile, dim = [inside_width, inside_length], columns = inside_columns, rows = inside_rows)
+            inside_grid = inside_grid.rotate((1, 0, 0), (0, 0, 0), -90)
+            return inside_grid, inside_height
+        else:
+            return None, None
 
-        print('inside tile meta', inside_meta, inside_columns, inside_rows)
-        inside_grid = grid.make_grid(part=inside_tile, dim = [inside_width, inside_length], columns = inside_columns, rows = inside_rows)
-        inside_grid = inside_grid.rotate((1, 0, 0), (0, 0, 0), -90)
+    def __make_outside_tile_grid(self):
+        if self.outside_tile:
+            bounds = self.outside_tile.val().BoundingBox()
+            outside_width = bounds.ylen
+            outside_length = bounds.xlen
+            outside_height = bounds.zlen
+            outside_columns = math.floor(self.height/outside_width)
+            outside_rows = math.floor(self.length/outside_length)
+            outside_grid = grid.make_grid(part=self.outside_tile, dim = [outside_width, outside_length], columns = outside_columns, rows = outside_rows)
+            outside_grid = outside_grid.rotate((1, 0, 0), (0, 0, 0), -90)
+            return outside_grid, outside_height
+        else:
+            return None, None
 
-        wall_assembly.add(inside_grid, name="insideGrid" , loc=cq.Location(cq.Vector(0, -(width/2+inside_height/2), 0)))
+    def build(self):
+        wall_assembly = cq.Assembly()
+        wall_assembly.add(self.wall, name="wall")
 
-    if outside_tile:
-        print('found outside tile')
-        outside_meta = __resolve_tile_meta(outside_tile)
-        outside_width = outside_meta['width']
-        outside_length = outside_meta['length']
-        outside_height = outside_meta['height']
-        outside_columns = math.floor(height/outside_width)
-        outside_rows = math.floor(length/outside_length)
+        if self.inside_grid:
+            wall_assembly.add(self.inside_grid, name="insideGrid" , loc=cq.Location(cq.Vector(0, -1*(self.width/2+self.inside_height/2), 0)))
 
-        print('outside tile meta', outside_meta, outside_columns, outside_rows)
-        outside_grid = grid.make_grid(part=outside_tile, dim = [outside_width, outside_length], columns = outside_columns, rows = outside_rows)
-        outside_grid = outside_grid.rotate((1, 0, 0), (0, 0, 0), -90)
+        if self.outside_grid:
+            wall_assembly.add(self.outside_grid, name="outsideGrid" , loc=cq.Location(cq.Vector(0, (self.width/2+self.inside_height/2), 0)))
 
-        wall_assembly.add(outside_grid, name="outsideGrid" , loc=cq.Location(cq.Vector(0, (width/2+outside_height/2), 0)))
-
-    comp_wall = wall_assembly.toCompound()
-
-    meta = {'type':'wall', 'height':height, 'length':length, 'width':width}
-    comp_wall.metadata = meta
-
-    return comp_wall
-
-def __resolve_tile_meta(tile):
-    meta = None
-    tile_attributes = dir(tile)
-    if 'metadata' in tile_attributes:
-        meta = tile.metadata
-    return meta
+        comp_wall = wall_assembly.toCompound()
+        scene = cq.Workplane("XY").add(comp_wall)
+        return scene

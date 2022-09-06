@@ -1,8 +1,10 @@
 import cadquery as cq
-from cqterrain import wall
+from cqterrain import Wall
 
-part = wall()
+bb = Wall()
+bb.make()
+wall = bb.build()
 workspace = cq.Workplane('XY')
-workspace.add(part)
+workspace.add(wall)
 
 cq.exporters.export(workspace,'out/wall.stl')

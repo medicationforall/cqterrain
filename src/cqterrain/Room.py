@@ -1,12 +1,25 @@
 import cadquery as cq
 from cadqueryhelper import series, shape
 from .floor import floor
-from .wall import wall
+from .Wall import Wall
 from .Door import Door
 
 
 class Room:
-    def __init__(self, length=120, width=80, height=50, wall_width=3, floor_height=3, floor_padding=0, window_count=1, style="office", door_walls = [False, True, False, False], window_walls = [True, True, True, True]):
+    def __init__(
+    self,
+    length=120,
+    width=80,
+    height=50,
+    wall_width=3,
+    floor_height=3,
+    floor_padding=0,
+    window_count=1,
+    style="office",
+    door_walls = [False, True, False, False],
+    window_walls = [True, True, True, True],
+    build_walls = [True, True, True, True]
+    ):
         # attributes
         self.length = length
         self.width = width
@@ -18,6 +31,7 @@ class Room:
         self.window_count = window_count
         self.door_walls = door_walls
         self.window_walls = window_walls
+        self.build_walls = build_walls
 
         # post make
         self.floor = None
@@ -44,9 +58,13 @@ class Room:
         return r_floor
 
     def __make_wall(self, length, width, height, door_wall, window_wall):
-        w = wall(length, width, height)
-        self.w_height = w.metadata['height']
-        self.w_width = w.metadata['width']
+        b_wall = Wall(length, width, height)
+        b_wall.make()
+        w = b_wall.build()
+        #print('wall built', dir(w))
+        self.w_height = b_wall.height
+        self.w_width = b_wall.width
+
 
         if self.style == "office" and window_wall:
             window_cutout = cq.Workplane().box(10, width, 20)
@@ -63,7 +81,7 @@ class Room:
             w = w.cut(window_series).add(window_series2)
 
         if door_wall:
-            print('attempt to make door')
+            #print('attempt to make door')
             #zero wall
             w = w.translate((0,0,height/2))
 
@@ -104,10 +122,17 @@ class Room:
     def build(self):
         room_assembly = cq.Assembly()
         room_assembly.add(self.floor, name="floor")
-        room_assembly.add(self.walls[0], name="wall1", loc=cq.Location(cq.Vector(0, (self.r_width /2) - (self.w_width /2), (self.w_height /2)-(self.r_height/2))))
-        room_assembly.add(self.walls[1], name="wall2", loc=cq.Location(cq.Vector(0, -1*((self.r_width /2) - (self.w_width /2)), (self.w_height /2)-(self.r_height/2))))
-        room_assembly.add(self.walls[2], name="wall3", loc=cq.Location(cq.Vector((self.r_length /2) - (self.w_width /2), 0, (self.w_height /2)-(self.r_height/2))))
-        room_assembly.add(self.walls[3], name="wall4", loc=cq.Location(cq.Vector(-1*((self.r_length /2) - (self.w_width /2)), 0, (self.w_height /2)-(self.r_height/2))))
+        if self.build_walls[0]:
+            room_assembly.add(self.walls[0], name="wall1", loc=cq.Location(cq.Vector(0, (self.r_width /2) - (self.w_width /2), (self.w_height /2)-(self.r_height/2))))
+
+        if self.build_walls[1]:
+            room_assembly.add(self.walls[1], name="wall2", loc=cq.Location(cq.Vector(0, -1*((self.r_width /2) - (self.w_width /2)), (self.w_height /2)-(self.r_height/2))))
+
+        if self.build_walls[2]:
+            room_assembly.add(self.walls[2], name="wall3", loc=cq.Location(cq.Vector((self.r_length /2) - (self.w_width /2), 0, (self.w_height /2)-(self.r_height/2))))
+
+        if self.build_walls[3]:
+            room_assembly.add(self.walls[3], name="wall4", loc=cq.Location(cq.Vector(-1*((self.r_length /2) - (self.w_width /2)), 0, (self.w_height /2)-(self.r_height/2))))
         comp_room = room_assembly.toCompound()
 
         # zero out height

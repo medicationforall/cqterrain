@@ -1,11 +1,13 @@
 import cadquery as cq
-from cqterrain import tile_wall
+from cqterrain import Wall
 from cadqueryhelper import shape
 
 cylinder = shape.cylinder(10, 5)
 star = shape.star()
 
-part = tile_wall(inside_tile=cylinder, outside_tile=star, height=75)
+bb = Wall(inside_tile=cylinder, outside_tile=star, height=75)
+bb.make()
+part = bb.build()
 workspace = cq.Workplane('XY')
 workspace.add(part)
 
