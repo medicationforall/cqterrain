@@ -15,7 +15,7 @@
 import cadquery as cq
 from cadqueryhelper import shape
 from .stairs import stairs
-from .RoomClass import RoomClass
+from .Room import Room
 
 class Building:
     def __init__(
@@ -38,14 +38,21 @@ class Building:
 
         #make room properties
         self.room = {}
+        self.room['length'] = self.length
+        self.room['width'] = self.width
+        self.room['height'] = self._room_height
         self.room['wall_width'] = 3
         self.room['floor_height'] = 3
         self.room['floor_padding'] = 0
         self.room['style'] = "office"
         self.room['window_count'] = 1
+        self.room['style'] = "office"
+        self.room['door_walls'] = [False,False,False,False]
+        self.room['window_walls'] = [True,True,True,True]
 
         self.has_stairs = has_stairs
         self.stair_type = 'wrap_exterior'
+        self.stair_stories = stories -1
 
         #make stair properties
         self.stair = {}
@@ -77,16 +84,7 @@ class Building:
     def make_stories(self):
         self.floors = []
         for i in range(self._stories):
-            floor = RoomClass(
-                self.length,
-                self.width,
-                height = self._room_height,
-                wall_width = self.room['wall_width'],
-                floor_height = self.room['floor_height'],
-                floor_padding = self.room['floor_padding'],
-                style = self.room['style'],
-                window_count = self.room['window_count']
-            )
+            floor = Room(**self.room)
 
             floor.make()
             self.floors.append(floor)
@@ -104,7 +102,7 @@ class Building:
     def __make_wrap_exterior_stairs(self):
         #print('__make_wrap_exterior_stairs')
         self.stairs = []
-        for i in range(self._stories):
+        for i in range(self.stair_stories):
             stair_height = self._room_height
             stair_height += self.stair['rail_height']
 
