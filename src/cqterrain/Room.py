@@ -1,6 +1,6 @@
 import cadquery as cq
 from cadqueryhelper import series, shape
-from .floor import floor
+from .Floor import Floor
 from .Wall import Wall
 from .Door import Door
 
@@ -51,10 +51,12 @@ class Room:
 
     def __make_floor(self):
         padding = self.floor_padding*2
-        r_floor = floor(self.length, self.width, self.floor_height)
-        self.r_height = r_floor.metadata['height']
-        self.r_width = r_floor.metadata['width'] - padding
-        self.r_length = r_floor.metadata['length'] - padding
+        floor_bp = Floor(self.length, self.width, self.floor_height)
+        floor_bp.make()
+        r_floor = floor_bp.build()
+        self.r_height = floor_bp.height
+        self.r_width = floor_bp.width - padding
+        self.r_length = floor_bp.length - padding
         return r_floor
 
     def __make_wall(self, length, width, height, door_wall, window_wall):

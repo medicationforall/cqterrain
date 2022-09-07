@@ -17,45 +17,46 @@ from cadqueryhelper import shape
 from cadqueryhelper import grid
 import math
 
-def floor(length=100, width=100, height=3):
-    work = shape.cube(length, width, height)
-    meta = {'type':'floor', 'height':height , 'length':length, 'width':width}
-    work.metadata = meta
-    return work
+class Floor():
+    def __init__(self, length=100, width=100, height=3, tile=None):
+        self.length = length
+        self.width = width
+        self.height = height
+        self.tile = tile
 
-def make_tile_floor(tile, length=100, width=100, height=3):
-    tile_width = 5
-    tile_length = 5
-    tile_height = 5
+        self.floor = None
+        self.tile_grid = None
+        self.grid_height = None
 
-    tile_meta = __resolve_tile_meta(tile)
+    def make(self):
+        self.floor = shape.cube(self.length, self.width, self.height)
+        self.tile_grid, self.grid_height = self.__make_tile_grid()
 
-    if tile_meta and 'width' in tile_meta and 'length' in tile_meta:
-        tile_width = tile_meta['width']
-        tile_length = tile_meta['length']
-        tile_height = tile_meta['height']
-    else:
-        raise Exception('Could not resolve width and or length from tile metadata', tile_meta)
+    def __make_tile_grid(self):
+        if self.tile:
+            bounds = self.tile.val().BoundingBox()
+            t_width = bounds.ylen
+            t_length = bounds.xlen
+            t_height = bounds.zlen
+            columns = math.floor(self.width/t_width)
+            rows = math.floor(self.length/t_length)
+            tile_grid = grid.make_grid(part=self.tile, dim = [t_width, t_length], columns = columns, rows = rows)
+            #inside_grid = inside_grid.rotate((1, 0, 0), (0, 0, 0), -90)
+            return tile_grid, t_height
+        else:
+            return None, None
 
-    columns = math.floor(width/tile_width)
-    rows = math.floor(length/tile_length)
+    def build(self):
+        floor_assembly = cq.Assembly()
+        if self.tile_grid:
+            print('add tile ggrid')
+            floor_assembly.add(self.tile_grid, name="tiles", loc=cq.Location(cq.Vector(0, 0, (self.grid_height/2) + (self.height/2))))
+        floor_assembly.add(self.floor, name="floor")
+        comp_floor = floor_assembly.toCompound()
 
-    tile_grid = grid.make_grid(part=tile, dim = [tile_width, tile_length], columns = columns, rows = rows)
-    floor_part = make_floor(length, width, height)
+        #meta = {'type':'floor', 'height':tile_height + height, 'length':length, 'width':width}
+        #comp_floor.metadata = meta
 
-    floor_assembly = cq.Assembly()
-    floor_assembly.add(tile_grid, name="tiles", loc=cq.Location(cq.Vector(0, 0, (tile_height/2) + (height/2))))
-    floor_assembly.add(floor_part, name="floor")
-    comp_floor = floor_assembly.toCompound()
-
-    meta = {'type':'floor', 'height':tile_height + height, 'length':length, 'width':width}
-    comp_floor.metadata = meta
-
-    return comp_floor
-
-def __resolve_tile_meta(tile):
-    meta = None
-    tile_attributes = dir(tile)
-    if 'metadata' in tile_attributes:
-        meta = tile.metadata
-    return meta
+        #return comp_floor
+        scene = cq.Workplane("XY").add(comp_floor)
+        return scene

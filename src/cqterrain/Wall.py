@@ -29,6 +29,7 @@ class Wall:
         self.inside_grid = None
         self.outside_grid  = None
         self.inside_height = None
+        self.outside_height = None
 
     def make(self):
         self.wall = shape.cube(self.length, self.width, self.height)

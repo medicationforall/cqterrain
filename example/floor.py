@@ -1,7 +1,9 @@
 import cadquery as cq
-from cqterrain import floor
+from cqterrain import Floor
 
-f = floor()
+bp = Floor()
+bp.make()
+f = bp.build()
 workspace = cq.Workplane('XY')
 workspace.add(f)
 
