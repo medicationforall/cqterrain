@@ -52,12 +52,13 @@ class Room:
     def __make_floor(self):
         padding = self.floor_padding*2
         floor_bp = Floor(self.length, self.width, self.floor_height)
-        floor_bp.make()
-        r_floor = floor_bp.build()
         self.r_height = floor_bp.height
         self.r_width = floor_bp.width - padding
         self.r_length = floor_bp.length - padding
-        return r_floor
+        floor_bp.make()
+        return floor_bp
+        #r_floor = floor_bp.build()
+        #return r_floor
 
     def __make_wall(self, length, width, height, door_wall, window_wall):
         b_wall = Wall(length, width, height)
@@ -100,8 +101,7 @@ class Room:
 
     def make(self):
         # make floor
-        r_floor = self.__make_floor()
-        self.floor = r_floor
+        self.floor = self.__make_floor()
 
         # make walls along the x axis
         w1  = self.__make_wall(length=self.r_length, width=self.wall_width, height=self.height, door_wall = self.door_walls[0], window_wall = self.window_walls[0])
@@ -123,7 +123,8 @@ class Room:
 
     def build(self):
         room_assembly = cq.Assembly()
-        room_assembly.add(self.floor, name="floor")
+        floor = self.floor.build()
+        room_assembly.add(floor, name="floor")
         if self.build_walls[0]:
             room_assembly.add(self.walls[0], name="wall1", loc=cq.Location(cq.Vector(0, (self.r_width /2) - (self.w_width /2), (self.w_height /2)-(self.r_height/2))))
 

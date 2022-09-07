@@ -23,6 +23,7 @@ class Floor():
         self.width = width
         self.height = height
         self.tile = tile
+        self.tile_padding = 0
 
         self.floor = None
         self.tile_grid = None
@@ -40,7 +41,7 @@ class Floor():
             t_height = bounds.zlen
             columns = math.floor(self.width/t_width)
             rows = math.floor(self.length/t_length)
-            tile_grid = grid.make_grid(part=self.tile, dim = [t_width, t_length], columns = columns, rows = rows)
+            tile_grid = grid.make_grid(part=self.tile, dim = [t_width + self.tile_padding, t_length + self.tile_padding], columns = columns, rows = rows)
             #inside_grid = inside_grid.rotate((1, 0, 0), (0, 0, 0), -90)
             return tile_grid, t_height
         else:
