@@ -38,6 +38,12 @@ class Room:
         self.walls = []
         self.doors = []
 
+        self.window = {}
+        self.window['padding'] = 1
+        self.window['length'] = 10
+        self.window['height'] = 20
+
+
         self.door = {}
         self.door['length'] = 25
         self.door['width'] = wall_width+2
@@ -70,17 +76,17 @@ class Room:
 
 
         if self.style == "office" and window_wall:
-            window_cutout = cq.Workplane().box(10, width, 20)
-            window_series = series(window_cutout, self.window_count, length_offset = 1)
+            window_cutout = cq.Workplane().box(self.window['length'], width, self.window['height'])
+            window_series = series(window_cutout, self.window_count, length_offset = self.window['padding'])
             w = w.cut(window_series)
         elif self.style == "arch" and window_wall:
             window_cutout = shape.arch_pointed(length=12, width=width, height=22, inner_height=10)
-            window_series = series(window_cutout, self.window_count, length_offset = 1)
+            window_series = series(window_cutout, self.window_count, length_offset = self.window['padding'])
 
             window_ridge = shape.arch_pointed(length=12, width=width+2, height=22, inner_height=11)
             window_cutout2 = shape.arch_pointed(length=10, width=width+2, height=20, inner_height=10)
             window = window_ridge.cut(window_cutout2)
-            window_series2 = series(window, self.window_count, length_offset = 1)
+            window_series2 = series(window, self.window_count, length_offset = self.window['padding'])
             w = w.cut(window_series).add(window_series2)
 
         if door_wall:

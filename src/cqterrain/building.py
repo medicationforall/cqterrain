@@ -49,6 +49,7 @@ class Building:
         self.room['style'] = "office"
         self.room['door_walls'] = [False,False,False,False]
         self.room['window_walls'] = [True,True,True,True]
+        self.room['build_walls'] = [True, True, True, True]
 
         self.has_stairs = has_stairs
         self.stair_type = 'wrap_exterior'
