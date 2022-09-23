@@ -2,12 +2,12 @@ import cadquery as cq
 from cadqueryhelper import series, shape
 from cqterrain import Building, Room, tile
 
-render_floor = True
-cq_editor_show = False
-export_to_file = True
+render_floor = False
+cq_editor_show=True
+export_to_file=False
 
 create = ['tower1', 'tower2', 'entrance']
-create = [ 'entrance']
+#create = [ 'entrance']
 
 floor_tile = tile.octagon_with_dots()
 
@@ -130,6 +130,18 @@ def make_tower2():
 
 scene = cq.Workplane("XY")
 
+
+
+if 'entrance' in create:
+    entrance = make_entrance()
+    entrance_roof = make_roof()
+    stair_cutout = cq.Workplane("XY").box(4, 30, 20).translate((-37.5+1.5,37.5+12.5+1,37.5+10+3))
+    entrance= (cq.Workplane("XY")
+               .add(entrance)
+               .add(entrance_roof)
+               )
+    scene = scene.union(entrance).cut(stair_cutout)
+
 if 'tower1' in create:
     tower = make_tower()
     tower1_roof = make_roof(10).translate((0,-75,70)).rotate((0,0,1),(0,0,0),90)
@@ -141,13 +153,6 @@ if 'tower2' in create:
     tower2_roof = make_roof(height=10).translate((0,0,70)).rotate((0,0,1),(0,0,0),-90)
     tower2= cq.Workplane("XY").add(tower2).add(tower2_roof)
     scene.add(tower2)
-
-if 'entrance' in create:
-    entrance = make_entrance()
-    entrance_roof = make_roof()
-
-    entrance= cq.Workplane("XY").add(entrance).add(entrance_roof)
-    scene.add(entrance)
 
 
 
