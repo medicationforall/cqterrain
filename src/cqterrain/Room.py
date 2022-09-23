@@ -14,6 +14,8 @@ class Room:
     wall_width=3,
     floor_height=3,
     floor_padding=0,
+    floor_tile=None,
+    floor_tile_padding=0,
     window_count=1,
     style="office",
     door_walls = [False, True, False, False],
@@ -27,6 +29,8 @@ class Room:
         self.wall_width = wall_width
         self.floor_height = floor_height
         self.floor_padding = floor_padding
+        self.floor_tile = floor_tile
+        self.floor_tile_padding = floor_tile_padding
         self.style = style
         self.window_count = window_count
         self.door_walls = door_walls
@@ -37,6 +41,7 @@ class Room:
         self.floor = None
         self.walls = []
         self.doors = []
+
 
         self.window = {}
         self.window['padding'] = 1
@@ -57,7 +62,7 @@ class Room:
 
     def __make_floor(self):
         padding = self.floor_padding*2
-        floor_bp = Floor(self.length, self.width, self.floor_height)
+        floor_bp = Floor(self.length, self.width, self.floor_height, self.floor_tile, self.floor_tile_padding)
         self.r_height = floor_bp.height
         self.r_width = floor_bp.width - padding
         self.r_length = floor_bp.length - padding

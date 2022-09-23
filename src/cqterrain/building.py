@@ -44,12 +44,19 @@ class Building:
         self.room['wall_width'] = 3
         self.room['floor_height'] = 3
         self.room['floor_padding'] = 0
-        self.room['style'] = "office"
-        self.room['window_count'] = 1
+        self.room['floor_tile'] = None
+        self.room['floor_tile_padding'] = 0
         self.room['style'] = "office"
         self.room['door_walls'] = [False,False,False,False]
         self.room['window_walls'] = [True,True,True,True]
         self.room['build_walls'] = [True, True, True, True]
+
+        self.window = {}
+        self.window['count'] = 1
+        self.window['padding'] = 1
+        self.window['length'] = 10
+        self.window['height'] = 20
+
 
         self.has_stairs = has_stairs
         self.stair_type = 'wrap_exterior'
@@ -60,11 +67,19 @@ class Building:
         self.stair['rail_height'] = 5
         self.stair['width'] = 10
         self.stair['run'] = 5
+        self.stair['length_padding'] = 0
         self.stair['stair_length_offset'] = 0
         self.stair['stair_height'] = 1
         self.stair['stair_height_offset'] = 0
         self.stair['rail_width'] = 1
         self.stair['step_overlap']=None
+        self.stair['start_rotation']=0
+        self.stair['direction']='counter-clockwise'
+
+        self.stair_landing = {}
+        self.stair_landing['width'] = None
+        self.stair_landing['length'] = None
+        self.stair_landing['height'] = 5
 
     @property
     def stories(self):
@@ -86,6 +101,11 @@ class Building:
         self.floors = []
         for i in range(self._stories):
             floor = Room(**self.room)
+            floor.window_count = self.window['count']
+            floor.window['padding'] = self.window['padding']
+            floor.window['length'] = self.window['length']
+            floor.window['height'] = self.window['height']
+
 
             floor.make()
             self.floors.append(floor)
@@ -122,9 +142,8 @@ class Building:
             else:
                 z_offset = (i*self._room_height)+self.stair['rail_height']/2
 
-
             stair = stairs(
-                length = stair_length,
+                length = stair_length - self.stair['length_padding'],
                 width = self.stair['width'],
                 height = stair_height,
                 run = self.stair['run'],
@@ -136,10 +155,19 @@ class Building:
                 step_overlap = self.stair['step_overlap']
             )
 
-            stair_case_width = stair.metadata['width']
+            if self.stair_landing['length'] and self.stair_landing['width']:
+                landing = cq.Workplane("XY").box(self.stair_landing['length'], self.stair_landing['width'], self.stair_landing['height'])
+                landing = landing.translate(((self.stair_landing['length']/2)+((stair_length - self.stair['length_padding'])/2),0,(stair_height/2)-(self.stair_landing['height']/2)))
+                stair = cq.Workplane("XY").add(stair).add(landing)
 
-            stair = stair.translate((0, (y_offset/2) + (stair_case_width/2), z_offset))
-            stair  = stair.rotate((0, 0, 1), (0, 0, 0), 90*i)
+            if self.stair['direction'] == 'counter-clockwise':
+                stair = stair.translate((0, (y_offset/2) + (self.stair['width']/2), z_offset))
+                stair  = stair.rotate((0, 0, 1), (0, 0, 0), 90*i).rotate((0, 0, 1), (0, 0, 0), self.stair['start_rotation'])
+            elif self.stair['direction'] == 'clockwise':
+                stair = stair.rotate((0, 0, 1), (0, 0, 0), 180).translate((0, (y_offset/2) + (self.stair['width']/2), z_offset))
+                stair  = stair.rotate((0, 0, 1), (0, 0, 0), -90*i).rotate((0, 0, 1), (0, 0, 0), self.stair['start_rotation'])
+            else:
+                raise Exception(f"unrecognized stair dirsction {self.stair['direction']}")
             self.stairs.append(stair)
 
 

@@ -18,12 +18,12 @@ from cadqueryhelper import grid
 import math
 
 class Floor():
-    def __init__(self, length=100, width=100, height=3, tile=None):
+    def __init__(self, length=100, width=100, height=3, tile=None, tile_padding=0):
         self.length = length
         self.width = width
         self.height = height
         self.tile = tile
-        self.tile_padding = 0
+        self.tile_padding = tile_padding
 
         self.floor = None
         self.tile_grid = None
