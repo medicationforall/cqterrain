@@ -50,6 +50,7 @@ class Building:
         self.room['door_walls'] = [False,False,False,False]
         self.room['window_walls'] = [True,True,True,True]
         self.room['build_walls'] = [True, True, True, True]
+        self.room['make_custom_windows'] = None
 
         self.window = {}
         self.window['count'] = 1

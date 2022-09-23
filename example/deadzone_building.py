@@ -1,11 +1,38 @@
 import cadquery as cq
+from cadqueryhelper import series, shape
 from cqterrain import Building, Room, tile
 
 render_floor = True
-cq_editor_show=True
-export_to_file=False
+cq_editor_show=False
+export_to_file=True
+
+create = ['tower1', 'tower2', 'entrance']
+#create = [ 'entrance']
 
 floor_tile = tile.octagon_with_dots()
+
+def _make_window(length, width, height):
+    frame = cq.Workplane("XY").box(length, width+2, height)
+    window = cq.Workplane("XY").box(length-8, width+2, height)
+    combined = frame.cut(window)
+
+    top_spheres = combined.edges("X").translate((0,0,-2)).sphere(1, combine=False)
+    bottom_spheres = combined.edges("X").translate((0,0,2)).sphere(1, combine=False)
+
+    combined = combined.edges("X").chamfer(.7).cut(top_spheres).cut(bottom_spheres)
+    return combined
+
+def custom_windows(wall, length, width, height, count, padding):
+    window_cutout = cq.Workplane().box(length, width, height)
+    window_cut_series = series(window_cutout, count, length_offset = padding)
+
+    window = _make_window(length, width, height)
+    window_series = series(window, count, length_offset = padding)
+
+    w = wall.cut(window_cut_series)
+    w = w.add(window_series)
+
+    return w
 
 def make_entrance():
     bp = Building(length=75, width=75, height=75, stories=1, has_stairs=True)
@@ -15,8 +42,9 @@ def make_entrance():
     bp.room['window_walls'] = [True, False, False, False]
     if render_floor:
         bp.room['floor_tile'] = floor_tile
-        bp.room['floor_tile_padding'] = 0.5
+        bp.room['floor_tile_padding'] = .5
     bp.window['count'] = 2
+    bp.room['make_custom_windows'] = custom_windows
 
     bp.stair['length_padding'] = 25
     bp.stair['width']=25
@@ -46,6 +74,10 @@ def make_roof(height=20):
         door_walls = [False, False, False, False],
         )
     bp.make()
+
+    for index, wall in enumerate(bp.walls):
+        bp.walls[index] = wall.chamfer(1)
+
     roof = bp.build()
     roof = roof.translate((0,75,10+37.5))
     return roof
@@ -56,6 +88,7 @@ def make_tower():
     bp.room['build_walls']= [True,True,True,False]
     bp.room['door_walls'] = [True, False, False, False]
     bp.room['window_walls'] = [False, True, True, False]
+    bp.room['make_custom_windows'] = custom_windows
     if render_floor:
         bp.room['floor_tile'] = floor_tile
         bp.room['floor_tile_padding'] = 0.5
@@ -74,6 +107,7 @@ def make_tower():
 def make_tower2():
     bp = Building(length=75, width=75, height=150, stories=2)
     bp.room['build_walls']= [True,True,False,True]
+    bp.room['make_custom_windows'] = custom_windows
     if render_floor:
         bp.room['floor_tile'] = floor_tile
         bp.room['floor_tile_padding'] = 0.5
@@ -94,24 +128,25 @@ def make_tower2():
     building  = building.translate((-75,0,0))
     return building
 
-tower = make_tower()
-tower1_roof = make_roof(10).translate((0,-75,70)).rotate((0,0,1),(0,0,0),90)
-tower= cq.Workplane("XY").add(tower).add(tower1_roof)
+scene = cq.Workplane("XY")
 
-tower2 = make_tower2()
-tower2_roof = make_roof(height=10).translate((0,0,70)).rotate((0,0,1),(0,0,0),-90)
-tower2= cq.Workplane("XY").add(tower2).add(tower2_roof)
+if 'tower1' in create:
+    tower = make_tower()
+    tower1_roof = make_roof(10).translate((0,-75,70)).rotate((0,0,1),(0,0,0),90)
+    tower= cq.Workplane("XY").add(tower).add(tower1_roof)
+    scene.add(tower)
 
-entrance = make_entrance()
-entrance_roof = make_roof()
-entrance= cq.Workplane("XY").add(entrance).add(entrance_roof)
+if 'tower2' in create:
+    tower2 = make_tower2()
+    tower2_roof = make_roof(height=10).translate((0,0,70)).rotate((0,0,1),(0,0,0),-90)
+    tower2= cq.Workplane("XY").add(tower2).add(tower2_roof)
+    scene.add(tower2)
 
-scene = (cq.Workplane("XY")
-         .add(tower)
-         .add(tower2)
-         .add(entrance)
-         )
-
+if 'entrance' in create:
+    entrance = make_entrance()
+    entrance_roof = make_roof()
+    entrance= cq.Workplane("XY").add(entrance).add(entrance_roof)
+    scene.add(entrance)
 
 
 
@@ -124,5 +159,5 @@ if cq_editor_show:
 if export_to_file:
     cq.exporters.export(scene,'out/deadzone_building.stl')
 
-
-#show_object(combined)
+#window = _make_window(20,5, 20)
+#show_object(window)

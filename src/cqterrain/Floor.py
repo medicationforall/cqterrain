@@ -50,7 +50,7 @@ class Floor():
     def build(self):
         floor_assembly = cq.Assembly()
         if self.tile_grid:
-            print('add tile ggrid')
+            #print('add tile ggrid')
             floor_assembly.add(self.tile_grid, name="tiles", loc=cq.Location(cq.Vector(0, 0, (self.grid_height/2) + (self.height/2))))
         floor_assembly.add(self.floor, name="floor")
         comp_floor = floor_assembly.toCompound()

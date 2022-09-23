@@ -4,6 +4,12 @@ from .Floor import Floor
 from .Wall import Wall
 from .Door import Door
 
+def _make_custom_windows(wall, length, width, height, count, padding):
+    window_cutout = cq.Workplane().box(length, width, height)
+    window_series = series(window_cutout, count, length_offset = padding)
+    w = wall.cut(window_series)
+    return w
+
 
 class Room:
     def __init__(
@@ -20,7 +26,8 @@ class Room:
     style="office",
     door_walls = [False, True, False, False],
     window_walls = [True, True, True, True],
-    build_walls = [True, True, True, True]
+    build_walls = [True, True, True, True],
+    make_custom_windows = None
     ):
         # attributes
         self.length = length
@@ -58,6 +65,9 @@ class Room:
         self.door['height'] = height-20
         self.door['x_offset'] = 0
 
+        # callback
+        self.make_custom_windows = make_custom_windows
+
 
 
     def __make_floor(self):
@@ -80,10 +90,10 @@ class Room:
         self.w_width = b_wall.width
 
 
-        if self.style == "office" and window_wall:
-            window_cutout = cq.Workplane().box(self.window['length'], width, self.window['height'])
-            window_series = series(window_cutout, self.window_count, length_offset = self.window['padding'])
-            w = w.cut(window_series)
+        if self.make_custom_windows != None and window_wall:
+            w = self.make_custom_windows(w, self.window['length'], width, self.window['height'], self.window_count, self.window['padding'])
+        elif self.style == "office" and window_wall:
+            w = _make_custom_windows(w, self.window['length'], width, self.window['height'], self.window_count, self.window['padding'])
         elif self.style == "arch" and window_wall:
             window_cutout = shape.arch_pointed(length=12, width=width, height=22, inner_height=10)
             window_series = series(window_cutout, self.window_count, length_offset = self.window['padding'])
@@ -93,6 +103,7 @@ class Room:
             window = window_ridge.cut(window_cutout2)
             window_series2 = series(window, self.window_count, length_offset = self.window['padding'])
             w = w.cut(window_series).add(window_series2)
+
 
         if door_wall:
             #print('attempt to make door')
