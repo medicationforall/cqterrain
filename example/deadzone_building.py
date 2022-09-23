@@ -3,11 +3,11 @@ from cadqueryhelper import series, shape
 from cqterrain import Building, Room, tile
 
 render_floor = True
-cq_editor_show=False
-export_to_file=True
+cq_editor_show = False
+export_to_file = True
 
 create = ['tower1', 'tower2', 'entrance']
-#create = [ 'entrance']
+create = [ 'entrance']
 
 floor_tile = tile.octagon_with_dots()
 
@@ -145,6 +145,7 @@ if 'tower2' in create:
 if 'entrance' in create:
     entrance = make_entrance()
     entrance_roof = make_roof()
+
     entrance= cq.Workplane("XY").add(entrance).add(entrance_roof)
     scene.add(entrance)
 
