@@ -51,12 +51,17 @@ class Building:
         self.room['window_walls'] = [True,True,True,True]
         self.room['build_walls'] = [True, True, True, True]
         self.room['make_custom_windows'] = None
+        self.room['make_custom_door'] = None
 
         self.window = {}
         self.window['count'] = 1
         self.window['padding'] = 1
         self.window['length'] = 10
         self.window['height'] = 20
+
+        self.door = {}
+        self.door ['length'] = 25
+        self.door ['height'] = self._room_height - 20
 
 
         self.has_stairs = has_stairs
@@ -107,6 +112,8 @@ class Building:
             floor.window['length'] = self.window['length']
             floor.window['height'] = self.window['height']
 
+            floor.door['length'] = self.door['length']
+            floor.door['height'] = self.door['height'] 
 
             floor.make()
             self.floors.append(floor)

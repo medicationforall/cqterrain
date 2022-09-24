@@ -10,6 +10,17 @@ def _make_custom_windows(wall, length, width, height, count, padding):
     w = wall.cut(window_series)
     return w
 
+def _make_custom_door(wall, length, width, height, floor_height):
+    bottom = wall.faces("-Z").val()
+    cutout = (cq.Workplane(bottom.Center())
+              .box(length, width, height)
+              .translate((0,0,(height/2)+floor_height))
+              )
+
+    log(bottom.Center())
+    w = wall.cut(cutout)
+    return w
+
 
 class Room:
     def __init__(
@@ -27,7 +38,8 @@ class Room:
     door_walls = [False, True, False, False],
     window_walls = [True, True, True, True],
     build_walls = [True, True, True, True],
-    make_custom_windows = None
+    make_custom_windows = None,
+    make_custom_door = None
     ):
         # attributes
         self.length = length
@@ -49,12 +61,10 @@ class Room:
         self.walls = []
         self.doors = []
 
-
         self.window = {}
         self.window['padding'] = 1
         self.window['length'] = 10
         self.window['height'] = 20
-
 
         self.door = {}
         self.door['length'] = 25
@@ -67,7 +77,7 @@ class Room:
 
         # callback
         self.make_custom_windows = make_custom_windows
-
+        self.make_custom_door = make_custom_door
 
 
     def __make_floor(self):
@@ -105,7 +115,9 @@ class Room:
             w = w.cut(window_series).add(window_series2)
 
 
-        if door_wall:
+        if door_wall and self.make_custom_door:
+            w = self.make_custom_door(w, self.door['length'], self.door['width'], self.door['height'], self.floor_height)
+        elif door_wall:
             #print('attempt to make door')
             #zero wall
             w = w.translate((0,0,height/2))
