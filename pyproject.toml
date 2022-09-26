@@ -19,6 +19,7 @@ classifiers = [
 ]
 dependencies = [
 "cadquery==2.2.0b0",
+"numpy-stl",
 'cqmore @ git+https://github.com/JustinSDK/cqMore',
 'cadqueryhelper @ git+https://github.com/medicationforall/cadqueryhelper'
 ]

@@ -1,6 +1,6 @@
 import cadquery as cq
 from cadqueryhelper import series, shape
-from cqterrain import Building, Room, tile
+from cqterrain import Building, Room, tile, window
 
 render_floor = False
 cq_editor_show=True
@@ -11,23 +11,14 @@ create = ['tower1', 'tower2', 'entrance']
 
 floor_tile = tile.octagon_with_dots()
 
-def _make_window(length, width, height):
-    frame = cq.Workplane("XY").box(length, width+2, height)
-    window = cq.Workplane("XY").box(length-8, width+2, height)
-    combined = frame.cut(window)
-
-    top_spheres = combined.edges("X").translate((0,0,-2)).sphere(1, combine=False)
-    bottom_spheres = combined.edges("X").translate((0,0,2)).sphere(1, combine=False)
-
-    combined = combined.edges("X").chamfer(.7).cut(top_spheres).cut(bottom_spheres)
-    return combined
-
 def custom_windows(wall, length, width, height, count, padding):
     window_cutout = cq.Workplane().box(length, width, height)
     window_cut_series = series(window_cutout, count, length_offset = padding)
 
-    window = _make_window(length, width, height)
-    window_series = series(window, count, length_offset = padding)
+    i_window = window.industrial(length, width+2, height)
+    grill = window.grill(length=20, width=4, height=60, rows=2, columns=2)
+    i_window.add(grill)
+    window_series = series(i_window, count, length_offset = padding)
 
     w = wall.cut(window_cut_series)
     w = w.add(window_series)
@@ -164,6 +155,3 @@ if cq_editor_show:
 
 if export_to_file:
     cq.exporters.export(scene,'out/deadzone_building.stl')
-
-#window = _make_window(20,5, 20)
-#show_object(window)
