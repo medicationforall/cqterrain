@@ -121,8 +121,6 @@ def make_tower2():
 
 scene = cq.Workplane("XY")
 
-
-
 if 'entrance' in create:
     entrance = make_entrance()
     entrance_roof = make_roof()
@@ -144,7 +142,6 @@ if 'tower2' in create:
     tower2_roof = make_roof(height=10).translate((0,0,70)).rotate((0,0,1),(0,0,0),-90)
     tower2= cq.Workplane("XY").add(tower2).add(tower2_roof)
     scene.add(tower2)
-
 
 
 mini = cq.Workplane("XY" ).cylinder(32, 12.5).translate((-10,70,(32/2)-37.5+78))
