@@ -1,12 +1,23 @@
 import cadquery as cq
 from cadqueryhelper import grid
+import math
+
+def lattice(length=20, width=4, height=40,  tile_size=4, lattice_width=1, lattice_height=1, lattice_angle=45):
+    hyp = math.sqrt(((width ** 2) + (height ** 2)))
+    columns= math.floor(hyp / (tile_size+lattice_width))
+    rows= math.floor(hyp / (tile_size+lattice_width))
+    pane = cq.Workplane("XY").box(length, lattice_height, height)
+    tile = cq.Workplane("XY").box(tile_size, lattice_height, tile_size).rotate((1,0,0),(0,0,0),90)
+    tiles = grid.make_grid(tile, [tile_size+lattice_width, tile_size+lattice_width], rows=columns, columns=rows).rotate((1,0,0),(0,0,0),-90).rotate((0,1,0),(0,0,0),lattice_angle)
+    combine = pane.cut(tiles)
+    return combine
 
 def frame(length=20, width = 4, height = 40, frame_width=3):
     outline = cq.Workplane("XY").box(length, width, height)
     inline =  cq.Workplane("XY").box(length-(frame_width*2), width, height-(frame_width*2))
     return outline.cut(inline)
 
-def grill(length=20, width=4, height=60, columns=4, rows=2, grill_width=1, grill_height=1):
+def grill(length=20, width=4, height=40, columns=4, rows=2, grill_width=1, grill_height=1):
     pane = cq.Workplane("XY").box(length, grill_height, height)
     t_width = length / columns
     t_height = height / rows
