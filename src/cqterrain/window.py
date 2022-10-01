@@ -3,7 +3,7 @@ from cadqueryhelper import grid
 import math
 
 def lattice(length=20, width=4, height=40,  tile_size=4, lattice_width=1, lattice_height=1, lattice_angle=45):
-    hyp = math.sqrt(((width ** 2) + (height ** 2)))
+    hyp = math.hypot(length, height)
     columns= math.floor(hyp / (tile_size+lattice_width))
     rows= math.floor(hyp / (tile_size+lattice_width))
     pane = cq.Workplane("XY").box(length, lattice_height, height)
