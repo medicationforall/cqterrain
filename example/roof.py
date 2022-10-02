@@ -23,11 +23,11 @@ angle_y = roof.angle(width/2, height)
 face_y = s_roof.rotate((0,0,1),(0,0,0),90).faces(">X")
 
 
-tiles = roof.tiles2(tile, face_x, length, height, t_length, t_width, angle_x, rows=tile_rows, odd_col_push=[1,0])
-tiles3 = roof.tiles2(tile, face_y, width, height, t_length, t_width, angle_y, rows=tile_rows, odd_col_push=[-1,0]).rotate((0,0,1),(0,0,0),90)
+tiles = roof.tiles(tile, face_x, length, height, t_length, t_width, angle_x, rows=tile_rows, odd_col_push=[1,0])
+tiles3 = roof.tiles(tile, face_y, width, height, t_length, t_width, angle_y, rows=tile_rows, odd_col_push=[-1,0]).rotate((0,0,1),(0,0,0),90)
 
-tiles4 = roof.tiles2(tile, face_y, width, height, t_length, t_width, angle_y, rows=tile_rows, odd_col_push=[-1,0]).rotate((0,0,1),(0,0,0),-90)
-tiles2 = roof.tiles2(tile, face_x, length, height, t_length, t_width, angle_x, rows=tile_rows, odd_col_push=[-1,0]).rotate((0,0,1),(0,0,0),180)
+tiles4 = roof.tiles(tile, face_y, width, height, t_length, t_width, angle_y, rows=tile_rows, odd_col_push=[-1,0]).rotate((0,0,1),(0,0,0),-90)
+tiles2 = roof.tiles(tile, face_x, length, height, t_length, t_width, angle_x, rows=tile_rows, odd_col_push=[-1,0]).rotate((0,0,1),(0,0,0),180)
 
 scene = s_roof.add(tiles).add(tiles2).add(tiles3).add(tiles4)
 #show_object(scene)
