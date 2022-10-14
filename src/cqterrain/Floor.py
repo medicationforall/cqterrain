@@ -28,10 +28,21 @@ class Floor():
         self.floor = None
         self.tile_grid = None
         self.grid_height = None
+        self.operations = []
+
+    def add_operation(self, funct):
+        print('add_operation')
+        self.operations.append(funct)
+
 
     def make(self):
         self.floor = shape.cube(self.length, self.width, self.height)
         self.tile_grid, self.grid_height = self.__make_tile_grid()
+        if self.operations and len(self.operations) > 0:
+            print('has operations')
+            for op in self.operations:
+                self.floor = op(self.floor)
+
 
     def __make_tile_grid(self):
         if self.tile:
