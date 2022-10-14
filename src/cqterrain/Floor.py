@@ -31,7 +31,7 @@ class Floor():
         self.operations = []
 
     def add_operation(self, funct):
-        print('add_operation')
+        #print('add_operation')
         self.operations.append(funct)
 
 
@@ -39,7 +39,7 @@ class Floor():
         self.floor = shape.cube(self.length, self.width, self.height)
         self.tile_grid, self.grid_height = self.__make_tile_grid()
         if self.operations and len(self.operations) > 0:
-            print('has operations')
+            #print('has operations')
             for op in self.operations:
                 self.floor = op(self.floor)
 
