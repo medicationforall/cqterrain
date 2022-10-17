@@ -50,8 +50,8 @@ class Floor():
             t_width = bounds.ylen
             t_length = bounds.xlen
             t_height = bounds.zlen
-            columns = math.floor(self.width/t_width)
-            rows = math.floor(self.length/t_length)
+            columns = math.floor(self.width/(t_width + self.tile_padding))
+            rows = math.floor(self.length/(t_length + self.tile_padding))
             tile_grid = grid.make_grid(part=self.tile, dim = [t_width + self.tile_padding, t_length + self.tile_padding], columns = columns, rows = rows)
             #inside_grid = inside_grid.rotate((1, 0, 0), (0, 0, 0), -90)
             return tile_grid, t_height
