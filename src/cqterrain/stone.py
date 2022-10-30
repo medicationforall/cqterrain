@@ -22,7 +22,7 @@ def make_stones(parts, dim=[5,5,2], rows=2, columns=5, seed="test4"):
 
             z_push = random.randrange(-1*math.floor(dim[2]),math.floor(dim[2]))
             z_push=0
-            #move the part in a random direction along the x and y axis.
+            # move the part in a random direction along the x and y axis.
             x_rand = random.randrange(-1*(math.floor(dim[0]/2)),(math.floor(dim[0]/2)))
             y_rand = random.randrange(-1*(math.floor(dim[1]/2)),(math.floor(dim[1]/2)))
 
