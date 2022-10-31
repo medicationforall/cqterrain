@@ -18,11 +18,18 @@ def frame(length=20, width = 4, height = 40, frame_width=3):
     return outline.cut(inline)
 
 def grill(length=20, width=4, height=40, columns=4, rows=2, grill_width=1, grill_height=1):
+    # Make a flat plane
     pane = cq.Workplane("XY").box(length, grill_height, height)
     t_width = length / columns
     t_height = height / rows
+
+    # Make the window cutout
     tile = cq.Workplane("XY").box(t_width, grill_height, t_height).rotate((1,0,0),(0,0,0),90)
+
+    # Repeat the cutout
     tiles = grid.make_grid(tile, [t_width+grill_width, t_height+grill_width], rows=columns, columns=rows).rotate((1,0,0),(0,0,0),-90)
+
+    # Remove the window cutouts leaving the frame
     combine = pane.cut(tiles)
     return combine
 
