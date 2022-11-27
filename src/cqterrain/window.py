@@ -1,5 +1,5 @@
 import cadquery as cq
-from cadqueryhelper import grid
+from cadqueryhelper import grid, shape
 import math
 
 def lattice(length=20, width=4, height=40,  tile_size=4, lattice_width=1, lattice_height=1, lattice_angle=45):
@@ -54,3 +54,17 @@ def industrial(length=20, width=4, height=40, frame_width=4, sphere_radius=1, sp
 
     combined = combined.edges("X").chamfer(strut_chamfer).cut(top_spheres).cut(bottom_spheres)
     return combined
+
+def cinquefoil(radius=5, sides=5, inner_radius=3, height=2):
+    polygon = shape.regular_polygon(radius=radius, sides=sides).translate((0,0,-2.5))
+    face = polygon.faces("Z")
+    points = face.edges()
+    circles = points.cylinder(height,2.6, combine=False)
+    center = cq.Workplane("XY").cylinder(height, inner_radius)
+    return circles.add(center)
+
+def cinquefoil_frame(outer_radius=7.5, radius=5, sides=5, inner_radius=3, height=2):
+    circles = cinquefoil(radius, sides, inner_radius, height)
+    frame_circle = cq.Workplane("XY").cylinder(height, outer_radius)
+    result = cq.Workplane("XY").add(frame_circle).cut(circles)
+    return result
