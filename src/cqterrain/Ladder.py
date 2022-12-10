@@ -72,9 +72,9 @@ class Ladder:
 
     def build(self):
         combined = (cq.Workplane("XY")
-        .add(self.side_rails[0])
-        .add(self.side_rails[1])
-        .add(self.rungs)
+        .union(self.side_rails[0])
+        .union(self.side_rails[1])
+        .union(self.rungs)
         )
 
         return combined
