@@ -20,7 +20,7 @@ def octagon_with_dots(tile_size=5, chamfer_size = 1.2, mid_tile_size =1.6, spaci
     tiles = grid.make_grid(tile, [tile_size + spacing,tile_size + spacing], rows=3, columns=3)
     center_tiles = grid.make_grid(mid_tile, [tile_size + spacing, tile_size + spacing], rows=4, columns=4)
 
-    combined = tiles.add(center_tiles).translate((0,0,-1*(1/2)))
+    combined = tiles.union(center_tiles).translate((0,0,-1*(1/2)))
     return combined
 
 
