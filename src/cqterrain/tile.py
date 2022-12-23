@@ -9,19 +9,56 @@ def octagon_with_dots(tile_size=5, chamfer_size = 1.2, mid_tile_size =1.6, spaci
             .chamfer(chamfer_size) # SET PERCENTAGE
             )
 
-    rotated_tile = tile.rotate((0,0,1),(0,0,0), 45)
 
     mid_tile = (cq.Workplane("XY")
             .rect(mid_tile_size, mid_tile_size)
-            .extrude(1)
+            .extrude(tile_height)
             .rotate((0,0,1),(0,0,0), 45)
             )
 
-    tiles = grid.make_grid(tile, [tile_size + spacing,tile_size + spacing], rows=3, columns=3)
-    center_tiles = grid.make_grid(mid_tile, [tile_size + spacing, tile_size + spacing], rows=4, columns=4)
+    tiles = (
+        cq.Workplane("XY")
+        .union(tile.translate((-1*((tile_size/2) + spacing/2),((tile_size/2) + spacing/2),0)))
+        .union(tile.translate((((tile_size/2) + spacing/2),((tile_size/2) + spacing/2),0)))
+        .union(tile.translate((((tile_size/2) + spacing/2),-1*((tile_size/2) + spacing/2),0)))
+        .union(tile.translate((-1*((tile_size/2) + spacing/2),-1*((tile_size/2) + spacing/2),0)))
+        .union(mid_tile)
+        .union(mid_tile.translate((-1*((tile_size) + spacing),0,0)))
+        .union(mid_tile.translate((((tile_size) + spacing),0,0)))
+        .union(mid_tile.translate((0,-1*((tile_size) + spacing),0)))
+        .union(mid_tile.translate((0,((tile_size) + spacing),0)))
+        .union(mid_tile.translate((-1*((tile_size) + spacing),((tile_size) + spacing),0)))
+        .union(mid_tile.translate((-1*((tile_size) + spacing),-1*((tile_size) + spacing),0)))
+        .union(mid_tile.translate((((tile_size) + spacing),-1*((tile_size) + spacing),0)))
+        .union(mid_tile.translate((((tile_size) + spacing),((tile_size) + spacing),0)))
+    )
+    return tiles.translate((0,0,-1*(tile_height/2)))
 
-    combined = tiles.union(center_tiles).translate((0,0,-1*(1/2)))
-    return combined
+
+def octagon_with_dots_2(tile_size=5, chamfer_size = 1.2, mid_tile_size =1.6, spacing = .5 , tile_height = 1):
+    tile = (cq.Workplane("XY")
+            .box(tile_size,tile_size, tile_height)
+            .edges("|Z")
+            .chamfer(chamfer_size) # SET PERCENTAGE
+            )
+
+
+    mid_tile = (cq.Workplane("XY")
+            .box(mid_tile_size, mid_tile_size, tile_height)
+            .rotate((0,0,1),(0,0,0), 45)
+            )
+
+    tiles = (
+        cq.Workplane("XY")
+        .union(tile)
+        .union(mid_tile.translate((-1*((tile_size/2) + spacing/2),((tile_size/2) + spacing/2),0)))
+        .union(mid_tile.translate((((tile_size/2) + spacing/2),((tile_size/2) + spacing/2),0)))
+        .union(mid_tile.translate((((tile_size/2) + spacing/2),-1*((tile_size/2) + spacing/2),0)))
+        .union(mid_tile.translate((-1*((tile_size/2) + spacing/2),-1*((tile_size/2) + spacing/2),0)))
+    )
+
+    cut_tile = cq.Workplane("XY").box(tile_size+spacing, tile_size+spacing, tile_height)
+    return cut_tile.intersect(tiles).translate((0,0,-1*(tile_height/2)))
 
 
 def basketweave(length = 4, width = 2, height = 1, padding = .5):
