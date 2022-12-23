@@ -1,10 +1,10 @@
 import cadquery as cq
 from cadqueryhelper import grid
 
-def octagon_with_dots(tile_size=5, chamfer_size = 1.2, mid_tile_size =1.6, spacing = .5 ):
+def octagon_with_dots(tile_size=5, chamfer_size = 1.2, mid_tile_size =1.6, spacing = .5 , tile_height = 1):
     tile = (cq.Workplane("XY")
             .rect(tile_size,tile_size)
-            .extrude(1)
+            .extrude(tile_height)
             .edges("|Z")
             .chamfer(chamfer_size) # SET PERCENTAGE
             )
