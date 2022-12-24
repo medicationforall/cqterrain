@@ -1,4 +1,6 @@
 ## Main wip
+
+## 0.0.5
 * modify octagon_with_dots to use union
 * octagon_with_dots Added tile_height param
 
