@@ -1,4 +1,6 @@
 ## Main wip
+
+## 0.1.1
 * Updated cadquery version
 
 ## 0.1.0
