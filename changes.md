@@ -1,4 +1,5 @@
 ## Main wip
+* Updated cadquery version
 
 ## 0.1.0
 * Added Star Tile
