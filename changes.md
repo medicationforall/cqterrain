@@ -1,5 +1,8 @@
 ## Main wip
 
+## 0.1.2
+* Jamie Broke the __init__.py at the root directory
+
 ## 0.1.1
 * Updated cadquery version
 * Upped cadqueryhelper version to 0.0.8
