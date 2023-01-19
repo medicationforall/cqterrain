@@ -2,6 +2,7 @@
 
 ## 0.1.1
 * Updated cadquery version
+* Upped cadqueryhelper version to 0.0.8
 
 ## 0.1.0
 * Added Star Tile
