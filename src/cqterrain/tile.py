@@ -58,7 +58,7 @@ def octagon_with_dots_2(tile_size=5, chamfer_size = 1.2, mid_tile_size =1.6, spa
     )
 
     cut_tile = cq.Workplane("XY").box(tile_size+spacing, tile_size+spacing, tile_height)
-    return cut_tile.intersect(tiles).translate((0,0,-1*(tile_height/2)))
+    return cut_tile.intersect(tiles)
 
 
 def basketweave(length = 4, width = 2, height = 1, padding = .5):

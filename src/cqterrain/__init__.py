@@ -1,5 +1,5 @@
 # Classes
-from .building import Building
+from .Building import Building
 from .Room import Room
 from .Door import Door
 from .Wall import Wall
