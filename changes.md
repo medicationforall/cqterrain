@@ -1,4 +1,5 @@
 ## Main wip
+* Fix octagon tile not centering correctly
 
 ## 0.1.2
 * Jamie Broke the __init__.py at the root directory
