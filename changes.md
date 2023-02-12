@@ -1,5 +1,10 @@
 ## Main wip
 
+## 0.1.3
+* Added Greeble Vent
+  * Added documentation
+* Upped required cadqueryhelper version to 0.1.0
+
 ## 0.1.2
 * Jamie Broke the __init__.py at the root directory
 
