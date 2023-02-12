@@ -1,4 +1,5 @@
 ## Main wip
+* Fix octagon tile not centering correctly
 
 ## 0.1.3
 * Added Greeble Vent
