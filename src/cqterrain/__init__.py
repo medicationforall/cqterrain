@@ -9,3 +9,4 @@ from .Ladder import Ladder
 # Methods
 from .stairs import stairs
 from .support import support
+from .column import obelisk
