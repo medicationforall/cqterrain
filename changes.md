@@ -1,6 +1,8 @@
 ## Main wip
-* Added Obelisk code and examples
 
+## 0.1.4
+* Added Obelisk code and examples
+* Upped dependency version of cadqueryhelper to 0.1.1
 
 ## 0.1.3
 * Added Greeble Vent
