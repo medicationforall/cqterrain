@@ -21,7 +21,6 @@ vent = greeble.vent(
     frame_width = 2,
     chamfer = None
 )
-
 ```
 
 ![](image/greeble/03.png)<br />

@@ -1,4 +1,7 @@
 ## Main wip
+* Split out tile.py code into separate files.
+* moved tile examples into separate folder
+* Added Apache 2 License headers to source files
 
 ## 0.1.4
 * Added Obelisk code and examples
