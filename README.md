@@ -3,7 +3,7 @@ Generate 3d models of buildings / terrain using CadQuery
 
 ## Documentation
 * [Stairs](documentation/stairs.md)
-* [Tile](documentation/greeble.md)
+* [Tile](documentation/tile.md)
 * [Greebles](documentation/greeble.md)
 
 ## Dependencies
