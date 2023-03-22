@@ -7,3 +7,4 @@ from .plain import plain
 from .chamferFrame import chamfer_frame
 from .rivet import rivet
 from .slot import slot
+from .slotDiagonal import slot_diagonal

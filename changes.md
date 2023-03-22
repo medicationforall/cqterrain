@@ -7,6 +7,7 @@
   * Chamfer_frame
   * Rivet
   * Slot
+  * Slot Diagonal
 * Added tile documentation.
 
 ## 0.1.4
