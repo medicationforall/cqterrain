@@ -32,14 +32,14 @@ slot_height = 0.5
 
     slot = (
         cq.Workplane("XY")
-        .slot2D(length - slot_length_padding,slot_width)
+        .slot2D(length - slot_length_padding, slot_width)
         .extrude(height + slot_height))
-    slot_count = math.floor((width+padding)/(slot_width + slot_width_offset))
+    slot_count = math.floor((width - padding) / (slot_width + slot_width_offset))
     if slot_count > 1:
         slots = series(
             shape = slot,
             size = slot_count,
-            width_offset=slot_width_offset
+            width_offset = slot_width_offset
         )
     else:
         slots = slot
