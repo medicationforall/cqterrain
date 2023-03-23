@@ -8,7 +8,7 @@
 * padding - space between bricks
 
 ``` python
-tile = tile.basketweave(
+result = tile.basketweave(
     length = 4,
     width = 2,
     height = 1,
@@ -33,7 +33,7 @@ tile = tile.basketweave(
 * internal_height_cut
 
 ``` python
-tile = tile.chamfer_frame(
+result = tile.chamfer_frame(
     length = 10,
     width = 10,
     height = 2,
@@ -44,6 +44,13 @@ tile = tile.chamfer_frame(
 )
 ```
 
+![](image/tile/02.png)<br />
+
+* [source](../src/cqterrain/tile/chamferframe.py)
+* [example](../example/tile/chamfer_frame.py)
+* [stl](../out/tile_chamfer_frame.stl)
+
+
 ## Octagon With Dots
 ### Parameters
 * tile_size
@@ -52,13 +59,22 @@ tile = tile.chamfer_frame(
 * spacing
 
 ``` python
-tile = tile.octagon_with_dots_2(
+result = tile.octagon_with_dots_2(
     tile_size = 5,
     chamfer_size = 1.2,
     mid_tile_size = 1.6,
     spacing = .5
 )
 ```
+
+![](image/tile/03.png)<br />
+
+* [source](../src/cqterrain/tile/octagonWithDots.py)
+* [example](../example/tile/octagon_with_dots.py)
+* [stl](../out/tile_octagon_with_dots.stl)
+
+#### Example
+![](image/tile/04.png)<br />
 
 ## Plain
 ### Parameters
@@ -68,13 +84,19 @@ tile = tile.octagon_with_dots_2(
 * padding
 
 ``` python
-tile = tile.plain(
+result = tile.plain(
     length = 10,
     width = 10,
     height = 2,
     padding = 1
 )
 ```
+
+![](image/tile/05.png)<br />
+
+* [source](../src/cqterrain/tile/plain.py)
+* [example](../example/tile/plain.py)
+* [stl](../out/tile_plain.stl)
 
 ## Rivet
 ### Parameters
@@ -87,7 +109,7 @@ tile = tile.plain(
 * rivet_radius
 
 ``` python
-tile = tile.rivet(
+result = tile.rivet(
     length = 10,
     width = 10,
     height = 2,
@@ -97,6 +119,12 @@ tile = tile.rivet(
     rivet_radius = .5
 )
 ```
+
+![](image/tile/06.png)<br />
+
+* [source](../src/cqterrain/tile/rivet.py)
+* [example](../example/tile/rivet.py)
+* [stl](../out/tile_rivet.stl)
 
 ## Slot
 ### Parameters
@@ -110,7 +138,7 @@ tile = tile.rivet(
 * slot_height
 
 ``` python
-tile = tile.slot(
+result = tile.slot(
     length = 10,
     width = 10,
     height = 2,
@@ -121,6 +149,12 @@ tile = tile.slot(
     slot_height = 0.5
 )
 ```
+
+![](image/tile/07.png)<br />
+
+* [source](../src/cqterrain/tile/slot.py)
+* [example](../example/tile/slot.py)
+* [stl](../out/tile_slot.stl)
 
 ## Slot diagonal
 ### Parameters
@@ -133,7 +167,7 @@ tile = tile.slot(
 * slot_width_padding_modifier
 
 ``` python
-tile = tile.slot_diagonal(
+result = tile.slot_diagonal(
     tile_size = 21,
     height = 2,
     slot_width = 2,
@@ -144,21 +178,39 @@ tile = tile.slot_diagonal(
 )
 ```
 
+![](image/tile/08.png)<br />
+
+* [source](../src/cqterrain/tile/slotDiagonal.py)
+* [example](../example/tile/slot_diagonal.py)
+* [stl](../out/tile_slot_diagonal.stl)
+
 ## Star
 ### Parameters
 * length
+* width
+* height
 * points
+* outer_radius
 * inner_radius
 * padding
 
 ``` python
-tile = tile.star(
-    length = 8.5,
-    points = 9,
-    inner_radius = 2,
-    padding = 1
+result = tile.star(
+    length = 10,
+    width = 10,
+    height = 1,
+    points = 4,
+    outer_radius = 5,
+    inner_radius = 3,
+    padding = .5
 )
 ```
+
+![](image/tile/09.png)<br />
+
+* [source](../src/cqterrain/tile/star.py)
+* [example](../example/tile/star.py)
+* [stl](../out/tile_star.stl)
 
 ## Windmill
 ### Parameters
@@ -167,9 +219,15 @@ tile = tile.star(
 * padding
 
 ``` python
-tile = tile.windmill(
+result = tile.windmill(
     tile_size = 10,
     height = 1,
     padding = 0.5
 )
 ```
+
+![](image/tile/10.png)<br />
+
+* [source](../src/cqterrain/tile/windmill.py)
+* [example](../example/tile/windmill.py)
+* [stl](../out/tile_windmill.stl)

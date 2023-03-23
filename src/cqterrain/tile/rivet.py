@@ -32,6 +32,6 @@ def rivet(
         .box(length-internal_padding, width-internal_padding, height)
         .faces("not Y")
         .edges("Z")
-        .cylinder(rivet_height, rivet_radius)
+        .cylinder(rivet_height, rivet_radius, combine=False)
     )
     return tile.add(internal_tile)
