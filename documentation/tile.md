@@ -2,10 +2,10 @@
 
 ## Basket Weave
 ### Parameters
-* length
-* width
+* length - length of a single brick
+* width - width of a single brick
 * height
-* padding
+* padding - space between bricks
 
 ``` python
 tile = tile.basketweave(
@@ -16,7 +16,13 @@ tile = tile.basketweave(
 )
 ```
 
-## Chamfer Plain
+![](image/tile/01.png)<br />
+
+* [source](../src/cqterrain/tile/basketweave.py)
+* [example](../example/tile/basketweave.py)
+* [stl](../out/tile_basketweave.stl)
+
+## Chamfer Frame
 ### Parameters
 * length
 * width
@@ -113,6 +119,28 @@ tile = tile.slot(
     slot_width_offset = 1.5,
     slot_width = 1,
     slot_height = 0.5
+)
+```
+
+## Slot diagonal
+### Parameters
+* tile_size
+* height
+* slot_width
+* slot_height
+* slot_length_padding
+* slot_width_padding
+* slot_width_padding_modifier
+
+``` python
+tile = tile.slot_diagonal(
+    tile_size = 21,
+    height = 2,
+    slot_width = 2,
+    slot_height = 2,
+    slot_length_padding = 7,
+    slot_width_padding = 2,
+    slot_width_padding_modifier = .25
 )
 ```
 

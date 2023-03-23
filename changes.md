@@ -1,4 +1,6 @@
 ## Main wip
+
+## 0.1.5
 * Split out tile.py code into separate files.
 * moved tile examples into separate folder
 * Added Apache 2 License headers to source files
