@@ -1,7 +1,7 @@
 import cadquery as cq
 from cqterrain import tile
 
-tile = tile.slot_diagonal(
+result = tile.slot_diagonal(
     tile_size = 21,
     height = 2,
     slot_width = 2,
@@ -11,4 +11,4 @@ tile = tile.slot_diagonal(
     slot_width_padding_modifier = .25
 )
 
-cq.exporters.export(tile,'out/tile_slot_diagonal.stl')
+cq.exporters.export(result,'out/tile_slot_diagonal.stl')

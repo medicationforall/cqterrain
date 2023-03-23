@@ -1,7 +1,7 @@
 import cadquery as cq
 from cqterrain import tile
 
-tile = tile.rivet(
+result = tile.rivet(
     length = 10,
     width = 10,
     height = 2,
@@ -11,4 +11,4 @@ tile = tile.rivet(
     rivet_radius = .5
 )
 
-cq.exporters.export(tile,'out/tile_rivet.stl')
+cq.exporters.export(result,'out/tile_rivet.stl')

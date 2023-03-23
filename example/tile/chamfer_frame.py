@@ -1,7 +1,7 @@
 import cadquery as cq
 from cqterrain import tile
 
-tile = tile.chamfer_frame(
+result = tile.chamfer_frame(
     length = 10,
     width = 10,
     height = 2,
@@ -11,4 +11,4 @@ tile = tile.chamfer_frame(
     internal_height_cut = 1
 )
 
-cq.exporters.export(tile,'out/tile_chamfer_frame.stl')
+cq.exporters.export(result,'out/tile_chamfer_frame.stl')

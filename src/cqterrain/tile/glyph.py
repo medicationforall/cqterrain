@@ -1,4 +1,4 @@
-# Copyright 2022 James Adams
+# Copyright 2023 James Adams
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
 
 import cadquery as cq
 
-def basketweave(length = 4, width = 2, height = 1, padding = .5):
+def glyph(length = 4, width = 2, height = 1, padding = 2):
     width_padding = width + padding
     bricks = __brick_tile(length, width, height, padding)
 
@@ -39,10 +39,10 @@ def basketweave(length = 4, width = 2, height = 1, padding = .5):
         .union(
             combine
             .rotate((0,0,1),(0,0,0), 180)
-            .translate((0,width_padding,0))
+            #.translate((0,width_padding,0))
         )
     )
-    return tile_combine
+    return tile_combine.translate((0,(width_padding/2),0))
 
 def __brick_tile(length = 4, width = 2, height = 1, padding = .5):
     length_padding = length + padding

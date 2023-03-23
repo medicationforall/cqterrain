@@ -10,6 +10,7 @@
   * Rivet
   * Slot
   * Slot Diagonal
+  * Glyph - experimental
 * Added tile documentation.
 
 ## 0.1.4

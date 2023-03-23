@@ -1,11 +1,11 @@
 import cadquery as cq
 from cqterrain import tile
 
-tile = tile.star(
+result = tile.star(
     length = 8.5,
     points = 9,
     inner_radius = 2,
     padding = 1
 )
 
-cq.exporters.export(tile,'out/tile_star.stl')
+cq.exporters.export(result,'out/tile_star.stl')
