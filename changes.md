@@ -1,5 +1,8 @@
 ## Main wip
+
+## 0.1.6
 * Updated the license
+* Cleaned up install dependencies
 
 ## 0.1.5
 * Split out tile.py code into separate files.
