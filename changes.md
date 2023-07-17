@@ -1,5 +1,8 @@
 ## Main wip
 
+## 0.1.7
+* Upped cadqueryhelper version
+
 ## 0.1.6
 * Updated the license
 * Cleaned up install dependencies
