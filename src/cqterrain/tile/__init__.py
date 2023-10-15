@@ -6,6 +6,7 @@ from .windmill import windmill
 from .plain import plain
 from .chamferFrame import chamfer_frame
 from .rivet import rivet
+from .rivetRound import rivet_round
 from .slot import slot
 from .slotDiagonal import slot_diagonal
 from .glyph import glyph

@@ -126,6 +126,32 @@ result = tile.rivet(
 * [example](../example/tile/rivet.py)
 * [stl](../out/tile_rivet.stl)
 
+## Rivet Round
+### Parameters
+* radius 
+* height
+* rivet_height
+* rivet_radius
+* padding
+* rivet_count
+
+``` python
+result = tile.rivet_round(
+    radius = 10, 
+    height = 2,
+    rivet_height = 0.5,
+    rivet_radius = .5,
+    padding = 1,
+    rivet_count = 5
+)
+```
+
+![](image/tile/11.png)<br />
+
+* [source](../src/cqterrain/tile/rivetRound.py)
+* [example](../example/tile/rivetRound.py)
+* [stl](../out/tile_rivet_round.stl)
+
 ## Slot
 ### Parameters
 * length
