@@ -2,6 +2,7 @@
 
 ## 0.1.9
 * Added tile rivet_round
+* Added tile spoked_wheel
 
 ## 0.1.8
 * Upped cadqueryhelper version

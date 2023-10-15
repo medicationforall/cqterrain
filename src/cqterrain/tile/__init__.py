@@ -8,5 +8,6 @@ from .chamferFrame import chamfer_frame
 from .rivet import rivet
 from .rivetRound import rivet_round
 from .slot import slot
+from .spokedWheel import spoked_wheel
 from .slotDiagonal import slot_diagonal
 from .glyph import glyph

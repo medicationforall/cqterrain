@@ -210,6 +210,41 @@ result = tile.slot_diagonal(
 * [example](../example/tile/slot_diagonal.py)
 * [stl](../out/tile_slot_diagonal.stl)
 
+
+## Spoked Wheel
+### Parameters
+* radius
+* height
+* frame
+* inner_radius
+* spoke_width
+* spoke_height
+* spoke_fillet
+* spoke_count
+* frame_chamfer
+* inner_chamfer
+
+``` python
+result = tile.spoked_wheel(
+    radius = 10,
+    height = 2,
+    frame = 2,
+    inner_radius = 3,
+    spoke_width = 2,
+    spoke_height = 1.5,
+    spoke_fillet = .5,
+    spoke_count = 12,
+    frame_chamfer = .5,
+    inner_chamfer = .5
+)
+```
+
+![](image/tile/12.png)<br />
+
+* [source](../src/cqterrain/tile/spokedWheel.py)
+* [example](../example/tile/spokedWheel.py)
+* [stl](../out/tile_spoked_wheel.stl)
+
 ## Star
 ### Parameters
 * length
