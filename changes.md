@@ -1,5 +1,8 @@
 ## Main wip
 
+## 0.2.1
+* Added damage.grid_seed
+
 ## 0.2.0
 * Added damage module and created blast template code.
 
