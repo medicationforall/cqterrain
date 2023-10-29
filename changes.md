@@ -1,5 +1,8 @@
 ## Main wip
 
+## 0.2.0
+* Added damage module and created blast template code.
+
 ## 0.1.9
 * Added tile rivet_round
 * Added tile spoked_wheel

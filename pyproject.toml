@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cqterrain"
-version = "0.1.9"
+version = "0.2.0"
 authors = [
   { name="James Adams", email="inklink28@gmail.com" },
 ]
@@ -18,7 +18,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-'cadqueryhelper @ git+https://github.com/medicationforall/cadqueryhelper@0.1.5'
+'cadqueryhelper @ git+https://github.com/medicationforall/cadqueryhelper@0.1.6'
 ]
 
 
