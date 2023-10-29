@@ -2,6 +2,7 @@
 
 ## 0.2.1
 * Added damage.grid_seed
+* Added blast grid examples.
 
 ## 0.2.0
 * Added damage module and created blast template code.
