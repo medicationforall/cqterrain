@@ -17,7 +17,8 @@ def blast_template(blast_seed):
     )
     text = cq.Workplane("XY").text(blast_seed,6, 2)
     return f_blast, text
-    
+
+test_seed = "med"    
 blasts = damage.grid_seed(
     blast_template,
     count = 24, 
@@ -26,4 +27,4 @@ blasts = damage.grid_seed(
 )
 
 #show_object(blasts)
-cq.exporters.export(blasts, "out/damage_blast_set_medium.stl")
+cq.exporters.export(blasts, f"out/damage_blast_set_medium_{test_seed}.stl")
