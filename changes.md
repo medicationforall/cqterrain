@@ -1,5 +1,9 @@
 ## Main wip
 
+## 0.3.0
+* Upped cadqueryhelper version 0.2.0
+  * "Base" class refactoring 
+
 ## 0.2.1
 * Added damage.grid_seed
 * Added blast grid examples.
