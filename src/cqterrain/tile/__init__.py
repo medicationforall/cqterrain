@@ -11,3 +11,4 @@ from .slot import slot
 from .spokedWheel import spoked_wheel
 from .slotDiagonal import slot_diagonal
 from .glyph import glyph
+from .boltPanel import bolt_panel

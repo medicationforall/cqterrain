@@ -22,6 +22,38 @@ result = tile.basketweave(
 * [example](../example/tile/basketweave.py)
 * [stl](../out/tile_basketweave.stl)
 
+## Bolt Panel
+### Parameters
+* length 
+* width
+* height 
+* chamfer - appliet to the z face of the tile, can be 0 or None 
+* radius_outer - outer radius of the bolt
+* radius_internal - internal radius of the bolt
+* cut_height - how deep the inset is of the bolt
+* padding - distance of the bolts from the corners of the tile
+
+``` python
+result = tile.bolt_panel(
+    length = 5, 
+    width = 6, 
+    height = 2, 
+    chamfer = .5, 
+    radius_outer = .4,
+    radius_internal = 0.2,
+    cut_height = 0.25,
+    padding = 1
+)
+```
+
+![](image/tile/13.png)<br />
+
+* [source](../src/cqterrain/tile/boltpanel.py)
+* [example](../example/tile/boltPanel.py)
+* [stl](../out/tile_bolt_panel.stl)
+
+
+
 ## Chamfer Frame
 ### Parameters
 * length
@@ -49,6 +81,29 @@ result = tile.chamfer_frame(
 * [source](../src/cqterrain/tile/chamferframe.py)
 * [example](../example/tile/chamfer_frame.py)
 * [stl](../out/tile_chamfer_frame.stl)
+
+
+## Glyph
+### Parameters
+* length
+* width
+* height
+* padding
+
+``` python
+result = tile.glyph(
+    length = 4,
+    width = 2,
+    height = 1,
+    padding = .5
+)
+```
+
+![](image/tile/14.png)<br />
+
+* [source](../src/cqterrain/tile/glyph.py)
+* [example](../example/tile/glyph.py)
+* [stl](../out/tile_glyph.stl)
 
 
 ## Octagon With Dots
