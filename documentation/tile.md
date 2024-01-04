@@ -82,6 +82,42 @@ result = tile.chamfer_frame(
 * [example](../example/tile/chamfer_frame.py)
 * [stl](../out/tile_chamfer_frame.stl)
 
+## Conduit
+### Parameters
+* length - length of the tile
+* width - with of the tile
+* height - height of the tile
+* frame - size of the frame can be 0
+* frame_depth - depth of the frame that the pipe is set into, can be zero
+* pipe_count - hard coded pipe count. If falsy the pipes count will be determined by the witdth of the tile and the diameter of the pipe.
+* radius - radius of the pipe
+* inner_radius - internal radius of the inner pope
+* segment_length - size of the pipe segments
+* space - spece between the pipe segments
+* pipe_padding - padding between pipes
+
+``` python
+result = tile.conduit(
+    length = 25,
+    width = 25,
+    height = 4,
+    frame= 1,
+    frame_depth =3,
+    pipe_count = None,
+    radius = 4,
+    inner_radius = 3,
+    segment_length = 6,
+    space = 4,
+    pipe_padding = 1
+)
+```
+
+![](image/tile/15.png)<br />
+
+* [source](../src/cqterrain/tile/conduit.py)
+* [example](../example/tile/conduit.py)
+* [stl](../out/tile_conduit.stl)
+
 
 ## Glyph
 ### Parameters

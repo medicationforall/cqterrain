@@ -3,7 +3,11 @@
 ## 0.3.1
 * Added tile bolt_panel
 * Added boltPanel example
-* Documentation for bolt_panel and glyph
+* Documentation for bolt_panel, glyph, and conduit
+* Added pipe.corrugated_straight
+* Added pipe_corrugated example
+* Added tile.conduit
+  * Added conduit example
 
 ## 0.3.0
 * Upped cadqueryhelper version 0.2.0
