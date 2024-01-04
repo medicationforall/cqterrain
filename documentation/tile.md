@@ -53,7 +53,6 @@ result = tile.bolt_panel(
 * [stl](../out/tile_bolt_panel.stl)
 
 
-
 ## Chamfer Frame
 ### Parameters
 * length
@@ -76,11 +75,33 @@ result = tile.chamfer_frame(
 )
 ```
 
-![](image/tile/02.png)<br />
+## Carton
+### Parameters
+* length
+* width
+* height
+* line_width
+* line_depth
+* x_divisor
+* y_divisor
 
-* [source](../src/cqterrain/tile/chamferframe.py)
-* [example](../example/tile/chamfer_frame.py)
-* [stl](../out/tile_chamfer_frame.stl)
+``` python
+result = tile.carton(
+    length=60, 
+    width=60, 
+    height = 4,
+    line_width = 3,
+    line_depth = 1.5,
+    x_divisor = 3,
+    y_divisor = 2
+)
+```
+
+![](image/tile/16.png)<br />
+
+* [source](../src/cqterrain/tile/carton.py)
+* [example](../example/tile/carton.py)
+* [stl](../out/tile_carton.stl)
 
 ## Conduit
 ### Parameters
