@@ -5,8 +5,8 @@
 * Added tile.bolt_panel
 * Added tile.conduit
 * Added tile.carton
-* Tile documentation for bolt_panel, glyph, conduit, carton
-* Tile examples for bolt_panel, conduit, carton
+* Added tile.carton2
+* Tile documentation and examples for bolt_panel, glyph, conduit, carton, carton2
 
 ## 0.3.0
 * Upped cadqueryhelper version 0.2.0

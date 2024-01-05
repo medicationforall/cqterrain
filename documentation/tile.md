@@ -75,6 +75,12 @@ result = tile.chamfer_frame(
 )
 ```
 
+![](image/tile/02.png)<br />
+
+* [source](../src/cqterrain/tile/chamferFrame.py)
+* [example](../example/tile/chamfer_frame.py)
+* [stl](../out/tile_chamfer_frame.stl)
+
 ## Carton
 ### Parameters
 * length
@@ -102,6 +108,35 @@ result = tile.carton(
 * [source](../src/cqterrain/tile/carton.py)
 * [example](../example/tile/carton.py)
 * [stl](../out/tile_carton.stl)
+
+
+## Carton2
+### Parameters
+* length
+* width
+* height
+* line_width
+* line_depth
+* x_divisor
+* y_divisor
+
+``` python
+result = tile.carton(
+    length = 30, 
+    width = 25, 
+    height = 4, 
+    line_width = 2, 
+    line_depth = 1.5,
+    x_divisor = 2,
+    y_divisor = 3
+)
+```
+
+![](image/tile/17.png)<br />
+
+* [source](../src/cqterrain/tile/carton2.py)
+* [example](../example/tile/carton2.py)
+* [stl](../out/tile_carton2.stl)
 
 ## Conduit
 ### Parameters

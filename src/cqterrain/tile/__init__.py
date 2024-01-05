@@ -14,3 +14,4 @@ from .glyph import glyph
 from .boltPanel import bolt_panel
 from .conduit import conduit
 from .carton import carton
+from .carton2 import carton2
