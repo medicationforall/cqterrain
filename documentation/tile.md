@@ -1,5 +1,34 @@
 # Tile
 
+## Apricorn
+### Parameters
+* length
+* width
+* height
+* line_width
+* line_depth
+* center_radius - if this is falsy determine center_radius based on **width** divided by **width_radius_divisor**
+* width_radius_divisor
+
+``` python
+result = tile.apricorn(
+    length = 30, 
+    width = 25, 
+    height = 4,
+    line_width = 2,
+    line_depth = .5,
+    center_radius = None,
+    width_radius_divisor = 4
+)
+```
+
+![](image/tile/18.png)<br />
+
+* [source](../src/cqterrain/tile/apricorn.py)
+* [example](../example/tile/apricorn.py)
+* [stl](../out/tile_apricorn.stl)
+
+
 ## Basket Weave
 ### Parameters
 * length - length of a single brick
