@@ -1,4 +1,5 @@
 from .apricorn import apricorn
+from .charge import charge
 from .octagonWithDots import octagon_with_dots
 from .octagonWithDots import octagon_with_dots_2
 from .basketweave import basketweave

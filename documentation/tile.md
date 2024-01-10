@@ -81,6 +81,36 @@ result = tile.bolt_panel(
 * [example](../example/tile/boltPanel.py)
 * [stl](../out/tile_bolt_panel.stl)
 
+## Charge
+### Parameters
+* length
+* width
+* height
+* line_width
+* line_depth
+* corner_chamfer
+* edge_chamfer
+* padding
+
+``` python
+result = tile.charge(
+    length = 30, 
+    width = 25, 
+    height = 4,
+    line_width = 3,
+    line_depth = 1,
+    corner_chamfer = 4,
+    edge_chamfer = 2,
+    padding = 2.5
+)
+```
+
+![](image/tile/19.png)<br />
+
+* [source](../src/cqterrain/tile/charge.py)
+* [example](../example/tile/charge.py)
+* [stl](../out/tile_charge.stl)
+
 
 ## Chamfer Frame
 ### Parameters
