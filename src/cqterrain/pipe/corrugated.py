@@ -14,6 +14,9 @@ def __make_segments(length, segment_length, space, segment):
     def __add_segment(loc):
         return segment.val().located(loc)
 
+    if not count:
+        count = 1
+
     segments = (
         cq.Workplane("XY")
         .rarray(

@@ -208,7 +208,7 @@ result = tile.carton(
 * radius - radius of the pipe
 * inner_radius - internal radius of the inner pope
 * segment_length - size of the pipe segments
-* space - spece between the pipe segments
+* space - space between the pipe segments
 * pipe_padding - padding between pipes
 
 ``` python

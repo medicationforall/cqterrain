@@ -1,5 +1,8 @@
 ## Main wip
 
+## 0.3.2
+* Papercut fixes
+
 ## 0.3.1
 * Added pipe.corrugated_straight
 * Added tile.apricorn

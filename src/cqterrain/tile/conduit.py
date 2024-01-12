@@ -13,7 +13,7 @@ def conduit(
         radius = 4, # radius of the pipe
         inner_radius = 3, # internal radius of the inner pope
         segment_length = 6, # size of the pipe segments
-        space = 4, # spece between the pipe segments
+        space = 4, # space between the pipe segments
         
         pipe_padding = 1 # padding between pipes
     ):
