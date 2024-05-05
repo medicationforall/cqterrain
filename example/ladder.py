@@ -23,4 +23,4 @@ ladder_bp.make()
 ladder = ladder_bp.build()
 
 #show_object(ladder)
-cq.exporters.export(ladder,'out/ladder.stl')
+cq.exporters.export(ladder,'stl/ladder.stl')

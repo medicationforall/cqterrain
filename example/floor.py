@@ -7,4 +7,4 @@ f = bp.build()
 workspace = cq.Workplane('XY')
 workspace.add(f)
 
-cq.exporters.export(workspace,'out/floor.stl')
+cq.exporters.export(workspace,'stl/floor.stl')

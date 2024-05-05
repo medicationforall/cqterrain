@@ -37,6 +37,6 @@ blast_ex3 = damage.blast(
     ]
 )
 
-cq.exporters.export(blast_ex, "out/damage_blast_1.stl")
-cq.exporters.export(blast_ex2, "out/damage_blast_2.stl")
-cq.exporters.export(blast_ex3, "out/damage_blast_3.stl")
+cq.exporters.export(blast_ex, "stl/damage_blast_1.stl")
+cq.exporters.export(blast_ex2, "stl/damage_blast_2.stl")
+cq.exporters.export(blast_ex3, "stl/damage_blast_3.stl")

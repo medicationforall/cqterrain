@@ -1,9 +1,12 @@
 ## Main wip
 
+## 1.0.0
+* Split window.py file out into it's own module with each function being it's own file.
+* Renamed out directory to stl
+
 ## 0.3.3
 * Upped cadqueryhelper version 0.2.1
   * Added shape.coffin
-
 
 ## 0.3.2
 * Papercut fixes

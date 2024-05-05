@@ -151,4 +151,4 @@ if cq_editor_show:
     show_object(scene)
 
 if export_to_file:
-    cq.exporters.export(scene,'out/deadzone_building.stl')
+    cq.exporters.export(scene,'stl/deadzone_building.stl')

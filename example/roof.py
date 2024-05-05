@@ -31,4 +31,4 @@ tiles2 = roof.tiles(tile, face_x, length, height, t_length, t_width, angle_x, ro
 
 scene = s_roof.add(tiles).add(tiles2).add(tiles3).add(tiles4)
 #show_object(scene)
-cq.exporters.export(scene,'out/roof.stl')
+cq.exporters.export(scene,'stl/roof.stl')

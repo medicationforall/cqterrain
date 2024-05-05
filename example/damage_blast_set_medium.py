@@ -27,4 +27,4 @@ blasts = damage.grid_seed(
 )
 
 #show_object(blasts)
-cq.exporters.export(blasts, f"out/damage_blast_set_medium_{test_seed}.stl")
+cq.exporters.export(blasts, f"stl/damage_blast_set_medium_{test_seed}.stl")

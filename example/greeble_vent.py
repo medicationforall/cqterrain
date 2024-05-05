@@ -11,4 +11,4 @@ vent = greeble.vent(
     chamfer = None
 )
 
-cq.exporters.export(vent,'out/greeble_vent.stl')
+cq.exporters.export(vent,'stl/greeble_vent.stl')

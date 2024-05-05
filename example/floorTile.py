@@ -13,7 +13,7 @@ workspace = cq.Workplane('XY')
 workspace.add(f)
 
 print('create floorTile.stl')
-cq.exporters.export(workspace,'out/floorTile.stl')
+cq.exporters.export(workspace,'stl/floorTile.stl')
 
 #if f.metadata:
 #    print(f.metadata)

@@ -11,4 +11,4 @@ tile3 = cq.Workplane("XY").box(3,6,2)
 tiles = stone.make_stones([tile.chamfer(0.8), tile2.fillet(.5), tile3.chamfer(0.5)], [6,6,2], columns = 10, rows = 3)
 
 #show_object(tiles)
-cq.exporters.export(tiles,'out/stones.stl')
+cq.exporters.export(tiles,'stl/stones.stl')

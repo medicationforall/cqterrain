@@ -18,4 +18,4 @@ workspace = cq.Workplane('XY')
 workspace.add(part)
 
 # Write to stl file.
-cq.exporters.export(workspace,'out/room.stl')
+cq.exporters.export(workspace,'stl/room.stl')

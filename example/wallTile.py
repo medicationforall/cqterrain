@@ -11,7 +11,4 @@ part = bb.build()
 workspace = cq.Workplane('XY')
 workspace.add(part)
 
-cq.exporters.export(workspace,'out/wallTile.stl')
-
-if part.metadata:
-    print(part.metadata)
+cq.exporters.export(workspace,'stl/wallTile.stl')

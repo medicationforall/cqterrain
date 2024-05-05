@@ -52,4 +52,4 @@ scene = (cq.Workplane("XY")
 .add(balcony2.translate((55,50,2.5+50)))
 )
 
-cq.exporters.export(scene,'out/building_with_roof.stl')
+cq.exporters.export(scene,'stl/building_with_roof.stl')

@@ -5,4 +5,4 @@ part = support()
 workspace = cq.Workplane('XY')
 workspace.add(part)
 
-cq.exporters.export(workspace,'out/support.stl')
+cq.exporters.export(workspace,'stl/support.stl')

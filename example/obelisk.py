@@ -91,6 +91,6 @@ scene = (
     .union(evile.translate((0,145,0)))
 )
 
-cq.exporters.export(scene,'out/obelisk_plate.stl')
+cq.exporters.export(scene,'stl/obelisk_plate.stl')
 
 #show_object(scene)

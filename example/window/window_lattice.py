@@ -1,7 +1,5 @@
 import cadquery as cq
 from cqterrain import window
-from cadqueryhelper import grid
-import math
 
 #grill = window.grill(height=40, columns=2)
 lattice = window.lattice(lattice_angle=20, tile_size=6)

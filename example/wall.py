@@ -7,4 +7,4 @@ wall = bb.build()
 workspace = cq.Workplane('XY')
 workspace.add(wall)
 
-cq.exporters.export(workspace,'out/wall.stl')
+cq.exporters.export(workspace,'stl/wall.stl')

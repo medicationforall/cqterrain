@@ -64,4 +64,4 @@ scene = (cq.Workplane("XY")
          .add(building2.rotate((0,0,1),(0,0,0),90).translate((100,0,0)))
          )
 
-cq.exporters.export(scene,'out/buildingsExample.stl')
+cq.exporters.export(scene,'stl/buildingsExample.stl')

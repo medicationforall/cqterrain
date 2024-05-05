@@ -9,4 +9,4 @@ result = pipe.corrugated_straight(
     space = 4
 )
 #show_object(result)
-cq.exporters.export(result,'out/pipe_corrugated.stl')
+cq.exporters.export(result,'stl/pipe_corrugated.stl')
