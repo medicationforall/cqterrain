@@ -12,4 +12,4 @@ result = tile.slot(
     slot_height = 0.5
 )
 
-cq.exporters.export(result,'out/tile_slot.stl')
+cq.exporters.export(result,'stl/tile_slot.stl')

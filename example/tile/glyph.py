@@ -8,4 +8,4 @@ result = tile.glyph(
     padding = .5
 )
 
-cq.exporters.export(result,'out/tile_glyph.stl')
+cq.exporters.export(result,'stl/tile_glyph.stl')

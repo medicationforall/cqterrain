@@ -11,4 +11,4 @@ result = tile.chamfer_frame(
     internal_height_cut = 1
 )
 
-cq.exporters.export(result,'out/tile_chamfer_frame.stl')
+cq.exporters.export(result,'stl/tile_chamfer_frame.stl')

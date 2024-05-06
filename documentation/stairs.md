@@ -23,7 +23,7 @@ workspace = cq.Workplane('XY')
 workspace.add(ex)
 
 # Write to stl file.
-cq.exporters.export(workspace,'out/stairs.stl')
+cq.exporters.export(workspace,'stl/stairs.stl')
 
 # Print metadata to console for debugging
 if ex.metadata:

@@ -13,7 +13,11 @@
 
 import cadquery as cq
 
-def windmill(tile_size=10, height=1, padding=.5):
+def windmill(
+        tile_size:float = 10, 
+        height:float = 1, 
+        padding:float = .5
+    ) -> cq.Workplane:
     outline = cq.Workplane("XY").box(tile_size, tile_size, height)
     sq_size = (tile_size/3)-padding/2
     rec_size = ((tile_size/3)*2)

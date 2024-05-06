@@ -8,4 +8,4 @@ result = tile.octagon_with_dots_2(
     spacing = .5
 )
 
-cq.exporters.export(result,'out/tile_octagon_with_dots.stl')
+cq.exporters.export(result,'stl/tile_octagon_with_dots.stl')

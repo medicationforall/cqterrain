@@ -7,4 +7,4 @@ result = tile.windmill(
     padding = 0.5
 )
 
-cq.exporters.export(result,'out/tile_windmill.stl')
+cq.exporters.export(result,'stl/tile_windmill.stl')

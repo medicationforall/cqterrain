@@ -8,4 +8,4 @@ result = tile.plain(
     padding = 1
 )
 
-cq.exporters.export(result,'out/tile_plain.stl')
+cq.exporters.export(result,'stl/tile_plain.stl')

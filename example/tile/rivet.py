@@ -11,4 +11,4 @@ result = tile.rivet(
     rivet_radius = .5
 )
 
-cq.exporters.export(result,'out/tile_rivet.stl')
+cq.exporters.export(result,'stl/tile_rivet.stl')

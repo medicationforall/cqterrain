@@ -68,16 +68,16 @@ evile = obelisk(
     intersect=False
 )
 
-cq.exporters.export(fantasy,'out/obelisk_fantasy.stl')
-cq.exporters.export(elven,'out/obelisk_elven.stl')
-cq.exporters.export(fantasy_elven,'out/obelisk_fantasy_elven.stl')
+cq.exporters.export(fantasy,'stl/obelisk_fantasy.stl')
+cq.exporters.export(elven,'stl/obelisk_elven.stl')
+cq.exporters.export(fantasy_elven,'stl/obelisk_fantasy_elven.stl')
 
-cq.exporters.export(egypt,'out/obelisk_egypt.stl')
-cq.exporters.export(dwarven,'out/obelisk_dwarven.stl')
-cq.exporters.export(egypt_dwarven,'out/obelisk_egypt_dwarven.stl')
+cq.exporters.export(egypt,'stl/obelisk_egypt.stl')
+cq.exporters.export(dwarven,'stl/obelisk_dwarven.stl')
+cq.exporters.export(egypt_dwarven,'stl/obelisk_egypt_dwarven.stl')
 
-cq.exporters.export(crystal,'out/obelisk_crystal.stl')
-cq.exporters.export(evile,'out/obelisk_evile.stl')
+cq.exporters.export(crystal,'stl/obelisk_crystal.stl')
+cq.exporters.export(evile,'stl/obelisk_evile.stl')
 
 scene = (
     cq.Workplane("XY")

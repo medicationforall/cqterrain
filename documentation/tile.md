@@ -26,7 +26,7 @@ result = tile.apricorn(
 
 * [source](../src/cqterrain/tile/apricorn.py)
 * [example](../example/tile/apricorn.py)
-* [stl](../out/tile_apricorn.stl)
+* [stl](../stl/tile_apricorn.stl)
 
 
 ## Basket Weave
@@ -49,7 +49,7 @@ result = tile.basketweave(
 
 * [source](../src/cqterrain/tile/basketweave.py)
 * [example](../example/tile/basketweave.py)
-* [stl](../out/tile_basketweave.stl)
+* [stl](../stl/tile_basketweave.stl)
 
 ## Bolt Panel
 ### Parameters
@@ -79,7 +79,7 @@ result = tile.bolt_panel(
 
 * [source](../src/cqterrain/tile/boltpanel.py)
 * [example](../example/tile/boltPanel.py)
-* [stl](../out/tile_bolt_panel.stl)
+* [stl](../stl/tile_bolt_panel.stl)
 
 ## Charge
 ### Parameters
@@ -109,7 +109,7 @@ result = tile.charge(
 
 * [source](../src/cqterrain/tile/charge.py)
 * [example](../example/tile/charge.py)
-* [stl](../out/tile_charge.stl)
+* [stl](../stl/tile_charge.stl)
 
 
 ## Chamfer Frame
@@ -138,7 +138,7 @@ result = tile.chamfer_frame(
 
 * [source](../src/cqterrain/tile/chamferFrame.py)
 * [example](../example/tile/chamfer_frame.py)
-* [stl](../out/tile_chamfer_frame.stl)
+* [stl](../stl/tile_chamfer_frame.stl)
 
 ## Carton
 ### Parameters
@@ -166,7 +166,7 @@ result = tile.carton(
 
 * [source](../src/cqterrain/tile/carton.py)
 * [example](../example/tile/carton.py)
-* [stl](../out/tile_carton.stl)
+* [stl](../stl/tile_carton.stl)
 
 
 ## Carton2
@@ -195,7 +195,7 @@ result = tile.carton(
 
 * [source](../src/cqterrain/tile/carton2.py)
 * [example](../example/tile/carton2.py)
-* [stl](../out/tile_carton2.stl)
+* [stl](../stl/tile_carton2.stl)
 
 ## Conduit
 ### Parameters
@@ -231,7 +231,7 @@ result = tile.conduit(
 
 * [source](../src/cqterrain/tile/conduit.py)
 * [example](../example/tile/conduit.py)
-* [stl](../out/tile_conduit.stl)
+* [stl](../stl/tile_conduit.stl)
 
 
 ## Glyph
@@ -254,7 +254,7 @@ result = tile.glyph(
 
 * [source](../src/cqterrain/tile/glyph.py)
 * [example](../example/tile/glyph.py)
-* [stl](../out/tile_glyph.stl)
+* [stl](../stl/tile_glyph.stl)
 
 
 ## Octagon With Dots
@@ -277,7 +277,7 @@ result = tile.octagon_with_dots_2(
 
 * [source](../src/cqterrain/tile/octagonWithDots.py)
 * [example](../example/tile/octagon_with_dots.py)
-* [stl](../out/tile_octagon_with_dots.stl)
+* [stl](../stl/tile_octagon_with_dots.stl)
 
 #### Example
 ![](image/tile/04.png)<br />
@@ -302,7 +302,7 @@ result = tile.plain(
 
 * [source](../src/cqterrain/tile/plain.py)
 * [example](../example/tile/plain.py)
-* [stl](../out/tile_plain.stl)
+* [stl](../stl/tile_plain.stl)
 
 ## Rivet
 ### Parameters
@@ -330,7 +330,7 @@ result = tile.rivet(
 
 * [source](../src/cqterrain/tile/rivet.py)
 * [example](../example/tile/rivet.py)
-* [stl](../out/tile_rivet.stl)
+* [stl](../stl/tile_rivet.stl)
 
 ## Rivet Round
 ### Parameters
@@ -356,7 +356,7 @@ result = tile.rivet_round(
 
 * [source](../src/cqterrain/tile/rivetRound.py)
 * [example](../example/tile/rivetRound.py)
-* [stl](../out/tile_rivet_round.stl)
+* [stl](../stl/tile_rivet_round.stl)
 
 ## Slot
 ### Parameters
@@ -386,7 +386,7 @@ result = tile.slot(
 
 * [source](../src/cqterrain/tile/slot.py)
 * [example](../example/tile/slot.py)
-* [stl](../out/tile_slot.stl)
+* [stl](../stl/tile_slot.stl)
 
 ## Slot diagonal
 ### Parameters
@@ -414,7 +414,7 @@ result = tile.slot_diagonal(
 
 * [source](../src/cqterrain/tile/slotDiagonal.py)
 * [example](../example/tile/slot_diagonal.py)
-* [stl](../out/tile_slot_diagonal.stl)
+* [stl](../stl/tile_slot_diagonal.stl)
 
 
 ## Spoked Wheel
@@ -449,7 +449,7 @@ result = tile.spoked_wheel(
 
 * [source](../src/cqterrain/tile/spokedWheel.py)
 * [example](../example/tile/spokedWheel.py)
-* [stl](../out/tile_spoked_wheel.stl)
+* [stl](../stl/tile_spoked_wheel.stl)
 
 ## Star
 ### Parameters
@@ -477,7 +477,7 @@ result = tile.star(
 
 * [source](../src/cqterrain/tile/star.py)
 * [example](../example/tile/star.py)
-* [stl](../out/tile_star.stl)
+* [stl](../stl/tile_star.stl)
 
 ## Windmill
 ### Parameters
@@ -497,4 +497,4 @@ result = tile.windmill(
 
 * [source](../src/cqterrain/tile/windmill.py)
 * [example](../example/tile/windmill.py)
-* [stl](../out/tile_windmill.stl)
+* [stl](../stl/tile_windmill.stl)

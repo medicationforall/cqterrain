@@ -27,4 +27,4 @@ vent = greeble.vent(
 
 * [source](../src/cqterrain/greeble/vent.py)
 * [example](../example/greeble_vent.py)
-* [stl](../out/greeble_vent.stl)
+* [stl](../stl/greeble_vent.stl)

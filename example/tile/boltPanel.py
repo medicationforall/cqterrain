@@ -12,4 +12,4 @@ result = tile.bolt_panel(
     padding = 2
 )
 
-cq.exporters.export(result,'out/tile_bolt_panel.stl')
+cq.exporters.export(result,'stl/tile_bolt_panel.stl')

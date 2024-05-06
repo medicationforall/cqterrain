@@ -11,4 +11,4 @@ result = tile.star(
     padding = .5
 )
 
-cq.exporters.export(result,'out/tile_star.stl')
+cq.exporters.export(result,'stl/tile_star.stl')

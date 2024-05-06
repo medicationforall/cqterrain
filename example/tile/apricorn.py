@@ -11,4 +11,4 @@ result = tile.apricorn(
     width_radius_divisor = 4
 )
 #show_object(result)
-cq.exporters.export(result,'out/tile_apricorn.stl')
+cq.exporters.export(result,'stl/tile_apricorn.stl')

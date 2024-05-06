@@ -3,8 +3,8 @@ from cadqueryhelper import series, shape
 from cqterrain import Building, Room, tile, window
 
 render_floor = False
-cq_editor_show=True
-export_to_file=False
+cq_editor_show=False
+export_to_file=True
 
 create = ['tower1', 'tower2', 'entrance']
 #create = [ 'entrance']
@@ -16,7 +16,7 @@ def custom_windows(wall, length, width, height, count, padding):
     window_cut_series = series(window_cutout, count, length_offset = padding)
 
     i_window = window.industrial(length, width+2, height)
-    grill = window.grill(length=20, width=4, height=60, rows=2, columns=2)
+    grill = window.grill(length=20, height=60, rows=2, columns=2)
     i_window.add(grill)
     window_series = series(i_window, count, length_offset = padding)
 

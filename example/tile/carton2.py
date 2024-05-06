@@ -12,4 +12,4 @@ result = tile.carton2(
 )
 #show_object(result)
 
-cq.exporters.export(result,'out/tile_carton2.stl')
+cq.exporters.export(result,'stl/tile_carton2.stl')

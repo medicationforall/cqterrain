@@ -10,4 +10,4 @@ result = tile.rivet_round(
     rivet_count = 5
 )
 
-cq.exporters.export(result,'out/tile_rivet_round.stl')
+cq.exporters.export(result,'stl/tile_rivet_round.stl')

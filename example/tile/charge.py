@@ -13,4 +13,4 @@ result = tile.charge(
 )
 
 #show_object(result)
-cq.exporters.export(result,'out/tile_charge.stl')
+cq.exporters.export(result,'stl/tile_charge.stl')

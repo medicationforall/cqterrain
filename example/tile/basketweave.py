@@ -8,4 +8,4 @@ result = tile.basketweave(
     padding = .5
 )
 
-cq.exporters.export(result,'out/tile_basketweave.stl')
+cq.exporters.export(result,'stl/tile_basketweave.stl')

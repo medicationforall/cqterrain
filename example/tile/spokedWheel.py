@@ -14,4 +14,4 @@ result = tile.spoked_wheel(
     inner_chamfer = .5
 )
 
-cq.exporters.export(result,'out/tile_spoked_wheel.stl')
+cq.exporters.export(result,'stl/tile_spoked_wheel.stl')

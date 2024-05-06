@@ -18,4 +18,4 @@ result = tile.conduit(
 )
 #show_object(result)
 
-cq.exporters.export(result,'out/tile_conduit.stl')
+cq.exporters.export(result,'stl/tile_conduit.stl')

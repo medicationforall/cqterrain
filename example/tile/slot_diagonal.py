@@ -11,4 +11,4 @@ result = tile.slot_diagonal(
     slot_width_padding_modifier = .25
 )
 
-cq.exporters.export(result,'out/tile_slot_diagonal.stl')
+cq.exporters.export(result,'stl/tile_slot_diagonal.stl')
