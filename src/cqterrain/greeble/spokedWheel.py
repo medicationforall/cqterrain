@@ -9,17 +9,17 @@ def __add_shape(custom_shape, length, z_translate):
     return add_shape
 
 def spoked_wheel(
-    radius = 10,
-    height = 2,
-    frame = 2,
-    inner_radius = 3,
-    spoke_width = 2,
-    spoke_height = 1.5,
-    spoke_fillet = .5,
-    spoke_count = 12,
-    frame_chamfer = .5,
-    inner_chamfer = .5
-):
+    radius:float = 10,
+    height:float = 2,
+    frame:float = 2,
+    inner_radius:float = 3,
+    spoke_width:float = 2,
+    spoke_height:float = 1.5,
+    spoke_fillet:float = .5,
+    spoke_count:int = 12,
+    frame_chamfer:float = .5,
+    inner_chamfer:float = .5
+) -> cq.Workplane:
     outline = cq.Workplane("XY").cylinder(height, radius)
     cut_cyl = cq.Workplane("XY").cylinder(height, radius-frame)
     inner_cyl = cq.Workplane("XY").cylinder(height, inner_radius)

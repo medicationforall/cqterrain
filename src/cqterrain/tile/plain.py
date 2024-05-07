@@ -13,10 +13,15 @@
 
 import cadquery as cq
 
-def plain(length = 10, width = 10, height = 2, padding = 1):
+def plain(
+        length:float = 10, 
+        width:float = 10, 
+        height:float = 2, 
+        padding:float = 1
+    ) -> cq.Workplane:
     '''
         Totally unnecessary but it has a method signature that I want.
-        Also google boilerplat for making custom tiles.
+        Also boilerplate for making custom tiles.
     '''
     tile = (
         cq.Workplane("XY")

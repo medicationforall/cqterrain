@@ -14,13 +14,13 @@
 import cadquery as cq
 
 def _make_line(
-        length, 
-        width, 
-        line_width, 
-        line_depth,
-        x_divisor,
-        y_divisor
-):
+        length:float, 
+        width:float, 
+        line_width:float, 
+        line_depth:float,
+        x_divisor:float,
+        y_divisor:float
+) -> cq.Workplane:
     pts = [
         (0,0),
         (0,width/y_divisor),
@@ -39,14 +39,14 @@ def _make_line(
     return cut_line
 
 def carton2(
-    length = 30, 
-    width = 25, 
-    height = 4, 
-    line_width = 2, 
-    line_depth = 1.5,
-    x_divisor = 2,
-    y_divisor = 3
-):
+    length:float = 30, 
+    width:float = 25, 
+    height:float = 4, 
+    line_width:float = 2, 
+    line_depth:float = 1.5,
+    x_divisor:float = 2,
+    y_divisor:float = 3
+) -> cq.Workplane:
     cut_line = _make_line(
         length, 
         width, 

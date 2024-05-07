@@ -1,18 +1,26 @@
 import cadquery as cq
+from typing import Callable
 
 def grid_seed(
-        shape_callback=None, 
-        count=16, 
-        seed_base="blast", 
-        columns=8, 
-        length = 50, 
-        width = 50, 
-        z_transform = 2.5
-    ):
+        shape_callback:Callable[[str], tuple[cq.Workplane, cq.Workplane]]|None=None, 
+        count:int = 16, 
+        seed_base:str = "blast", 
+        columns:int = 8, 
+        length:float = 50, 
+        width:float = 50, 
+        z_transform:float = 2.5
+    ) -> cq.Workplane:
+    '''
+    Helper for previewing randomly generated blast patterns.
+    '''
     shape_grid = cq.Workplane("XY")
     row_count = -1
     for i in range(count):
         string_seed = f"{seed_base}{i}"
+
+        if not shape_callback:
+            raise Exception('Please supply callback')
+        
         gen_shape, text = shape_callback(string_seed)
         
         col_count = i % columns

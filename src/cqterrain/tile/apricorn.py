@@ -1,25 +1,25 @@
 import cadquery as cq
 
 def _make_lines(
-    length, 
-    height,
-    line_width,
-    center_radius
-):
+    length:float, 
+    height:float,
+    line_width:float,
+    center_radius:float
+) -> cq.Workplane:
     line = cq.Workplane("XY").box(length, line_width, height)
     center = cq.Workplane("XY").cylinder(height, center_radius+line_width)
     cut_center = cq.Workplane("XY").cylinder(height, center_radius)
     return center.union(line).cut(cut_center)
 
 def apricorn(
-    length = 30, 
-    width = 25, 
-    height = 4,
-    line_width = 2,
-    line_depth = .5,
-    center_radius = None,
-    width_radius_divisor = 4
-):
+    length:float = 30, 
+    width:float = 25, 
+    height:float = 4,
+    line_width:float = 2,
+    line_depth:float = .5,
+    center_radius:float|None = None,
+    width_radius_divisor:float = 4
+) -> cq.Workplane:
     if not center_radius:
         center_radius = width / width_radius_divisor
     

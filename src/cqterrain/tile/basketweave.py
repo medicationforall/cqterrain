@@ -13,7 +13,12 @@
 
 import cadquery as cq
 
-def basketweave(length = 4, width = 2, height = 1, padding = .5):
+def basketweave(
+        length:float = 4, 
+        width:float = 2, 
+        height:float = 1, 
+        padding:float = .5
+    ) -> cq.Workplane:
     width_padding = width + padding
     bricks = __brick_tile(length, width, height, padding)
 
@@ -44,7 +49,12 @@ def basketweave(length = 4, width = 2, height = 1, padding = .5):
     )
     return tile_combine
 
-def __brick_tile(length = 4, width = 2, height = 1, padding = .5):
+def __brick_tile(
+        length:float = 4, 
+        width:float = 2, 
+        height:float = 1, 
+        padding:float = .5
+    ) -> cq.Workplane:
     length_padding = length + padding
     width_padding = width + padding
     rect = (

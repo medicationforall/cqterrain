@@ -13,7 +13,12 @@
 
 import cadquery as cq
 
-def glyph(length = 4, width = 2, height = 1, padding = 2):
+def glyph(
+        length:float = 4, 
+        width:float = 2, 
+        height:float = 1, 
+        padding:float = 2
+    ) -> cq.Workplane:
     width_padding = width + padding
     bricks = __brick_tile(length, width, height, padding)
 
@@ -44,7 +49,12 @@ def glyph(length = 4, width = 2, height = 1, padding = 2):
     )
     return tile_combine.translate((0,(width_padding/2),0))
 
-def __brick_tile(length = 4, width = 2, height = 1, padding = .5):
+def __brick_tile(
+        length:float = 4, 
+        width:float = 2, 
+        height:float = 1, 
+        padding:float = .5
+    ) -> cq.Workplane:
     length_padding = length + padding
     width_padding = width + padding
     rect = (

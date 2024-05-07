@@ -2,14 +2,14 @@ import cadquery as cq
 from .. import pipe as terrain_pipe
 
 def pipe(
-        length = 25, 
-        width = 25, 
-        height = 4,
+        length:float = 25, 
+        width:float = 25, 
+        height:float = 4,
 
-        radius = 4,
-        inner_radius = 3,
-        segment_length = 6,
-        space = 4
+        radius:float = 4,
+        inner_radius:float = 3,
+        segment_length:float = 6,
+        space:float = 4
     ):
 
     outline = cq.Workplane("XY").box(length, width, height)

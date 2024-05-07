@@ -2,14 +2,14 @@ import cadquery as cq
 import math
 
 def slot_diagonal(
-    tile_size = 21,
-    height = 2,
-    slot_width = 2,
-    slot_height = 2,
-    slot_length_padding = 7,
-    slot_width_padding = 2,
-    slot_width_padding_modifier = .25
-):
+    tile_size:float = 21,
+    height:float = 2,
+    slot_width:float = 2,
+    slot_height:float = 2,
+    slot_length_padding:float = 7,
+    slot_width_padding:float = 2,
+    slot_width_padding_modifier:float = .25
+) -> cq.Workplane:
     size = math.floor(tile_size / (slot_width + slot_width_padding))
     tile = cq.Workplane("XY").box(tile_size, tile_size, height)
     slots = (cq.Workplane("XY"))

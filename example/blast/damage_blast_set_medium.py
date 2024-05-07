@@ -1,9 +1,8 @@
 import cadquery as cq
 from cadqueryhelper import shape
-import random
 from cqterrain import damage
 
-def blast_template(blast_seed):
+def blast_template(blast_seed:str) -> tuple[cq.Workplane, cq.Workplane]:
     f_blast = damage.blast(
         seed = blast_seed,
         height=5,

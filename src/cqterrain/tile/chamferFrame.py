@@ -14,14 +14,14 @@
 import cadquery as cq
 
 def chamfer_frame(
-    length = 10,
-    width = 10,
-    height = 2,
-    chamfer_length = 3,
-    padding = .5,
-    frame_width = 1.5,
-    internal_height_cut = 1
-    ):
+    length:float = 10,
+    width:float = 10,
+    height:float = 2,
+    chamfer_length:float = 3,
+    padding:float = .5,
+    frame_width:float = 1.5,
+    internal_height_cut:float = 1
+    ) -> cq.Workplane:
     chamfer_base = length if length < width else width
     chamfer_safe = chamfer_base/2-.9
     chamfer_attempt = chamfer_length

@@ -2,11 +2,11 @@ import cadquery as cq
 import math
 
 def _make_lines(
-    length, 
-    width, 
-    height,
-    line_width
-):
+    length:float, 
+    width:float, 
+    height:float,
+    line_width:float
+) -> cq.Workplane:
     outline = cq.Workplane("XY").box(length, width, height)
     hyp = math.hypot(length, width)
     #log(hyp)
@@ -30,15 +30,15 @@ def _make_lines(
     return lines
 
 def charge(
-    length = 30, 
-    width = 25, 
-    height = 4,
-    line_width = 3,
-    line_depth = 1,
-    corner_chamfer = 4,
-    edge_chamfer = 2,
-    padding = 2.5
-):
+    length:float = 30, 
+    width:float = 25, 
+    height:float = 4,
+    line_width:float = 3,
+    line_depth:float = 1,
+    corner_chamfer:float = 4,
+    edge_chamfer:float = 2,
+    padding:float = 2.5
+) -> cq.Workplane:
     outline = cq.Workplane("XY").box(
         length, 
         width, 

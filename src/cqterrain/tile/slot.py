@@ -16,15 +16,15 @@ import math
 from cadqueryhelper import series
 
 def slot(
-length = 10,
-width = 10,
-height = 2,
-padding = 1,
-slot_length_padding = 3,
-slot_width_offset = 1.5,
-slot_width = 1,
-slot_height = 0.5
-):
+length:float = 10,
+width:float = 10,
+height:float = 2,
+padding:float = 1,
+slot_length_padding:float = 3,
+slot_width_offset:float = 1.5,
+slot_width:float = 1,
+slot_height:float = 0.5
+) -> cq.Workplane:
     tile = (
         cq.Workplane("XY")
         .box(length-padding, width-padding, height)

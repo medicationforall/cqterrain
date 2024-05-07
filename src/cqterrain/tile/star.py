@@ -14,7 +14,15 @@
 import cadquery as cq
 from cadqueryhelper import shape
 
-def star(length=10, width=10, height=1, points=4, outer_radius=5, inner_radius=3, padding=.5):
+def star(
+        length:float = 10, 
+        width:float = 10, 
+        height:float = 1, 
+        points:int = 4, 
+        outer_radius:float = 5, 
+        inner_radius:float = 3, 
+        padding:float = .5
+    ) -> cq.Workplane:
     tile = cq.Workplane("XY").box(length, width, height)
 
     cut_star = shape.star(outer_radius=outer_radius+(padding/2), inner_radius=inner_radius+(padding/2), points=points, height=height)

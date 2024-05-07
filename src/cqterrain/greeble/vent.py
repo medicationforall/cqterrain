@@ -2,16 +2,17 @@ import cadquery as cq
 from cadqueryhelper import wave
 
 def vent(
-        length = 25,
-        width = 25,
-        height = 4,
-        segment_length = 3,
-        inner_width = 2,
-        frame_width = 2,
-        chamfer = None
-    ):
+        length:float = 25,
+        width:float = 25,
+        height:float = 4,
+        segment_length:float = 3,
+        inner_width:float = 2,
+        frame_width:float = 2,
+        chamfer:float|None = None,
+        wave_pattern = wave.sawtooth 
+    ) -> cq.Workplane:
 
-    sawtooth = wave.sawtooth(
+    sawtooth = wave_pattern(
         length = length-frame_width,
         width = height,
         height = width-frame_width,

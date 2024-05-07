@@ -1,15 +1,15 @@
 import cadquery as cq
 
 def bolt_panel(
-        length = 10, 
-        width = 10, 
-        height = 2, 
-        chamfer = .5, 
-        radius_outer = 1,
-        radius_internal = 0.5,
-        cut_height = 0.5,
-        padding = 2
-    ):
+        length:float = 10, 
+        width:float = 10, 
+        height:float = 2, 
+        chamfer:float = .5, 
+        radius_outer:float = 1,
+        radius_internal:float = 0.5,
+        cut_height:float = 0.5,
+        padding:float = 2
+    ) -> cq.Workplane:
     outline = (
         cq.Workplane("XY")
         .box(length, width, height)

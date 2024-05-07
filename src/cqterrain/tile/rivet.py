@@ -14,14 +14,14 @@
 import cadquery as cq
 
 def rivet(
-    length = 10,
-    width = 10,
-    height = 2,
-    padding = 1,
-    internal_padding = 2.5,
-    rivet_height = 2.5,
-    rivet_radius = .5
-):
+    length:float = 10,
+    width:float = 10,
+    height:float = 2,
+    padding:float = 1,
+    internal_padding:float = 2.5,
+    rivet_height:float = 2.5,
+    rivet_radius:float = .5
+) -> cq.Workplane:
     tile = (
         cq.Workplane("XY")
         .box(length-padding, width-padding, height)

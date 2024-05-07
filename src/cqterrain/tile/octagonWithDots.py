@@ -13,7 +13,13 @@
 
 import cadquery as cq
 
-def octagon_with_dots(tile_size=5, chamfer_size = 1.2, mid_tile_size =1.6, spacing = .5 , tile_height = 1):
+def octagon_with_dots(
+        tile_size:float = 5, 
+        chamfer_size:float = 1.2, 
+        mid_tile_size:float =1.6, 
+        spacing:float = .5, 
+        tile_height:float = 1
+    ) -> cq.Workplane:
     tile = (cq.Workplane("XY")
             .rect(tile_size,tile_size)
             .extrude(tile_height)
@@ -47,13 +53,18 @@ def octagon_with_dots(tile_size=5, chamfer_size = 1.2, mid_tile_size =1.6, spaci
     return tiles.translate((0,0,-1*(tile_height/2)))
 
 
-def octagon_with_dots_2(tile_size=5, chamfer_size = 1.2, mid_tile_size =1.6, spacing = .5 , tile_height = 1):
+def octagon_with_dots_2(
+        tile_size:float=5, 
+        chamfer_size:float = 1.2, 
+        mid_tile_size:float = 1.6, 
+        spacing:float = .5, 
+        tile_height:float = 1
+    ) -> cq.Workplane:
     tile = (cq.Workplane("XY")
             .box(tile_size,tile_size, tile_height)
             .edges("|Z")
             .chamfer(chamfer_size) # SET PERCENTAGE
             )
-
 
     mid_tile = (cq.Workplane("XY")
             .box(mid_tile_size, mid_tile_size, tile_height)
