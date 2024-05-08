@@ -10,10 +10,10 @@ from .chamferFrame import chamfer_frame
 from .rivet import rivet
 from .rivetRound import rivet_round
 from .slot import slot
-from .spokedWheel import spoked_wheel
 from .slotDiagonal import slot_diagonal
 from .glyph import glyph
 from .boltPanel import bolt_panel
 from .conduit import conduit
 from .carton import carton
 from .carton2 import carton2
+from .truchet_triangle import truchet_triangle

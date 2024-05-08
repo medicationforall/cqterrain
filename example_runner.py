@@ -15,6 +15,8 @@ import example.tile.slot_diagonal
 import example.tile.slot
 import example.tile.spokedWheel
 import example.tile.star
+import example.tile.truchet_triangle
+import example.tile.truchet_triangle_grid_randomized
 import example.tile.windmill
 
 import example.window.casement
@@ -25,9 +27,9 @@ import example.window.lattice
 import example.building
 import example.buildingRough
 import example.buildingsExample
-import example.damage_blast_set_large
-import example.damage_blast_set_medium
-import example.damage_blast
+import example.blast.damage_blast_set_large
+import example.blast.damage_blast_set_medium
+import example.blast.damage_blast
 import example.deadzone_building
 import example.door
 import example.floor
