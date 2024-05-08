@@ -13,10 +13,11 @@ import example.tile.rivet
 import example.tile.rivetRound
 import example.tile.slot_diagonal
 import example.tile.slot
-import example.tile.spokedWheel
 import example.tile.star
 import example.tile.truchet_triangle
 import example.tile.truchet_triangle_grid_randomized
+import example.tile.truchet_circle
+import example.tile.truchet_circle_grid_randomized
 import example.tile.windmill
 
 import example.window.casement
@@ -34,7 +35,8 @@ import example.deadzone_building
 import example.door
 import example.floor
 import example.floorTile
-import example.greeble_vent
+import example.greeble.greeble_vent
+import example.greeble.spokedWheel
 import example.ladder
 import example.obelisk
 import example.pipe_corrugated

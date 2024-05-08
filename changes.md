@@ -4,6 +4,15 @@
 * Split window.py file out into it's own module with each function being it's own file.
 * Renamed out directory to stl
 * moved spokedWheel from tile to greeble module
+  * Moved greeble examples 
+* Added tile.truchet_triangle
+* Added tile.truchet_circle
+* Annotated modules:
+  * tile
+  * greeble
+  * damage
+  * window
+  * pipe
 
 ## 0.3.3
 * Upped cadqueryhelper version 0.2.1

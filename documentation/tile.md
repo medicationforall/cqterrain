@@ -180,7 +180,7 @@ result = tile.carton(
 * y_divisor
 
 ``` python
-result = tile.carton(
+result = tile.carton2(
     length = 30, 
     width = 25, 
     height = 4, 
