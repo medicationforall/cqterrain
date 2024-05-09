@@ -1,6 +1,7 @@
 import cadquery as cq
 from cadqueryhelper import grid
-from cqterrain import Floor, Room, tile
+from cqterrain.building import Floor, Room
+from cqterrain import tile
 
 combined = tile.octagon_with_dots()
 #combined = tile.basketweave()

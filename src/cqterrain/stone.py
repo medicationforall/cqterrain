@@ -15,7 +15,12 @@ import cadquery as cq
 import random
 import math
 
-def make_stones(parts, dim=[5,5,2], rows=2, columns=5, seed="test4"):
+def make_stones(
+        parts, 
+        dim:list[float]=[5,5,2], 
+        rows:int=2, 
+        columns:int=5,
+        seed:str="test4") -> cq.Workplane:
     grid = cq.Assembly()
     random.seed(seed)
 

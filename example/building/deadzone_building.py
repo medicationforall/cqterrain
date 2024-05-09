@@ -1,6 +1,7 @@
 import cadquery as cq
 from cadqueryhelper import series, shape
-from cqterrain import Building, Room, tile, window
+from cqterrain.building import Building, Room
+from cqterrain import tile, window
 
 render_floor = False
 cq_editor_show=False

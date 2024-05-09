@@ -1,5 +1,5 @@
 import cadquery as cq
-from cqterrain import Floor
+from cqterrain.building import Floor
 from cadqueryhelper import shape
 
 cone = shape.cone()

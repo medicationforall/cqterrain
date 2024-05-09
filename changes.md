@@ -13,6 +13,10 @@
   * damage
   * window
   * pipe
+* Annotated files
+* Removed old files
+* Split out minibase methods into it's own module
+* Moved building files into their own module
 
 ## 0.3.3
 * Upped cadqueryhelper version 0.2.1

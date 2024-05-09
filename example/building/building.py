@@ -1,5 +1,5 @@
 import cadquery as cq
-from cqterrain import Building
+from cqterrain.building import Building
 
 building = Building(
     length=50,

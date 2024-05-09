@@ -13,7 +13,15 @@
 
 import cadquery as cq
 
-def support(length=10, width=10, height=30, inner_height=8, inner_length=4, inner_width=4, top_offset=0):
+def support(
+        length:float = 10, 
+        width:float = 10, 
+        height:float = 30, 
+        inner_height:float = 8, 
+        inner_length:float = 4, 
+        inner_width:float = 4, 
+        top_offset:float = 0
+    ) -> cq.Workplane:
     result = (cq.Workplane("XY")
           .box(length, width, inner_height)
           .wires(">Z")

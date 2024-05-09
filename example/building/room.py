@@ -1,5 +1,5 @@
 import cadquery as cq
-from  cqterrain  import Room
+from  cqterrain.building  import Room
 
 ex = Room(
     length=104,

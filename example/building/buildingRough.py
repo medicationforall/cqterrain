@@ -1,6 +1,6 @@
 
 import cadquery as cq
-from cqterrain import Building
+from cqterrain.building import Building
 
 b = Building(height=200, width=90, length=100, has_stairs=True, stories=4)
 b.room["window_count"]=5

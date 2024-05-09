@@ -18,7 +18,13 @@ from cadqueryhelper import grid
 import math
 
 class Wall:
-    def __init__(self, length = 100, width = 3, height = 50, inside_tile=None, outside_tile=None):
+    def __init__(self, 
+                 length:float = 100, 
+                 width:float = 3, 
+                 height:float = 50, 
+                 inside_tile = None, 
+                 outside_tile = None
+        ):
         self.length = length
         self.width = width
         self.height = height

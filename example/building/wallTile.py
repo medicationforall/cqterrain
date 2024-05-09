@@ -1,5 +1,5 @@
 import cadquery as cq
-from cqterrain import Wall
+from cqterrain.building import Wall
 from cadqueryhelper import shape
 
 cylinder = shape.cylinder(10, 5)

@@ -13,9 +13,9 @@
 
 import cadquery as cq
 from cadqueryhelper import series, shape
-from .Floor import Floor
-from .Wall import Wall
-from .Door import Door
+from . import Floor
+from . import Wall
+from .. import Door
 
 def _make_custom_windows(wall, length, width, height, count, padding):
     window_cutout = cq.Workplane().box(length, width, height)
@@ -30,7 +30,7 @@ def _make_custom_door(wall, length, width, height, floor_height):
               .translate((0,0,(height/2)+floor_height))
               )
 
-    log(bottom.Center())
+    #log(bottom.Center())
     w = wall.cut(cutout)
     return w
 

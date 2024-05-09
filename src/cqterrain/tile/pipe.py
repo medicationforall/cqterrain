@@ -10,7 +10,7 @@ def pipe(
         inner_radius:float = 3,
         segment_length:float = 6,
         space:float = 4
-    ):
+    ) -> cq.Workplane:
 
     outline = cq.Workplane("XY").box(length, width, height)
 

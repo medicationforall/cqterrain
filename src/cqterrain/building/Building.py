@@ -14,8 +14,8 @@
 
 import cadquery as cq
 from cadqueryhelper import shape
-from .stairs import stairs
-from .Room import Room
+from .. import stairs
+from . import Room
 
 class Building:
     def __init__(

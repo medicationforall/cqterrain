@@ -1,5 +1,5 @@
 import cadquery as cq
-from cqterrain import Floor
+from cqterrain.building import Floor
 
 bp = Floor()
 bp.make()
