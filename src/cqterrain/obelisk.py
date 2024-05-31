@@ -15,10 +15,10 @@ import cadquery as cq
 import math
 
 def __points_extrude_faces(
-        points=[(0,0),(0,12.5),(2,12.5) ,(4,4), (4,0)],
-        extrude=10,
-        faces=4,
-        intersect=True
+        points:list[tuple[float,float]]=[(0,0),(0,12.5),(2,12.5) ,(4,4), (4,0)],
+        extrude:float=10,
+        faces:int=4,
+        intersect:bool=True
     ):
     poly = (
         cq.Workplane("XY")
@@ -52,17 +52,17 @@ def __points_extrude_faces(
     return scene.rotate((0,1,0),(0,0,0),90)
 
 def obelisk(
-        base_width=30,
-        base_height=3,
-        inset_width=15,
-        inset_height=5,
-        mid_width=30,
-        mid_height=15,
-        top_width=15,
-        top_height=70,
-        height=102,
-        faces=4,
-        intersect=True
+        base_width:float = 30,
+        base_height:float = 3,
+        inset_width:float = 15,
+        inset_height:float = 5,
+        mid_width:float = 30,
+        mid_height:float = 15,
+        top_width:float = 15,
+        top_height:float = 70,
+        height:float = 102,
+        faces:int = 4,
+        intersect:bool = True
         ):
     in_height = base_height + inset_height
     mid_height = in_height + mid_height

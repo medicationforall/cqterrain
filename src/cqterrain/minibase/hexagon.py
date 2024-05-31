@@ -1,4 +1,4 @@
-# Copyright 2022 James Adams
+# Copyright 2024 James Adams
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,34 +15,25 @@
 import cadquery as cq
 from . import make_magnet_outline
 
-def ellipse(
-        x_diameter:float = 52, 
-        y_diameter:float = 90, 
+def hexagon(
+        diameter:float = 25, 
         height:float = 3, 
-        taper:float = -1, 
+        taper:float = -1,
         render_magnet:bool = True,
         magnet_diameter:float = 3, 
         magnet_height:float = 2
     ) -> cq.Workplane:
-    '''
-    @todo should allow for multiple magnets
-    '''
-    base_x_radius = x_diameter / 2
-    base_y_radius = y_diameter / 2
-
-    top_x_radius = base_x_radius + taper
-    top_y_radius = base_y_radius + taper
 
     base = (
-        cq.Workplane("XY" )
-        .ellipse(base_x_radius,base_y_radius)
+        cq.Workplane("XY")
+        .polygon(6, diameter)
         .workplane(offset=height)
-        .ellipse(top_x_radius,top_y_radius)
+        .polygon(6, diameter+taper)
         .loft(combine=True)
         .translate((0,0,-1*(height/2)))
     )
 
-    h_solid = make_magnet_outline(height, magnet_diameter,  magnet_height)
+    h_solid = make_magnet_outline(height, magnet_diameter, magnet_height)
 
     minibase = cq.Workplane("XY").add(base)
     if render_magnet:

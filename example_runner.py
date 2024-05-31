@@ -1,3 +1,10 @@
+import example.minibase.circle
+import example.minibase.ellipse
+import example.minibase.rectangle
+import example.minibase.slot
+import example.minibase.hexagon
+import example.minibase.minibase_group
+
 import example.tile.apricorn
 import example.tile.basketweave
 import example.tile.boltPanel

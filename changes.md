@@ -14,8 +14,16 @@
   * window
   * pipe
 * Annotated files
+  * Ladder
+  * obelisk
 * Removed old files
-* Split out minibase methods into it's own module
+* Split out minibase methods into it's own module. Added annotations, and examples
+  * circle
+  * ellipse
+  * Added hexagon
+  * make_magnet_outline
+  * recangle
+  * slot  
 * Moved building files into their own module
 
 ## 0.3.3

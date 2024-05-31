@@ -3,3 +3,4 @@ from .circle import circle
 from .ellipse import ellipse
 from .rectangle import rectangle
 from .slot import slot
+from .hexagon import hexagon

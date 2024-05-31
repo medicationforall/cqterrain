@@ -14,7 +14,11 @@
 
 import cadquery as cq
 
-def make_magnet_outline(shape_height, magnet_diameter=3, magnet_height=2):
+def make_magnet_outline(
+        shape_height:float, 
+        magnet_diameter:float = 3, 
+        magnet_height:float = 2
+    ) -> cq.Workplane:
     h_radius = magnet_diameter/2
     h_solid = cq.Workplane("XY").cylinder(magnet_height, h_radius).translate((0,0,(magnet_height/2)-(shape_height/2)))
     return h_solid
