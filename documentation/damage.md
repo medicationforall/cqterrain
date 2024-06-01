@@ -1,6 +1,15 @@
 # Damage
 
+Quickly generate randomized damage templates driven by seed.
+<br />see: [example](../example/damage/damage_blast_set_large.py.py)
+
+![](image/damage/01.png)<br />
+
+The idea is that you generate a plate of randomized damage templates. And choose the ones you like best.
+
 ## Blast
+
+Generates damage template derived from a modified [pinwheel](https://github.com/medicationforall/cadqueryhelper/blob/main/documentation/shapes.md#pinwheel).
 
 ### Parameters
 * seed: str
@@ -35,3 +44,16 @@ if given a height of 0 will return the wire instead.
 * [stl 1](../stl/damage_blast_1.stl)
 * [stl 2](../stl/damage_blast_2.stl)
 * [stl 3](../stl/damage_blast_3.stl)
+
+## Random Nudge Points
+
+Utility function to randomize the x and y values of a list of points.
+
+### Parameters
+* seed: str
+* points
+* x_jiggle: tuple[int,int] | int - can be tuple or int
+* y_jiggle: tuple[int,int] | int - can be tuple or int
+
+### Returns
+* list[tuple[int,int]]
