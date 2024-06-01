@@ -42,7 +42,7 @@ import example.building.deadzone_building
 import example.door
 import example.building.floor
 import example.building.floorTile
-import example.greeble.greeble_vent
+import example.greeble.vent
 import example.greeble.spokedWheel
 import example.ladder
 import example.obelisk
