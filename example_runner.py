@@ -38,9 +38,9 @@ import example.window.lattice_fancy
 import example.building.building
 import example.building.buildingRough
 import example.building.buildingsExample
-import example.blast.damage_blast_set_large
-import example.blast.damage_blast_set_medium
-import example.blast.damage_blast
+import example.damage.damage_blast_set_large
+import example.damage.damage_blast_set_medium
+import example.damage.damage_blast
 import example.building.deadzone_building
 import example.door
 import example.building.floor
