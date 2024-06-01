@@ -30,6 +30,7 @@
 * Updated README.md
 * Added window documentation and examples.
 * Added damage documentation.
+* Added pipe documentation.
 
 ## 0.3.3
 * Upped cadqueryhelper version 0.2.1
