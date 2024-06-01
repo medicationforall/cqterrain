@@ -57,3 +57,5 @@ Utility function to randomize the x and y values of a list of points.
 
 ### Returns
 * list[tuple[int,int]]
+
+* [source](../src/cqterrain/damage/blast.py)
