@@ -40,7 +40,7 @@ if given a height of 0 will return the wire instead.
 ![](image/damage/08.png)<br />
 
 * [source](../src/cqterrain/damage/blast.py)
-* [example](../example/damage/blast.py)
+* [example](../example/damage/damage_blast.py)
 * [stl 1](../stl/damage_blast_1.stl)
 * [stl 2](../stl/damage_blast_2.stl)
 * [stl 3](../stl/damage_blast_3.stl)
