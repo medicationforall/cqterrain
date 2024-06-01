@@ -1,15 +1,21 @@
 # cqterrain
-Generate 3d models of buildings / terrain using CadQuery
+Helper Libary to Generate 3d models of buildings / terrain using CadQuery.
 
 ## Documentation
+* [Greebles](documentation/greeble.md)
+* [Minibase](documentation/minibase.md)
 * [Stairs](documentation/stairs.md)
 * [Tile](documentation/tile.md)
-* [Greebles](documentation/greeble.md)
+
+## Changes
+* [Changelog](./changes.md)
 
 ## Dependencies
-* [CadQuery 2.1](https://github.com/CadQuery/cadquery)
+* [CadQuery 2.x](https://github.com/CadQuery/cadquery)
 * [cqMore](https://github.com/JustinSDK/cqMore)
 * [cadqueryhelper](https://github.com/medicationforall/cadqueryhelper)
+
+---
 
 
 ### Installation

@@ -25,6 +25,9 @@
   * recangle
   * slot  
 * Moved building files into their own module
+* Added documentation for minibase module.
+* Updated greeble documentation.
+* Updated README.md
 
 ## 0.3.3
 * Upped cadqueryhelper version 0.2.1
