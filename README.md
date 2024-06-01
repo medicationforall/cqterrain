@@ -2,10 +2,11 @@
 Helper Libary to Generate 3d models of buildings / terrain using CadQuery.
 
 ## Documentation
-* [Greebles](documentation/greeble.md)
+* [Greeble](documentation/greeble.md)
 * [Minibase](documentation/minibase.md)
 * [Stairs](documentation/stairs.md)
 * [Tile](documentation/tile.md)
+* [Window](documentation/window.md)
 
 ## Changes
 * [Changelog](./changes.md)

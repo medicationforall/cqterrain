@@ -25,7 +25,21 @@ def casement(
         grill_width:float = 1, 
         grill_height:float = 1
     ) -> cq.Workplane:
-    outline = cq.Workplane("XY").box(length, width, height)
-    window = frame(length, width, height, frame_width)
-    w_grill = grill(length, height, colums, rows, grill_width, grill_height)
-    return window.add(w_grill)
+
+    window = frame(
+        length, 
+        width, 
+        height, 
+        frame_width
+    )
+
+    w_grill = grill(
+        length, 
+        height, 
+        colums, 
+        rows, 
+        grill_width, 
+        grill_height
+    )
+    
+    return window.union(w_grill)

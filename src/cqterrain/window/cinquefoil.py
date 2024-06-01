@@ -21,9 +21,12 @@ def cinquefoil(
         inner_radius:float = 3, 
         height:float = 2
     ) -> cq.Workplane:
+
+    #this is being oddly tricky / this is invisible construction
     polygon = regular_polygon(radius=radius, sides=sides).translate((0,0,-2.5))
     face = polygon.faces("Z")
     points = face.edges()
+
     circles = points.cylinder(height,2.6, combine=False)
     center = cq.Workplane("XY").cylinder(height, inner_radius)
-    return circles.add(center)
+    return circles.union(center)

@@ -29,8 +29,11 @@ import example.tile.windmill
 
 import example.window.casement
 import example.window.cinquefoil
+import example.window.cinquefoil_frame
+import example.window.frame
 import example.window.grill
 import example.window.lattice
+import example.window.lattice_fancy
 
 import example.building.building
 import example.building.buildingRough

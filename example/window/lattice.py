@@ -1,12 +1,15 @@
 import cadquery as cq
 from cqterrain import window
 
-#grill = window.grill(height=40, columns=2)
-lattice = window.lattice(lattice_angle=20, tile_size=6)
+lattice = window.lattice(
+    length = 20, 
+    height = 40,  
+    tile_size = 4, 
+    lattice_width = 1, 
+    lattice_height = 1, 
+    lattice_angle = 45
+)
 frame = window.frame()
-
-#show_object(lattice)
-#show_object(frame)
 
 scene = cq.Workplane("XY").add(frame).add(lattice)
 
