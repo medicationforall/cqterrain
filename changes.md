@@ -31,6 +31,10 @@
 * Added window documentation and examples.
 * Added damage documentation.
 * Added pipe documentation.
+* Added misc documentation.
+  * door
+  * ladder
+  * obelisk
 
 ## 0.3.3
 * Upped cadqueryhelper version 0.2.1

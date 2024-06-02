@@ -1,7 +1,7 @@
 # cqterrain
 Helper Libary to Generate 3d models of buildings / terrain using CadQuery.
 
-## Documentation
+## Documentation 
 * [Damage](documentation/damage.md)
 * [Greeble](documentation/greeble.md)
 * [Minibase](documentation/minibase.md)
@@ -9,6 +9,7 @@ Helper Libary to Generate 3d models of buildings / terrain using CadQuery.
 * [Stairs](documentation/stairs.md)
 * [Tile](documentation/tile.md)
 * [Window](documentation/window.md)
+* [Misc](documentation/misc.md) aka everything else
 
 ## Changes
 * [Changelog](./changes.md)

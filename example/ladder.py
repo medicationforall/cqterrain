@@ -1,7 +1,6 @@
 import cadquery as cq
 from cqterrain import Ladder
 
-
 def _make_rung(length, width, height):
     rung = cq.Workplane("XY").box(length+1.5, width ,height)
     rung = rung.edges("X").fillet(.909999)

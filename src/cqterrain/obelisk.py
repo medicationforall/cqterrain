@@ -15,10 +15,10 @@ import cadquery as cq
 import math
 
 def __points_extrude_faces(
-        points:list[tuple[float,float]]=[(0,0),(0,12.5),(2,12.5) ,(4,4), (4,0)],
-        extrude:float=10,
-        faces:int=4,
-        intersect:bool=True
+        points:list[tuple[float,float]] = [(0,0),(0,12.5),(2,12.5) ,(4,4), (4,0)],
+        extrude:float = 10,
+        faces:int = 4,
+        intersect:bool = True
     ):
     poly = (
         cq.Workplane("XY")

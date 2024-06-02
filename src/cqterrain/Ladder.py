@@ -57,7 +57,7 @@ class Ladder(Base):
         self.make_side_rail:Callable[[float,float,float],cq.Workplane] = _make_side_rail
 
         # parts
-        self.outline:cq.Workplane|None=None
+        self.outline:cq.Workplane|None = None
         self.side_rails:list[cq.Workplane] = []
         self.rung:cq.Workplane|None = None
         self.rungs:cq.Workplane|None = None
