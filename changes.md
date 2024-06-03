@@ -1,6 +1,18 @@
 ## Main wip
 
 ## 1.0.0
+### Overview
+* Updated every file
+* Added type annotations
+* Documented all modules
+* example_runner.py runs all examples
+* Updgraded cadqueryhelper version 1.1.1
+
+## Breaking
+* I believe roof import path may have changed.
+* stone.make_stones algorithm generates different outputs.
+
+### Details
 * Updated README.md
 * Renamed out directory to stl
 * Removed old files
@@ -43,8 +55,11 @@
   * door
   * ladder
   * obelisk
+  * make_stones
 * Added tile.truchet_triangle
-* Added tile.truchet_circle 
+* Added tile.truchet_circle
+* Added example_runner.py
+* Refactored make stones to no longer use an assembly
 
 ## 0.3.3
 * Upped cadqueryhelper version 0.2.1

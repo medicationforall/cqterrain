@@ -16,13 +16,16 @@ import random
 import math
 
 def make_stones(
-        parts, 
-        dim:list[float]=[5,5,2], 
-        rows:int=2, 
-        columns:int=5,
-        seed:str="test4") -> cq.Workplane:
-    grid = cq.Assembly()
-    random.seed(seed)
+        parts:list[cq.Workplane], 
+        dim:list[float] = [5,5,2], 
+        rows:int = 2, 
+        columns:int = 5,
+        seed:str|None = "test4"
+    ) -> cq.Workplane:
+    grid = cq.Workplane("XY")
+    
+    if seed:
+        random.seed(seed)
 
     # loop the rows
     for row_i in range(rows):
@@ -44,18 +47,23 @@ def make_stones(
             y_rand = random.randrange(-1*(math.floor(dim[1]/2)),(math.floor(dim[1]/2)))
 
             # choose a random part from the parts list
-            part_index = random.randrange(0,len(parts))
+            part = random.choice(parts)
 
             # add the part to the assembly
-            grid.add(parts[part_index], loc=cq.Location(cq.Vector(row_offset + col_push_x + x_rand, col_offset + col_push_y + y_rand, z_push)))
+            grid = grid.union(
+                part
+                .translate((
+                    row_offset + col_push_x + x_rand, 
+                    col_offset + col_push_y + y_rand, 
+                    z_push
+                ))
+            )
 
     length = dim[1] * columns
     width = dim[0] * rows
 
-    # dump the assembly out as a single compound
-    comp = grid.toCompound()
     work = cq.Workplane("XZ").center(0, 0).workplane()
-    work.add(comp)
+    work.add(grid)
 
     # zero out the grid
     work = work.translate(((dim[0]/2),(dim[1]/2)))

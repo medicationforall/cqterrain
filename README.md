@@ -11,6 +11,11 @@ Helper Libary to Generate 3d models of buildings / terrain using CadQuery.
 * [Tile](documentation/tile.md)
 * [Window](documentation/window.md)
 * [Misc](documentation/misc.md) aka everything else
+  * door
+  * ladder
+  * obelisk
+  * stones
+  * support
 
 ## Changes
 * [Changelog](./changes.md)
