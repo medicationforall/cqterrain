@@ -99,7 +99,7 @@ dwarven = obelisk(
 * [stl](../stl/obelisk.stl)
 * [Streamlit app](https://obeliskterrain.streamlit.app/)
 
-## make_stones
+## stone.make_stones
 
 Create a sparse pattern of the given parts. 
 This method of generation should be relatively performant.
