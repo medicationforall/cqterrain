@@ -28,7 +28,7 @@ Helper Libary to Generate 3d models of buildings / terrain using CadQuery.
 ---
 
 
-### Installation
+## Installation
 To install CQ Terrain directly from GitHub, run the following `pip` command:
 
 	pip install git+https://github.com/medicationforall/cqterrain
@@ -40,10 +40,20 @@ From the cloned cqterrain directory run.
 
 	pip install ./
 
+---
 
 ## Running Example Scripts
-* From the root of the project run one of example scripts:
+[example_runner.py](example_runner.py) runs all examples.
 
+``` bash
+C:\Users\<user>\home\3d\cqterrain>python example_runner.py
+```
+
+**OR**
+
+### Running individual examples
+* From the root of the project run one of the example scripts:
+  
 ``` bash
 C:\Users\<user>\home\3d\cqterrain>python ./example/stairs.py
 ```
