@@ -5,6 +5,10 @@ import example.minibase.slot
 import example.minibase.hexagon
 import example.minibase.minibase_group
 
+import example.roof.hip
+import example.roof.gable
+import example.roof.roof
+
 import example.tile.apricorn
 import example.tile.basketweave
 import example.tile.boltPanel
@@ -50,7 +54,6 @@ import example.greeble.spokedWheel
 import example.ladder
 import example.obelisk
 import example.pipe.pipe_corrugated
-import example.roof
 import example.building.room_with_tile
 import example.building.room
 import example.stairs

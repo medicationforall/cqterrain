@@ -1,40 +1,50 @@
 ## Main wip
 
 ## 1.0.0
-* Split window.py file out into it's own module with each function being it's own file.
+* Updated README.md
 * Renamed out directory to stl
-* moved spokedWheel from tile to greeble module
+* Removed old files
+* Split window.py file out into it's own module. Added annotations, examples, and documentation.
+  * casement
+  * cinquefoil
+  * cinquefoil_frame
+  * frame
+  * grill
+  * lattive_fancy
+  * lattice
+* Split roof.py file out into it's own module. Added annotations, examples, and documentation.
+  * angle
+  * gable
+  * hip
+  * shell
+  * tiles
+* Split out minibase.py methods into it's own module. Added annotations, examples, and documentation.
+  * circle
+  * ellipse
+  * Added hexagon
+  * make_magnet_outline
+  * recangle
+  * slot
+* Moved building files into their own module
+* moved spokedWheel from tile to greeble module and updated documentation
   * Moved greeble examples 
-* Added tile.truchet_triangle
-* Added tile.truchet_circle
 * Annotated modules:
   * tile
   * greeble
   * damage
   * window
   * pipe
-* Annotated files
   * Ladder
   * obelisk
-* Removed old files
-* Split out minibase methods into it's own module. Added annotations, and examples
-  * circle
-  * ellipse
-  * Added hexagon
-  * make_magnet_outline
-  * recangle
-  * slot  
-* Moved building files into their own module
-* Added documentation for minibase module.
-* Updated greeble documentation.
-* Updated README.md
-* Added window documentation and examples.
+  * roof
 * Added damage documentation.
 * Added pipe documentation.
 * Added misc documentation.
   * door
   * ladder
   * obelisk
+* Added tile.truchet_triangle
+* Added tile.truchet_circle 
 
 ## 0.3.3
 * Upped cadqueryhelper version 0.2.1
