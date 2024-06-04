@@ -71,8 +71,6 @@ import example.window.grill
 import example.window.lattice
 import example.window.lattice_fancy
 
-
-
 print('misc ')
 import example.door
 import example.ladder

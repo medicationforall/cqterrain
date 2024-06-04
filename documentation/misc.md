@@ -133,3 +133,14 @@ tiles = stone.make_stones(
 * [source](../src/cqterrain/stone.py)
 * [example](../example/stones.py)
 * [stl](../stl/stones.stl)
+
+## Support
+
+### parameters
+* length: float 
+* width: float 
+* height: float 
+* inner_height: float 
+* inner_length: float 
+* inner_width: float 
+* top_offset: float

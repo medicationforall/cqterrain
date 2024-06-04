@@ -56,6 +56,7 @@
   * ladder
   * obelisk
   * make_stones
+  * support
 * Added tile.truchet_triangle
 * Added tile.truchet_circle
 * Added example_runner.py

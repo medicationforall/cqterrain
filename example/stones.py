@@ -14,7 +14,7 @@ tiles = stone.make_stones(
     [6,6,2], 
     columns = 10, 
     rows = 3,
-    #seed = "test4"
+    seed = "test4"
 )
 
 #show_object(tiles)
