@@ -144,3 +144,21 @@ tiles = stone.make_stones(
 * inner_length: float 
 * inner_width: float 
 * top_offset: float
+
+``` python
+result = support(
+    length = 10, 
+    width = 10, 
+    height = 30, 
+    inner_height = 8, 
+    inner_length = 4, 
+    inner_width = 4, 
+    top_offset = 0
+)
+```
+
+![](image/misc/04.png)
+
+* [source](../src/cqterrain/support.py)
+* [example](../example/support.py)
+* [stl](../stl/support.stl)

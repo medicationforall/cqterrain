@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import cadquery as cq
+from cadqueryhelper import Base
 
 def _cut_slot(
         shape, 
@@ -44,7 +45,7 @@ def _outer_frame(
     frame = outline.cut(frame_cut)
     return frame
 
-class Door:
+class Door(Base):
     def __init__(
             self, 
             length:float = 25, 

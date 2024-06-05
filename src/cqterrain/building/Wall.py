@@ -13,74 +13,102 @@
 # limitations under the License.
 
 import cadquery as cq
-from cadqueryhelper import shape
-from cadqueryhelper import grid
+from cadqueryhelper import grid, Base
 import math
 
-class Wall:
+class Wall(Base):
     def __init__(self, 
                  length:float = 100, 
                  width:float = 3, 
                  height:float = 50, 
-                 inside_tile = None, 
-                 outside_tile = None
+                 inside_tile:cq.Workplane|None = None, 
+                 outside_tile:cq.Workplane|None = None
         ):
-        self.length = length
-        self.width = width
-        self.height = height
-        self.inside_tile = inside_tile
-        self.outside_tile = outside_tile
 
-        #make
-        self.wall = None
-        self.inside_grid = None
-        self.outside_grid  = None
-        self.inside_height = None
-        self.outside_height = None
+        # parameters
+        self.length:float = length
+        self.width:float = width
+        self.height:float = height
+        self.inside_tile:cq.Workplane|None = inside_tile
+        self.outside_tile:cq.Workplane|None = outside_tile
+
+        #parts
+        self.wall:cq.Workplane|None = None
+        self.inside_grid:cq.Workplane|None = None
+        self.outside_grid:cq.Workplane|None = None
 
     def make(self):
-        self.wall = shape.cube(self.length, self.width, self.height)
-        self.inside_grid, self.inside_height = self.__make_inside_tile_grid()
-        self.outside_grid, self.outside_height = self.__make_outside_tile_grid()
+        self.wall = cq.Workplane("XY").box(self.length, self.width, self.height)
+        self.inside_grid = self.__make_inside_tile_grid()
+        self.outside_grid = self.__make_outside_tile_grid()
+        
+    def _calculate_bounds(self, shape):
+        if shape:
+            bounds = shape.val().BoundingBox()
+            length = bounds.xlen
+            width = bounds.ylen
+            height = bounds.zlen
+            return (length, width, height)
+        else:
+            raise Exception('Could not resolve shape')
 
-    def __make_inside_tile_grid(self):
+
+    def __make_inside_tile_grid(self) -> cq.Workplane|None:
         if self.inside_tile:
-            bounds = self.inside_tile.val().BoundingBox()
-            inside_width = bounds.ylen
-            inside_length = bounds.xlen
-            inside_height = bounds.zlen
-            inside_columns = math.floor(self.height/inside_width)
-            inside_rows = math.floor(self.length/inside_length)
-            inside_grid = grid.make_grid(part=self.inside_tile, dim = [inside_width, inside_length], columns = inside_columns, rows = inside_rows)
-            inside_grid = inside_grid.rotate((1, 0, 0), (0, 0, 0), -90)
-            return inside_grid, inside_height
-        else:
-            return None, None
+            length, width, height = self._calculate_bounds(self.inside_tile)
 
-    def __make_outside_tile_grid(self):
-        if self.outside_tile:
-            bounds = self.outside_tile.val().BoundingBox()
-            outside_width = bounds.ylen
-            outside_length = bounds.xlen
-            outside_height = bounds.zlen
-            outside_columns = math.floor(self.height/outside_width)
-            outside_rows = math.floor(self.length/outside_length)
-            outside_grid = grid.make_grid(part=self.outside_tile, dim = [outside_width, outside_length], columns = outside_columns, rows = outside_rows)
-            outside_grid = outside_grid.rotate((1, 0, 0), (0, 0, 0), -90)
-            return outside_grid, outside_height
+            inside_columns = math.floor(self.height/width)
+            inside_rows = math.floor(self.length/length)
+            inside_grid = grid.make_grid(part=self.inside_tile, dim = [width, length], columns = inside_columns, rows = inside_rows)
+            inside_grid = inside_grid.rotate((1, 0, 0), (0, 0, 0), -90)
+            return inside_grid
         else:
-            return None, None
+            return None
+
+    def __make_outside_tile_grid(self)-> cq.Workplane|None:
+        if self.outside_tile:
+            length, width, height = self._calculate_bounds(self.outside_tile)
+            outside_columns = math.floor(self.height/width)
+            outside_rows = math.floor(self.length/length)
+            outside_grid = grid.make_grid(part=self.outside_tile, dim = [width, length], columns = outside_columns, rows = outside_rows)
+            outside_grid = outside_grid.rotate((1, 0, 0), (0, 0, 0), -90)
+            return outside_grid
+        else:
+            return None
+        
 
     def build(self):
+        scene = (
+            cq.Workplane("XY")
+            .union(self.wall)
+        )
+
+        if self.inside_grid:
+            length, width, height = self._calculate_bounds(self.inside_tile)
+            scene = scene.add(self.inside_grid.translate((0, -1*(self.width/2+height/2), 0)))
+
+        if self.outside_grid:
+            length, width, height = self._calculate_bounds(self.outside_tile)
+            scene = scene.add(self.outside_grid.translate((0, (self.width/2+height/2), 0)))
+
+        return scene
+
+    def build_assembly(self):
         wall_assembly = cq.Assembly()
         wall_assembly.add(self.wall, name="wall")
 
         if self.inside_grid:
-            wall_assembly.add(self.inside_grid, name="insideGrid" , loc=cq.Location(cq.Vector(0, -1*(self.width/2+self.inside_height/2), 0)))
+            length, width, height = self._calculate_bounds(self.inside_tile)
+            wall_assembly.add(
+                self.inside_grid, 
+                name="insideGrid", 
+                loc=cq.Location(cq.Vector(0, -1*(self.width/2+height/2), 0)))
 
         if self.outside_grid:
-            wall_assembly.add(self.outside_grid, name="outsideGrid" , loc=cq.Location(cq.Vector(0, (self.width/2+self.inside_height/2), 0)))
+            length, width, height = self._calculate_bounds(self.outside_tile)
+            wall_assembly.add(
+                self.outside_grid, 
+                name="outsideGrid", 
+                loc=cq.Location(cq.Vector(0, (self.width/2+height/2), 0)))
 
-        comp_wall = wall_assembly.toCompound()
-        scene = cq.Workplane("XY").add(comp_wall)
-        return scene
+        return wall_assembly

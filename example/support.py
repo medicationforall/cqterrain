@@ -11,4 +11,5 @@ result = support(
     top_offset = 0
 )
 
+#show_object(result)
 cq.exporters.export(result,'stl/support.stl')

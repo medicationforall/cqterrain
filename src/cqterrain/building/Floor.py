@@ -13,22 +13,32 @@
 # limitations under the License.
 
 import cadquery as cq
-from cadqueryhelper import shape
-from cadqueryhelper import grid
 import math
+from cadqueryhelper import shape, grid, Base
+from typing import Callable
 
-class Floor():
-    def __init__(self, length=100, width=100, height=3, tile=None, tile_padding=0):
-        self.length = length
-        self.width = width
-        self.height = height
-        self.tile = tile
-        self.tile_padding = tile_padding
 
-        self.floor = None
-        self.tile_grid = None
-        self.grid_height = None
-        self.operations = []
+class Floor(Base):
+    def __init__(
+            self, 
+            length:float = 100, 
+            width:float = 100, 
+            height:float = 3, 
+            tile:cq.Workplane|None = None, 
+            tile_padding:float = 0
+        ):
+        # parameters
+        self.length:float = length
+        self.width:float = width
+        self.height:float = height
+        self.tile:cq.Workplane|None = tile
+        self.tile_padding:float = tile_padding
+
+        # parts
+        self.floor:cq.Workplane|None = None
+        self.tile_grid:cq.Workplane|None = None
+        self.grid_height:float|None = None
+        self.operations:list[Callable[[cq.Workplane], cq.Workplane]] = []
 
     def add_operation(self, funct):
         #print('add_operation')
@@ -36,17 +46,18 @@ class Floor():
 
 
     def make(self):
-        self.floor = shape.cube(self.length, self.width, self.height)
+        self.floor = cq.Workplane("XY").box(self.length, self.width, self.height)
+
         self.tile_grid, self.grid_height = self.__make_tile_grid()
+
         if self.operations and len(self.operations) > 0:
-            #print('has operations')
             for op in self.operations:
                 self.floor = op(self.floor)
 
 
     def __make_tile_grid(self):
         if self.tile:
-            bounds = self.tile.val().BoundingBox()
+            bounds = self.tile.val().BoundingBox() #type: ignore
             t_width = bounds.ylen
             t_length = bounds.xlen
             t_height = bounds.zlen
@@ -60,7 +71,7 @@ class Floor():
 
     def build(self):
         floor_assembly = cq.Assembly()
-        if self.tile_grid:
+        if self.tile_grid and self.grid_height:
             #print('add tile ggrid')
             floor_assembly.add(self.tile_grid, name="tiles", loc=cq.Location(cq.Vector(0, 0, (self.grid_height/2) + (self.height/2))))
         floor_assembly.add(self.floor, name="floor")
@@ -72,3 +83,12 @@ class Floor():
         #return comp_floor
         scene = cq.Workplane("XY").add(comp_floor)
         return scene
+    
+    def build_assembly(self):
+        floor_assembly = cq.Assembly()
+        if self.tile_grid and self.grid_height:
+            #print('add tile ggrid')
+            floor_assembly.add(self.tile_grid, name="tiles", loc=cq.Location(cq.Vector(0, 0, (self.grid_height/2) + (self.height/2))))
+        floor_assembly.add(self.floor, name="floor")
+        return floor_assembly.add(self.floor, name="floor")
+

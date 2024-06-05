@@ -61,6 +61,10 @@
 * Added tile.truchet_circle
 * Added example_runner.py
 * Refactored make stones to no longer use an assembly
+* Building changes
+  * Refactored wall
+  * Changed example output paths to have building prefix
+  * Refactored Room
 
 ## 0.3.3
 * Upped cadqueryhelper version 0.2.1

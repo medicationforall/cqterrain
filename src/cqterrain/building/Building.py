@@ -13,28 +13,28 @@
 # limitations under the License.
 
 import cadquery as cq
-from cadqueryhelper import shape
+from cadqueryhelper import shape, Base
 from .. import stairs
 from . import Room
 
-class Building:
+class Building(Base):
     def __init__(
         self,
-        length=100,
-        width=100,
-        height=300,
-        stories=3,
-        has_stairs=False
+        length:float = 100,
+        width:float = 100,
+        height:float = 300,
+        stories:int = 3,
+        has_stairs:bool = False
     ):
         # properties
-        self.length = length
-        self.width = width
-        self.height = height
-        self._stories = stories
-        self._room_height = height/stories
+        self.length:float = length
+        self.width:float = width
+        self.height:float = height
+        self._stories:int = stories
+        self._room_height:float = height/stories
 
-        self.floors = [],
-        self.staircase = []
+        self.floors:list[Base] = []
+        self.staircase:list[cq.Workplane] = []
 
         #make room properties
         self.room = {}
@@ -62,7 +62,6 @@ class Building:
         self.door = {}
         self.door ['length'] = 25
         self.door ['height'] = self._room_height - 20
-
 
         self.has_stairs = has_stairs
         self.stair_type = 'wrap_exterior'

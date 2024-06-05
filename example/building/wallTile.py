@@ -2,13 +2,18 @@ import cadquery as cq
 from cqterrain.building import Wall
 from cadqueryhelper import shape
 
-cylinder = shape.cylinder(10, 5)
+cylinder = cq.Workplane("XY").cylinder(5, 10)
 star = shape.star()
 
-bb = Wall(inside_tile=cylinder, outside_tile=star, height=75)
-bb.make()
-part = bb.build()
-workspace = cq.Workplane('XY')
-workspace.add(part)
+bp_wall = Wall()
+bp_wall.length = 100
+bp_wall.width = 3
+bp_wall.height = 75
+bp_wall.inside_tile = cylinder
+bp_wall.outside_tile = star
 
-cq.exporters.export(workspace,'stl/wallTile.stl')
+bp_wall.make()
+result = bp_wall.build()
+
+#show_object(result)
+cq.exporters.export(result,'stl/building_wall_tile.stl')

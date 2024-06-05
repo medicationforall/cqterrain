@@ -12,7 +12,14 @@ create = ['tower1', 'tower2', 'entrance']
 
 floor_tile = tile.octagon_with_dots()
 
-def custom_windows(wall, length, width, height, count, padding):
+def custom_windows(
+        wall, 
+        length, 
+        width, 
+        height, 
+        count, 
+        padding
+    ):
     window_cutout = cq.Workplane().box(length, width, height)
     window_cut_series = series(window_cutout, count, length_offset = padding)
 
@@ -152,4 +159,4 @@ if cq_editor_show:
     show_object(scene)
 
 if export_to_file:
-    cq.exporters.export(scene,'stl/deadzone_building.stl')
+    cq.exporters.export(scene,'stl/building_deadzone.stl')

@@ -26,4 +26,4 @@ room = bp_room.build()
 
 
 #show_object(room)
-cq.exporters.export(room,'stl/room_with_tile.stl')
+cq.exporters.export(room,'stl/building_room_with_tile.stl')

@@ -3,17 +3,20 @@ from cqterrain.building import Floor
 from cadqueryhelper import shape
 
 cone = shape.cone()
-cube = shape.cube()
-cylinder = shape.cylinder(12, 20)
+cube = cq.Workplane("XY").box(5,5,5)
+cylinder = cq.Workplane("XY").cylinder(20, 12)
 
-bp = Floor(tile=cylinder, width=200)
-bp.make()
-f = bp.build()
-workspace = cq.Workplane('XY')
-workspace.add(f)
+bp_floor = Floor(tile=cylinder, width=200)
+bp_floor.length = 100 
+bp_floor.width = 100
+bp_floor.height = 3 
+bp_floor.tile = cylinder 
+bp_floor.tile_padding = 0
 
-print('create floorTile.stl')
-cq.exporters.export(workspace,'stl/floorTile.stl')
+bp_floor.make()
+result = bp_floor.build()
 
-#if f.metadata:
-#    print(f.metadata)
+#show_object(floor_ex)
+cq.exporters.export(result,'stl/building_floorTile.stl')
+
+

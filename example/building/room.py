@@ -1,21 +1,23 @@
 import cadquery as cq
 from  cqterrain.building  import Room
 
-ex = Room(
-    length=104,
-    width=79,
-    height=40,
-    wall_width=4,
-    floor_height=3,
-    floor_padding=2
-)
+bp_room = Room()
+bp_room.length= 120
+bp_room.width = 80
+bp_room.height= 50
+bp_room.wall_width = 3
+bp_room.floor_height = 3
+bp_room.floor_padding = 0
+bp_room.floor_tile = None
+bp_room.floor_tile_padding = 0
+bp_room.style = "office"
+bp_room.window_count= 1
+bp_room.door_walls = [False, True, False, False]
+bp_room.window_walls = [True, False, True, True]
+bp_room.build_walls = [True, True, True, True]
 
-ex.make()
-part = ex.build()
+bp_room.make()
+result = bp_room.build()
 
-# Add the stairs to a workplane.
-workspace = cq.Workplane('XY')
-workspace.add(part)
-
-# Write to stl file.
-cq.exporters.export(workspace,'stl/room.stl')
+#show_object(room_ex)
+cq.exporters.export(result,'stl/building_room.stl')

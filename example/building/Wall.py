@@ -1,10 +1,16 @@
 import cadquery as cq
 from cqterrain.building import Wall
+from cadqueryhelper import shape
 
-bb = Wall()
-bb.make()
-wall = bb.build()
-workspace = cq.Workplane('XY')
-workspace.add(wall)
+bp_wall = Wall()
+bp_wall.length = 100
+bp_wall.width = 3
+bp_wall.height = 50
+bp_wall.inside_tile = None
+bp_wall.outside_tile = None
 
-cq.exporters.export(workspace,'stl/wall.stl')
+bp_wall.make()
+result = bp_wall.build()
+
+#show_object(result)
+cq.exporters.export(result,'stl/building_wall.stl')

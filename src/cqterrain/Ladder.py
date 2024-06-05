@@ -13,9 +13,9 @@
 # limitations under the License.
 
 import cadquery as cq
-from cadqueryhelper import series, Base
 import math
 from typing import Callable
+from cadqueryhelper import series, Base
 
 def _make_side_rail(
         width:float, 
