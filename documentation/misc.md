@@ -1,5 +1,32 @@
 # Miscellaneous
 
+## Board
+### parameters
+* length: float
+* width: float
+* height: float
+* x_count: int
+* y_count: int
+* shell: float
+* height_offset: float
+
+``` python
+board_bp = Board()
+board_bp.length = 260
+board_bp.width = 260
+board_bp.height = 8
+board_bp.x_count = 8
+board_bp.y_count = 8
+board_bp.shell = 1.5
+board_bp.height_offset = 2.5
+```
+
+![](image/misc/05.png)
+
+* [source](../src/cqterrain/board.py)
+* [example](../example/board.py)
+* [stl](../stl/board_ex_full.stl)
+
 ## Door
 ### parameters
 * length: float 

@@ -72,6 +72,7 @@ import example.window.lattice
 import example.window.lattice_fancy
 
 print('misc ')
+import example.board
 import example.door
 import example.ladder
 import example.obelisk

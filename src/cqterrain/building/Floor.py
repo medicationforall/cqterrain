@@ -45,7 +45,8 @@ class Floor(Base):
         self.operations.append(funct)
 
 
-    def make(self):
+    def make(self, parent = None):
+        super().make(parent)
         self.floor = cq.Workplane("XY").box(self.length, self.width, self.height)
 
         self.tile_grid, self.grid_height = self.__make_tile_grid()
@@ -69,22 +70,18 @@ class Floor(Base):
         else:
             return None, None
 
-    def build(self):
-        floor_assembly = cq.Assembly()
+    def build(self) -> cq.Workplane:
+        super().build()
+        scene = (
+            cq.Workplane("XY").union(self.floor)
+        )
+
         if self.tile_grid and self.grid_height:
-            #print('add tile ggrid')
-            floor_assembly.add(self.tile_grid, name="tiles", loc=cq.Location(cq.Vector(0, 0, (self.grid_height/2) + (self.height/2))))
-        floor_assembly.add(self.floor, name="floor")
-        comp_floor = floor_assembly.toCompound()
+            scene = scene.union(self.tile_grid.translate((0, 0, (self.grid_height/2) + (self.height/2))))
 
-        #meta = {'type':'floor', 'height':tile_height + height, 'length':length, 'width':width}
-        #comp_floor.metadata = meta
-
-        #return comp_floor
-        scene = cq.Workplane("XY").add(comp_floor)
         return scene
     
-    def build_assembly(self):
+    def build_assembly(self) ->cq.Assembly:
         floor_assembly = cq.Assembly()
         if self.tile_grid and self.grid_height:
             #print('add tile ggrid')

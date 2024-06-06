@@ -62,7 +62,8 @@ class Ladder(Base):
         self.rung:cq.Workplane|None = None
         self.rungs:cq.Workplane|None = None
 
-    def make(self):
+    def make(self, parent=None):
+        super().make(parent)
         self.outline = cq.Workplane("XY").box(
             self.length, 
             self.width, 
@@ -92,7 +93,8 @@ class Ladder(Base):
         self.side_rails.append(side_rail_left)
         self.side_rails.append(side_rail_right)
 
-    def build(self):
+    def build(self) -> cq.Workplane:
+        super().build()
         combined = (cq.Workplane("XY")
         .union(self.side_rails[0])
         .union(self.side_rails[1])

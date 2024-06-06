@@ -83,12 +83,14 @@ class Door(Base):
             .translate((0,0,-1*(self.frame_height/2)))
          )
 
-    def make(self):
+    def make(self, parent = None):
+        super().make(parent)
         self.make_outline()
         self.make_out_frame()
         self.make_inner_door()
 
-    def build(self):
+    def build(self) -> cq.Workplane:
+        super().build()
         combined = cq.Workplane("XY")
 
         if self.frame and self.inner_door:

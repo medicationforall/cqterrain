@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import cadquery as cq
-from cadqueryhelper import shape, Base
+from cadqueryhelper import Base
 from .. import stairs
 from . import Room
 
@@ -96,7 +96,8 @@ class Building(Base):
         self._room_height = self.height/self._stories
 
 
-    def make(self):
+    def make(self, parent = None):
+        super().make(parent)
         self.make_stories()
 
         if self.has_stairs:
@@ -178,10 +179,21 @@ class Building(Base):
             self.stairs.append(stair)
 
 
-    def build(self):
-        '''
-        lifecycle
-        '''
+    def build(self) -> cq.Workplane:
+        super().build()
+        scene = cq.Workplane("XY")
+
+        for i, floor in enumerate(self.floors):
+            scene = scene.union(floor.build().translate((0, 0, i*self._room_height))) #type: ignore
+
+        if self.has_stairs:
+            for i, stair_case in enumerate(self.stairs):
+                scene = scene.union(stair_case.translate((0,0,0)))
+
+        return scene
+    
+    def build_assembly(self) -> cq.Assembly:
+        super().build()
         building_assembly = cq.Assembly()
 
         # could be a series
@@ -192,5 +204,4 @@ class Building(Base):
             for i, stair_case in enumerate(self.stairs):
                 building_assembly.add(stair_case, name=f"stair{i}", loc=cq.Location(cq.Vector(0, 0, 0)))
 
-        comp_building = building_assembly.toCompound()
-        return comp_building#, building_assembly
+        return building_assembly

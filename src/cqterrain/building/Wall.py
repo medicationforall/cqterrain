@@ -37,7 +37,8 @@ class Wall(Base):
         self.inside_grid:cq.Workplane|None = None
         self.outside_grid:cq.Workplane|None = None
 
-    def make(self):
+    def make(self, parent = None):
+        super().make(parent)
         self.wall = cq.Workplane("XY").box(self.length, self.width, self.height)
         self.inside_grid = self.__make_inside_tile_grid()
         self.outside_grid = self.__make_outside_tile_grid()
@@ -77,7 +78,8 @@ class Wall(Base):
             return None
         
 
-    def build(self):
+    def build(self) -> cq.Workplane:
+        super().build()
         scene = (
             cq.Workplane("XY")
             .union(self.wall)
@@ -93,7 +95,7 @@ class Wall(Base):
 
         return scene
 
-    def build_assembly(self):
+    def build_assembly(self) -> cq.Assembly:
         wall_assembly = cq.Assembly()
         wall_assembly.add(self.wall, name="wall")
 

@@ -162,7 +162,9 @@ class Room(Base):
             wall = wall.translate((0,0,-1*(height/2)))
         return wall
 
-    def make(self):
+    def make(self, parent = None):
+        super().make(parent)
+
         # make floor
         self.floor = self.__make_floor()
 
@@ -185,7 +187,8 @@ class Room(Base):
         self.walls.append(w3_rotated)
         self.walls.append(w4_rotated)
 
-    def build(self):
+    def build(self) -> cq.Workplane:
+        super().build()
         scene = cq.Workplane("XY")
 
         if self.floor:
@@ -227,7 +230,7 @@ class Room(Base):
         return scene
     
 
-    def build_assembly(self):
+    def build_assembly(self) -> cq.Assembly:
         room_assembly = cq.Assembly()
 
         if self.floor:
