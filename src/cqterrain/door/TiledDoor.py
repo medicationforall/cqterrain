@@ -163,7 +163,7 @@ class TiledDoor(Base):
                         0,
                         -handle_y_translate))
                     )
-                    .add(self.handle.translate((
+                    .union(self.handle.translate((
                         -handle_x_translate,
                         0,
                         -handle_y_translate))

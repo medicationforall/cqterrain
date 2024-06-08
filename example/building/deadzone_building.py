@@ -2,6 +2,7 @@ import cadquery as cq
 from cadqueryhelper import series, shape
 from cqterrain.building import Building, Room
 from cqterrain import tile, window
+from cqterrain.door import TiledDoor
 
 render_floor = False
 cq_editor_show=False
@@ -33,6 +34,32 @@ def custom_windows(
 
     return w
 
+def make_custom_door(wall, length, width, height, floor_height):
+    bottom = wall.faces("-Z").val()
+    cutout = (
+        cq.Workplane(bottom.Center())
+        .box(length, width, height)
+        .translate((0,0,(height/2)+floor_height))
+    )
+    
+    door_bp = TiledDoor()
+    door_bp.length = length
+    door_bp.width = width-.5
+    door_bp.height = height
+    door_bp.make()
+    door_instance = door_bp.build()
+    
+    def add_door(loc: cq.Location) -> cq.Shape:
+        return door_instance.translate((0,0,(height/2)+floor_height)).val().located(loc) #type: ignore
+        
+        
+    door_wrapper = cq.Workplane(bottom.Center()).eachpoint(callback = add_door)
+
+    #log(bottom.Center())
+    wall = wall.cut(cutout).union(door_wrapper)
+    #new_wall = cq.Workplane("XY").box(length, width, height)
+    return wall
+
 def make_entrance():
     bp = Building(length=75, width=75, height=75, stories=1, has_stairs=True)
     bp.stair_stories = 1
@@ -44,6 +71,7 @@ def make_entrance():
         bp.room['floor_tile_padding'] = .5
     bp.window['count'] = 2
     bp.room['make_custom_windows'] = custom_windows
+    bp.room['make_custom_door'] = make_custom_door
 
     bp.stair['length_padding'] = 25
     bp.stair['width']=25
@@ -88,6 +116,7 @@ def make_tower():
     bp.room['door_walls'] = [True, False, False, False]
     bp.room['window_walls'] = [False, True, True, False]
     bp.room['make_custom_windows'] = custom_windows
+    bp.room['make_custom_door'] = make_custom_door
     if render_floor:
         bp.room['floor_tile'] = floor_tile
         bp.room['floor_tile_padding'] = 0.5
@@ -107,6 +136,7 @@ def make_tower2():
     bp = Building(length=75, width=75, height=150, stories=2)
     bp.room['build_walls']= [True,True,False,True]
     bp.room['make_custom_windows'] = custom_windows
+    bp.room['make_custom_door'] = make_custom_door
     if render_floor:
         bp.room['floor_tile'] = floor_tile
         bp.room['floor_tile_padding'] = 0.5
