@@ -27,36 +27,6 @@ board_bp.height_offset = 2.5
 * [example](../example/board.py)
 * [stl](../stl/board_ex_full.stl)
 
-## Door
-### parameters
-* length: float 
-* width: float 
-* frame_length: float 
-* frame_height: float 
-* inner_width: float 
-* height: float 
-* x_offset: float
-
-``` python
-    bp_door = Door()
-    bp_door.length = 25
-    bp_door.width = 8
-    bp_door.frame_length = 3 
-    bp_door.frame_height = 4
-    bp_door.inner_width = 3
-    bp_door.height  = 40
-    bp_door.x_offset = 0
-
-    bp_door.make()
-    result = bp_door.build()
-```
-
-![](image/misc/01.png)
-
-* [source](../src/cqterrain/door.py)
-* [example](../example/door.py)
-* [stl](../stl/door.stl)
-
 ## Ladder
 ### parameters
 * length: float

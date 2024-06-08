@@ -7,6 +7,7 @@
 * Documented all modules
 * example_runner.py runs all examples
 * Updgraded cadqueryhelper version 1.1.1
+* Added missing license blocks
 
 ## Breaking
 * I believe roof import path may have changed.
@@ -16,7 +17,7 @@
 * Updated README.md
 * Renamed out directory to stl
 * Removed old files
-* Split window.py file out into it's own module. Added annotations, examples, and documentation.
+* Split window.py file out into it's own package. Added annotations, examples, and documentation.
   * casement
   * cinquefoil
   * cinquefoil_frame
@@ -24,23 +25,24 @@
   * grill
   * lattive_fancy
   * lattice
-* Split roof.py file out into it's own module. Added annotations, examples, and documentation.
+* Split roof.py file out into it's own package. Added annotations, examples, and documentation.
   * angle
   * gable
   * hip
   * shell
   * tiles
-* Split out minibase.py methods into it's own module. Added annotations, examples, and documentation.
+* Split out minibase.py methods into it's own package. Added annotations, examples, and documentation.
   * circle
   * ellipse
   * Added hexagon
   * make_magnet_outline
   * recangle
   * slot
-* Moved building files into their own module
-* moved spokedWheel from tile to greeble module and updated documentation
-  * Moved greeble examples 
-* Annotated modules:
+* Moved building files into their own package
+* Moved spokedWheel from tile to greeble package and updated documentation
+  * Moved greeble examples
+* Made door into it's own package
+* Annotated packages:
   * tile
   * greeble
   * damage
@@ -65,6 +67,9 @@
   * Refactored wall
   * Changed example output paths to have building prefix
   * Refactored Room
+* Added Board; with example, and documenation
+* Added gothic_one greeble, with example and documentation
+* Added pull_hande door, with example and documentation
 
 ## 0.3.3
 * Upped cadqueryhelper version 0.2.1

@@ -16,7 +16,7 @@ from cadqueryhelper import series, shape, Base
 from typing import Callable
 from . import Floor
 from . import Wall
-from .. import Door
+from ..door import Door
 
 def _make_custom_windows(wall, length, width, height, count, padding):
     window_cutout = cq.Workplane().box(length, width, height)

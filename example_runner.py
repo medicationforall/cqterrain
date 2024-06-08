@@ -16,7 +16,13 @@ import example.damage.damage_blast_set_large
 import example.damage.damage_blast_set_medium
 import example.damage.damage_blast
 
+print('door example')
+import example.door.door
+import example.door.pull_handle
+import example.door.tiled_door
+
 print('greeble examples')
+import example.greeble.gothic_one
 import example.greeble.vent
 import example.greeble.spokedWheel
 
@@ -73,7 +79,6 @@ import example.window.lattice_fancy
 
 print('misc ')
 import example.board
-import example.door
 import example.ladder
 import example.obelisk
 import example.stones

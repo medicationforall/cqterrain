@@ -1,5 +1,45 @@
 # Greebles
 
+## Gothic One
+
+Design is mirrored on both sides.
+
+### Parameters
+* length: float
+* width: float
+* height: float
+* frame_size: float
+* pane_width: float
+* inside_frame_width: float
+* inside_frame_size: float
+* diamond_frame_size: float
+* diamond_frame_width: float
+* diamond_inside: float
+
+``` python
+import cadquery as cq
+from cqterrain.greeble import gothic_one
+
+result = gothic_one(
+    length = 15,
+    width = 4,
+    height = 20,
+    frame_size = .5,
+    pane_width = 1,
+    inside_frame_width = -.5,
+    inside_frame_size = .5,
+    diamond_frame_size = 1,
+    diamond_frame_width = -.25,
+    diamond_inside = -.5
+)
+```
+
+![](image/greeble/04.png)<br />
+
+* [source](../src/cqterrain/greeble/gothic_one.py)
+* [example](../example/greeble/gothic_one.py)
+* [stl](../stl/greeble_gothic_one.stl)
+
 ## Spoked Wheel
 ### Parameters
 * radius: float

@@ -1,5 +1,5 @@
 import cadquery as cq
-from  cqterrain  import Door
+from  cqterrain.door  import Door
 
 bp_door = Door()
 bp_door.length = 25

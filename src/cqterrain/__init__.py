@@ -1,5 +1,4 @@
 # Classes
-from .Door import Door
 from .Ladder import Ladder
 from .Board import Board
 
