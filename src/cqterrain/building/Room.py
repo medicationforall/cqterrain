@@ -145,7 +145,7 @@ class Room(Base):
             wall = wall.cut(window_series).add(window_series2)
 
         if door_wall and self.make_custom_door:
-            w = self.make_custom_door(wall, self.door['length'], self.door['width'], self.door['height'], self.floor_height)
+            wall = self.make_custom_door(wall, self.door['length'], self.door['width'], self.door['height'], self.floor_height)
         elif door_wall:
             #print('attempt to make door')
             #zero wall

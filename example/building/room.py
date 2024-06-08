@@ -19,5 +19,5 @@ bp_room.build_walls = [True, True, True, True]
 bp_room.make()
 result = bp_room.build()
 
-#show_object(room_ex)
+#show_object(result)
 cq.exporters.export(result,'stl/building_room.stl')
