@@ -7,5 +7,6 @@ result = tile.truchet_triangle(
     height = 4, 
     min_height = 2
 )
+
 #show_object(result)
 cq.exporters.export(result,'stl/tile_truchet_triangle.stl')

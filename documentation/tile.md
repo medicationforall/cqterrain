@@ -510,6 +510,64 @@ show_object(union_grid)
 * [example](../example/tile/truchet_circle_grid_randomized.py)
 * [stl](../stl/tile_truchet_circle_randomized_grid.stl)
 
+## Truchet Triangle
+
+### Parameters
+* length: float
+* width: float
+* height: float 
+* min_height: float
+
+``` python
+import cadquery as cq
+from cqterrain import tile
+
+result = tile.truchet_triangle(
+    length = 10, 
+    width = 10, 
+    height = 4, 
+    min_height = 2
+)
+```
+
+![](image/tile/29.png)<br />
+
+* [source](../src/cqterrain/tile/truchet_triangle.py)
+* [example](../example/tile/truchet_triangle.py)
+* [stl](../stl/tile_truchet_triangle.stl)
+
+### Randomized Grid Example
+
+``` python
+import cadquery as cq
+from cadqueryhelper import randomized_rotation_grid
+from cqterrain import tile
+
+triangle_tile = tile.truchet_triangle(
+    length = 10, 
+    width = 10, 
+    height = 4, 
+    min_height = 2
+)
+
+result = randomized_rotation_grid(
+        shape = triangle_tile, 
+        seed = "test3",
+        rotate_increment = 90, 
+        rotate_min = 0, 
+        rotate_max = 360,
+        x_count = 5,
+        y_count = 5,
+        x_spacing = 10,
+        y_spacing = 10
+)
+```
+
+![](image/tile/20.png)<br />
+
+* [example](../example/tile/truchet_triangle_grid_randomized.py)
+* [stl](../stl/tile_truchet_triangle_randomized_grid.stl)
+
 ## Windmill
 ### Parameters
 * tile_size

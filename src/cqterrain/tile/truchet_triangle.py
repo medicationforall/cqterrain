@@ -15,11 +15,11 @@
 import cadquery as cq
 
 def truchet_triangle(
-        length:float = 10, 
-        width:float = 10, 
-        height:float = 4, 
-        min_height:float = 2
-    ) -> cq.Workplane:
+    length:float = 10, 
+    width:float = 10, 
+    height:float = 4, 
+    min_height:float = 2
+) -> cq.Workplane:
     
     base = cq.Workplane("XY").box(length, width, min_height).translate((0,0,-(min_height/2)))
     pts = [(0,0),(length,0),(length,width)]

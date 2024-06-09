@@ -6,7 +6,7 @@
 * Added type annotations
 * Documented all modules
 * example_runner.py runs all examples
-* Updgraded cadqueryhelper version 1.1.1
+* Updgraded cadqueryhelper version 1.1.2
 * Added missing license blocks
 
 ## Breaking
