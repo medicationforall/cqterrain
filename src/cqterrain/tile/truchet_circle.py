@@ -21,7 +21,7 @@ def truchet_circle(
         height:float = 4,
         radius:float = 1.5, 
         base_height:float = 2,
-        shift_design:float=0 #hack to deal with no square tiles
+        shift_design:float=0 #hack to deal with non square tiles
     ) -> cq.Workplane:
     circle = cq.Workplane('XY').circle(radius)
     torus_radius = length if length>width else width
