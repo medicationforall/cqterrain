@@ -1,6 +1,10 @@
 # cqterrain
 Helper Libary to Generate 3d models of buildings / terrain using CadQuery.
 
+[![](documentation/image/building/17.png)](documentation/building.md)<br />
+
+[![](documentation/image/tile/30.png)](documentation/tile.md)
+
 ## Documentation
 * [Building](documentation/building.md) 
 * [Damage](documentation/damage.md)
@@ -13,7 +17,6 @@ Helper Libary to Generate 3d models of buildings / terrain using CadQuery.
 * [Tile](documentation/tile.md)
 * [Window](documentation/window.md)
 * [Misc](documentation/misc.md) aka everything else
-  * door
   * ladder
   * obelisk
   * stones

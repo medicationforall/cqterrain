@@ -18,3 +18,5 @@ from .carton import carton
 from .carton2 import carton2
 from .truchet_triangle import truchet_triangle
 from .truchet_circle import truchet_circle
+
+from .tile_plate import TilesPlate

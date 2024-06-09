@@ -76,6 +76,7 @@
 * Documented Truchet Circle tile.
 * Documented Truchet Triange tile. - that's a rabbit hole.
 * Fix rivet_round tile padding parameter now does something.
+* Added TilesPlate to tile package
 
 ## 0.3.3
 * Upped cadqueryhelper version 0.2.1

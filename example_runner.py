@@ -68,6 +68,7 @@ import example.tile.truchet_triangle_grid_example
 import example.tile.truchet_circle
 import example.tile.truchet_circle_grid_randomized
 import example.tile.windmill
+import example.tile.tile_plate
 
 print('window examples')
 import example.window.casement
