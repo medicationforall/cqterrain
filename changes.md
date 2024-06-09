@@ -74,6 +74,8 @@
 * Added pull_hande door, with example and documentation
 * Fixed tile rivet bug.
 * Documented Truchet Circle tile.
+* Documented Truchet Triange tile. - that's a rabbit hole.
+* Fix rivet_round tile padding parameter now does something.
 
 ## 0.3.3
 * Upped cadqueryhelper version 0.2.1

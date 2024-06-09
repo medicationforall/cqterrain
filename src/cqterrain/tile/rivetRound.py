@@ -26,7 +26,7 @@ def __add_shape(
         nonlocal padding
         nonlocal height
         nonlocal rivet_height
-        return custom_shape.translate((-2,0,height/2+rivet_height/2)).val().located(loc) #type:ignore
+        return custom_shape.translate((-(2+padding),0,height/2+rivet_height/2)).val().located(loc) #type:ignore
     return add_shape
 
 def rivet_round(
