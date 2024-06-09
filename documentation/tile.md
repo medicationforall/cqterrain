@@ -283,6 +283,7 @@ result = tile.octagon_with_dots_2(
 ![](image/tile/04.png)<br />
 
 ## Plain
+Placeholder example tile 
 ### Parameters
 * length
 * width
@@ -443,6 +444,71 @@ result = tile.star(
 * [source](../src/cqterrain/tile/star.py)
 * [example](../example/tile/star.py)
 * [stl](../stl/tile_star.stl)
+
+## Truchet Circle
+
+### Parameters
+* length: float
+* width: float
+* height: float
+* radius: float
+* base_height: float
+* shift_design: float - Hack to deal with non square tiles
+
+``` python
+import cadquery as cq
+from cqterrain.tile import truchet_circle
+
+result = truchet_circle(
+    length = 10,
+    width = 10,
+    height = 4,
+    radius = 1.5, 
+    base_height = 2,
+    shift_design=0
+)
+```
+
+![](image/tile/27.png)<br />
+
+* [source](../src/cqterrain/tile/truchet_circle.py)
+* [example](../example/tile/truchet_circle.py)
+* [stl](../stl/tile_truchet_circle.stl)
+
+### Randomized grid example
+
+``` python
+import cadquery as cq
+from cqterrain.tile import truchet_circle
+from cadqueryhelper import randomized_rotation_grid
+
+example_tile = truchet_circle(
+    length=20,
+    width=20,
+    height=4,
+    radius=2, 
+    base_height=2.5,
+    shift_design=3
+)
+show_object(example_tile)
+
+#---------------------
+random_grid = randomized_rotation_grid(
+    example_tile,
+    x_spacing=20,
+    y_spacing=20,
+    x_count=10,
+    y_count=10,
+    seed='truchet'
+)
+result = cq.Workplane('XY').union(random_grid)
+show_object(union_grid)
+```
+
+![](image/tile/25.png)<br />
+
+* [example](../example/tile/truchet_circle_grid_randomized.py)
+* [stl](../stl/tile_truchet_circle_randomized_grid.stl)
 
 ## Windmill
 ### Parameters

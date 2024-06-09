@@ -7,8 +7,9 @@ result = tile.rivet(
     height = 2,
     padding = 1,
     internal_padding = 2.5,
-    rivet_height = 2.5,
+    rivet_height = .5,
     rivet_radius = .5
 )
 
+#show_object(result)
 cq.exporters.export(result,'stl/tile_rivet.stl')

@@ -19,7 +19,7 @@ def rivet(
     height:float = 2,
     padding:float = 1,
     internal_padding:float = 2.5,
-    rivet_height:float = 2.5,
+    rivet_height:float = .5,
     rivet_radius:float = .5
 ) -> cq.Workplane:
     tile = (
@@ -33,5 +33,7 @@ def rivet(
         .faces("not Y")
         .edges("Z")
         .cylinder(rivet_height, rivet_radius, combine=False)
-    )
-    return tile.add(internal_tile)
+    ).translate((0,0,(height/2)+(rivet_height/2)))
+    
+    #return internal_tile
+    return tile.union(internal_tile)

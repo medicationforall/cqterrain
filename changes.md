@@ -12,6 +12,8 @@
 ## Breaking
 * I believe roof import path may have changed.
 * stone.make_stones algorithm generates different outputs.
+* rivet tile now places its rivets on top of the tile face. 
+  * As opposed to inside the center of the object and just lackadaisically poking through.
 
 ### Details
 * Updated README.md
@@ -70,6 +72,8 @@
 * Added Board; with example, and documenation
 * Added gothic_one greeble, with example and documentation
 * Added pull_hande door, with example and documentation
+* Fixed tile rivet bug.
+* Documented Truchet Circle tile.
 
 ## 0.3.3
 * Upped cadqueryhelper version 0.2.1
