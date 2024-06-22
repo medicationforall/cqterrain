@@ -1,5 +1,8 @@
 ## Main wip
 
+## 1.0.2
+* Updgraded cadqueryhelper version 1.2.1
+
 ## 1.0.1
 * Updgraded cadqueryhelper version 1.2.0
 
