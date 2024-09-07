@@ -1,5 +1,14 @@
 ## Main wip
 
+## 1.1.0
+* Added bridge module
+  * Added BaseRamp
+  * Added BaseStraight
+  * Added Bridge orchestrator
+  * Added Examples
+  * Added Documentation
+* Updated README.md
+
 ## 1.0.4
 * Updgraded cadqueryhelper version 1.2.3
   * Upped cadquery to version 2.4.x 

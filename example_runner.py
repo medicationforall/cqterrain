@@ -1,3 +1,7 @@
+print('bridge examples')
+import example.bridge.bridge
+import example.bridge.base_ramp
+import example.bridge.base_straight
 
 print('building examples')
 import example.building.building
@@ -85,3 +89,5 @@ import example.ladder
 import example.obelisk
 import example.stones
 import example.support
+
+
