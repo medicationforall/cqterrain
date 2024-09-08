@@ -5,6 +5,8 @@
   * Added example
   * Added Documentation
 * Fixed bridge BaseStraight example
+* Added bridge TileBridge
+  * Added example
 
 ## 1.1.0
 * Added bridge module

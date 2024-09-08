@@ -3,7 +3,7 @@ from . import Bridge, TileStraight
 class TileBridge(Bridge):
     def __init__(self):
         super().__init__()
-        self.bp_straight = TileStraight()
+        self.bp_straight:TileStraight = TileStraight()
         
     def make(self, parent=None):
         super().make(parent)

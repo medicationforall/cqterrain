@@ -3,6 +3,7 @@ import example.bridge.bridge
 import example.bridge.base_ramp
 import example.bridge.base_straight
 import example.bridge.tile_straight
+import example.bridge.tile_bridge
 
 print('building examples')
 import example.building.building
