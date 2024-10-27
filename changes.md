@@ -1,7 +1,13 @@
 ## Main wip
 
 ## 1.1.2
+* Added damage uneven plane
+  * Added documentation
+  * Added examples 
 * Added HeavyDoor to door module
+* Updgraded cadqueryhelper version 1.2.5
+  * Added uneven wave
+
 
 ## 1.1.1
 * Added bridge TileStraight

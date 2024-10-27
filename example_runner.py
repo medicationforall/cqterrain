@@ -21,6 +21,9 @@ print('damage examples')
 import example.damage.damage_blast_set_large
 import example.damage.damage_blast_set_medium
 import example.damage.damage_blast
+import example.damage.uneven_plane_safe
+import example.damage.uneven_plane_risky
+import example.damage.uneven_plane_grid
 
 print('door example')
 import example.door.door
