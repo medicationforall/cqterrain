@@ -1,5 +1,8 @@
 ## Main wip
 
+## 1.1.2
+* Added HeavyDoor to door module
+
 ## 1.1.1
 * Added bridge TileStraight
   * Added example

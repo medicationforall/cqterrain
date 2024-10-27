@@ -26,6 +26,7 @@ print('door example')
 import example.door.door
 import example.door.pull_handle
 import example.door.tiled_door
+import example.door.heavy_door
 
 print('greeble examples')
 import example.greeble.gothic_one

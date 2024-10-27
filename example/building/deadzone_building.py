@@ -2,11 +2,11 @@ import cadquery as cq
 from cadqueryhelper import series, shape
 from cqterrain.building import Building, Room
 from cqterrain import tile, window
-from cqterrain.door import TiledDoor
+from cqterrain.door import TiledDoor, HeavyDoor
 
 render_floor = False
-cq_editor_show=False
-export_to_file=True
+cq_editor_show= False
+export_to_file= True
 
 create = ['tower1', 'tower2', 'entrance']
 #create = [ 'entrance']
@@ -38,11 +38,11 @@ def make_custom_door(wall, length, width, height, floor_height):
     bottom = wall.faces("-Z").val()
     cutout = (
         cq.Workplane(bottom.Center())
-        .box(length, width, height)
+        .box(16, width, height)
         .translate((0,0,(height/2)+floor_height))
     )
     
-    door_bp = TiledDoor()
+    door_bp = HeavyDoor()
     door_bp.length = length
     door_bp.width = width-.5
     door_bp.height = height
