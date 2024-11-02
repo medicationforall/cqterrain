@@ -54,6 +54,13 @@ import example.roof.roof
 
 print('stairs examples')
 import example.stairs.stairs
+import example.stairs.round.combined_greebled
+import example.stairs.round.combined_plain
+import example.stairs.round.combined_ramp
+import example.stairs.round.greebled_stairs
+import example.stairs.round.outline
+import example.stairs.round.plain_stairs
+import example.stairs.round.ramp
 
 print('tile examples')
 import example.tile.apricorn

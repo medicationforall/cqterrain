@@ -5,6 +5,11 @@
 * Moved stones into material module
 * Added Material.md documentation
 * Added documentation.md index
+* Added stairs round module, documentation, and examples
+  * Added greebled_stairs
+  * Added outline
+  * Added plain stairs
+  * Added Ramp 
 
 ## 1.1.2
 * Added damage uneven plane

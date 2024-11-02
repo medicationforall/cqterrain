@@ -170,3 +170,244 @@ ex = stairs(
 ```
 
 ![](image/stairs/06.png)
+
+---
+
+## Round
+
+## Greebled Stairs
+
+### parameters
+* height: float
+* inner_diameter: float
+* diameter: float
+* stair_height: float|None
+* stair_count: int|None
+* inside_margin: float
+* debug: bool
+
+``` python
+import cadquery as cq
+from cqterrain.stairs.round import greebled_stairs
+
+stairs = greebled_stairs(
+    stair_count = 12,
+    height = 75,
+    inner_diameter = 75,
+    diameter = 75 + 55, 
+    debug = False
+).translate((0,0,(75)/2))
+show_object(stairs)
+```
+
+![](image/stairs/08.png)
+
+* [source](../src/cqterrain/stairs/round/greebled_stairs.py)
+* [example](../example/stairs/round/greebled_stairs.py)
+* [stl](../stl/stairs_round_greebled_stairs.stl)
+
+
+### Combined with ramp example
+
+``` python
+import cadquery as cq
+from cqterrain.stairs.round import ramp, greebled_stairs
+
+stairs = greebled_stairs(
+    stair_count = 12,
+    height = 75,
+    inner_diameter = 75,
+    diameter = 75 + 55, 
+    debug = False
+).translate((0,0,(75)/2))
+
+round_ramp = ramp(
+    stair_count = 12*2,
+    height = 75,
+    inner_diameter = 75,
+    diameter = 75 + 55,
+    distance_overlap = 0.5,
+    debug = False
+).translate((0,0,(75)/2))
+
+stairs = stairs.rotate((0,0,1),(0,0,0),7) 
+
+combined_stairs = stairs.cut(round_ramp)
+
+show_object(combined_stairs)
+```
+
+![](image/stairs/09.png)
+
+* [example](../example/stairs/round/combined_greebled.py)
+* [stl](../stl/stairs_round_combined_greebled.stl)
+----
+
+## Plain Stairs
+
+### parameters
+* height: float
+* inner_diameter: float
+* diameter: float
+* stair_height: float|None
+* stair_count: int|None
+* inside_margin: float
+* debug: bool
+
+``` python
+import cadquery as cq
+from cqterrain.stairs.round import plain_stairs
+
+stairs = plain_stairs(
+    stair_count = 12,
+    height = 75,
+    inner_diameter = 75,
+    diameter = 75 + 55, 
+    debug = False
+).translate((0,0,(75)/2))
+
+show_object(stairs)
+```
+
+![](image/stairs/10.png)
+
+* [source](../src/cqterrain/stairs/round/plain_stairs.py)
+* [example](../example/stairs/round/plain_stairs.py)
+* [stl](../stl/stairs_round_plain_stairs.stl)
+
+### Combined with ramp example
+
+``` python
+import cadquery as cq
+from cqterrain.stairs.round import ramp, plain_stairs
+
+stairs = plain_stairs(
+    stair_count = 12,
+    height = 75,
+    inner_diameter = 75,
+    diameter = 75 + 55, 
+    debug = False
+).translate((0,0,(75)/2))
+
+round_ramp = ramp(
+    stair_count = 12*2,
+    height = 75,
+    inner_diameter = 75,
+    diameter = 75 + 55,
+    distance_overlap = 0.5,
+    debug = False
+).translate((0,0,(75)/2))
+
+stairs = stairs.rotate((0,0,1),(0,0,0),7) 
+
+combined_stairs = stairs.cut(round_ramp)
+
+show_object(combined_stairs)
+```
+
+![](image/stairs/11.png)
+
+* [example](../example/stairs/round/combined_plain.py)
+* [stl](../stl/stairs_round_combined_plain.stl)
+
+---
+
+## Ramp
+
+### parameters
+* height: float
+* inner_diameter: float
+* diameter: float
+* stair_height: float|None
+* stair_count: int|None
+* distance_overlap: float
+* debug: bool
+
+``` python
+import cadquery as cq
+from cqterrain.stairs.round import ramp, greebled_stairs
+
+round_ramp = ramp(
+    stair_count = 12*2,
+    height = 75,
+    inner_diameter = 75,
+    diameter = 75 + 55,
+    distance_overlap = 0.5,
+    debug = False
+).translate((0,0,(75)/2))
+
+show_object(round_ramp)
+```
+
+![](image/stairs/12.png)
+
+* [source](../src/cqterrain/stairs/round/ramp.py)
+* [example](../example/stairs/round/ramp.py)
+* [stl](../stl/stairs_round_ramp.stl)
+
+### Combined with ramp example
+
+``` python
+import cadquery as cq
+from cqterrain.stairs.round import ramp
+
+round_ramp = ramp(
+    stair_count = 12*2,
+    height = 75,
+    inner_diameter = 75,
+    diameter = 75 + 55,
+    distance_overlap = 0.5,
+    debug = False
+).translate((0,0,(75)/2))
+
+cut_ramp = ramp(
+    stair_count = 12*2,
+    height = 75,
+    inner_diameter = 75,
+    diameter = 75 + 55,
+    distance_overlap = 0.5,
+    debug = False
+).translate((0,0,(75)/2))
+
+round_ramp = round_ramp.rotate((0,0,1),(0,0,0),7) 
+
+combined_ramp = round_ramp.cut(cut_ramp)
+
+show_object(combined_ramp)
+```
+
+![](image/stairs/13.png)
+
+* [example](../example/stairs/round/combined_ramp.py)
+* [stl](../stl/stairs_round_combined_ramp.stl)
+
+---
+
+## Outline
+
+### parameters
+* height: float
+* inner_diameter: float
+* diameter: float
+* rotate: float
+* debug: bool
+
+``` python
+import cadquery as cq
+from cqterrain.stairs.round import outline
+
+outline_ex = outline(
+    height = 75,
+    inner_diameter = 75,
+    diameter = 75 + 55,
+    rotate = 50
+).rotate((0,0,1),(0,0,0),45/2)
+
+show_object(outline_ex)
+```
+
+![](image/stairs/14.png)
+
+* [source](../src/cqterrain/stairs/round/outline.py)
+* [example](../example/stairs/round/outline.py)
+* [stl](../stl/stairs_round_outline.stl)
