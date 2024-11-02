@@ -1,5 +1,11 @@
 ## Main wip
 
+## 1.2.0
+* Refactored stairs into own module
+* Moved stones into material module
+* Added Material.md documentation
+* Added documentation.md index
+
 ## 1.1.2
 * Added damage uneven plane
   * Added documentation

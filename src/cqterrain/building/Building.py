@@ -14,7 +14,7 @@
 
 import cadquery as cq
 from cadqueryhelper import Base
-from .. import stairs
+from ..stairs import stairs
 from . import Room
 
 class Building(Base):

@@ -53,7 +53,7 @@ import example.roof.gable
 import example.roof.roof
 
 print('stairs examples')
-import example.stairs
+import example.stairs.stairs
 
 print('tile examples')
 import example.tile.apricorn
@@ -93,7 +93,7 @@ print('misc ')
 import example.board
 import example.ladder
 import example.obelisk
-import example.stones
+import example.material.stones
 import example.support
 
 

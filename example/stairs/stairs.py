@@ -1,5 +1,5 @@
 import cadquery as cq # Main cadquery library.
-from cqterrain import stairs #Import stair generator code.
+from cqterrain.stairs import stairs #Import stair generator code.
 
 # Make an instance of the stairs shape with the following parameters.
 ex = stairs(

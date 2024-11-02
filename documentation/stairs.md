@@ -1,9 +1,22 @@
 # Stairs Documentation
 
-## Example Usage
+## Stairs
+
+### parameters
+* length
+* width
+* height
+* run
+* stair_length_offset
+* stair_height
+* stair_height_offset
+* rail_width
+* rail_height
+* step_overlap
+
 ``` python
 import cadquery as cq # Main cadquery library.
-from cqterrain import stairs #Import stair generator code.
+from cqterrain.stairs import stairs #Import stair generator code.
 
 # Make an instance of the stairs shape with the following parameters.
 ex = stairs(
@@ -36,25 +49,19 @@ The code above:
 * Exports the shape to a file.
 * Prints the shapes metadata to the console.
 
-## Parameters
-* length
-* width
-* height
-* run
-* stair_length_offset
-* stair_height
-* stair_height_offset
-* rail_width
-* rail_height
-* step_overlap
-
-#### Annotation
 ![](image/stairs/07.png)
 
 # Notes
 * By default *step_overlap* is half of *rail_width* unless specified.
 * *stair_length_offset* is added or removed invisible space to *run*
 * *stair_height_offset* is added or removed invisible space to *stair_height*
+
+<br />
+
+
+* [source](../src/cqterrain/stairs/stairs.py)
+* [example](../example/stairs/stairs.py)
+* [stl](../stl/stairs.stl)
 
 
 ---

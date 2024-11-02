@@ -1,11 +1,11 @@
 import cadquery as cq
-from cqterrain import stone
+from cqterrain.material import make_stones
 
 
 tile = cq.Workplane("XY").box(5,5,2).chamfer(0.8)
 tile2 = cq.Workplane("XY").box(4,4,2).fillet(.5)
 tile3 = cq.Workplane("XY").box(3,6,2).chamfer(0.5)
-tiles = stone.make_stones(
+tiles = make_stones(
     [
         tile, 
         tile2, 
@@ -18,4 +18,4 @@ tiles = stone.make_stones(
 )
 
 #show_object(tiles)
-cq.exporters.export(tiles,'stl/stones.stl')
+cq.exporters.export(tiles,'stl/material_stones.stl')
