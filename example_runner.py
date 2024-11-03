@@ -36,6 +36,11 @@ import example.greeble.gothic_one
 import example.greeble.vent
 import example.greeble.spokedWheel
 
+print('material examples')
+import example.material.stones
+import example.material.uneven_blocks
+import example.material.uneven_centered_blocks
+
 print('minibase examples')
 import example.minibase.circle
 import example.minibase.ellipse
@@ -100,7 +105,4 @@ print('misc ')
 import example.board
 import example.ladder
 import example.obelisk
-import example.material.stones
 import example.support
-
-

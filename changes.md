@@ -2,8 +2,11 @@
 
 ## 1.2.0
 * Refactored stairs into own module
-* Moved stones into material module
-* Added Material.md documentation
+* Moved stones into material module, and Added Material.md documentation
+  * Added center_blocks
+  * Added tower_stones
+  * Added uneven_blocks
+  * Added uneven_centered_blocks
 * Added documentation.md index
 * Added stairs round module, documentation, and examples
   * Added greebled_stairs
