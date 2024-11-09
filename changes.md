@@ -1,5 +1,8 @@
 ## Main wip
 
+## 1.2.2
+* Fix Dwarf Star union bug when using with rarray
+
 ## 1.2.1
 * Added license blocks
 * Added dwarf_star tile
