@@ -235,6 +235,38 @@ result = tile.conduit(
 * [example](../example/tile/conduit.py)
 * [stl](../stl/tile_conduit.stl)
 
+## Dwarf Star
+### Parameters
+* length: float
+* width: float
+* height: float
+* depth: float
+* margin: float
+* inner_band_width: float
+* inner_track_width: float
+
+``` python
+import cadquery as cq
+from cqterrain.tile import dwarf_star
+
+result = dwarf_star(
+        length = 15,
+        width = 15,
+        height = 2,
+        depth = .6, 
+        margin = .6,
+        inner_band_width = 1,
+        inner_track_width = 1
+)
+show_object(result)
+```
+
+![](image/tile/33.png)<br />
+
+* [source](../src/cqterrain/tile/dwarfStar.py)
+* [example](../example/tile/dwarf_star.py)
+* [stl](../stl/tile_dwarf_star.stl)
+
 
 ## Glyph
 ### Parameters

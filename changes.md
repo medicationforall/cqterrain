@@ -1,5 +1,10 @@
 ## Main wip
 
+## 1.2.1
+* Added license blocks
+* Added dwarf_star tile
+* Fixed door documentation
+
 ## 1.2.0
 * Refactored stairs into own module
 * Moved stones into material module, and Added Material.md documentation

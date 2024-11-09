@@ -65,22 +65,20 @@ handle_ex = pull_handle(
 ## Tiled Door
 
 ### parameters
-length:float = 30
-width:float = 3
-height:float = 40
-
-render_tiles=True
-tiles_x_count:int = 2
-tiles_y_count:int = 3
-tile_x_padding:float = 3
-tile_y_padding:float = 2
-tile_width_padding:float = .5
-
-render_handle:bool=True
-handle_length:float
-handle_width_padding:float
-handle_height:float
-handle_x_margin:float
+* length: float
+* width: float
+* height: float
+* render_tiles: bool
+* tiles_x_count: int
+* tiles_y_count: int
+* tile_x_padding: float
+* tile_y_padding: float
+* tile_width_padding: float
+* render_handle: bool
+* handle_length: float
+* handle_width_padding: float
+* handle_height: float
+* handle_x_margin: float
 
 ## method callbacks
 * tile_bp: Callable[[float, float, float], cq.Workplane]
