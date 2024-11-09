@@ -1,5 +1,8 @@
 ## Main wip
 
+## 1.2.3
+* Fix Dwarf Star union bug when using with rarray
+
 ## 1.2.2
 * Fix Dwarf Star union bug when using with rarray
 
