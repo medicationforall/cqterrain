@@ -50,5 +50,5 @@ def dwarf_star(
         .cut(margin_cut.translate((0,0,height/2-depth/2)))
         .cut(inner_track.translate((0,0,height/2-depth/2)))
         .cut(track_diamond.translate((0,0,height/2-depth/2)))
-        .add(inner_box.translate((0,0,height/2-depth/2)))
+        .union(inner_box.translate((0,0,height/2-depth/2)))
     )
