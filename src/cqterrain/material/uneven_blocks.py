@@ -23,7 +23,7 @@ def uneven_blocks(
         columns:int = 5, 
         margin:float  = 2,
         uneven_depth:float  = 2.5,
-        seed:str = 'test',
+        seed:str|None = 'test',
         segments:int  = 5,
         peak_count:tuple[int,int]|int  = (4,5)
     ) -> cq.Workplane:
