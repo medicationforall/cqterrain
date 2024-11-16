@@ -1,7 +1,7 @@
 ## Main wip
 
 ## 1.2.4
-* Make seed nullable for unveven terrain generation
+* Make seed nullable for uneven terrain generation
 
 ## 1.2.3
 * Fix Dwarf Star union bug when using with rarray
