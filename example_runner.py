@@ -1,4 +1,9 @@
 print('bridge examples')
+import example.barrier.barrier
+import example.barrier.barrier_alt
+import example.barrier.barrier_greebled
+import example.barrier.barrier_magnet_template
+
 import example.bridge.bridge
 import example.bridge.base_ramp
 import example.bridge.base_straight
@@ -51,6 +56,11 @@ import example.minibase.minibase_group
 
 print('pipe examples')
 import example.pipe.pipe_corrugated
+import example.pipe.pipeCurve
+import example.pipe.pipeEnd
+import example.pipe.pipeHatch
+import example.pipe.pipePlatform
+import example.pipe.pipeStraight
 
 print('roof examples')
 import example.roof.hip
@@ -101,6 +111,11 @@ import example.window.frame
 import example.window.grill
 import example.window.lattice
 import example.window.lattice_fancy
+
+print('Walkway Examples')
+import example.walkway.walkway
+import example.walkway.walkway_irregular
+import example.walkway.walkway_tile
 
 print('misc ')
 import example.board

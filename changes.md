@@ -1,7 +1,15 @@
 ## Main wip
 
+## 2.0.0
+* Upgrade cadqueryhelper to 1.3.0 - resolves numpy issue
+* Move cqspoolterrain.pipe code into cqterrain.pipe
+* Move cqspoolterrain.industrial_stairs code into cqterrain.stairs
+* Move cqindustry barrier code into cqterrain.barrier
+* Move cqindustry walkway code into cqterrain.walkway
+* Resolved a bug with the industrial pipe generation.
+
 ## 1.2.4
-* Make seed nullable for uneven terrain generation
+* Make seed nullable for uneven terrain generation 
 
 ## 1.2.3
 * Fix Dwarf Star union bug when using with rarray

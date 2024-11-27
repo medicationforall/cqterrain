@@ -14,5 +14,6 @@
 * [Stairs](stairs.md)
 * [tile](tile.md)
 * [Window](window.md)
+* [Walkway](walkway.md)
   
 ---

@@ -3,10 +3,13 @@ Helper Libary to Generate 3d models of buildings / terrain using CadQuery.
 
 [![](documentation/image/building/17.png)](documentation/building.md)<br />
 
-[![](documentation/image/tile/30.png)](documentation/tile.md)
+[![](documentation/image/tile/30.png)](documentation/tile.md)<br />
+
+[![Pipe Mockup](./documentation/image/pipe/15.png)](documentation/pipe.md)
 
 ## Project Documention
 * [Documentation](documentation/README.md)
+  * [Barrier](documentation/barrier.md)
   * [Bridge](documentation/bridge.md)
   * [Building](documentation/building.md) 
   * [Damage](documentation/damage.md)
@@ -19,6 +22,7 @@ Helper Libary to Generate 3d models of buildings / terrain using CadQuery.
   * [Stairs](documentation/stairs.md)
   * [Tile](documentation/tile.md)
   * [Window](documentation/window.md)
+  * [Walkway](documentation/walkway.md)
   * [Misc](documentation/misc.md) aka everything else
     * ladder
     * obelisk
@@ -30,8 +34,12 @@ Helper Libary to Generate 3d models of buildings / terrain using CadQuery.
 
 ## Dependencies
 * [CadQuery 2.x](https://github.com/CadQuery/cadquery)
-* [cqMore](https://github.com/JustinSDK/cqMore)
 * [cadqueryhelper](https://github.com/medicationforall/cadqueryhelper)
+
+## Projects
+* [Jersey Barrier Set](https://miniforall.com/jerseybarriers)
+* [Pipe Terrain Set](https://miniforall.com/pipeterrain)
+* [Walkway Terrain Set](https://miniforall.com/walkways)
 
 ---
 
