@@ -15,7 +15,7 @@
 import cadquery as cq
 from . import pipe_face
 
-def end():
+def end() -> cq.Workplane:
     power_face = pipe_face(face_rotate=0)
     path = (
         cq.Workplane("ZY")

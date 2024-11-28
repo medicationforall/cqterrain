@@ -20,16 +20,16 @@ from cqterrain.barrier import (
 )
 
 def straight(
-        length = 75, 
-        connector_length=2, 
-        connector_radius = 11.5,
-        render_hollow=True,
-        hollow_padding = 6,
-        hollow_radius_padding = 3,
-        render_through_hole = True,
-        through_radius = 5,
-        debug_magnets = False
-    ):
+        length:float = 75, 
+        connector_length:float = 2, 
+        connector_radius:float = 11.5,
+        render_hollow:bool = True,
+        hollow_padding:float = 6,
+        hollow_radius_padding:float = 3,
+        render_through_hole:bool = True,
+        through_radius:float = 5,
+        debug_magnets:bool = False
+    ) -> cq.Workplane:
     connector_plate = cq.Workplane("XY").cylinder(connector_length, connector_radius).rotate((0,1,0),(0,0,0),90).translate((0,0,connector_radius+.5))
     outline = pipe_face()
     barrier = barrier_straight(

@@ -15,10 +15,12 @@
 import cadquery as cq
 from . import pipe_face
 
-def __add_connector_with_count(max_count=3):
+def __add_connector_with_count(
+        max_count:int=3
+    ):
     connector_count_test = 0
 
-    def add_connector(loc):
+    def add_connector(loc:cq.Location)->cq.Shape:
         nonlocal connector_count_test
         connector = (
             cq.Workplane("XY")
@@ -32,14 +34,18 @@ def __add_connector_with_count(max_count=3):
             connector = connector.translate((0,-1,0))
             
         connector_count_test+=1
-        return connector.translate((0,0,-0.5)).val().located(loc)
+        return connector.translate((0,0,-0.5)).val().located(loc) #type:ignore
     
     return add_connector
 
-def __add_magnets_with_count(shape, pip_height, max_count=2):
+def __add_magnets_with_count(
+        shape:cq.Workplane, 
+        pip_height:float, 
+        max_count:int=2
+    ):
     magnet_count_test = 0
 
-    def add_connector( loc):
+    def add_connector( loc:cq.Location)->cq.Shape:
         nonlocal magnet_count_test
         nonlocal shape
         nonlocal pip_height
@@ -51,11 +57,13 @@ def __add_magnets_with_count(shape, pip_height, max_count=2):
             connector = connector.translate((0,-1*(pip_height/2),0))
             
         magnet_count_test+=1
-        return connector.translate((0,0,-0.5)).val().located(loc)
+        return connector.translate((0,0,-0.5)).val().located(loc) #type:ignore
     
     return add_connector
 
-def __make_curved_connectors(radius):
+def __make_curved_connectors(
+        radius:float
+    ):
     connector_arc =(
         cq.Workplane("XY")
         .polarArray(
@@ -70,7 +78,11 @@ def __make_curved_connectors(radius):
     ).rotate((0,1,0),(0,0,0),90).translate((0,radius,0))
     return connector_arc
 
-def __make_curved_magnets(radius=75, pip_height = 2.4, pip_radius = 1.56):
+def __make_curved_magnets(
+        radius:float = 75, 
+        pip_height:float = 2.4, 
+        pip_radius:float = 1.56
+    ):
     pip = (
         cq.Workplane("XY")
         .cylinder(pip_height,pip_radius)
@@ -110,7 +122,10 @@ def __make_curved_magnets(radius=75, pip_height = 2.4, pip_radius = 1.56):
     return magnet_arc
 
 
-def curve(radius = 75, rotation_angle = -30):
+def curve(
+        radius:float = 75, 
+        rotation_angle:float = -30
+    ):
     # --- cylinder connectors
     connector_arc = __make_curved_connectors(radius)
     magnet_arc = __make_curved_magnets(radius)

@@ -15,7 +15,11 @@
 import cadquery as cq
 from . import pipe_face
 
-def connector(length=2, radius=11.5, face_height = 23):
+def connector(
+        length:float = 2, 
+        radius:float = 11.5, 
+        face_height:float = 23
+    ) -> cq.Workplane:
     outline = (
         pipe_face()
         .extrude(length)

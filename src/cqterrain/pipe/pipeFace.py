@@ -15,12 +15,12 @@
 import cadquery as cq
 
 def pipe_face(
-        radius = 10, 
-        side_radius = 1.5, 
-        base_height = 1.5, 
-        side_a_deg_= 60, 
-        side_b_deg = 30, 
-        face_rotate = 90
+        radius:float = 10, 
+        side_radius:float = 1.5, 
+        base_height:float = 1.5, 
+        side_a_deg:float = 60, 
+        side_b_deg:float = 30, 
+        face_rotate:float = 90
     ):
     
     face = (
@@ -39,7 +39,7 @@ def pipe_face(
         cq.Workplane("XY")
         .placeSketch(face)
         .extrude(1)
-        .union(side.translate((0,radius,0)).rotate((0,0,1),(0,0,0),-side_a_deg_))
+        .union(side.translate((0,radius,0)).rotate((0,0,1),(0,0,0),-side_a_deg))
         .union(side.translate((0,radius,0)).rotate((0,0,1),(0,0,0),side_b_deg))
     ).rotate((0,0,1),(0,0,0),face_rotate)
     

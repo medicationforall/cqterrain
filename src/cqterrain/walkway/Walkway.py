@@ -69,15 +69,15 @@ class Walkway(Base):
         self.rail_slot_type:str = "box" # box, archpointed, archround
 
         ## shapes
-        self.walkway = None
+        self.walkway:cq.Workplane|None = None
 
-        self.slots = None
-        self.grid = None
-        self.irregular_grid = None
+        self.slots:cq.Workplane|None = None
+        self.grid:cq.Workplane|None = None
+        self.irregular_grid:cq.Workplane|None = None
 
-        self.tabs = None
-        self.rails = None
-        self.rail_slots = None
+        self.tabs:cq.Workplane|None = None
+        self.rails:cq.Workplane|None = None
+        self.rail_slots:cq.Workplane|None = None
 
     def __make_walkway(self):
         walkway = (

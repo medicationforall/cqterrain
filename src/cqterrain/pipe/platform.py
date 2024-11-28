@@ -19,11 +19,11 @@ from ..stairs import industrial_stairs_platform as industrial_stairs
 
 
 def platform(
-        top_length = 42, 
-        stair_y_distance = 23,
-        straight_pipe = None,
-        render_hollow = True,
-        render_through_hole = True
+        top_length:float = 42, 
+        stair_y_distance:float = 23,
+        straight_pipe:cq.Workplane|None = None,
+        render_hollow:bool = True,
+        render_through_hole:bool = True
     ):
 
     if not straight_pipe:

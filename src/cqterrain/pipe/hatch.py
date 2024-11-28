@@ -15,17 +15,17 @@
 import cadquery as cq
 
 def hatch(
-        connector, 
-        radius = 11.5,
-        height = 4,
-        bolt_number = 8, 
-        bolt_radius = 2, 
-        bolt_height = 1,
-        bolt_padding = -2,
-        center_radius = 8,
-        center_height = 1,
-        center_cut_height = 2
-    ):
+        connector:cq.Workplane, 
+        radius:float = 11.5,
+        height:float = 4,
+        bolt_number:int = 8, 
+        bolt_radius:float = 2, 
+        bolt_height:float = 1,
+        bolt_padding:float = -2,
+        center_radius:float = 8,
+        center_height:float = 1,
+        center_cut_height:float = 2
+    ) -> cq.Workplane:
     bolt = (
         cq.Workplane("XY")
         .polygon(6, bolt_radius)
@@ -33,9 +33,8 @@ def hatch(
         .translate((bolt_padding,0,0))
     )
     
-
-    def add_bolt(loc):
-        return bolt.val().located(loc)
+    def add_bolt(loc:cq.Location)->cq.Shape:
+        return bolt.val().located(loc)#type:ignore
     
     bolt_arc =(
         cq.Workplane("XY")

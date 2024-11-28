@@ -1,5 +1,8 @@
 ## Main wip
 
+## 2.0.2
+* Added industrial pipe annotations
+
 ## 2.0.1
 * Cleaned up IndustrialStairs example
 
