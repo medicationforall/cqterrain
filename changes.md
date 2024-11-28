@@ -1,8 +1,11 @@
 ## Main wip
 
+## 2.0.3
+* Bit by windows file case insensitive files
+  
 ## 2.0.2
 * Added industrial pipe annotations
-
+  
 ## 2.0.1
 * Cleaned up IndustrialStairs example
 
