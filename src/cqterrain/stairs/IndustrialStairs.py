@@ -18,30 +18,30 @@ from cadqueryhelper import Base
 class IndustrialStairs(Base):
     def __init__(
             self,
-            length = 75,
-            width = 75,
-            height = 75,
-            stair_count = 9,
-            stair_chamfer = None,
-            render_step_cut = True,
-            render_hollow = True,
-            cut_padding = 4
+            length:float = 75,
+            width:float = 75,
+            height:float = 75,
+            stair_count:int = 9,
+            stair_chamfer:float|None = None,
+            render_step_cut:bool = True,
+            render_hollow:bool = True,
+            cut_padding:float = 4
         ):
         super().__init__()
         # parameters
-        self.length = length
-        self.width = width
-        self.height = height
+        self.length:float = length
+        self.width:float = width
+        self.height:float = height
 
-        self.stair_count = stair_count
-        self.stair_chamfer = stair_chamfer
+        self.stair_count:int = stair_count
+        self.stair_chamfer:float|None = stair_chamfer
         
-        self.render_step_cut = render_step_cut
-        self.cut_padding = cut_padding
-        self.render_hollow = render_hollow
+        self.render_step_cut:float = render_step_cut
+        self.cut_padding:float = cut_padding
+        self.render_hollow:bool = render_hollow
 
         #parts
-        self.stairs = None
+        self.stairs:cq.Workplane|None = None
 
     def __make_step(self, i, stair_interval_lengh, stair_interval_height):
         step = cq.Workplane("XY").box(

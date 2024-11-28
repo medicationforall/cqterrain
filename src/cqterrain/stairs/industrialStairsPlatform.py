@@ -18,7 +18,7 @@ def make_step(
           i:int, 
           stair_interval:float, 
           width:float
-    ):
+    ) -> cq.Workplane:
     step = cq.Workplane("XY").box(
         stair_interval,
         width, 
@@ -41,7 +41,7 @@ def industrial_stairs_platform(
         height:float = 75,
         stair_count:int = 10,
         stair_chamfer:float|None = None
-    ):
+    ) -> cq.Workplane:
     stair_interval = length / stair_count
     
     stairs =(cq.Workplane("XY"))
