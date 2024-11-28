@@ -1,5 +1,8 @@
 ## Main wip
 
+## 2.0.2
+* Bit by windows file case insensitive files
+
 ## 2.0.1
 * Cleaned up IndustrialStairs example
 
