@@ -76,6 +76,7 @@ import example.stairs.round.greebled_stairs
 import example.stairs.round.outline
 import example.stairs.round.plain_stairs
 import example.stairs.round.ramp
+import example.stairs.industrial_stairs
 
 print('tile examples')
 import example.tile.apricorn

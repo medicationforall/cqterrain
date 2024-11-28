@@ -1,5 +1,8 @@
 ## Main wip
 
+## 2.0.1
+* Cleaned up IndustrialStairs example
+
 ## 2.0.0
 * Upgrade cadqueryhelper to 1.3.0 - resolves numpy issue
 * Move cqspoolterrain.pipe code into cqterrain.pipe

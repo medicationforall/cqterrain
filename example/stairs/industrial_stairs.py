@@ -1,5 +1,5 @@
 import cadquery as cq
-from cqspoolterrain import Stairs
+from cqterrain.stairs import IndustrialStairs as Stairs
 
 bp = Stairs()
 bp.length = 75
@@ -14,4 +14,4 @@ bp.make()
 ex_stairs = bp.build()
 
 #show_object(ex_stairs)
-cq.exporters.export(ex_stairs,"stl/stairst_industrial_stairs.stl")
+cq.exporters.export(ex_stairs,"stl/stairs_industrial_stairs.stl")

@@ -1,2 +1,3 @@
 from .stairs import stairs
-from .industrialStairs import industrial_stairs
+from .IndustrialStairs import IndustrialStairs
+from .industrialStairsPlatform import industrial_stairs_platform

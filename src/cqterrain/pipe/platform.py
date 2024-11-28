@@ -15,7 +15,7 @@
 import cadquery as cq
 from ..walkway import Walkway
 from . import straight
-from ..stairs import industrial_stairs
+from ..stairs import industrial_stairs_platform as industrial_stairs
 
 
 def platform(
