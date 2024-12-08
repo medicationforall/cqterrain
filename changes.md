@@ -1,5 +1,8 @@
 ## Main wip
 
+## 2.1.0
+* Move cqspoolterrain.spool code, examples, documentation into cqterrain.spool
+
 ## 2.0.3
 * Added industrial pipe annotations
 * Added industrial stair annotations

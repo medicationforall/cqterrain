@@ -67,6 +67,12 @@ import example.roof.hip
 import example.roof.gable
 import example.roof.roof
 
+print('spool examples')
+import example.spool.spool
+import example.spool.spool_no_center
+import example.spool.spoolLogoStack
+import example.spool.spoolLogoStackAlt
+
 print('stairs examples')
 import example.stairs.stairs
 import example.stairs.round.combined_greebled
