@@ -144,3 +144,94 @@ show_object(uneven_surface_example)
 
 * [example](../example/damage/uneven_plane_grid.py)
 * [stl](../stl/damage_uneven_plane_grid.stl)
+
+---
+
+## Uneven Spline Plane
+
+### parameters
+* length: float 
+* width: float
+* segments: int
+* height: float
+* min_height: float
+* step: float
+* peak_count: tuple[int,int]|int 
+* seed: str|None
+* render_plate: bool
+* plate_height: float
+
+``` python
+import cadquery as cq
+from cqterrain.damage import uneven_plane, uneven_spline_plane
+
+u_plane_safe = uneven_spline_plane(
+    length=20, 
+    width=25,
+    height=4,
+    #peak_count=(3,5), - risky
+    peak_count=5,
+
+    segments=5,
+    seed='test',
+    render_plate=True,
+    plate_height = 0.1
+)
+
+# show_object(u_plane_safe)
+```
+
+![](image/damage/12.png)
+
+* [source](../src/cqterrain/damage/uneven_spline_plane.py)
+* [example](../example/damage/uneven_spline_plane_safe.py)
+* [stl](../stl/damage_uneven_spline_plane_safe.stl)
+
+### Uneven Spline Plane Grid Example
+
+
+``` python
+import cadquery as cq
+from cqterrain.damage import uneven_spline_plane
+
+#grid of surfaces
+seed='test'
+
+def add_surface(loc:cq.Location) -> cq.Shape:
+    u_plane_risky = uneven_spline_plane(
+        length = 90, 
+        width = 90,
+        height = 9,
+        #peak_count = (4,5),
+        peak_count=5,
+        min_height = 2,
+        step = 1,
+        
+        segments = 6,
+        seed = None,
+        render_plate = True,
+        plate_height = 0.5
+    )
+    return u_plane_risky.val().located(loc) #type:ignore
+
+uneven_surface_example = (
+    cq.Workplane("XY")
+    .rarray(
+        xSpacing = 100, 
+        ySpacing = 100,
+        xCount = 3, 
+        yCount= 3, 
+        center = True)
+    .eachpoint(callback = add_surface)
+)
+
+show_object(uneven_surface_example)
+```
+
+![](image/damage/13.png)
+
+* [example](../example/damage/uneven_spline_plane_grid.py)
+* [stl](../stl/damage_uneven_spline_plane_grid.stl)
+  
+---
+

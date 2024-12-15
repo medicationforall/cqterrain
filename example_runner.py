@@ -30,6 +30,10 @@ import example.damage.uneven_plane_safe
 import example.damage.uneven_plane_risky
 import example.damage.uneven_plane_grid
 
+import example.damage.uneven_spline_plane_safe
+import example.damage.uneven_spline_plane_risky
+import example.damage.uneven_spline_plane_grid
+
 print('door example')
 import example.door.door
 import example.door.pull_handle

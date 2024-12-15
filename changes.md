@@ -1,5 +1,10 @@
 ## Main wip
 
+## 2.2.0
+* Upgrade cadqueryhelper to 1.4.1 - Added uneven_spline
+* Added damage uneven_spline_plane
+* Updated damage documentation
+
 ## 2.1.0
 * Move cqspoolterrain.spool code, examples, documentation into cqterrain.spool
 
