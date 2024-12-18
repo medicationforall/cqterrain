@@ -1,5 +1,8 @@
 ## Main wip
 
+## 2.3.0
+* Added tile truchet_circle_two, example, and documentation
+
 ## 2.2.0
 * Upgrade cadqueryhelper to 1.4.1 - Added uneven_spline
 * Added damage uneven_spline_plane

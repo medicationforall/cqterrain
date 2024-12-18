@@ -509,6 +509,33 @@ result = truchet_circle(
 * [example](../example/tile/truchet_circle.py)
 * [stl](../stl/tile_truchet_circle.stl)
 
+## Truchet Circle two
+Simplified implementation from truchet circle and has better performance.
+
+### Parameters
+* length: float
+* width: float
+* radius: float
+
+``` python
+import cadquery as cq
+from cqterrain.tile import truchet_circle_two
+
+example_tile = truchet_circle_two(
+    length=10,
+    width=10,
+    radius=2 
+)
+
+show_object(example_tile)
+```
+
+![](image/tile/34.png)<br />
+
+* [source](../src/cqterrain/tile/truchet_circle_two.py)
+* [example](../example/tile/truchet_circle_two.py)
+* [stl](../stl/tile_truchet_circle_two.stl)
+
 ### Randomized grid example
 
 ``` python
