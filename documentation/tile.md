@@ -509,33 +509,6 @@ result = truchet_circle(
 * [example](../example/tile/truchet_circle.py)
 * [stl](../stl/tile_truchet_circle.stl)
 
-## Truchet Circle two
-Simplified implementation from truchet circle and has better performance.
-
-### Parameters
-* length: float
-* width: float
-* radius: float
-
-``` python
-import cadquery as cq
-from cqterrain.tile import truchet_circle_two
-
-example_tile = truchet_circle_two(
-    length=10,
-    width=10,
-    radius=2 
-)
-
-show_object(example_tile)
-```
-
-![](image/tile/34.png)<br />
-
-* [source](../src/cqterrain/tile/truchet_circle_two.py)
-* [example](../example/tile/truchet_circle_two.py)
-* [stl](../stl/tile_truchet_circle_two.stl)
-
 ### Randomized grid example
 
 ``` python
@@ -570,6 +543,60 @@ show_object(union_grid)
 
 * [example](../example/tile/truchet_circle_grid_randomized.py)
 * [stl](../stl/tile_truchet_circle_randomized_grid.stl)
+
+## Truchet Circle two
+Simplified implementation from truchet circle and has better performance.
+
+### Parameters
+* length: float
+* width: float
+* radius: float
+
+``` python
+import cadquery as cq
+from cqterrain.tile import truchet_circle_two
+
+example_tile = truchet_circle_two(
+    length=10,
+    width=10,
+    radius=2 
+)
+
+show_object(example_tile)
+```
+
+![](image/tile/34.png)<br />
+
+* [source](../src/cqterrain/tile/truchet_circle_two.py)
+* [example](../example/tile/truchet_circle_two.py)
+* [stl](../stl/tile_truchet_circle_two.stl)
+
+## Truchet Circle three
+Event more simplified implementation from truchet circle.
+
+### Parameters
+* length: float
+* width: float
+* radius: float
+
+``` python
+import cadquery as cq
+from cqterrain.tile import truchet_circle_three
+
+example_tile = truchet_circle_three(
+    length=10,
+    width=10,
+    radius=2 
+)
+
+show_object(example_tile)
+```
+
+![](image/tile/35.png)<br />
+
+* [source](../src/cqterrain/tile/truchet_circle_three.py)
+* [example](../example/tile/truchet_circle_three.py)
+* [stl](../stl/tile_truchet_circle_three.stl)
 
 ## Truchet Triangle
 

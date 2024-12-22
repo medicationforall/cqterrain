@@ -110,6 +110,7 @@ import example.tile.truchet_triangle_grid_randomized
 import example.tile.truchet_triangle_grid_example
 import example.tile.truchet_circle
 import example.tile.truchet_circle_two
+import example.tile.truchet_circle_three
 import example.tile.truchet_circle_grid_randomized
 import example.tile.windmill
 import example.tile.dwarf_star
