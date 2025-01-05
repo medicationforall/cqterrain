@@ -71,6 +71,29 @@ import example.roof.hip
 import example.roof.gable
 import example.roof.roof
 
+print('shieldwall examples')
+import example.shieldwall.arch_shape
+import example.shieldwall.archset
+import example.shieldwall.base_cut
+import example.shieldwall.cap_greeble
+import example.shieldwall.corner_connector
+import example.shieldwall.curve_basic_arch
+import example.shieldwall.curve_basic
+import example.shieldwall.end_cap
+import example.shieldwall.gothic_mesh
+import example.shieldwall.hex_mesh
+import example.shieldwall.hex_set_sku
+import example.shieldwall.hex_set
+import example.shieldwall.hex_straight
+import example.shieldwall.magnets
+import example.shieldwall.mesh
+import example.shieldwall.set
+import example.shieldwall.shield_shape
+import example.shieldwall.straight_basic
+import example.shieldwall.straight_demo
+import example.shieldwall.straight_hex
+import example.shieldwall.straight
+
 print('spool examples')
 import example.spool.spool
 import example.spool.spool_no_center

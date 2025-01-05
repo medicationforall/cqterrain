@@ -11,6 +11,7 @@
 * [Misc](misc.md)
 * [Pipe](pipe.md)
 * [Roof](roof.md)
+* [Shieldwall](shieldwall.md)
 * [Spool](spool.md)
 * [Stairs](stairs.md)
 * [tile](tile.md)

@@ -1,5 +1,9 @@
 ## Main wip
 
+## 2.5.0
+* Move cqportal shieldwall code into cqterrain.
+* Updated README.md
+
 ## 2.4.0
 * Upgrade cadqueryhelper to 1.4.2
 * Added tile truchet_circle_three, example, and documentation
