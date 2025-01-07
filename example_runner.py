@@ -39,6 +39,9 @@ import example.door.door
 import example.door.pull_handle
 import example.door.tiled_door
 import example.door.heavy_door
+import example.door.blastDoor
+import example.door.hatch
+import example.door.splitDoor
 
 print('greeble examples')
 import example.greeble.gothic_one

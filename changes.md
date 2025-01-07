@@ -1,5 +1,8 @@
 ## Main wip
 
+## 2.6.0
+* Moved skirmishbunker BlastDoor, Hatch and SplitDoor code into cqterrain door.
+
 ## 2.5.0
 * Move cqportal shieldwall code into cqterrain.
 * Updated README.md
