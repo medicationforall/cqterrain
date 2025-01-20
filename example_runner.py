@@ -22,7 +22,6 @@ import example.building.wallTile
 import example.building.room_with_tile
 import example.building.room
 
-
 print('crystal examples')
 import example.crystal.crystal
 import example.crystal.crystal_random
@@ -64,6 +63,7 @@ import example.minibase.circle
 import example.minibase.ellipse
 import example.minibase.rectangle
 import example.minibase.slot
+import example.minibase.slot_uneven
 import example.minibase.hexagon
 import example.minibase.minibase_group
 

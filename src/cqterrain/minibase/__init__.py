@@ -3,4 +3,5 @@ from .circle import circle
 from .ellipse import ellipse
 from .rectangle import rectangle
 from .slot import slot
+from .slot_uneven import slot_uneven
 from .hexagon import hexagon
