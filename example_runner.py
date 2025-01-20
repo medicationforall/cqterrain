@@ -26,6 +26,7 @@ print('crystal examples')
 import example.crystal.crystal
 import example.crystal.crystal_random
 import example.crystal.crystal_random_group
+import example.crystal.crystal_wall
 
 print('damage examples')
 import example.damage.damage_blast_set_large

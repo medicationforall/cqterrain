@@ -5,6 +5,7 @@
 * Fixed source file path in damage.md
 * Hatch removed unused parameter
 * Added uneven textured slotted base
+* Added Crystal Wall
 
 ## 2.6.0
 * Moved skirmishbunker BlastDoor, Hatch and SplitDoor code into cqterrain door.
