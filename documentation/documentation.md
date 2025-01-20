@@ -1,8 +1,10 @@
 # cqterrain Documentation
 
 ## Index
+* [Barrier](barrier.md)
 * [Bridge](bridge.md)
 * [Building](building.md)
+* [Crystal](crystal.md)
 * [Damage](damage.md)
 * [Door](door.md)
 * [Greeble](greeble.md)
@@ -14,7 +16,7 @@
 * [Shieldwall](shieldwall.md)
 * [Spool](spool.md)
 * [Stairs](stairs.md)
-* [tile](tile.md)
+* [Tile](tile.md)
 * [Window](window.md)
 * [Walkway](walkway.md)
   

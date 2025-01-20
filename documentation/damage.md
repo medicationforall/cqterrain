@@ -97,7 +97,7 @@ show_object(u_plane_safe)
 
 ![](image/damage/09.png)
 
-* [source](../src/cqterrain/damage/uneven_plane.py)
+* [source](../src/cqterrain/damage/unevenPlane.py)
 * [example](../example/damage/uneven_plane_safe.py)
 * [stl](../stl/damage_uneven_plane_safe.stl)
 
@@ -183,7 +183,7 @@ u_plane_safe = uneven_spline_plane(
 
 ![](image/damage/12.png)
 
-* [source](../src/cqterrain/damage/uneven_spline_plane.py)
+* [source](../src/cqterrain/damage/unevenSplinePlane.py)
 * [example](../example/damage/uneven_spline_plane_safe.py)
 * [stl](../stl/damage_uneven_spline_plane_safe.stl)
 

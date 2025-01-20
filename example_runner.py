@@ -22,6 +22,12 @@ import example.building.wallTile
 import example.building.room_with_tile
 import example.building.room
 
+
+print('crystal examples')
+import example.crystal.crystal
+import example.crystal.crystal_random
+import example.crystal.crystal_random_group
+
 print('damage examples')
 import example.damage.damage_blast_set_large
 import example.damage.damage_blast_set_medium

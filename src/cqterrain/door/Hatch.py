@@ -20,7 +20,6 @@ class Hatch(Base):
         self.length:float = 25
         self.width:float = 25
         self.height:float = 4
-        self.base_height:float|None = None
         self.base_corner_chamfer:float = 2
         self.base_top_chamfer:float = 2
         self.base_extrude:float = 1.5

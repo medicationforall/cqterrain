@@ -1,5 +1,10 @@
 ## Main wip
 
+## 2.7.0
+* Added crystal package
+* Fixed source file path in damage.md
+* Hatch removed unused parameter
+
 ## 2.6.0
 * Moved skirmishbunker BlastDoor, Hatch and SplitDoor code into cqterrain door.
 
