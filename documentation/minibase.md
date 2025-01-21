@@ -137,6 +137,50 @@ result = hexagon(
 
 ---
 
+## Hexagon Uneven
+
+### Parameters
+* diameter: float
+* base_height: float
+* taper: float
+* render_magnet: bool  
+* magnet_diameter: float 
+* magnet_height: float
+* detail_height: float
+* uneven_height: float
+* peak_count: tuple[int,int]|int
+* segments: int
+* seed: str
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import hexagon_uneven
+
+ex_base = hexagon_uneven(
+    diameter = 45,
+    base_height = 3,
+    taper = -1,
+    render_magnet = True,  
+    magnet_diameter = 3, 
+    magnet_height = 2,
+    detail_height = 3,
+    uneven_height = 4,
+    peak_count = (9,10),
+    segments = 6,
+    seed="red"
+)
+
+show_object(ex_base)
+```
+
+![](image/minibase/09.png)<br />
+
+* [source](../src/cqterrain/minibase/hexagon_uneven.py)
+* [example](../example/minibase/hexagon_uneven.py)
+* [stl](../stl/minibase_hexagon_uneven.stl)
+
+---
+
 ## make_magnet_outline
 Utility function for making the magnet cutouts for the bases.
 

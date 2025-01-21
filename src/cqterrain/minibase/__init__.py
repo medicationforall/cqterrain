@@ -6,3 +6,4 @@ from .rectangle import rectangle
 from .slot import slot
 from .slot_uneven import slot_uneven
 from .hexagon import hexagon
+from .hexagon_uneven import hexagon_uneven

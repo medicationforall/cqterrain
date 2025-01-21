@@ -1,12 +1,15 @@
 ## Main wip
 
 ## 2.7.0
+* Fixed source file paths in damage.md
+* door Hatch removed unused parameter
+* Added uneven textured minibases
+  * Added uneven textured slotted base
+  * Added uneven textured circular base
+  * Added uneven textured hexagon base
 * Added crystal package
-* Fixed source file path in damage.md
-* Hatch removed unused parameter
-* Added uneven textured slotted base
-* Added uneven textured circular base
-* Added Crystal Wall
+  * Added crystal_random
+  * Added Crystal Wall
 
 ## 2.6.0
 * Moved skirmishbunker BlastDoor, Hatch and SplitDoor code into cqterrain door.
