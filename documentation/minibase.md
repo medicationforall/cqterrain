@@ -35,6 +35,50 @@ result = circle(
 
 ---
 
+## Circle Uneven
+
+### Parameters
+* diameter: float
+* base_height: float
+* taper: float
+* render_magnet: bool  
+* magnet_diameter: float 
+* magnet_height: float
+* detail_height: float
+* uneven_height: float
+* peak_count: tuple[int,int]|int
+* segments: int
+* seed: str
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import circle_uneven
+
+ex_base = circle_uneven(
+    diameter = 45,
+    base_height = 3,
+    taper = -1,
+    render_magnet = True,  
+    magnet_diameter = 3, 
+    magnet_height = 2,
+    detail_height = 3,
+    uneven_height = 4,
+    peak_count = (9,10),
+    segments = 6,
+    seed="red"
+)
+
+show_object(ex_base)
+```
+
+![](image/minibase/08.png)<br />
+
+* [source](../src/cqterrain/minibase/circle_uneven.py)
+* [example](../example/minibase/circle_uneven.py)
+* [stl](../stl/minibase_circle_uneven.stl)
+
+---
+
 ## Ellipse
 ### Parameters
 * x_diameter: float
@@ -205,3 +249,5 @@ show_object(ex_base)
 * [source](../src/cqterrain/minibase/slot_uneven.py)
 * [example](../example/minibase/slot_uneven.py)
 * [stl](../stl/minibase_slot_uneven.stl)
+
+---

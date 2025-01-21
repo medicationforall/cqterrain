@@ -61,6 +61,7 @@ import example.material.uneven_centered_blocks
 
 print('minibase examples')
 import example.minibase.circle
+import example.minibase.circle_uneven
 import example.minibase.ellipse
 import example.minibase.rectangle
 import example.minibase.slot
