@@ -3,6 +3,7 @@ from .circle import circle
 from .circle_uneven import circle_uneven
 from .ellipse import ellipse
 from .rectangle import rectangle
+from .rectangle_uneven import rectangle_uneven
 from .slot import slot
 from .slot_uneven import slot_uneven
 from .hexagon import hexagon

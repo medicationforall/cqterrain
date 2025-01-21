@@ -7,6 +7,7 @@
   * Added uneven textured slotted base
   * Added uneven textured circular base
   * Added uneven textured hexagon base
+  * Added uneven textured rectangle base
 * Added crystal package
   * Added crystal_random
   * Added Crystal Wall

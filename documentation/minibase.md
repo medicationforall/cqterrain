@@ -220,6 +220,52 @@ result = rectangle(
 
 ---
 
+## Rectangle Uneven
+
+### Parameters
+* length: float
+* width: float
+* base_height: float
+* taper: float
+* render_magnet: bool  
+* magnet_diameter: float 
+* magnet_height: float
+* detail_height: float
+* uneven_height: float
+* peak_count: tuple[int,int]|int
+* segments: int
+* seed: str
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import rectangle_uneven
+
+ex_base = rectangle_uneven(
+    length = 40,
+    width = 40,
+    base_height = 3,
+    taper = -1,
+    render_magnet = True,  
+    magnet_diameter = 3, 
+    magnet_height = 2,
+    detail_height = 3,
+    uneven_height = 4,
+    peak_count = (9,10),
+    segments = 6,
+    seed="red"
+)
+
+show_object(ex_base)
+```
+
+![](image/minibase/10.png)<br />
+
+* [source](../src/cqterrain/minibase/rectangle_uneven.py)
+* [example](../example/minibase/rectangle_uneven.py)
+* [stl](../stl/minibase_rectangle_uneven.stl)
+
+---
+
 ## Slot
 ### Parameters
 * length: float 
