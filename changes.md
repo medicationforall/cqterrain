@@ -9,9 +9,11 @@
   * Added uneven textured hexagon base
   * Added uneven textured rectangle base
   * Added uneven textured ellipse base
+  * Added Uneven minibase group example
 * Added crystal package
   * Added crystal_random
   * Added Crystal Wall
+* Added license blocks 
 
 ## 2.6.0
 * Moved skirmishbunker BlastDoor, Hatch and SplitDoor code into cqterrain door.

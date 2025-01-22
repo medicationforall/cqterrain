@@ -71,6 +71,7 @@ import example.minibase.slot_uneven
 import example.minibase.hexagon
 import example.minibase.hexagon_uneven
 import example.minibase.minibase_group
+import example.minibase.minibase_group_uneven
 
 print('pipe examples')
 import example.pipe.pipe_corrugated
