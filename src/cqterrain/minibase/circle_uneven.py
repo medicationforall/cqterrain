@@ -14,7 +14,7 @@ def circle_uneven(
         peak_count:tuple[int, int]|int = (9,10),
         segments:int = 6,
         seed:str = "seed"
-    ):
+    ) -> cq.Workplane:
     # slot
     mini_base = circle(
         diameter = diameter,
@@ -23,7 +23,7 @@ def circle_uneven(
         render_magnet = render_magnet,  
         magnet_diameter = magnet_diameter, 
         magnet_height = magnet_height
-    ).rotate((0,0,1),(0,0,0),90)
+    )
 
     top = (
            mini_base

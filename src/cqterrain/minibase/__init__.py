@@ -2,6 +2,7 @@ from .make_magnet_outline import make_magnet_outline
 from .circle import circle
 from .circle_uneven import circle_uneven
 from .ellipse import ellipse
+from .ellipse_uneven import ellipse_uneven
 from .rectangle import rectangle
 from .rectangle_uneven import rectangle_uneven
 from .slot import slot

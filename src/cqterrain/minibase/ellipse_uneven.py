@@ -1,9 +1,10 @@
 import cadquery as cq
-from . import hexagon
+from . import ellipse
 from ..damage import uneven_plane
 
-def hexagon_uneven(
-        diameter:float = 40,
+def ellipse_uneven(
+        length:float = 52,
+        width:float = 90,
         base_height:float = 3,
         taper:float = -1,
         render_magnet:bool = True,  
@@ -16,8 +17,9 @@ def hexagon_uneven(
         seed:str = "seed"
     ) -> cq.Workplane:
     # slot
-    mini_base = hexagon(
-        diameter = diameter,
+    mini_base = ellipse(
+        x_diameter = length,
+        y_diameter = width,
         height = base_height, 
         taper = taper,
         render_magnet = render_magnet,  
@@ -35,8 +37,8 @@ def hexagon_uneven(
     
     # uneven plane
     u_plane_safe = uneven_plane(
-        length = diameter, 
-        width = diameter,
+        length = length, 
+        width = width,
         height = uneven_height,
         peak_count = peak_count,
         segments = segments,

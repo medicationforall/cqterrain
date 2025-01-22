@@ -63,6 +63,7 @@ print('minibase examples')
 import example.minibase.circle
 import example.minibase.circle_uneven
 import example.minibase.ellipse
+import example.minibase.ellipse_uneven
 import example.minibase.rectangle
 import example.minibase.rectangle_uneven
 import example.minibase.slot

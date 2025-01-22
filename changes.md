@@ -8,6 +8,7 @@
   * Added uneven textured circular base
   * Added uneven textured hexagon base
   * Added uneven textured rectangle base
+  * Added uneven textured ellipse base
 * Added crystal package
   * Added crystal_random
   * Added Crystal Wall

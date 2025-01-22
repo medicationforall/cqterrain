@@ -3,19 +3,19 @@ from . import rectangle
 from ..damage import uneven_plane
 
 def rectangle_uneven(
-        length = 40,
-        width = 40,
-        base_height=3,
-        taper = -1,
-        render_magnet = True,  
-        magnet_diameter = 3, 
-        magnet_height = 2,
-        detail_height=3,
-        uneven_height=4,
-        peak_count = (9,10),
-        segments=6,
-        seed="seed"
-    ):
+        length:float = 40,
+        width:float = 40,
+        base_height:float = 3,
+        taper:float = -1,
+        render_magnet:bool = True,  
+        magnet_diameter:float = 3, 
+        magnet_height:float = 2,
+        detail_height:float = 3,
+        uneven_height:float = 4,
+        peak_count:tuple[int,int]|int = (9,10),
+        segments:int = 6,
+        seed:str = "seed"
+    ) -> cq.Workplane:
     # slot
     mini_base = rectangle(
         length = length,
@@ -25,7 +25,7 @@ def rectangle_uneven(
         render_magnet = render_magnet,  
         magnet_diameter = magnet_diameter, 
         magnet_height = magnet_height
-    ).rotate((0,0,1),(0,0,0),90)
+    )
 
     top = (
            mini_base
