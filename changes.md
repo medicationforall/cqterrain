@@ -1,4 +1,8 @@
 ## Main wip
+
+## 2.8.1
+* Fix book documentation link in readme.md
+
 ## 2.8.0
 * Added book package
   * Added book
