@@ -10,6 +10,11 @@ import example.bridge.base_straight
 import example.bridge.tile_straight
 import example.bridge.tile_bridge
 
+print('book examples')
+import example.book.book
+import example.book.book_random
+import example.book.books
+
 print('building examples')
 import example.building.building
 import example.building.buildingRough

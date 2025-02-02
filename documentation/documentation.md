@@ -2,6 +2,7 @@
 
 ## Index
 * [Barrier](barrier.md)
+* [Book](book.md)
 * [Bridge](bridge.md)
 * [Building](building.md)
 * [Crystal](crystal.md)
