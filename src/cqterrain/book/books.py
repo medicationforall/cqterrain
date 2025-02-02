@@ -98,7 +98,7 @@ def books(
     attach = ex_book
 
     if book_count > 2:
-        for i in range(count-1):#type:ignore
+        for i in range(book_count-1):#type:ignore
             generated_book = (
                 attach
                 .faces(">X")
