@@ -183,3 +183,38 @@ show_object(ex_books)
 * [stl](../stl/books_pink.stl)
 
 ---
+
+## Bookcase
+
+### parameters
+* length: float
+* width: float 
+* height: float
+* segments: int
+* margin_top: float
+* margin_sides: float
+* back_translate: float
+
+``` python
+import cadquery as cq
+from cqterrain.book import bookcase 
+
+ex_bookcase = bookcase(
+    length = 75,
+    width = 20,
+    height = 60,
+    segments = 4,
+    margin_top = 1.5,
+    margin_sides = 2,
+    back_translate = 1
+)
+show_object(ex_bookcase)
+```
+
+![](image/book/06.png)
+
+* [source](../src/cqterrain/book/bookcase.py)
+* [example](../example/book/bookcase.py)
+* [stl](../stl/book_bookcase.stl)
+  
+---

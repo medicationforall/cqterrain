@@ -4,7 +4,9 @@
   * Added book
   * Added book_random
   * Added books
+  * Added bookcase
   * Updated README.md
+
 
 ## 2.7.0
 * Fixed source file paths in damage.md
