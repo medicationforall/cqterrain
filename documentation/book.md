@@ -158,7 +158,7 @@ import cadquery as cq
 from cqterrain.book import books
 
 seed = "pink"
-ex_books = books(
+ex_books,dim = books(
     count=5,
     length = (2.0,4.0,0.5),
     width = (8,11,0.5), 

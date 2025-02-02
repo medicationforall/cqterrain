@@ -85,7 +85,7 @@ def books(
         bottom_align = bottom_align,
         seed=None
     )
-    ex_book = ex_book.translate((0,-dim_1[1]/2,dim_1[2]/2))
+    ex_book = ex_book.translate((dim_1[0]/2,-dim_1[1]/2,dim_1[2]/2))
 
     adder_method = book_generator(
         length=length,
@@ -106,6 +106,11 @@ def books(
                 .faces(">X")
                 .workplane()
                 .eachpoint(callback = adder_method))
-            attach = attach.add(generated_book)
-    return attach
+            attach = attach.union(generated_book)
+
+    x = attach.val().BoundingBox().xlen #type:ignore
+    y = attach.val().BoundingBox().ylen #type:ignore
+    z = attach.val().BoundingBox().zlen #type:ignore
+
+    return attach,(x,y,z)
 
