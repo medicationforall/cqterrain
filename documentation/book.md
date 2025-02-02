@@ -153,6 +153,9 @@ show_object(green_book)
 * bottom_align: bool
 * seed: str
 
+### returns
+Returns a cadquery workplane and a tuple which has length, width and height of the generated books.
+
 ``` python
 import cadquery as cq
 from cqterrain.book import books
