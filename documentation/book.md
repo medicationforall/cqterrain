@@ -213,8 +213,66 @@ show_object(ex_bookcase)
 
 ![](image/book/06.png)
 
-* [source](../src/cqterrain/book/bookcase.py)
+* [source](../src/cqterrain/book/book_case.py)
 * [example](../example/book/bookcase.py)
 * [stl](../stl/book_bookcase.stl)
   
 ---
+
+## Bookcase Class
+Base derrived class that combines a bookcase and books.
+
+### parameters
+* length: float
+* width: float
+* height: float
+* segments: int
+* margin_top: float
+* margin_sides: float
+* back_translate: float 
+* render_books: bool
+* book_length: float|tuple[float,float,float]
+* minus_width: float
+* seed: str
+* book_count: int|tuple[int,int,int]
+* bottom_align: bool
+* binder_width: float
+* page_width_inset: float
+* page_height_inset: float
+* min_book_height: float
+
+``` python
+import cadquery as cq
+from cqterrain.book import Bookcase
+
+bp_case = Bookcase()
+bp_case.length = 100
+bp_case.width = 15
+bp_case.segments = 4
+bp_case.minus_width = 3
+bp_case.seed = "purple"
+bp_case.book_count =(16,30,1)
+bp_case.min_book_height = 6
+
+#closed
+bp_case.bottom_align = True
+bp_case.page_width_inset=0.5
+bp_case.back_translate = 1
+
+# open
+#bp_case.bottom_align = False#True
+#bp_case.page_width_inset=1#0.5
+#bp_case.back_translate = 0#1
+
+bp_case.render_books = True
+bp_case.make()
+
+ex_case = bp_case.build()
+show_object(ex_case)
+```
+
+![](image/book/07.png)
+
+* [source](../src/cqterrain/book/Bookcase.py)
+* [example](../example/book/bookcase_class.py)
+* [stl](../stl/book_bookcase_books.stl)

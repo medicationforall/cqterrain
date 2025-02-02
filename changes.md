@@ -5,6 +5,7 @@
   * Added book_random
   * Added books
   * Added bookcase
+  * added Bookcase class
   * Updated README.md
 
 

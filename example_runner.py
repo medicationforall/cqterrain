@@ -15,6 +15,7 @@ import example.book.book
 import example.book.book_random
 import example.book.books
 import example.book.bookcase
+import example.book.bookcase_class
 
 print('building examples')
 import example.building.building
