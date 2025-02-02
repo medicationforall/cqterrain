@@ -71,6 +71,8 @@ def books(
         bottom_align:bool = True,
         seed:str = "test"
     ):
+    if seed:
+        random.seed(seed)
     book_count:int = resolve_range_val(count)
 
     ex_book,dim_1 = book_random(
@@ -81,7 +83,7 @@ def books(
         page_width_inset = page_width_inset,
         page_height_inset=page_height_inset,
         bottom_align = bottom_align,
-        seed=seed
+        seed=None
     )
     ex_book = ex_book.translate((0,-dim_1[1]/2,dim_1[2]/2))
 
