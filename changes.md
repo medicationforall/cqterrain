@@ -1,5 +1,8 @@
 ## Main wip
 
+## 2.8.2
+* Fix walkway rail chamfer bug due to length. 
+
 ## 2.8.1
 * Fix book documentation link in readme.md
 

@@ -188,7 +188,7 @@ class Walkway(Base):
         )
 
         if self.rail_chamfer:
-            if self.rail_chamfer < self.rail_height:
+            if self.rail_chamfer < self.rail_height and self.rail_chamfer < self.length/2:
                 rail = (
                     rail
                     .faces("Z")
@@ -196,7 +196,7 @@ class Walkway(Base):
                     .chamfer(self.rail_chamfer)
                 )
             else:
-                raise Exception(f"rail_chamfer {self.rail_chamfer} is too big for rail_height {self.rail_height}")
+                raise Exception(f"rail_chamfer {self.rail_chamfer} is too big for rail_height {self.rail_height} or length {self.length/2}")
 
         if self.render_rails == True:
             rails = (
