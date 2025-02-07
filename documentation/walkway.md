@@ -1,4 +1,4 @@
-# cqindustry walkway Documentation
+# Walkway Documentation
 
 ## Walkway
 
@@ -55,7 +55,7 @@
 
 ``` python
 import cadquery as cq
-from cqindustry import Walkway
+from cqterrain.walkway import Walkway
 
 bp = Walkway()
 bp.length = 225

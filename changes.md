@@ -1,6 +1,9 @@
 ## Main wip
 
 ## 2.8.2
+* Fix walkway documentation example import.
+
+## 2.8.2
 * Fix walkway rail chamfer bug due to length. 
 
 ## 2.8.1
