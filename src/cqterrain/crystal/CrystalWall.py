@@ -33,14 +33,17 @@ class CrystalWall(Base):
         #parameters
         self.length:float = 75
         self.width:float = 25
-        self.height:float = 30
+        self.height:tuple[float,float,float]|float = (20,30,2.5)
         
-        self.render_base:bool = True
         self.seed:str = 'test'
-        self.base_height:float = 3
-        self.min_height:float = 20
         self.crystal_count:int = 5
         self.crystal_margin:float = 10
+
+        self.render_base:bool = True
+        self.base_height:float = 3
+
+        self.render_crystals:bool = True
+
         self.random_rotate_x:tuple[float,float,float]|float|None = (-20.0, 20.0, 2.5)
         self.random_rotate_y:tuple[float,float,float]|float|None = (-15.0, 15.0, 2.5)
         
@@ -56,6 +59,12 @@ class CrystalWall(Base):
             base_height = self.base_height,
             seed = self.seed
         )
+
+    def calculate_height(self)->float:
+        height = self.height
+        if type(self.height) == tuple:
+            height = self.height[1]
+        return height #type:ignore
         
     def crystal_adder(self):
         # closure
@@ -66,7 +75,7 @@ class CrystalWall(Base):
             adder_seed = f"{self.seed}_{count}"
             #log(f'{adder_seed}')
             crystal,height = crystal_random(
-                height = (self.min_height,self.height,2.5),
+                height = self.height,
                 seed = adder_seed,
                 
                 base_width = 20.0,
@@ -112,18 +121,21 @@ class CrystalWall(Base):
         self.crystals = group
         
     def make_base_cut(self):
+        height = self.calculate_height()
+
         self.base_cut = (
             cq.Workplane("XY").box(
                 self.length,
                 self.width,
-                self.height
+                height #type:ignore
             )
         )
     
     def make(self, parent=None):
         super().make(parent)
         
-        self.make_crystals()
+        if self.render_crystals:
+            self.make_crystals()
         
         if self.render_base:
             self.make_mini_base()
@@ -134,13 +146,14 @@ class CrystalWall(Base):
         super().build()
         scene = cq.Workplane("XY")#.box(10,10,10)
         
-        if self.crystals:
+        if self.render_crystals and self.crystals:
             scene = scene.union(self.crystals)
         
         if self.render_base and self.mini_base:
             scene = scene.union(self.mini_base.translate((0,0,self.base_height/2)))
             
         if self.base_cut:
-            scene= scene.cut(self.base_cut.translate((0,0,-self.height/2)))
+            height = self.calculate_height()
+            scene= scene.cut(self.base_cut.translate((0,0,-height/2)))
             
         return scene

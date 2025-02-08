@@ -139,11 +139,11 @@ show_object(model)
 ### parameters
 * length: float
 * width: float
-* height: float
+* height: tuple[float,float,float]|float
 * render_base: bool
+* render_crystals:bool
 * seed: str
 * base_height: float
-* min_height: float
 * crystal_count: int
 * crystal_margin: float
 * random_rotate_x: tuple[float,float,float]|float|None
@@ -155,9 +155,10 @@ from cqterrain.crystal import CrystalWall
 
 bp_wall = CrystalWall()
 bp_wall.length = 75
-bp_wall.height = 40
+bp_wall.height = (20,40,2.5)
 bp_wall.width = 30
 bp_wall.render_base = True
+bp_wall.render_crystals = True
 bp_wall.crystal_margin = 10
 bp_wall.crystal_count = 10
 bp_wall.seed = "zoe"
