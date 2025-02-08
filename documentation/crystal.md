@@ -137,17 +137,32 @@ show_object(model)
 ## Crystal Wall
 
 ### parameters
-* length: float
-* width: float
-* height: tuple[float,float,float]|float
-* render_base: bool
-* render_crystals:bool
+* length: float 
+* width: float 
+* height: tuple[float,float,float]|float 
 * seed: str
-* base_height: float
-* crystal_count: int
-* crystal_margin: float
-* random_rotate_x: tuple[float,float,float]|float|None
-* random_rotate_y: tuple[float,float,float]|float|None
+* crystal_count: int 
+* crystal_margin: float 
+* render_base: bool 
+* base_height: float 
+* base_taper: float 
+* base_render_magnet: bool 
+* base_detail_height: float 
+* base_uneven_height: float 
+* base_peak_count: tuple[int,int]|int 
+* render_crystals: bool 
+* crystal_base_width: tuple[float,float,float]|float 
+* crystal_base_height: tuple[float,float,float]|float 
+* crystal_inset_width: tuple[float,float,float]|float 
+* crystal_inset_height: tuple[float,float,float]|float 
+* crystal_mid_height: tuple[float,float,float]|float 
+* crystal_mid_width: tuple[float,float,float]|float 
+* crystal_top_height: tuple[float,float,float]|float 
+* crystal_top_width: tuple[float,float,float]|float 
+* crystal_faces: tuple[int,int,int]|int
+* crystal_intersect: bool 
+* random_rotate_x: tuple[float,float,float]|float|None 
+* random_rotate_y: tuple[float,float,float]|float|None 
 
 ``` python
 import cadquery as cq
@@ -158,7 +173,23 @@ bp_wall.length = 75
 bp_wall.height = (20,40,2.5)
 bp_wall.width = 30
 bp_wall.render_base = True
+bp_wall.base_height = 3
+bp_wall.base_taper = -1
+bp_wall.base_render_magnet = False
+bp_wall.base_detail_height = 3
+bp_wall.base_uneven_height= 4
+bp_wall.base_peak_count = (9,10)
 bp_wall.render_crystals = True
+bp_wall.crystal_base_width = 20.0
+bp_wall.crystal_base_height = 0.5
+bp_wall.crystal_inset_width = 20.0
+bp_wall.crystal_inset_height = (1.0,3.0,0.5)
+bp_wall.crystal_mid_height = (2.0,5.0,0.5)
+bp_wall.crystal_mid_width = (10,20.0,2.5)
+bp_wall.crystal_top_height = (10,15,2.5)
+bp_wall.crystal_top_width = (10,15.0,2.5)
+bp_wall.crystal_faces = (5,10,1)
+bp_wall.crystal_intersect = True
 bp_wall.crystal_margin = 10
 bp_wall.crystal_count = 10
 bp_wall.seed = "zoe"

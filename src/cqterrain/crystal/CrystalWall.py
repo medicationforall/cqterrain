@@ -41,8 +41,23 @@ class CrystalWall(Base):
 
         self.render_base:bool = True
         self.base_height:float = 3
+        self.base_taper:float = -1
+        self.base_render_magnet:bool = False
+        self.base_detail_height:float = 3
+        self.base_uneven_height:float = 4
+        self.base_peak_count:tuple[int,int]|int = (9,10)
 
         self.render_crystals:bool = True
+        self.crystal_base_width:tuple[float,float,float]|float = 20.0
+        self.crystal_base_height:tuple[float,float,float]|float = 0.5
+        self.crystal_inset_width:tuple[float,float,float]|float = 20.0
+        self.crystal_inset_height:tuple[float,float,float]|float = (1.0,3.0,0.5)
+        self.crystal_mid_height:tuple[float,float,float]|float = (2.0,5.0,0.5)
+        self.crystal_mid_width:tuple[float,float,float]|float = (10,20.0,2.5)
+        self.crystal_top_height:tuple[float,float,float]|float = (10,15,2.5)
+        self.crystal_top_width:tuple[float,float,float]|float = (10,15.0,2.5)
+        self.crystal_faces:tuple[int,int,int]|int=(5,10,1)
+        self.crystal_intersect:bool = True
 
         self.random_rotate_x:tuple[float,float,float]|float|None = (-20.0, 20.0, 2.5)
         self.random_rotate_y:tuple[float,float,float]|float|None = (-15.0, 15.0, 2.5)
@@ -57,7 +72,15 @@ class CrystalWall(Base):
             length = self.length,
             width = self.width,
             base_height = self.base_height,
-            seed = self.seed
+            seed = self.seed,
+            taper = self.base_taper,
+            render_magnet = self.base_render_magnet,  
+            magnet_diameter = 3, 
+            magnet_height = 2,
+            detail_height = self.base_detail_height,
+            uneven_height = self.base_uneven_height,
+            peak_count = (9,10),
+            segments= 6
         )
 
     def calculate_height(self)->float:
@@ -77,17 +100,16 @@ class CrystalWall(Base):
             crystal,height = crystal_random(
                 height = self.height,
                 seed = adder_seed,
-                
-                base_width = 20.0,
-                base_height = 0.5,
-                inset_width = 20.0,
-                inset_height = (1.0,3.0,0.5),
-                mid_height = (2.0,5.0,0.5),
-                mid_width = (10,20.0,2.5),
-                top_height = (10,15,2.5),
-                top_width = (10,15.0,2.5),
-                faces=(5,10,1),#min,max,step
-                intersect = True
+                base_width = self.crystal_base_width,
+                base_height = self.crystal_base_height,
+                inset_width = self.crystal_inset_width,
+                inset_height = self.crystal_inset_height,
+                mid_height = self.crystal_mid_height,
+                mid_width = self.crystal_mid_width,
+                top_height = self.crystal_top_height,
+                top_width = self.crystal_top_width,
+                faces=self.crystal_faces,#min,max,step
+                intersect = self.crystal_intersect
             )
             crystal = crystal.translate((0,0,height/2))
             

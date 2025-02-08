@@ -1,10 +1,13 @@
 ## Main wip
 
-## 2.9.0
+## 3.0.0
+* Changed the crystal wall api. 
 * Added additional parameters to the crystal wall.
   * Made height an optional tuple
   * removed min_height
-  * Added render_crystals boolean parameter
+  * Added render_crystals boolean parameter.
+  * Added additional crystal tuple parameters.
+  * Added base parameters.
 
 ## 2.8.2
 * Fix walkway documentation example import.
