@@ -46,6 +46,7 @@ class CrystalWall(Base):
         self.base_detail_height:float = 3
         self.base_uneven_height:float = 4
         self.base_peak_count:tuple[int,int]|int = (9,10)
+        self.base_segments:int = 6
 
         self.render_crystals:bool = True
         self.crystal_base_width:tuple[float,float,float]|float = 20.0
@@ -79,8 +80,8 @@ class CrystalWall(Base):
             magnet_height = 2,
             detail_height = self.base_detail_height,
             uneven_height = self.base_uneven_height,
-            peak_count = (9,10),
-            segments= 6
+            peak_count = self.base_peak_count,
+            segments= self.base_segments
         )
 
     def calculate_height(self)->float:

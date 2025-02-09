@@ -1,5 +1,8 @@
 ## Main wip
 
+## 3.0.1
+* wired up crystal wall base_peak_count and added base_segments parameter
+
 ## 3.0.0
 * Changed the crystal wall api. 
 * Added additional parameters to the crystal wall.

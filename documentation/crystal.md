@@ -150,6 +150,7 @@ show_object(model)
 * base_detail_height: float 
 * base_uneven_height: float 
 * base_peak_count: tuple[int,int]|int 
+* base_segments:int
 * render_crystals: bool 
 * crystal_base_width: tuple[float,float,float]|float 
 * crystal_base_height: tuple[float,float,float]|float 
@@ -179,6 +180,7 @@ bp_wall.base_render_magnet = False
 bp_wall.base_detail_height = 3
 bp_wall.base_uneven_height= 4
 bp_wall.base_peak_count = (9,10)
+bp_wall.base_segments = 6
 bp_wall.render_crystals = True
 bp_wall.crystal_base_width = 20.0
 bp_wall.crystal_base_height = 0.5
