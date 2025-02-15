@@ -171,12 +171,85 @@ class CrystalWall(Base):
         
         if self.render_crystals and self.crystals:
             scene = scene.union(self.crystals)
+            
+        if self.base_cut:
+            height = self.calculate_height()
+            scene= scene.cut(self.base_cut.translate((0,0,-height/2 + self.base_height)))
+            
         
         if self.render_base and self.mini_base:
             scene = scene.union(self.mini_base.translate((0,0,self.base_height/2)))
             
+
+        return scene
+    
+    def build_cut_base(self):
+        '''
+        @todo this build_cut_base code is a mess.
+        '''
+        scene = cq.Workplane("XY")
+        cut_scene = cq.Workplane("XY")
+        
+        #one
+        if self.render_crystals and self.crystals and self.base_cut:
+            cut_scene = cut_scene.union(self.crystals)
+
+            height = self.calculate_height()
+            cut_scene = cut_scene.cut(self.base_cut.translate((0,0,-height/2 + self.base_height)))
+            cut_face_one = cut_scene.faces("<Z").wires().toPending().wires().extrude(self.base_detail_height)
+        
+        #two
+        if self.render_crystals and self.crystals and self.base_cut:
+            cut_scene = cut_scene.union(self.crystals)
+
+            height = self.calculate_height()
+            cut_scene = cut_scene.cut(self.base_cut.translate((0,0,-height/2 + self.base_height+ self.base_detail_height)))
+            cut_face = cut_scene.faces("<Z").wires().toPending().wires().extrude(-self.base_detail_height)
+            
+            cut_face:cq.Workplane = (
+                cut_face
+                .union(cut_face_one.translate((0,0,0)))
+            )
+            
+        if self.render_base and self.mini_base and cut_face:
+            cut_face = cut_face.val().scale(1.01) #type:ignore
+            
+            scene = scene.union(self.mini_base.translate((0,0,self.base_height/2)))
+            scene = scene.cut(cut_face)
+
+        return scene
+    
+    def build_crystals(self):
+        scene = cq.Workplane("XY")
+        if self.render_crystals and self.crystals and self.base_cut:
+            scene = scene.union(self.crystals)
+            
         if self.base_cut:
             height = self.calculate_height()
-            scene= scene.cut(self.base_cut.translate((0,0,-height/2)))
+            scene = scene.cut(self.base_cut.translate((0,0,-height/2 + self.base_height)))
             
         return scene
+        
+    
+    def build_plate(self):
+        super().build()
+        scene = cq.Workplane("XY")#.box(10,10,10)
+        
+        base = self.build_cut_base()
+        crystals = self.build_crystals()
+        scene = (
+            scene
+            .union(base)
+            .union(crystals.translate((0,self.width,-self.base_height)))
+        )
+
+        return scene
+    
+    def build_assembly(self):
+        assembly = cq.Assembly()
+        crsytals = self.build_crystals()
+        assembly.add(crsytals, color=cq.Color(0, 0, 1), name="crystals")
+        
+        if self.mini_base:
+            assembly.add(self.mini_base, color=cq.Color(0, 1, 0), name="base")
+        return assembly

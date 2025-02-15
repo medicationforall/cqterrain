@@ -1,5 +1,9 @@
 ## Main wip
 
+## 3.1.0
+* Added build_plate for CrystalWall
+* Added build_assembly for CrystalWall
+
 ## 3.0.1
 * wired up crystal wall base_peak_count and added base_segments parameter
 

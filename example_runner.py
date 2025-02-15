@@ -34,6 +34,8 @@ import example.crystal.crystal
 import example.crystal.crystal_random
 import example.crystal.crystal_random_group
 import example.crystal.crystal_wall
+import example.crystal.crystal_wall_assembly
+import example.crystal.crystal_wall_plate
 
 print('damage examples')
 import example.damage.damage_blast_set_large
