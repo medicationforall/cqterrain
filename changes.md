@@ -4,7 +4,7 @@
 * Added material stacked_wave_from_map
 * Added material stucco_brick_blocks
 * Added examples for stucco_brick_blocks
-* Updated metarial documentation
+* Updated material documentation
 
 ## 3.1.0
 * Added build_plate for CrystalWall
