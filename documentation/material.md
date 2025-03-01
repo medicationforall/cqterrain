@@ -1,4 +1,17 @@
 # Material
+
+## center_blocks
+Helper functino to make a list of workplane objects centered at the 0,0 origin point.
+
+### parameters
+* blocks: cq.Workplane
+
+<br />
+
+* [source](../src/cqterrain/material/center_blocks.py)
+
+---
+
 ## make_stones
 
 Create a sparse pattern of the given parts. 
@@ -36,9 +49,62 @@ show_object(tiles)
 
 ![](image/stone/01.png)
 
-* [source](../src/cqterrain/material/stone.py)
+* [source](../src/cqterrain/material/make_stones.py)
 * [example](../example/material/stones.py)
 * [stl](../stl/material_stones.stl)
+
+---
+
+## stucco_brick_blocks
+Makes a grid of bricks based on the output from stacked_wave_form_map.
+
+### parameters
+* wfc_data: list[list[str]] 
+* length: float
+* width: float 
+* height: float
+* spacing: float
+
+``` python
+import cadquery as cq
+from cqterrain.material import stacked_wave_form_map, stucco_brick_blocks
+
+map = stacked_wave_form_map(
+    size = (10,15),
+    seed = 'test',
+    cell_types = ['block','block','empty','block']
+)
+
+ex_matarial = stucco_brick_blocks(
+    map,
+    length = 10, 
+    width = 5, 
+    height = 5,
+    spacing = 2
+)
+
+show_object(ex_matarial)
+```
+
+![](image/material/04.png)
+
+* [source](../src/cqterrain/material/stucco_brick_blocks.py)
+* [example](../example/material/stucco_brick_blocks.py)
+* [stl](../stl/material_stucco_brick_blocks.stl)
+
+---
+
+## stacked_wave_form_map
+Helper function creates a list of lists. Each row is informed by the preceding row to determing if the cell should be empty based on the cell below.
+
+### parameters
+* size:Tuple[int,int]
+* seed:str|None
+* cell_types:list[str]
+
+<br />
+
+* [source](../src/cqterrain/material/stacked_wave_form_map.py)
 
 ---
 
@@ -130,4 +196,6 @@ for i, b in enumerate(blocks):
 * [source](../src/cqterrain/material/uneven_centered_blocks.py)
 * [example](../example/material/uneven_centered_blocks.py)
 * [stl](../stl/material_centered_uneven_blocks.stl)
+
+---
 
