@@ -11,6 +11,7 @@ def stucco_brick_blocks(
     #log('make_grid_of_blocks')
     #make block
     block = cq.Workplane("XY").box(length, width, height).tag('keep')
+    fill_block = cq.Workplane("XY").box(length+spacing,width+spacing,height)
 
     y_count:int= len(wfc_data)
     x_count:int = len(wfc_data[0])
@@ -48,7 +49,7 @@ def stucco_brick_blocks(
             keep_blocks = keep_blocks.add(k_block)
             return k_block #type:ignore
         else:
-            r_block = cq.Workplane("XY").box(12,7,5.5).translate((offset,0,0)).val().located(loc) #type:ignore
+            r_block = fill_block.translate((offset,0,0)).val().located(loc) #type:ignore
             remove_blocks = remove_blocks.add(r_block)
             return r_block #type:ignore
     
@@ -63,5 +64,5 @@ def stucco_brick_blocks(
             center = True)
         .eachpoint(callback = add_block)
     )
-    
+      
     return keep_blocks.union(remove_blocks)

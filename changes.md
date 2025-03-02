@@ -1,5 +1,10 @@
 ## Main wip
 
+## 3.2.1
+* Fix a bug with how the keep blocks are generated in stucco_brick_blocks.
+* Refactored stucco_brick_blocks.
+* Fix where the stucco example is writing it's stl file to the right location.
+
 ## 3.2.0
 * Added material stacked_wave_from_map
 * Added material stucco_brick_blocks

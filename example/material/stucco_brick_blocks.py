@@ -16,4 +16,4 @@ ex_matarial = stucco_brick_blocks(
 )
 
 #show_object(ex_matarial)
-cq.exporters.export(ex_matarial, 'material_stucco_brick_blocks.stl')
+cq.exporters.export(ex_matarial, 'stl/material_stucco_brick_blocks.stl')
