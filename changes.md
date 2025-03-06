@@ -1,5 +1,8 @@
 ## Main wip
 
+## 3.3.0
+* Added roof tile_alt
+
 ## 3.2.1
 * Fix a bug with how the keep blocks are generated in stucco_brick_blocks.
 * Refactored stucco_brick_blocks.

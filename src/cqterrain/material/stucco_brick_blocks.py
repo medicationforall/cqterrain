@@ -41,9 +41,6 @@ def stucco_brick_blocks(
             row += 1
         count += 1
         
-        if count < 0:
-            return cq.Workplane("XY").cylinder(1,1).val().located(loc) #type:ignore
-        
         if block_type is 'block':
             k_block = block.translate((offset,0,0)).val().located(loc) #type:ignore
             keep_blocks = keep_blocks.add(k_block)
