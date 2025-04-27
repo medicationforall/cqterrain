@@ -7,4 +7,4 @@ tiles_bp.make()
 tiles_ex = tiles_bp.build_assembly()
 
 #show_object(tiles_ex)
-tiles_ex.save("gltf/tiles_plate.gltf")
+tiles_ex.export("gltf/tiles_plate.gltf")

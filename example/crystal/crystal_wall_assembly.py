@@ -36,4 +36,4 @@ bp_wall.make()
 ex_assembly = bp_wall.build_assembly()
 
 #show_object(ex_wall)
-ex_assembly.save("gltf/crystal_wall.gltf")
+ex_assembly.export("gltf/crystal_wall.gltf")

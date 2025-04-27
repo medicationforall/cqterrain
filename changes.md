@@ -1,5 +1,9 @@
 ## Main wip
 
+## 3.4.1
+* Update to cadqueryhelperversion 1.5.0
+* Changed from using assembly.save (deprecated) to assembly.export
+
 ## 3.4.0
 * Updated min python version 3.10
 * Update to cadqueryhelperversion 1.5.0

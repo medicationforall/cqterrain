@@ -31,5 +31,5 @@ workspace.add(ex)
 
 #show_object(ex)
 cq.exporters.export(workspace,'stl/building.stl')
-#assemble.save('gltf/building.gltf', exportType='GLTF')
+#assemble.export('gltf/building.gltf', exportType='GLTF')
 #cq.exporters.export(workspace,'gltf/building.gltf', exportType='GLTF')
