@@ -138,7 +138,7 @@ class CrystalWall(Base):
             xCount = self.crystal_count, 
             yCount= 1,
             center = True)
-            .eachpoint(callback = self.crystal_adder())
+            .eachpoint(self.crystal_adder())
         )
         
         self.crystals = group

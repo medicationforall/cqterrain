@@ -47,7 +47,7 @@ def __make_segments(
             xCount = count, 
             yCount= 1, 
             center = True)
-        .eachpoint(callback = __add_segment)
+        .eachpoint(__add_segment)
     )
     
     return segments

@@ -17,6 +17,9 @@ door_bp.render_handle = True
 door_bp.handle_length = 3
 door_bp.handle_height = 6
 door_bp.handle_x_margin = .5
+door_bp.handle_mirrored  = False
+door_bp.handle_handle_length = 1
+door_bp.handle_base_chamfer = 1
 
 door_bp.make()
 

@@ -128,7 +128,7 @@ class TileStraight(BaseStraight):
                 xCount = x_count, 
                 yCount= y_count, 
                 center = True)
-            .eachpoint(callback = add_tile)
+            .eachpoint(add_tile)
         )
         
     def make(self, parent=None):

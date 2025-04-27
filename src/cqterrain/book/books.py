@@ -105,7 +105,7 @@ def books(
                 attach
                 .faces(">X")
                 .workplane()
-                .eachpoint(callback = adder_method))
+                .eachpoint(adder_method))
             attach = attach.union(generated_book)
 
     x = attach.val().BoundingBox().xlen #type:ignore

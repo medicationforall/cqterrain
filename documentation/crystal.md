@@ -120,7 +120,7 @@ group = (
     xCount = size, 
     yCount= size,
     center = True)
-    .eachpoint(callback = crystal_adder())
+    .eachpoint(crystal_adder())
 )
 
 show_object(model)

@@ -87,7 +87,7 @@ class CapGreeble(BaseGreeble):
                 xCount = 1, 
                 yCount= y_count, 
                 center = True)
-            .eachpoint(callback = add_shape)
+            .eachpoint(add_shape)
         ).rotate((1,0,0),(0,0,0),90)
         
         return grill_set

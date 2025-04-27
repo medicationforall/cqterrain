@@ -49,6 +49,6 @@ def rivet_round(
             fill = True,
             rotate = True
         )
-        .eachpoint(callback = __add_shape(rivet, padding, height, rivet_height))  
+        .eachpoint(__add_shape(rivet, padding, height, rivet_height))  
     )
     return base.union(rivets)

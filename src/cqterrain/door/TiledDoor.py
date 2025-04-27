@@ -39,10 +39,13 @@ class TiledDoor(Base):
         self.handle_width_padding:float = .25
         self.handle_height:float = 6
         self.handle_x_margin:float = .5
+        self.handle_mirrored:bool  = False
+        self.handle_handle_length:float = 1
+        self.handle_base_chamfer:float = 1
         
         #method callbacks
         self.tile_bp:Callable[[float, float, float], cq.Workplane] = gothic_one
-        self.handle_bp:Callable[[float, float, float], cq.Workplane] = pull_handle
+        self.handle_bp:Callable[[float, float, float, float, float, bool], cq.Workplane] = pull_handle
         
         #shapes
         self.outline:cq.Workplane|None = None
@@ -99,7 +102,7 @@ class TiledDoor(Base):
                 xCount = self.tiles_x_count, 
                 yCount= self.tiles_y_count, 
                 center = True)
-            .eachpoint(callback = add_tile)
+            .eachpoint(add_tile)
         )
         
         self.tiles = tiles.rotate((1,0,0),(0,0,0),-90)
@@ -119,16 +122,19 @@ class TiledDoor(Base):
                 xCount = self.tiles_x_count, 
                 yCount= self.tiles_y_count, 
                 center = True)
-            .eachpoint(callback = add_cut_tile)
+            .eachpoint(add_cut_tile)
         )
         
         self.cut_tiles = cut_tiles.rotate((1,0,0),(0,0,0),-90)
         
     def __make_handle(self):
         self.handle = self.handle_bp(
-            self.handle_length,
-            self.width + self.handle_width_padding*2,
-            self.handle_height
+            length = self.handle_length,
+            width = self.width + self.handle_width_padding*2,
+            height =self.handle_height,
+            handle_length = self.handle_handle_length,
+            handle_base_chamfer = self.handle_base_chamfer,
+            mirrored = self.handle_mirrored
         )
         
         self.cut_handle = (

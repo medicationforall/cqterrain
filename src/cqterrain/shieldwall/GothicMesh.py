@@ -111,7 +111,7 @@ class GothicMesh(Mesh):
                 xCount = x_count, 
                 yCount= y_count, 
                 center = True)
-            .eachpoint(callback = add_tile)
+            .eachpoint(add_tile)
         )
     
     def build(self) -> cq.Workplane:

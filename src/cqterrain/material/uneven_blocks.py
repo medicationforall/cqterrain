@@ -51,7 +51,7 @@ def uneven_blocks(
             xCount = columns, 
             yCount= rows, 
             center = True)
-        .eachpoint(callback = add_block)
+        .eachpoint(add_block)
     )
     
     uneven = uneven_plane(

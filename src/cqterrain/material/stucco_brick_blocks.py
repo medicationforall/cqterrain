@@ -59,7 +59,7 @@ def stucco_brick_blocks(
             xCount = x_count, 
             yCount= y_count, 
             center = True)
-        .eachpoint(callback = add_block)
+        .eachpoint(add_block)
     )
       
     return keep_blocks.union(remove_blocks)

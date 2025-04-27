@@ -91,7 +91,7 @@ class Bookcase(Base):
                 xCount = 1, 
                 yCount= self.segments, 
                 center = True)
-            .eachpoint(callback = adder_method)
+            .eachpoint(adder_method)
         ).rotate((1,0,0),(0,0,0),-90)
         
         self.books = group_books

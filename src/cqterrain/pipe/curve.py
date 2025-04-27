@@ -74,7 +74,7 @@ def __make_curved_connectors(
             fill = True,
             rotate = True
         )
-        .eachpoint(callback = __add_connector_with_count())
+        .eachpoint(__add_connector_with_count())
     ).rotate((0,1,0),(0,0,0),90).translate((0,radius,0))
     return connector_arc
 
@@ -117,7 +117,7 @@ def __make_curved_magnets(
             fill = True,
             rotate = True
         )
-        .eachpoint(callback = __add_magnets_with_count(magnet_cuts, pip_height))
+        .eachpoint(__add_magnets_with_count(magnet_cuts, pip_height))
     ).rotate((0,1,0),(0,0,0),90).translate((0,radius,0))
     return magnet_arc
 

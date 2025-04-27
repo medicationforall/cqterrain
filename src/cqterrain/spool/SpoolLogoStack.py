@@ -91,7 +91,7 @@ class SpoolLogoStack(Base):
                 yCount= stack_levels, 
                 center = True
             )
-            .eachpoint(callback = add_spool)
+            .eachpoint(add_spool)
         )
         
         return stack.rotate((1,0,0),(0,0,0),90)
@@ -129,7 +129,7 @@ class SpoolLogoStack(Base):
                 yCount= stack_levels, 
                 center = True
             )
-            .eachpoint(callback = add_word)
+            .eachpoint(add_word)
         )
         
         return word_stack.rotate((1,0,0),(0,0,0),-90)

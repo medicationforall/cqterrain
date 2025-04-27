@@ -46,7 +46,7 @@ def hatch(
             fill = True,
             rotate = True
         )
-        .eachpoint(callback = add_bolt)
+        .eachpoint(add_bolt)
     )
     
     center_cut = cq.Workplane("XY").cylinder(center_cut_height, center_radius)

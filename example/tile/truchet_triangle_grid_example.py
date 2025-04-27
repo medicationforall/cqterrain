@@ -21,7 +21,7 @@ result = (
         xCount = 5, 
         yCount= 5, 
         center = True)
-    .eachpoint(callback = add_star)
+    .eachpoint(add_star)
 )
 
 union_grid = cq.Workplane("XY").union(result)

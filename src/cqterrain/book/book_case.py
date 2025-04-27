@@ -36,7 +36,7 @@ def book_case(
             xCount = 1, 
             yCount= segments, 
             center = True)
-        .eachpoint(callback = add_segment)
+        .eachpoint(add_segment)
     ).rotate((1,0,0),(0,0,0),90)
     
     scene = (

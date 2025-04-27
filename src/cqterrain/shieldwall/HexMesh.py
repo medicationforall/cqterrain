@@ -74,7 +74,7 @@ class HexMesh(Mesh):
                 xCount = x_count, 
                 yCount= y_count, 
                 center = True)
-            .eachpoint(callback = add_tile)
+            .eachpoint(add_tile)
         )
         
         if self.outline:

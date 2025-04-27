@@ -74,7 +74,7 @@ def conduit(
                 xCount = 1, 
                 yCount= pipe_count, 
                 center = True)
-            .eachpoint(callback = __add_pipe)
+            .eachpoint(__add_pipe)
         )
 
         tile = tile.union(half_pipes.translate((0,0,height/2-frame_depth)))

@@ -53,7 +53,7 @@ def make_custom_door(wall, length, width, height, floor_height):
         return door_instance.translate((0,0,(height/2)+floor_height)).val().located(loc) #type: ignore
         
         
-    door_wrapper = cq.Workplane(bottom.Center()).eachpoint(callback = add_door)
+    door_wrapper = cq.Workplane(bottom.Center()).eachpoint(add_door)
 
     #log(bottom.Center())
     wall = wall.cut(cutout).union(door_wrapper)

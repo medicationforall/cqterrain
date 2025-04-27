@@ -66,7 +66,7 @@ def spoked_wheel(
             fill = True,
             rotate = True
         )
-        .eachpoint(callback = __add_shape(
+        .eachpoint(__add_shape(
             spoke,
             spoke_length,
             spoke_z_translate

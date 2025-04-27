@@ -89,7 +89,7 @@ class Board(Base):
                 xCount = self.x_count, 
                 yCount= self.y_count, 
                 center = True)
-            .eachpoint(callback = add_square)
+            .eachpoint(add_square)
         )
         self.squares = squares
         

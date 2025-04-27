@@ -29,7 +29,7 @@ uneven_surface_example = (
         xCount = 3, 
         yCount= 3, 
         center = True)
-    .eachpoint(callback = add_surface)
+    .eachpoint(add_surface)
 )
 
 #show_object(uneven_surface_example)

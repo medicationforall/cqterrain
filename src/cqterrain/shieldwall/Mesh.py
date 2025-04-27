@@ -72,7 +72,7 @@ class Mesh(BaseMesh):
                 xCount = x_count, 
                 yCount= y_count, 
                 center = True)
-            .eachpoint(callback = add_star)
+            .eachpoint(add_star)
         )
         
     def make(self, parent=None):

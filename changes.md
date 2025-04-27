@@ -1,5 +1,16 @@
 ## Main wip
 
+## 3.4.0
+* Updated min python version 3.10
+* Update to cadqueryhelperversion 1.5.0
+* Added door TiledDoor handle parameters. Updated example, and documentation.
+  * handle_mirrored:bool
+  * handle_handle_length:float
+  * handle_base_chamfer:float
+* Cleaned up instances where I was setting the callback parameter for workplane.eachpoint invocations.
+  * https://github.com/CadQuery/cadquery/issues/1395
+
+
 ## 3.3.0
 * Added roof tile_alt
 

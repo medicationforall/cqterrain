@@ -217,6 +217,9 @@ show_object(door_ex)
 * handle_width_padding: float
 * handle_height: float
 * handle_x_margin: float
+* handle_mirrored:bool
+* handle_handle_length:float
+* handle_base_chamfer:float
 
 ## method callbacks
 * tile_bp: Callable[[float, float, float], cq.Workplane]
@@ -242,10 +245,15 @@ door_bp.render_handle = True
 door_bp.handle_length = 3
 door_bp.handle_height = 6
 door_bp.handle_x_margin = .5
+door_bp.handle_mirrored  = False
+door_bp.handle_handle_length = 1
+door_bp.handle_base_chamfer = 1
 
 door_bp.make()
 
 door_ex = door_bp.build()
+
+show_object(door_ex)
 ```
 
 ![](image/door/03.png)
