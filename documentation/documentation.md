@@ -8,6 +8,7 @@
 * [Crystal](crystal.md)
 * [Damage](damage.md)
 * [Door](door.md)
+* [Floor](floor.md)
 * [Greeble](greeble.md)
 * [Material](material.md)
 * [Minibase](minibase.md)

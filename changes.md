@@ -1,5 +1,11 @@
 ## Main wip
 
+## 3.4.2
+* Update to cadqueryhelperversion 1.6.0
+* Added floor package
+  * Added RoundBrickFloor
+  * Updated README.md / docuentation
+
 ## 3.4.1
 * Update to cadqueryhelperversion 1.5.0
 * Changed from using assembly.save (deprecated) to assembly.export

@@ -58,6 +58,10 @@ import example.door.blastDoor
 import example.door.hatch
 import example.door.splitDoor
 
+print('floor')
+import example.floor.round_brick_floor
+import example.floor.round_brick_floor_alt
+
 print('greeble examples')
 import example.greeble.gothic_one
 import example.greeble.vent
