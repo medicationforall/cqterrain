@@ -1,5 +1,17 @@
 # Building
 
+- [Building](#building)
+  - [Floor](#floor)
+    - [parameters](#parameters)
+    - [With tile example](#with-tile-example)
+  - [Room](#room)
+    - [parameters](#parameters-1)
+  - [Wall](#wall)
+    - [parameters](#parameters-2)
+    - [With tile example](#with-tile-example-1)
+
+---
+
 ## Floor
 ### parameters
 * length: float

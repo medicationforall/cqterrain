@@ -1,5 +1,21 @@
 # Book
 
+- [Book](#book)
+  - [Book](#book-1)
+    - [parameters](#parameters)
+  - [Book Random](#book-random)
+    - [parameters](#parameters-1)
+    - [returns](#returns)
+    - [Alternative seed blue](#alternative-seed-blue)
+    - [Alternative seed green](#alternative-seed-green)
+  - [Books](#books)
+    - [parameters](#parameters-2)
+    - [returns](#returns-1)
+  - [Bookcase](#bookcase)
+    - [parameters](#parameters-3)
+  - [Bookcase Class](#bookcase-class)
+    - [parameters](#parameters-4)
+
 ---
 
 ## Book

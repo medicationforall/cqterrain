@@ -61,6 +61,8 @@ import example.door.splitDoor
 print('floor')
 import example.floor.round_brick_floor
 import example.floor.round_brick_floor_alt
+import example.floor.wood_floor
+import example.floor.wood_floor_struct
 
 print('greeble examples')
 import example.greeble.gothic_one

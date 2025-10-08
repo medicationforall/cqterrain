@@ -1,18 +1,46 @@
 # Stairs Documentation
 
+- [Stairs Documentation](#stairs-documentation)
+  - [Stairs](#stairs)
+    - [parameters](#parameters)
+    - [Notes](#notes)
+    - [Examples](#examples)
+      - [Default](#default)
+      - [Ladder](#ladder)
+      - [Grand](#grand)
+      - [Small](#small)
+      - [Futuristic](#futuristic)
+      - [Overlap](#overlap)
+  - [Round](#round)
+    - [Greebled Stairs](#greebled-stairs)
+      - [parameters](#parameters-1)
+      - [Combined With Ramp Example](#combined-with-ramp-example)
+    - [Plain Stairs](#plain-stairs)
+      - [parameters](#parameters-2)
+      - [Plain Combined With Ramp Example](#plain-combined-with-ramp-example)
+    - [Ramp](#ramp)
+      - [parameters](#parameters-3)
+      - [Ramp Combined With Ramp Example](#ramp-combined-with-ramp-example)
+    - [Outline](#outline)
+      - [parameters](#parameters-4)
+  - [Industrial Stairs](#industrial-stairs)
+    - [parameters](#parameters-5)
+
+---
+
 ## Stairs
 
 ### parameters
-* length
-* width
-* height
-* run
-* stair_length_offset
-* stair_height
-* stair_height_offset
-* rail_width
-* rail_height
-* step_overlap
+* length: float
+* width: float
+* height: float
+* run: float
+* stair_length_offset: float
+* stair_height: float
+* stair_height_offset: float
+* rail_width: float
+* rail_height: float
+* step_overlap: float|None
 
 ``` python
 import cadquery as cq # Main cadquery library.
@@ -32,15 +60,9 @@ ex = stairs(
 )
 
 # Add the stairs to a workplane.
-workspace = cq.Workplane('XY')
-workspace.add(ex)
+result = cq.Workplane('XY').add(ex)
 
-# Write to stl file.
-cq.exporters.export(workspace,'stl/stairs.stl')
-
-# Print metadata to console for debugging
-if ex.metadata:
-    print(ex.metadata)
+show_object(result)
 ```
 
 The code above:
@@ -51,7 +73,7 @@ The code above:
 
 ![](image/stairs/07.png)
 
-# Notes
+### Notes
 * By default *step_overlap* is half of *rail_width* unless specified.
 * *stair_length_offset* is added or removed invisible space to *run*
 * *stair_height_offset* is added or removed invisible space to *stair_height*
@@ -65,9 +87,9 @@ The code above:
 
 
 ---
-# Examples
+### Examples
 
-## Default
+#### Default
 
 ``` python
 ex = stairs(
@@ -84,13 +106,13 @@ ex = stairs(
 
 ![](image/stairs/02.png)
 
-## Ladder
+#### Ladder
 
 ``` python
 ex = stairs(
     length = 10,
     width = 10,
-    heigh t= 40,
+    height= 40,
     run = 1,
     stair_length_offset = 0,
     stair_height = 1,
@@ -101,7 +123,7 @@ ex = stairs(
 
 ![](image/stairs/01.png)
 
-## Grand
+#### Grand
 
 ``` python
 ex = stairs(
@@ -118,7 +140,7 @@ ex = stairs(
 
 ![](image/stairs/03.png)
 
-## Small
+#### Small
 
 ``` python
 ex = stairs(
@@ -135,7 +157,7 @@ ex = stairs(
 
 ![](image/stairs/04.png)
 
-## Futuristic
+#### Futuristic
 
 ``` python
 ex = stairs(
@@ -153,7 +175,7 @@ ex = stairs(
 
 ![](image/stairs/05.png)
 
-## Overlap
+#### Overlap
 
 ``` python
 ex = stairs(
@@ -175,9 +197,11 @@ ex = stairs(
 
 ## Round
 
-## Greebled Stairs
+---
 
-### parameters
+### Greebled Stairs
+
+#### parameters
 * height: float
 * inner_diameter: float
 * diameter: float
@@ -207,7 +231,7 @@ show_object(stairs)
 * [stl](../stl/stairs_round_greebled_stairs.stl)
 
 
-### Combined with ramp example
+#### Combined With Ramp Example
 
 ``` python
 import cadquery as cq
@@ -243,9 +267,9 @@ show_object(combined_stairs)
 * [stl](../stl/stairs_round_combined_greebled.stl)
 ----
 
-## Plain Stairs
+### Plain Stairs
 
-### parameters
+#### parameters
 * height: float
 * inner_diameter: float
 * diameter: float
@@ -275,7 +299,7 @@ show_object(stairs)
 * [example](../example/stairs/round/plain_stairs.py)
 * [stl](../stl/stairs_round_plain_stairs.stl)
 
-### Combined with ramp example
+#### Plain Combined With Ramp Example
 
 ``` python
 import cadquery as cq
@@ -312,9 +336,9 @@ show_object(combined_stairs)
 
 ---
 
-## Ramp
+### Ramp
 
-### parameters
+#### parameters
 * height: float
 * inner_diameter: float
 * diameter: float
@@ -345,7 +369,7 @@ show_object(round_ramp)
 * [example](../example/stairs/round/ramp.py)
 * [stl](../stl/stairs_round_ramp.stl)
 
-### Combined with ramp example
+#### Ramp Combined With Ramp Example
 
 ``` python
 import cadquery as cq
@@ -383,9 +407,9 @@ show_object(combined_ramp)
 
 ---
 
-## Outline
+### Outline
 
-### parameters
+#### parameters
 * height: float
 * inner_diameter: float
 * diameter: float
@@ -411,3 +435,42 @@ show_object(outline_ex)
 * [source](../src/cqterrain/stairs/round/outline.py)
 * [example](../example/stairs/round/outline.py)
 * [stl](../stl/stairs_round_outline.stl)
+
+---
+
+## Industrial Stairs
+
+### parameters
+* length: float
+* width: float
+* height: float
+* stair_count: int
+* stair_chamfer: float|None
+* render_step_cut: bool
+* render_hollow: bool
+* cut_padding: float
+
+``` python
+import cadquery as cq
+from cqterrain.stairs import IndustrialStairs
+
+bp = IndustrialStairs()
+bp.length = 75
+bp.width = 75
+bp.height = 50
+bp.stair_count = 5
+bp.stair_chamfer = .5
+bp.render_step_cut = True
+bp.render_hollow = True
+bp.cut_padding = 10
+bp.make()
+ex_stairs = bp.build()
+
+show_object(ex_stairs)
+```
+
+![](image/stairs/15.png)
+
+* [source](../src/cqterrain/stairs/IndustrialStairs.py)
+* [example](../example/stairs/industrial_stairs.py)
+* [stl](../stl/stairs_industrial_stairs.stl)

@@ -7,6 +7,22 @@ Quickly generate randomized damage templates driven by seed.
 
 The idea is that you generate a plate of randomized damage templates. And choose the ones you like best.
 
+- [Damage](#damage)
+  - [Blast](#blast)
+    - [parameters](#parameters)
+  - [Random Nudge Points](#random-nudge-points)
+    - [parameters](#parameters-1)
+    - [Returns](#returns)
+  - [Uneven Plane](#uneven-plane)
+    - [parameters](#parameters-2)
+    - [Uneven Plane Grid Example](#uneven-plane-grid-example)
+  - [Uneven Spline Plane](#uneven-spline-plane)
+    - [parameters](#parameters-3)
+    - [Uneven Spline Plane Grid Example](#uneven-spline-plane-grid-example)
+
+
+---
+
 ## Blast
 
 Generates damage template derived from a modified [pinwheel](https://github.com/medicationforall/cadqueryhelper/blob/main/documentation/shapes.md#pinwheel).

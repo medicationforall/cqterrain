@@ -1,5 +1,18 @@
 # Walkway Documentation
 
+- [Walkway Documentation](#walkway-documentation)
+  - [Walkway](#walkway)
+    - [parameters](#parameters)
+      - [slots](#slots)
+      - [regular tiles](#regular-tiles)
+      - [irregular tiles](#irregular-tiles)
+      - [tabs](#tabs)
+      - [rails](#rails)
+      - [rail slots](#rail-slots)
+
+
+---
+
 ## Walkway
 
 ### parameters

@@ -1,5 +1,21 @@
 # Roof
 
+- [Roof](#roof)
+  - [Angle](#angle)
+    - [parameters](#parameters)
+    - [returns](#returns)
+  - [Gable](#gable)
+    - [parameters](#parameters-1)
+  - [Hip](#hip)
+    - [parameters](#parameters-2)
+  - [Shell](#shell)
+    - [parameters](#parameters-3)
+  - [Tiles](#tiles)
+    - [parameters](#parameters-4)
+
+
+---
+
 ## Angle
 
 utility function finds the hypotenuse of a right triangle.

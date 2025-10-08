@@ -1,5 +1,25 @@
 # Door
 
+- [Door](#door)
+  - [Blast Door](#blast-door)
+    - [parameters](#parameters)
+  - [Door](#door-1)
+    - [parameters](#parameters-1)
+  - [Hatch](#hatch)
+    - [parameters](#parameters-2)
+  - [Heavy Door](#heavy-door)
+    - [Paramaters](#paramaters)
+  - [Pull Handle](#pull-handle)
+    - [parameters](#parameters-3)
+  - [Split Door](#split-door)
+    - [parameters](#parameters-4)
+  - [Tiled Door](#tiled-door)
+    - [parameters](#parameters-5)
+    - [method callbacks](#method-callbacks)
+
+
+---
+
 ## Blast Door
 ### parameters
 length: float
@@ -49,6 +69,8 @@ show_object(blast_door)
 * [example](../example/door/blastDoor.py)
 * [stl](../stl/door_blastDoor.stl)
 
+---
+
 ## Door
 ### parameters
 * length: float 
@@ -83,6 +105,9 @@ show_object(result)
 * [source](../src/cqterrain/door/Door.py)
 * [example](../example/door/door.py)
 * [stl](../stl/door.stl)
+
+
+---
 
 ## Hatch
 ### parameters
@@ -130,6 +155,76 @@ show_object(hatch_ex)
 * [example](../example/door/hatch.py)
 * [stl](../stl/door_hatch.stl)
 
+---
+## Heavy Door
+
+### Paramaters
+* length: float 
+* width: float
+* height: float
+* trim_size: float
+* inset_depth: float
+* render_side_cuts: bool
+* side_cut_height: float 
+* side_cut_length: float
+* side_cut_distance: float
+* side_cut_operation: Literal['chamfer','fillet']|None
+* render_cross_bars: bool
+* cross_bars_angle: float
+* cross_bar_offset: float
+* cross_bar_height: float|None
+* render_window: float
+* window_height: float
+* window_width: float
+* window_trim: float|None
+* window_offset: float
+* render_window_pane_cut: bool
+* window_pane_margin: float
+* window_pane_width: float
+* window_key_width: float
+* window_key_margin: float
+* wndow_key_text: str
+* render_cross_section: bool
+
+``` python
+import cadquery as cq
+from cqterrain.door import HeavyDoor
+
+bp_door = HeavyDoor()
+bp_door.length = 30 
+bp_door.width =  4
+bp_door.height = 45
+bp_door.trim_size = 1.5
+bp_door.inset_depth = 1
+
+bp_door.render_side_cuts = True
+
+bp_door.side_cut_height = 20 
+bp_door.side_cut_length = 5
+bp_door.side_cut_distance = 5
+bp_door.side_cut_operation = 'chamfer'
+
+bp_door.render_cross_bars = True
+bp_door.cross_bars_angle = 30
+bp_door.cross_bar_offset = 8
+bp_door.cross_bar_height = None
+
+bp_door.render_window = True
+bp_door.make()
+
+ex_door = bp_door.build_plate()
+
+show_object(ex_door)
+```
+
+![](image/door/07.png)
+
+* [source](../src/cqterrain/door/HeavyDoor.py)
+* [example](../example/door/heavy_door.py)
+* [stl](../stl/door_heavy_door.stl)
+
+---
+
 ## Pull Handle
 
 ### parameters
@@ -163,6 +258,8 @@ handle_ex = pull_handle(
 * [source](../src/cqterrain/door/pull_handle.py)
 * [example](../example/door/pull_handle.py)
 * [stl](../stl/door_pull_handle.stl)
+
+---
 
 ## Split Door
 ### parameters
@@ -200,6 +297,8 @@ show_object(door_ex)
 * [example](../example/door/splitDoor.py)
 * [stl](../stl/door_splitDoor.stl)
 
+---
+
 ## Tiled Door
 
 ### parameters
@@ -221,7 +320,7 @@ show_object(door_ex)
 * handle_handle_length:float
 * handle_base_chamfer:float
 
-## method callbacks
+### method callbacks
 * tile_bp: Callable[[float, float, float], cq.Workplane]
 * handle_bp: Callable[[float, float, float], cq.Workplane]
 

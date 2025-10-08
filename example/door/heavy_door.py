@@ -25,5 +25,5 @@ bp_door.make()
 
 ex_door = bp_door.build_plate()
 
-#show_object(ex_door
+#show_object(ex_door)
 cq.exporters.export(ex_door,'stl/door_heavy_door.stl')

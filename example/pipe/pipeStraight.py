@@ -17,6 +17,6 @@ pipe_line_hollow = pipe.straight(
     render_through_hole=True
 )
 
-#show_object(power_line)
+#show_object(pipe_line)
 cq.exporters.export(pipe_line,"stl/pipe_straight.stl")
 cq.exporters.export(pipe_line_hollow,"stl/pipe_line_hollow.stl")

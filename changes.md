@@ -4,7 +4,15 @@
 * Update to cadqueryhelperversion 1.6.0
 * Added floor package
   * Added RoundBrickFloor
+  * Added WoodFloor
   * Updated README.md / docuentation
+* Documentation Added table of contents to each section.
+  * Added industrial_stairs to stair documentation
+  * Built out pipe documentation
+* Built out pipe examples
+  * Added parameters
+* HeavyDoor added type annotations
+  * Added heavy door documentation to door.md
 
 ## 3.4.1
 * Update to cadqueryhelperversion 1.5.0

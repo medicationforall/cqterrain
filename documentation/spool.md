@@ -1,5 +1,16 @@
 # Spool Documentation
 
+- [Spool Documentation](#spool-documentation)
+  - [spool](#spool)
+    - [parameters](#parameters)
+    - [build\_no\_center](#build_no_center)
+  - [SpoolLogoStack](#spoollogostack)
+    - [parameters](#parameters-1)
+  - [blueprints](#blueprints)
+
+
+---
+
 ## spool
 Builder class for making a spool. Inherits from Base.
 

@@ -3,6 +3,35 @@
 Collection is minibase shapes with magnet cutouts. 
 The code for these is very simple most of these are just a loft operation.
 
+- [Minibase](#minibase)
+  - [Basic Bases](#basic-bases)
+  - [Circle](#circle)
+    - [Parameters](#parameters)
+  - [Ellipse](#ellipse)
+    - [Parameters](#parameters-1)
+  - [Hexagon](#hexagon)
+    - [Parameters](#parameters-2)
+  - [make\_magnet\_outline](#make_magnet_outline)
+    - [Parameters](#parameters-3)
+  - [Rectangle](#rectangle)
+    - [Parameters](#parameters-4)
+  - [Slot](#slot)
+    - [Parameters](#parameters-5)
+  - [Uneven Bases](#uneven-bases)
+  - [Circle Uneven](#circle-uneven)
+    - [Parameters](#parameters-6)
+  - [Ellipse Uneven](#ellipse-uneven)
+    - [Parameters](#parameters-7)
+  - [Hexagon Uneven](#hexagon-uneven)
+    - [Parameters](#parameters-8)
+  - [Rectangle Uneven](#rectangle-uneven)
+    - [Parameters](#parameters-9)
+  - [Slot Uneven](#slot-uneven)
+    - [Parameters](#parameters-10)
+
+
+---
+
 ## Basic Bases
 
 ![](image/minibase/06.png)

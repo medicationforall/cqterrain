@@ -14,43 +14,44 @@
 
 import cadquery as cq
 from cadqueryhelper import Base
+from typing import Literal
 
 class HeavyDoor(Base):
     def __init__(self):
         super()
         #parameters
-        self.length = 30 
-        self.width =  3
-        self.height = 45
-        self.trim_size = 1.5
-        self.inset_depth = 1
+        self.length:float = 30 
+        self.width:float =  3
+        self.height:float = 45
+        self.trim_size:float = 1.5
+        self.inset_depth:float = 1
         
-        self.render_side_cuts = True
+        self.render_side_cuts:bool = True
         
-        self.side_cut_height = 20 
-        self.side_cut_length = 5
-        self.side_cut_distance = 5
-        self.side_cut_operation = 'chamfer'
+        self.side_cut_height:float = 20 
+        self.side_cut_length:float = 5
+        self.side_cut_distance:float = 5
+        self.side_cut_operation:Literal['chamfer','fillet']|None = 'chamfer'
         
-        self.render_cross_bars = True
-        self.cross_bars_angle = 30
-        self.cross_bar_offset = 8
-        self.cross_bar_height = None
+        self.render_cross_bars:bool = True
+        self.cross_bars_angle:float = 30
+        self.cross_bar_offset:float = 8
+        self.cross_bar_height:float|None = None
         
-        self.render_window = True
-        self.window_height = 15
-        self.window_width = 8
-        self.window_trim = None
-        self.window_offset = 8
+        self.render_window:float = True
+        self.window_height:float = 15
+        self.window_width:float = 8
+        self.window_trim:float|None = None
+        self.window_offset:float = 8
         
-        self.render_window_pane_cut = True
-        self.window_pane_margin = 0.4
-        self.window_pane_width = 0.4
-        self.window_key_width = 2
-        self.window_key_margin = 0.2
-        self.wndow_key_text = "Heavy Door Window Key"
+        self.render_window_pane_cut:bool = True
+        self.window_pane_margin:float = 0.4
+        self.window_pane_width:float = 0.4
+        self.window_key_width:float = 2
+        self.window_key_margin:float = 0.2
+        self.wndow_key_text:str = "Heavy Door Window Key"
         
-        self.render_cross_section = False
+        self.render_cross_section:bool = False
 
         #shapes
         self.body = None
