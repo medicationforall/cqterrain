@@ -1,5 +1,16 @@
 ## Main wip
 
+## 3.4.3
+* Added license blocks
+* fixed WoodFloor paramater misspelling board_lenghs to board_lengths
+  * In build use union opposed to add.
+* Added minibase circle_wood
+* Added minibase ellipse_wood
+* Added minibase hexagon_wood
+* Added minibase rectangle_wood
+* Added minibase slot_wood
+* Added minibase wood documentation
+
 ## 3.4.2
 * Update to cadqueryhelperversion 1.6.0
 * Added floor package

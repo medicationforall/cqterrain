@@ -1,3 +1,18 @@
+# Copyright 2025 James Adams
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
 import cadquery as cq
 from cadqueryhelper import Base
 from  math import floor
@@ -32,7 +47,7 @@ class WoodFloor(Base):
         
         # grid
         self.seed:str = "redd2"
-        self.board_lenghs:list[int] = [1,4]
+        self.board_lengths:list[int] = [1,4]
         self.board_break_width:float = .2
         self.grid:list[str] = []
         
@@ -183,7 +198,7 @@ class WoodFloor(Base):
         x_count = self.calculate_boards_count()
         
         #log(f' make grid {y_count=} {x_count=}')
-        break_point = random.choice(self.board_lenghs)
+        break_point = random.choice(self.board_lengths)
         grid = []
         
         #log(f"{break_point=}")
@@ -208,7 +223,7 @@ class WoodFloor(Base):
                         row.append("f")
                     else:
                         row.append("b")
-                        break_point=random.choice(self.board_lenghs)
+                        break_point=random.choice(self.board_lengths)
                 else:
                     break_point -=1
                     row.append("f")
@@ -343,8 +358,8 @@ class WoodFloor(Base):
         if self.boards and self.board_breaks:
             boards = self.boards.cut(self.board_breaks)
 
-        part = part.add(boards)
-        part = part.add(nails)
+        part = part.union(boards)
+        part = part.union(nails)
         return part
 
     def build_joists(self)->cq.Workplane:
@@ -352,7 +367,7 @@ class WoodFloor(Base):
 
         if self.outline and self.joists:
             joists = self.outline.intersect(self.joists)
-        part = part.add(joists)
+        part = part.union(joists)
         return part
         
     def build(self):
@@ -362,10 +377,10 @@ class WoodFloor(Base):
         
         if self.render_joists:
             joists = self.build_joists()
-            part = part.add(joists)
-            part = part.add(floor.translate((0,0,self.height/2)))
+            part = part.union(joists)
+            part = part.union(floor.translate((0,0,self.height/2)))
         else:
-           part = part.add(floor) 
+           part = part.union(floor) 
         return part
     
     def build_assembly(self):

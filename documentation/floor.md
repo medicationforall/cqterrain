@@ -102,7 +102,7 @@ show_object(combined)
 * nail_x_margin: float
 * nail_y_margin: float
 * seed: str
-* board_lenghs: list[int]
+* board_lengths: list[int]
 * board_break_width: float
 * grid: list[str]
 
@@ -134,7 +134,7 @@ bp_floor.nail_y_margin = .5
 
 # grid
 bp_floor.seed= "redd2"
-bp_floor.board_lenghs = [1,4]
+bp_floor.board_lengths = [1,4]
 bp_floor.board_break_width= .2
 bp_floor.grid = []
 

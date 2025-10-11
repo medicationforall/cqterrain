@@ -28,6 +28,17 @@ The code for these is very simple most of these are just a loft operation.
     - [Parameters](#parameters-9)
   - [Slot Uneven](#slot-uneven)
     - [Parameters](#parameters-10)
+  - [Wood Bases](#wood-bases)
+  - [Circle Wood](#circle-wood)
+    - [Parameters](#parameters-11)
+  - [Ellipse Wood](#ellipse-wood)
+    - [Parameters](#parameters-12)
+  - [Hexagon Wood](#hexagon-wood)
+    - [Parameters](#parameters-13)
+  - [Rectangle Wood](#rectangle-wood)
+    - [Parameters](#parameters-14)
+  - [Slot Wood](#slot-wood)
+    - [Parameters](#parameters-15)
 
 
 ---
@@ -429,5 +440,287 @@ show_object(ex_base)
 * [source](../src/cqterrain/minibase/slot_uneven.py)
 * [example](../example/minibase/slot_uneven.py)
 * [stl](../stl/minibase_slot_uneven.stl)
+
+---
+
+## Wood Bases
+
+![](image/minibase/18.png)<br />
+
+---
+
+## Circle Wood
+
+### Parameters
+* diameter: float
+* base_height: float
+* taper: float
+* render_magnet: bool  
+* magnet_diameter: float
+* magnet_height: float
+* board_height: float
+* overlap: float
+* seed: str
+* joist_space: float
+* board_width: float
+* board_width_spacer: float
+* board_break_width: float
+* nail_diameter: float
+* joist_width: float
+* debug: bool
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import circle_wood
+
+ex_base = circle_wood(    
+    diameter = 40,
+    base_height = 3,
+    taper = -1,
+    render_magnet = True,  
+    magnet_diameter = 3, 
+    magnet_height = 2,
+    board_height = 1,
+    overlap = 20,
+    seed = "seed",
+    joist_space = 12.5,
+    board_width = 6.5,
+    board_width_spacer = .2,
+    board_break_width = .4,
+    nail_diameter = .6,
+    joist_width = 4,
+    debug = False
+)
+
+show_object(ex_base)
+```
+
+![](image/minibase/14.png)<br />
+
+* [source](../src/cqterrain/minibase/circle_wood.py)
+* [example](../example/minibase/circle_wood.py)
+* [stl](../stl/minibase_circle_wood.stl)
+
+---
+
+## Ellipse Wood
+
+### Parameters
+* x_diameter: float
+* y_diameter: float
+* base_height: float
+* taper: float
+* render_magnet: bool  
+* magnet_diameter: float
+* magnet_height: float
+* board_height: float
+* overlap: float
+* seed: str
+* joist_space: float
+* board_width: float
+* board_width_spacer: float
+* board_break_width: float
+* nail_diameter: float
+* joist_width: float
+* debug: bool
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import ellipse_wood
+
+ex_base = ellipse_wood(    
+    x_diameter = 52, 
+    y_diameter = 90, 
+    base_height = 3,
+    taper = -1,
+    render_magnet = True,  
+    magnet_diameter = 3, 
+    magnet_height = 2,
+    board_height = 1,
+    overlap = 20,
+    seed = "seed",
+    joist_space = 12.5,
+    board_width = 6.5,
+    board_width_spacer = .2,
+    board_break_width = .4,
+    nail_diameter = .6,
+    joist_width = 4,
+    debug = False
+)
+
+show_object(ex_base)
+```
+
+![](image/minibase/17.png)<br />
+
+* [source](../src/cqterrain/minibase/ellipse_wood.py)
+* [example](../example/minibase/ellipse_wood.py)
+* [stl](../stl/minibase_ellipse_wood.stl)
+
+---
+
+## Hexagon Wood
+
+### Parameters
+* diameter: float
+* base_height: float
+* taper: float
+* render_magnet: bool  
+* magnet_diameter: float
+* magnet_height: float
+* board_height: float
+* overlap: float
+* seed: str
+* joist_space: float
+* board_width: float
+* board_width_spacer: float
+* board_break_width: float
+* nail_diameter: float
+* joist_width: float
+* debug: bool
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import hexagon_wood
+
+ex_base = hexagon_wood(    
+    diameter = 40,
+    base_height = 3,
+    taper = -1,
+    render_magnet = True,  
+    magnet_diameter = 3, 
+    magnet_height = 2,
+    board_height = 1,
+    overlap = 20,
+    seed = "seed",
+    joist_space = 12.5,
+    board_width = 6.5,
+    board_width_spacer = .2,
+    board_break_width = .4,
+    nail_diameter = .6,
+    joist_width = 4,
+    debug = False
+)
+
+show_object(ex_base)
+```
+
+![](image/minibase/16.png)<br />
+
+* [source](../src/cqterrain/minibase/hexagon_wood.py)
+* [example](../example/minibase/hexagon_wood.py)
+* [stl](../stl/minibase_hexagon_wood.stl)
+
+---
+
+## Rectangle Wood
+
+### Parameters
+* length: float
+* width: float
+* base_height: float
+* taper: float
+* render_magnet: bool  
+* magnet_diameter: float
+* magnet_height: float
+* board_height: float
+* overlap: float
+* seed: str
+* joist_space: float
+* board_width: float
+* board_width_spacer: float
+* board_break_width: float
+* nail_diameter: float
+* joist_width: float
+* debug: bool
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import rectangle_wood
+
+ex_base = rectangle_wood(
+    length = 40,
+    width = 40,
+    base_height = 3,
+    taper = -1,
+    render_magnet = True,  
+    magnet_diameter = 3, 
+    magnet_height = 2,
+    board_height = 1,
+    overlap = 20,
+    seed = "seed",
+    joist_space = 12.5,
+    board_width = 6.5,
+    board_width_spacer = .2,
+    board_break_width = .4,
+    nail_diameter = .6,
+    joist_width = 4,
+    debug = False
+)
+
+show_object(ex_base)
+```
+
+![](image/minibase/15.png)<br />
+
+* [source](../src/cqterrain/minibase/rectangle_wood.py)
+* [example](../example/minibase/rectangle_wood.py)
+* [stl](../stl/minibase_rectangle_wood.stl)
+
+---
+
+## Slot Wood
+
+### Parameters
+* length: float
+* width: float
+* base_height: float
+* taper: float
+* render_magnet: bool  
+* magnet_diameter: float
+* magnet_height: float
+* board_height: float
+* overlap: float
+* seed: str
+* joist_space: float
+* board_width: float
+* board_width_spacer: float
+* board_break_width: float
+* nail_diameter: float
+* joist_width: float
+* debug: bool
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import slot_wood
+
+ex_base = slot_wood(
+    length = 75,
+    width = 30,
+    base_height = 3,
+    taper = -1,
+    render_magnet = True,  
+    magnet_diameter = 3, 
+    magnet_height = 2,
+    board_height = 1,
+    overlap = 20,
+    seed = "seed",
+    joist_space = 12.5,
+    board_width = 6.5,
+    board_width_spacer = .2,
+    board_break_width = .4,
+    nail_diameter = .6,
+    joist_width = 4,
+    debug = False
+)
+
+show_object(ex_base)
+```
+
+![](image/minibase/13.png)<br />
+
+* [source](../src/cqterrain/minibase/slot_wood.py)
+* [example](../example/minibase/slot_wood.py)
+* [stl](../stl/minibase_slot_wood.stl)
 
 ---

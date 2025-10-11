@@ -78,16 +78,22 @@ import example.material.stucco_brick_blocks
 print('minibase examples')
 import example.minibase.circle
 import example.minibase.circle_uneven
+import example.minibase.circle_wood
 import example.minibase.ellipse
 import example.minibase.ellipse_uneven
+import example.minibase.ellipse_wood
 import example.minibase.rectangle
 import example.minibase.rectangle_uneven
+import example.minibase.rectangle_wood
 import example.minibase.slot
 import example.minibase.slot_uneven
+import example.minibase.slot_wood
 import example.minibase.hexagon
 import example.minibase.hexagon_uneven
+import example.minibase.hexagon_wood
 import example.minibase.minibase_group
 import example.minibase.minibase_group_uneven
+import example.minibase.minibase_group_wood
 
 print('pipe examples')
 import example.pipe.pipe_corrugated

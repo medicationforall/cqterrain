@@ -25,7 +25,7 @@ bp_floor.nail_y_margin = .5
 
 # grid
 bp_floor.seed= "redd2"
-bp_floor.board_lenghs = [1,4]
+bp_floor.board_lengths = [1,4]
 bp_floor.board_break_width= .2
 bp_floor.grid = []
 

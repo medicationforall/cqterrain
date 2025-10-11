@@ -8,13 +8,13 @@
   - [Hatch](#hatch)
     - [parameters](#parameters-2)
   - [Heavy Door](#heavy-door)
-    - [Paramaters](#paramaters)
-  - [Pull Handle](#pull-handle)
     - [parameters](#parameters-3)
-  - [Split Door](#split-door)
+  - [Pull Handle](#pull-handle)
     - [parameters](#parameters-4)
-  - [Tiled Door](#tiled-door)
+  - [Split Door](#split-door)
     - [parameters](#parameters-5)
+  - [Tiled Door](#tiled-door)
+    - [parameters](#parameters-6)
     - [method callbacks](#method-callbacks)
 
 
@@ -158,7 +158,7 @@ show_object(hatch_ex)
 ---
 ## Heavy Door
 
-### Paramaters
+### parameters
 * length: float 
 * width: float
 * height: float

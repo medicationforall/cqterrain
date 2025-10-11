@@ -10,9 +10,9 @@
   - [stacked\_wave\_form\_map](#stacked_wave_form_map)
     - [parameters](#parameters-3)
   - [uneven\_blocks](#uneven_blocks)
-    - [paramaters](#paramaters)
+    - [parameters](#parameters-4)
   - [uneven\_centered\_blocks](#uneven_centered_blocks)
-    - [paramaters](#paramaters-1)
+    - [parameters](#parameters-5)
 
 
 ---
@@ -127,7 +127,7 @@ Helper function creates a list of lists. Each row is informed by the preceding r
 
 ## uneven_blocks
 
-### paramaters
+### parameters
 * tile_length: float 
 * tile_width: float 
 * tile_height: float 
@@ -172,7 +172,7 @@ show_object(blocks)
 
 List of uneven blocks centered at the 0,0 origin point.
 
-### paramaters
+### parameters
 * tile_length: float 
 * tile_width: float 
 * tile_height: float 
