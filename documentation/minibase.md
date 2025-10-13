@@ -39,6 +39,17 @@ The code for these is very simple most of these are just a loft operation.
     - [Parameters](#parameters-14)
   - [Slot Wood](#slot-wood)
     - [Parameters](#parameters-15)
+  - [Irregular Bases](#irregular-bases)
+  - [Circle Irregular](#circle-irregular)
+    - [Parameters](#parameters-16)
+  - [Ellipse Irregular](#ellipse-irregular)
+    - [Parameters](#parameters-17)
+  - [Hexagon Irregular](#hexagon-irregular)
+    - [Parameters](#parameters-18)
+  - [Rectangle Irregular](#rectangle-irregular)
+    - [Parameters](#parameters-19)
+  - [Slot Irregular](#slot-irregular)
+    - [Parameters](#parameters-20)
 
 
 ---
@@ -732,5 +743,304 @@ show_object(ex_base)
 * [source](../src/cqterrain/minibase/slot_wood.py)
 * [example](../example/minibase/slot_wood.py)
 * [stl](../stl/minibase_slot_wood.stl)
+
+---
+
+
+## Irregular Bases
+
+![](image/minibase/24.png)<br />
+
+---
+
+## Circle Irregular
+
+### Parameters
+* diameter: float
+* base_height: float
+* taper: float
+* render_magnet: bool 
+* magnet_diameter: float
+* magnet_height
+* min_height: float
+* max_height: float
+* overlap: float
+* col_size: float
+* row_size: float
+* max_columns: int
+* max_rows: int
+* passes_count: int
+* seed: str
+* tile_styles: list
+* debug: bool
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import circle_irregular
+
+def custom_item(length, width, height):
+    return (
+        cq.Workplane("XY")
+        .box(length-.3, width-.3, height)
+        .chamfer(0.5)
+    )
+
+ex_base = circle_irregular(
+    diameter = 40, 
+    base_height = 3, 
+    taper = -1,
+    render_magnet = True,  
+    magnet_diameter = 3, 
+    magnet_height = 2,
+    min_height = 1,
+    max_height = 3.5,
+    overlap = 20,
+    col_size = 5,
+    row_size = 8,
+    max_columns = 2,
+    max_rows = 2,
+    passes_count = 3000,
+    seed = "seed",
+    tile_styles = [custom_item],
+    debug = False
+)
+
+show_object(ex_base)
+```
+
+![](image/minibase/19.png)<br />
+
+* [source](../src/cqterrain/minibase/circle_irregular.py)
+* [example](../example/minibase/circle_irregular.py)
+* [stl](../stl/minibase_circle_irregular.stl)
+
+---
+
+## Ellipse Irregular
+
+### Parameters
+* x_diameter: float
+* y_diameter: float
+* base_height: float
+* taper: float
+* render_magnet: bool 
+* magnet_diameter: float
+* magnet_height
+* min_height: float
+* max_height: float
+* overlap: float
+* col_size: float
+* row_size: float
+* max_columns: int
+* max_rows: int
+* passes_count: int
+* seed: str
+* tile_styles: list
+* debug: bool
+
+
+``` python
+
+```
+
+![](image/minibase/20.png)<br />
+
+* [source](../src/cqterrain/minibase/ellipse_irregular.py)
+* [example](../example/minibase/ellipse_irregular.py)
+* [stl](../stl/minibase_ellipse_irregular.stl)
+
+---
+
+## Hexagon Irregular
+
+### Parameters
+* diameter: float
+* base_height: float
+* taper: float
+* render_magnet: bool 
+* magnet_diameter: float
+* magnet_height
+* min_height: float
+* max_height: float
+* overlap: float
+* col_size: float
+* row_size: float
+* max_columns: int
+* max_rows: int
+* passes_count: int
+* seed: str
+* tile_styles: list
+* debug: bool
+
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import hexagon_irregular
+
+def custom_item(length, width, height):
+    return (
+        cq.Workplane("XY")
+        .box(length-.3, width-.3, height)
+        .chamfer(0.5)
+    )
+
+ex_base = hexagon_irregular(
+    diameter = 40,
+    base_height = 3, 
+    taper = -1,
+    render_magnet = True,  
+    magnet_diameter = 3, 
+    magnet_height = 2,
+    min_height = 1,
+    max_height = 3.5,
+    overlap = 20,
+    col_size = 5,
+    row_size = 8,
+    max_columns = 2,
+    max_rows = 2,
+    passes_count = 3000,
+    seed = "seed",
+    tile_styles = [custom_item],
+    debug = False
+)
+
+show_object(ex_base)
+```
+
+![](image/minibase/21.png)<br />
+
+* [source](../src/cqterrain/minibase/hexagon_irregular.py)
+* [example](../example/minibase/hexagon_irregular.py)
+* [stl](../stl/minibase_hexagon_irregular.stl)
+
+---
+
+## Rectangle Irregular
+
+### Parameters
+* length: float
+* base_height: float
+* taper: float
+* render_magnet: bool 
+* magnet_diameter: float
+* magnet_height
+* min_height: float
+* max_height: float
+* overlap: float
+* col_size: float
+* row_size: float
+* max_columns: int
+* max_rows: int
+* passes_count: int
+* seed: str
+* tile_styles: list
+* debug: bool
+
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import rectangle_irregular
+
+def custom_item(length, width, height):
+    return (
+        cq.Workplane("XY")
+        .box(length-.3, width-.3, height)
+        .chamfer(0.5)
+    )
+
+ex_base = rectangle_irregular(
+    length = 40,
+    width = 40,
+    base_height = 3, 
+    taper = -1,
+    render_magnet = True,  
+    magnet_diameter = 3, 
+    magnet_height = 2,
+    min_height = 1,
+    max_height = 3.5,
+    overlap = 20,
+    col_size = 5,
+    row_size = 8,
+    max_columns = 2,
+    max_rows = 2,
+    passes_count = 3000,
+    seed = "seed",
+    tile_styles = [custom_item],
+    debug = False
+)
+
+show_object(ex_base)
+```
+
+![](image/minibase/22.png)<br />
+
+* [source](../src/cqterrain/minibase/rectangle_irregular.py)
+* [example](../example/minibase/rectangle_irregular.py)
+* [stl](../stl/minibase_rectangle_irregular.stl)
+
+---
+
+## Slot Irregular
+
+### Parameters
+* length: float
+* base_height: float
+* taper: float
+* render_magnet: bool 
+* magnet_diameter: float
+* magnet_height
+* min_height: float
+* max_height: float
+* overlap: float
+* col_size: float
+* row_size: float
+* max_columns: int
+* max_rows: int
+* passes_count: int
+* seed: str
+* tile_styles: list
+* debug: bool
+
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import slot_irregular
+
+def custom_item(length, width, height):
+    return (
+        cq.Workplane("XY")
+        .box(length-.3, width-.3, height)
+        .chamfer(0.5)
+    )
+
+ex_base = slot_irregular(
+    length = 75,
+    width = 30,
+    base_height = 3, 
+    taper = -1,
+    render_magnet = True,  
+    magnet_diameter = 3, 
+    magnet_height = 2,
+    min_height = 1,
+    max_height = 3.5,
+    overlap = 20,
+    col_size = 5,
+    row_size = 8,
+    max_columns = 2,
+    max_rows = 2,
+    passes_count = 3000,
+    seed = "seed",
+    tile_styles = [custom_item],
+    debug = False
+)
+
+show_object(ex_base)
+```
+
+![](image/minibase/23.png)<br />
+
+* [source](../src/cqterrain/minibase/slot_irregular.py)
+* [example](../example/minibase/slot_irregular.py)
+* [stl](../stl/minibase_slot_irregular.stl)
 
 ---
