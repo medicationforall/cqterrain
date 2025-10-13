@@ -24,17 +24,28 @@ def slot(
         magnet_diameter:float = 3, 
         magnet_height:float = 2
     ) -> cq.Workplane:
-    base = (
-        cq.Workplane("XY" )
-        .slot2D(width, length, 90)
-        .workplane(offset=height)
-        .slot2D(width+taper, length+taper, 90)
-        .loft(combine=True)
-        .translate((0,0,-1*(height/2)))
-    )
-    h_solid = make_magnet_outline(height, magnet_diameter,  magnet_height)
 
-    minibase = cq.Workplane("XY").add(base)
+    if width > length:
+        base = (
+            cq.Workplane("XY" )
+            .slot2D(width, length, 90)
+            .workplane(offset=height)
+            .slot2D(width+taper, length+taper, 90)
+            .loft(combine=True)
+            .translate((0,0,-1*(height/2)))
+        )
+    else:
+        base = (
+            cq.Workplane("XY" )
+            .slot2D(length, width, 90)
+            .workplane(offset=height)
+            .slot2D(length+taper, width+taper, 90)
+            .loft(combine=True)
+            .translate((0,0,-1*(height/2)))
+            .rotate((0,0,1),(0,0,0),90)
+        )
+
     if render_magnet:
-        minibase = minibase.cut(h_solid)
-    return minibase
+        h_solid = make_magnet_outline(height, magnet_diameter,  magnet_height)
+        base = base.cut(h_solid)
+    return base

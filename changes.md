@@ -17,6 +17,8 @@
 * Added minibase hexagon_irregular
 * Added minibase rectangle_irregular
 * Added minibase slot_irregular
+* Fix slotted base bug.
+  * Had an issue if width or length were longer than the other. 
 
 ## 3.4.2
 * Update to cadqueryhelperversion 1.6.0

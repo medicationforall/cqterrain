@@ -37,14 +37,14 @@ def slot_wood(
     debug:bool = False
 ):
     mini_base = slot(
-        length = width, 
-        width = length, 
+        length = length, 
+        width = width, 
         height = base_height, 
         taper = taper,
         render_magnet = render_magnet,  
         magnet_diameter = magnet_diameter, 
         magnet_height = magnet_height
-    ).rotate((0,0,1),(0,0,0),90)
+    )
     
     greeble_floor_height = board_height+1
     

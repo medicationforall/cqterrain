@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 import cadquery as cq
 from . import slot
 from ..damage import uneven_plane
@@ -33,14 +32,14 @@ def slot_uneven(
     ) -> cq.Workplane:
     # slot base
     mini_base = slot(
-        length = width, 
-        width = length, 
+        length = length, 
+        width = width, 
         height = base_height, 
         taper = taper,
         render_magnet = render_magnet,  
         magnet_diameter = magnet_diameter, 
         magnet_height = magnet_height
-    ).rotate((0,0,1),(0,0,0),90)
+    )
 
     top = (
            mini_base
