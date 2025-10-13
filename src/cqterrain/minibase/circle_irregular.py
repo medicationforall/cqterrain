@@ -15,6 +15,7 @@
 
 import cadquery as cq
 from . import circle, base_irregular
+from typing import Callable
 
 def custom_item(length, width, height):
     return (
@@ -39,7 +40,7 @@ def circle_irregular(
     max_rows:int = 2,
     passes_count:int = 3000,
     seed:str = "seed",
-    tile_styles:list = [custom_item],
+    tile_styles:list[Callable[[float, float, float],cq.Workplane]] = [custom_item],
     debug:bool = False
 ):
     base:cq.Workplane = circle(
