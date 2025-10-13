@@ -7,7 +7,7 @@ from cqterrain.minibase import (
     hexagon_uneven
 )
 
-seed = 'random_badger'
+seed = 'random_hippo'
 
 #------------------
 ellipse_base = ellipse_uneven(
@@ -18,7 +18,7 @@ ellipse_base = ellipse_uneven(
     render_magnet = True, 
     magnet_diameter=3, 
     magnet_height=2,
-    seed = seed
+    seed = seed+"_one"
 )
 
 #show_object(ellipse_base)
@@ -31,7 +31,7 @@ circle_base = circle_uneven(
     render_magnet = True, 
     magnet_diameter=3, 
     magnet_height=2,
-    seed = seed
+    seed = seed +"_two"
 )
 
 #show_object(circle_base)
@@ -45,7 +45,7 @@ rectangle_base = rectangle_uneven(
     render_magnet = True, 
     magnet_diameter = 3, 
     magnet_height = 2,
-    seed = seed
+    seed = seed+"_three"
 )
 
 #show_object(rectangle_base)
@@ -60,7 +60,7 @@ slot_base = slot_uneven(
     render_magnet = True, 
     magnet_diameter = 3, 
     magnet_height = 2,
-    seed = seed
+    seed = seed+"_four"
 )
 
 #show_object(slot_base)
@@ -75,7 +75,7 @@ hexagon_base = hexagon_uneven(
     render_magnet = True,  
     magnet_diameter = 3, 
     magnet_height = 2,
-    seed = seed
+    seed = seed+"_five"
 )
 
 #show_object(hexagon_base)
@@ -88,7 +88,7 @@ group = (
     .add(ellipse_base.translate((45,0,0)))
     .add(circle_base.translate((0,-30,0)))
     .add(rectangle_base.translate((0,30,0)))
-    .add(slot_base.translate((-30,0,0)))
+    .add(slot_base.translate((-40,0,0)))
     .add(hexagon_base)
 )
 

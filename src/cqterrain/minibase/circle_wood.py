@@ -17,6 +17,7 @@ def circle_wood(
     board_width_spacer:float = .2,
     board_break_width:float = .4,
     nail_diameter:float = .6,
+    nail_overlap_height:float = .4,
     joist_width:float = 4,
     debug:bool = False
 ):
@@ -57,7 +58,7 @@ def circle_wood(
     
     #nail
     bp_floor.nail_diameter = nail_diameter
-    bp_floor.nail_overlap_height = .2
+    bp_floor.nail_overlap_height = nail_overlap_height
     bp_floor.nail_x_margin = .5
     bp_floor.nail_y_margin = .5
     

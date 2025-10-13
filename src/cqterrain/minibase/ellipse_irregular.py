@@ -1,0 +1,56 @@
+import cadquery as cq
+from . import ellipse, base_irregular
+from cadqueryhelper import irregular_grid
+import random
+
+def custom_item(length, width, height):
+    return (
+        cq.Workplane("XY")
+        .box(length-.3, width-.3, height)
+        .chamfer(0.5)
+    )
+
+def ellipse_irregular(
+    x_diameter:float = 52, 
+    y_diameter:float = 90, 
+    base_height:float = 3, 
+    taper:float = -1,
+    render_magnet:bool = True,  
+    magnet_diameter:float = 3, 
+    magnet_height:float = 2,
+    min_height:float = 1,
+    max_height:float = 3.5,
+    overlap:float = 20,
+    col_size:float = 5,
+    row_size:float = 8,
+    max_columns:int = 2,
+    max_rows:int = 2,
+    passes_count:int = 3000,
+    seed:str = "seed",
+    tile_styles:list = [custom_item],
+    debug:bool = False
+):
+    base:cq.Workplane = ellipse(
+        x_diameter = x_diameter, 
+        y_diameter = y_diameter, 
+        height = base_height, 
+        taper = taper,
+        render_magnet = render_magnet,  
+        magnet_diameter = magnet_diameter, 
+        magnet_height = magnet_height
+    )
+
+    return base_irregular(
+        base,
+        min_height = min_height,
+        max_height = max_height,
+        overlap = overlap,
+        col_size = col_size,
+        row_size = row_size,
+        max_columns = max_columns,
+        max_rows = max_rows,
+        passes_count = passes_count,
+        seed = seed,
+        tile_styles = tile_styles,
+        debug = debug
+    )

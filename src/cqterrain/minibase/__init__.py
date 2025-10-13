@@ -14,3 +14,10 @@ from .slot_wood import slot_wood
 from .hexagon import hexagon
 from .hexagon_uneven import hexagon_uneven
 from .hexagon_wood import hexagon_wood
+
+from .base_irregular import base_irregular 
+from .circle_irregular import circle_irregular
+from .ellipse_irregular import ellipse_irregular
+from .hexagon_irregular import hexagon_irregular
+from .rectangle_irregular import rectangle_irregular
+from .slot_irregular import slot_irregular

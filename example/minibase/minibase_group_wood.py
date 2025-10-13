@@ -18,7 +18,7 @@ ellipse_base = ellipse_wood(
     render_magnet = True, 
     magnet_diameter=3, 
     magnet_height=2,
-    seed = seed
+    seed = seed+"_one"
 )
 
 #show_object(ellipse_base)
@@ -31,7 +31,7 @@ circle_base = circle_wood(
     render_magnet = True, 
     magnet_diameter=3, 
     magnet_height=2,
-    seed = seed
+    seed = seed+"_two"
 )
 
 #show_object(circle_base)
@@ -45,7 +45,7 @@ rectangle_base = rectangle_wood(
     render_magnet = True, 
     magnet_diameter = 3, 
     magnet_height = 2,
-    seed = seed
+    seed = seed+"_three"
 )
 
 #show_object(rectangle_base)
@@ -60,7 +60,7 @@ slot_base = slot_wood(
     render_magnet = True, 
     magnet_diameter = 3, 
     magnet_height = 2,
-    seed = seed
+    seed = seed+"_four"
 )
 
 #show_object(slot_base)
@@ -75,7 +75,7 @@ hexagon_base = hexagon_wood(
     render_magnet = True,  
     magnet_diameter = 3, 
     magnet_height = 2,
-    seed = seed
+    seed = seed+"_five"
 )
 
 #show_object(hexagon_base)

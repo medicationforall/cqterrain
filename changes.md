@@ -10,6 +10,13 @@
 * Added minibase rectangle_wood
 * Added minibase slot_wood
 * Added minibase wood documentation
+* Fixed spacing for example minibase_group_uneven
+* Initial base_irregular.py
+* Added minibase circle_irregular
+* Added minibase ellipse_irregular
+* Added minibase hexagon_irregular
+* Added minibase rectangle_irregular
+* Added minibase slot_irregular
 
 ## 3.4.2
 * Update to cadqueryhelperversion 1.6.0

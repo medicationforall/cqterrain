@@ -466,6 +466,7 @@ show_object(ex_base)
 * board_width_spacer: float
 * board_break_width: float
 * nail_diameter: float
+* nail_overlap_height: float
 * joist_width: float
 * debug: bool
 
@@ -488,6 +489,7 @@ ex_base = circle_wood(
     board_width_spacer = .2,
     board_break_width = .4,
     nail_diameter = .6,
+    nail_overlap_height = .4,
     joist_width = 4,
     debug = False
 )
@@ -521,6 +523,7 @@ show_object(ex_base)
 * board_width_spacer: float
 * board_break_width: float
 * nail_diameter: float
+* nail_overlap_height: float
 * joist_width: float
 * debug: bool
 
@@ -544,6 +547,7 @@ ex_base = ellipse_wood(
     board_width_spacer = .2,
     board_break_width = .4,
     nail_diameter = .6,
+    nail_overlap_height = .4,
     joist_width = 4,
     debug = False
 )
@@ -576,6 +580,7 @@ show_object(ex_base)
 * board_width_spacer: float
 * board_break_width: float
 * nail_diameter: float
+* nail_overlap_height: float
 * joist_width: float
 * debug: bool
 
@@ -598,6 +603,7 @@ ex_base = hexagon_wood(
     board_width_spacer = .2,
     board_break_width = .4,
     nail_diameter = .6,
+    nail_overlap_height = .4,
     joist_width = 4,
     debug = False
 )
@@ -631,6 +637,7 @@ show_object(ex_base)
 * board_width_spacer: float
 * board_break_width: float
 * nail_diameter: float
+* nail_overlap_height: float
 * joist_width: float
 * debug: bool
 
@@ -654,6 +661,7 @@ ex_base = rectangle_wood(
     board_width_spacer = .2,
     board_break_width = .4,
     nail_diameter = .6,
+    nail_overlap_height = .4,
     joist_width = 4,
     debug = False
 )
@@ -687,6 +695,7 @@ show_object(ex_base)
 * board_width_spacer: float
 * board_break_width: float
 * nail_diameter: float
+* nail_overlap_height: float
 * joist_width: float
 * debug: bool
 
@@ -710,6 +719,7 @@ ex_base = slot_wood(
     board_width_spacer = .2,
     board_break_width = .4,
     nail_diameter = .6,
+    nail_overlap_height = .4,
     joist_width = 4,
     debug = False
 )

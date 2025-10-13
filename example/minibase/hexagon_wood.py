@@ -16,6 +16,7 @@ ex_base = hexagon_wood(
     board_width_spacer = .2,
     board_break_width = .4,
     nail_diameter = .6,
+    nail_overlap_height = .4,
     joist_width = 4,
     debug = False
 )
