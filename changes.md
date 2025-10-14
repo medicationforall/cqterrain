@@ -21,7 +21,8 @@
 * Fixed WoodFloor paramater misspelling board_lenghs to board_lengths
   * In build use union opposed to add.
 * Fix slotted base bug.
-  * Had an issue if width or length were longer than the other. 
+  * Had an issue if width or length were longer than the other.
+* Added Glyph Maze Example 
 
 ## 3.4.2
 * Update to cadqueryhelperversion 1.6.0
