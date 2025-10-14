@@ -1,22 +1,25 @@
 ## Main wip
 
-## 3.4.3
+## 3.5.0
 * Added license blocks
-* fixed WoodFloor paramater misspelling board_lenghs to board_lengths
-  * In build use union opposed to add.
-* Added minibase circle_wood
-* Added minibase ellipse_wood
-* Added minibase hexagon_wood
-* Added minibase rectangle_wood
-* Added minibase slot_wood
-* Added minibase wood documentation
+* Wood Bases
+  * Added minibase circle_wood
+  * Added minibase ellipse_wood
+  * Added minibase hexagon_wood
+  * Added minibase rectangle_wood
+  * Added minibase slot_wood
+  * Added minibase wood documentation
+* Irregular Bases 
+  * Initial base_irregular.py
+  * Added minibase circle_irregular
+  * Added minibase ellipse_irregular
+  * Added minibase hexagon_irregular
+  * Added minibase rectangle_irregular
+  * Added minibase slot_irregular
+* Added Greeble CircuitGlyph 
 * Fixed spacing for example minibase_group_uneven
-* Initial base_irregular.py
-* Added minibase circle_irregular
-* Added minibase ellipse_irregular
-* Added minibase hexagon_irregular
-* Added minibase rectangle_irregular
-* Added minibase slot_irregular
+* Fixed WoodFloor paramater misspelling board_lenghs to board_lengths
+  * In build use union opposed to add.
 * Fix slotted base bug.
   * Had an issue if width or length were longer than the other. 
 
