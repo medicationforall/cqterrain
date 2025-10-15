@@ -22,7 +22,8 @@
   * In build use union opposed to add.
 * Fix slotted base bug.
   * Had an issue if width or length were longer than the other.
-* Added Glyph Maze Example 
+* Added Glyph Maze Example
+* Updated README.md
 
 ## 3.4.2
 * Update to cadqueryhelperversion 1.6.0

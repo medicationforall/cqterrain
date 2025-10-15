@@ -30,7 +30,7 @@ class CircuitGlyph(Base):
         self.kind:Literal['arc', 'intersection', 'tangent'] = 'intersection'
         
         self.pts:list[Tuple[int,int]] = []
-        self.render_outline = False
+        self.render_outline:bool = False
         
         #shapes
         self.outline = None

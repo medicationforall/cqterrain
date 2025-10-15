@@ -1,11 +1,12 @@
 # cqterrain
-Helper Libary to Generate 3d models of buildings / terrain using CadQuery.
+Helper Libary to Generate 3d models of greebles, buildings, and terrain using [CadQuery](https://cadquery.readthedocs.io/en/latest/intro.html).
 
 ## Examples
 |||
 |-|-|
 |[![](documentation/image/building/17.png)](documentation/building.md)|[![](documentation/image/tile/30.png)](documentation/tile.md)|
 |[![Pipe Mockup](./documentation/image/pipe/15.png)](documentation/pipe.md)|[![Pipe Mockup](./documentation/image/shieldwall/48.png)](documentation/shieldwall.md)|
+|[![Book Case](./documentation/image/book/cover.png)](documentation/book.md)|[![Crystal Example](./documentation/image/crystal/05.png)](documentation/crystal.md)|
 
 ## Project Documention
 * [Documentation](documentation/README.md)

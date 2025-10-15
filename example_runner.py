@@ -68,8 +68,8 @@ print('greeble examples')
 import example.greeble.gothic_one
 import example.greeble.vent
 import example.greeble.spokedWheel
-import example.greeble.glypth_greeble_one
-import example.greeble.glypth_greeble_two
+import example.greeble.glyph_greeble_one
+import example.greeble.glyph_greeble_two
 
 print('material examples')
 import example.material.stones
