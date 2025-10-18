@@ -45,6 +45,7 @@ class CircuitGlyph(Base):
         
         self.pts:list[Tuple[int,int]] = []
         self.render_outline:bool = False
+        self.outline_margin:float = 0
         
         #shapes
         self.outline = None
@@ -110,7 +111,7 @@ class CircuitGlyph(Base):
                     
                 
                 points = points.add(point_shape.translate((pt[0],pt[1],0)))
-                nonpoint = cq.Workplane("XY").cylinder(self.height,diameter/2)
+                nonpoint = cq.Workplane("XY").cylinder(self.height,diameter/2 + self.outline_margin)
                 nonpoints.add(nonpoint.translate((pt[0],pt[1],0)))
 
         self.points = points

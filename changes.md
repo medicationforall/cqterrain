@@ -1,5 +1,8 @@
 ## Main wip
 
+## 3.5.1
+* Circuit Glyph added outline_margin paramter
+
 ## 3.5.0
 * Added license blocks
 * Wood Bases

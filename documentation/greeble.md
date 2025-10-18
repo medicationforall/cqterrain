@@ -26,6 +26,7 @@ Renders a cq.Workplane at each point specified.
 * line_width: float
 * line_height: float
 * kind: Literal['arc', 'intersection', 'tangent']
+* outline_margin: float
 * pts: list[Tuple[int,int]] 
 * render_outline: bool
 
