@@ -1,7 +1,13 @@
 ## Main wip
 
 ## 3.5.1
-* Circuit Glyph added outline_margin paramter
+* Update to cadqueryhelperversion 1.7.0
+* Circuit Glyph 
+  * added outline_margin parameter.
+  * change kind to default to arc as opposed to intersect (arc seems to blow up less)
+  * added add_point_rotate method.
+  * Added debug parameter
+  * Added glyph_greeble_three example
 
 ## 3.5.0
 * Added license blocks

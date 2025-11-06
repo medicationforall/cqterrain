@@ -70,6 +70,7 @@ import example.greeble.vent
 import example.greeble.spokedWheel
 import example.greeble.glyph_greeble_one
 import example.greeble.glyph_greeble_two
+import example.greeble.glyph_greeble_three
 
 print('material examples')
 import example.material.stones

@@ -16,6 +16,23 @@ import cadquery as cq
 from cadqueryhelper import Base
 from cadqueryhelper.shape import ring
 from typing import Literal, Tuple
+import math
+
+
+def rotate_point(point, angle=0, origin = (0,0)):
+    """
+    https://stackoverflow.com/a/34374437
+    Rotate a point clockwise by a given angle degrees around a given origin.
+    """
+    o_x, o_y = origin
+    p_x, p_y = point
+    angle = -math.radians(angle)
+
+    q_x = o_x + math.cos(angle) * (p_x - o_x) - math.sin(angle) * (p_y - o_y)
+    q_y = o_y + math.sin(angle) * (p_x - o_x) + math.cos(angle) * (p_y - o_y)
+    
+    return (q_x, q_y)
+
 
 def condition_points(pts):
     length = len(pts)
@@ -41,11 +58,12 @@ class CircuitGlyph(Base):
         self.point_diameter:float = 3
         self.line_width:float = .5
         self.line_height:float = 1
-        self.kind:Literal['arc', 'intersection', 'tangent'] = 'intersection'
+        self.kind:Literal['arc', 'intersection', 'tangent'] = 'arc'
         
         self.pts:list[Tuple[int,int]] = []
         self.render_outline:bool = False
         self.outline_margin:float = 0
+        self.debug:bool = False
         
         #shapes
         self.outline = None
@@ -55,9 +73,31 @@ class CircuitGlyph(Base):
         self.point_shapes:list[cq.Workplane|None] = []
         
     def add_point(self,x=0,y=0,shape=None):
+        """
+        Absolute point placement
+        """
         pt = (x,y)
         self.pts.append(pt)
         
+        if shape:
+            self.point_shapes.append(shape)
+        else:
+            self.point_shapes.append(None)
+
+    def add_point_rotate(self, x, y, angle, shape=None):
+        """
+        Relative point placement
+        """
+        pt = (x,y)
+        prev_pt = (0,0)
+
+        if len(self.pts)>0:
+            prev_pt = self.pts[-1]
+            pt = (x+prev_pt[0],y+prev_pt[1])
+
+        r_pt = rotate_point(pt, angle, prev_pt)
+        self.pts.append(r_pt)
+
         if shape:
             self.point_shapes.append(shape)
         else:
@@ -71,7 +111,7 @@ class CircuitGlyph(Base):
         )
         
         self.outline = outline
-        
+
     def make_connection(self):
         connection = cq.Workplane("XY")
         
@@ -88,6 +128,26 @@ class CircuitGlyph(Base):
             
             self.connection = connection
         
+    #def make_connection_2(self):
+    #    connection = cq.Workplane("XY")
+    #    
+    #    if len(self.pts)>1:
+    #        pts = condition_points(self.pts)
+    #
+    #        origin = pts[0]
+    #        connection = connection.center(origin[0],origin[1])
+    #
+    #        for pt in pts[1:]:
+    #            connection = connection.lineTo(pt[0],pt[1])
+    #        
+    #        connection = (
+    #            connection
+    #            .offset2D(self.line_width/2, self.kind)
+    #            .extrude(self.line_height)
+    #            .translate((0,0,-self.line_height/2))
+    #        )
+    #       
+    #        self.connection = connection
         
     def make_points(self):
         points = cq.Workplane("XY")
@@ -138,12 +198,14 @@ class CircuitGlyph(Base):
             connection = self.connection.cut(self.points_outline)
             part = part.union(connection.translate((0,0,self.height/2 - self.line_height/2)))
             
-        tp = []
-        
-        for i in self.pts:
-            tp.append(i)
-        
-        con2 = cq.Workplane("XY").polyline(tp)
-        #show_object(con2)
+        if self.debug:
+            tp = []
+            
+            for i in self.pts:
+                tp.append(i)
+            
+            con2 = cq.Workplane("XY").polyline(tp)
+            #show_object(con2)
+            #show_object(con2.offset2D(self.line_width/2, self.kind))
         
         return part
