@@ -1,7 +1,7 @@
 ## Main wip
 
 ## 3.5.1
-* Update to cadqueryhelperversion 1.7.0
+* Update to cadqueryhelper version 1.7.0
 * Circuit Glyph 
   * added outline_margin parameter.
   * change kind to default to arc as opposed to intersect (arc seems to blow up less)
