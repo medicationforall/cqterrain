@@ -103,6 +103,8 @@ import example.minibase.minibase_group
 import example.minibase.minibase_group_uneven
 import example.minibase.minibase_group_wood
 import example.minibase.minibase_group_irregular
+import example.minibase.ruin_stone_base
+import example.minibase.minibase_group_ruin
 
 print('pipe examples')
 import example.pipe.pipe_corrugated

@@ -14,6 +14,7 @@ from .slot_wood import slot_wood
 from .hexagon import hexagon
 from .hexagon_uneven import hexagon_uneven
 from .hexagon_wood import hexagon_wood
+from.RuinStoneBase import RuinStoneBase
 
 from .base_irregular import base_irregular 
 from .circle_irregular import circle_irregular

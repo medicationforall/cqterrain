@@ -1,5 +1,8 @@
 ## Main wip
 
+## 3.6.0
+* Added minibase RuinStoneBase
+
 ## 3.5.1
 * Update to cadqueryhelper version 1.7.0
 * Circuit Glyph 
