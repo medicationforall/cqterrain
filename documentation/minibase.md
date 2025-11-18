@@ -17,39 +17,41 @@ The code for these is very simple most of these are just a loft operation.
     - [Parameters](#parameters-4)
   - [Slot](#slot)
     - [Parameters](#parameters-5)
+  - [Ruin Stone Base](#ruin-stone-base)
+    - [Parameters](#parameters-6)
   - [Uneven Bases](#uneven-bases)
   - [Circle Uneven](#circle-uneven)
-    - [Parameters](#parameters-6)
-  - [Ellipse Uneven](#ellipse-uneven)
     - [Parameters](#parameters-7)
-  - [Hexagon Uneven](#hexagon-uneven)
+  - [Ellipse Uneven](#ellipse-uneven)
     - [Parameters](#parameters-8)
-  - [Rectangle Uneven](#rectangle-uneven)
+  - [Hexagon Uneven](#hexagon-uneven)
     - [Parameters](#parameters-9)
-  - [Slot Uneven](#slot-uneven)
+  - [Rectangle Uneven](#rectangle-uneven)
     - [Parameters](#parameters-10)
+  - [Slot Uneven](#slot-uneven)
+    - [Parameters](#parameters-11)
   - [Wood Bases](#wood-bases)
   - [Circle Wood](#circle-wood)
-    - [Parameters](#parameters-11)
-  - [Ellipse Wood](#ellipse-wood)
     - [Parameters](#parameters-12)
-  - [Hexagon Wood](#hexagon-wood)
+  - [Ellipse Wood](#ellipse-wood)
     - [Parameters](#parameters-13)
-  - [Rectangle Wood](#rectangle-wood)
+  - [Hexagon Wood](#hexagon-wood)
     - [Parameters](#parameters-14)
-  - [Slot Wood](#slot-wood)
+  - [Rectangle Wood](#rectangle-wood)
     - [Parameters](#parameters-15)
+  - [Slot Wood](#slot-wood)
+    - [Parameters](#parameters-16)
   - [Irregular Bases](#irregular-bases)
   - [Circle Irregular](#circle-irregular)
-    - [Parameters](#parameters-16)
-  - [Ellipse Irregular](#ellipse-irregular)
     - [Parameters](#parameters-17)
-  - [Hexagon Irregular](#hexagon-irregular)
+  - [Ellipse Irregular](#ellipse-irregular)
     - [Parameters](#parameters-18)
-  - [Rectangle Irregular](#rectangle-irregular)
+  - [Hexagon Irregular](#hexagon-irregular)
     - [Parameters](#parameters-19)
-  - [Slot Irregular](#slot-irregular)
+  - [Rectangle Irregular](#rectangle-irregular)
     - [Parameters](#parameters-20)
+  - [Slot Irregular](#slot-irregular)
+    - [Parameters](#parameters-21)
 
 
 ---
@@ -219,12 +221,111 @@ result = slot(
   
 ---
 
+## Ruin Stone Base
+
+Builder class that can generate ruin bases for rectangle, circle, slot, ellipse, hexagon bases.
+
+### Parameters
+* length: float
+* width: float
+* height: float
+* diameter: float
+* diameter_y: float
+* taper: float
+* magnet_diameter: float
+* magnet_height: float
+* render_magnet: bool
+* base_type: Literal['rectangle','circle','slot','ellipse','hexagon']
+* uneven_height: float
+* peak_count: tuple[int,int]|int
+* segments: int
+* seed: str
+* detail_height: float
+* overlap: float
+* min_height: float
+* col_size: float
+* row_size: float
+* max_columns: int
+* max_rows: int
+* passes_count: int
+* tile_styles: list[Callable[[float, float, float],cq.Workplane]]
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import RuinStoneBase
+
+def custom_item(length, width, height):
+    return (
+        cq.Workplane("XY")
+        .box(length-.3, width-.3, height)
+        .chamfer(0.5)
+    )
+
+def custom_item_rotated_y_pos(length, width, height):
+    return (
+        cq.Workplane("XY")
+        .box(length-.3, width-.3, height)
+        .chamfer(0.5)
+        .rotate((0,1,0),(0,0,0),12)
+    )
+
+def custom_item_rotated_y_neg(length, width, height):
+    return (
+        cq.Workplane("XY")
+        .box(length-.3, width-.3, height)
+        .chamfer(0.5)
+        .rotate((0,1,0),(0,0,0),-12)
+    )
+
+bp_base = RuinStoneBase()
+bp_base.length = 30
+bp_base.width = 25
+bp_base.height = 3
+bp_base.diameter = 30
+bp_base.diameter_y = 30
+bp_base.taper = -1
+bp_base.magnet_diameter = 3
+bp_base.magnet_height = 2
+bp_base.render_magnet = True
+
+bp_base.base_type= "circle"
+
+bp_base.uneven_height = 4
+bp_base.peak_count = (9,10)
+bp_base.segments = 6
+bp_base.seed = "seed"
+bp_base.detail_height = 3
+
+bp_base.overlap = 20
+bp_base.min_height = 1
+bp_base.col_size = 5
+bp_base.row_size = 8
+bp_base.max_columns = 2
+bp_base.max_rows = 2
+bp_base.passes_count = 3000
+bp_base.tile_styles = [
+    custom_item,    
+    custom_item_rotated_y_pos,
+    custom_item_rotated_y_neg
+]
+
+bp_base.make()
+
+ex_base = bp_base.build()
+show_object(ex_base)
+```
+
+![](image/minibase/25.png)
+
+* [source](../src/cqterrain/minibase/ruin_stone_base.py)
+* [example](../example/minibase/ruin_stone_base.py)
+* [stl](../stl/minibase_ruin_stone_base.stl)
+
+---
+
 ## Uneven Bases
 
 ![](image/minibase/12.png)
-
-* [example](../example/minibase/minibase_group_uneven.py)
-* [stl](../stl/minibase_group_uneven.stl)
 
 ---
 
