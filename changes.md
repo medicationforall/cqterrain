@@ -1,5 +1,15 @@
 ## Main wip
 
+## 3.5.3
+* Updated walkway 
+  * made make_rails method a protected method as opposed to private.
+  * Added bp_floor parameter
+  * Added grid_length_padding parameter
+* Update to cadqueryhelper version 1.7.3
+* Added floor 
+  * BaseFloor
+  * Yoinked TileGenerator from cqfantasy
+
 ## 3.5.2
 * Added minibase RuinStoneBase
 

@@ -292,3 +292,28 @@ class RuinStoneBase(Base):
             part = part.union(combined_irregular)
         
         return part
+    
+    def build_assembly(self):
+        base_assembly = cq.Assembly()
+        if self.minibase:
+            base_assembly.add(self.minibase.translate((0,0,self.height/2)), color=cq.Color(0,0,1), name="base")
+
+        if self.uneven_plane and self.top:
+            combined_pattern = (
+                cq.Workplane("XY")
+                .union(self.top.translate((0,0,self.height/2)))
+                .intersect(self.uneven_plane.translate((0,0,self.uneven_height/2+self.height)))
+            )
+            base_assembly.add(combined_pattern, color=cq.Color(0,1,0), name="plain")
+
+        if self.irregular_pattern and self.top_pattern:
+            z_translate = self.min_height/2+self.height
+            combined_irregular = (
+                cq.Workplane("XY")
+                .union(self.top_pattern.translate((0,0,self.height/2)))
+                .intersect(self.irregular_pattern.translate((0,0,z_translate)))
+            )
+            
+            base_assembly.add(combined_irregular, color=cq.Color(1,0,0), name="stones")
+
+        return base_assembly
