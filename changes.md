@@ -1,5 +1,12 @@
 ## Main wip
 
+## 3.5.4
+* Added ruin package
+  * Added corner
+  * Added ruin_corner
+  * Added three_wall_corner
+  * Added ruin_three_wall_corner
+
 ## 3.5.3
 * Updated walkway 
   * made make_rails method a protected method as opposed to private.

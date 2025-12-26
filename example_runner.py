@@ -119,6 +119,12 @@ import example.roof.hip
 import example.roof.gable
 import example.roof.roof
 
+print('ruin examples')
+import example.ruin.corner
+import example.ruin.ruin_corner
+import example.ruin.three_wall_corner
+import example.ruin.ruin_three_wall_corner
+
 print('shieldwall examples')
 import example.shieldwall.arch_shape
 import example.shieldwall.archset
