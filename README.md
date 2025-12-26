@@ -23,6 +23,7 @@ Helper Libary to Generate 3d models of greebles, buildings, and terrain using [C
   * [Minibase](documentation/minibase.md)
   * [Pipe](documentation/pipe.md)
   * [Roof](documentation/roof.md)
+  * [Ruin](documentation/ruin.md)
   * [Shieldwall](documentation/shieldwall.md)
   * [Spool](documentation/spool.md)
   * [Stairs](documentation/stairs.md)

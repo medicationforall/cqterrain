@@ -8,5 +8,5 @@ ex_three_wall_corner = three_wall_corner(
     wall_width = 10
 )
 
-#show_object(result)
+#show_object(ex_three_wall_corner)
 cq.exporters.export(ex_three_wall_corner, 'stl/ruin_three_wall_corner.stl')

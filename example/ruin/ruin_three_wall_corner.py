@@ -14,5 +14,5 @@ ex_three_wall_corner = ruin_three_wall_corner(
     y_adjustments = [(10,-5),(-2,-2),(3,5),(-3,5)]
 )
 
-#show_object(result)
+#show_object(ex_three_wall_corner)
 cq.exporters.export(ex_three_wall_corner, 'stl/ruin_ruin_three_wall_corner.stl')
