@@ -77,6 +77,7 @@ import example.material.stones
 import example.material.uneven_blocks
 import example.material.uneven_centered_blocks
 import example.material.stucco_brick_blocks
+import example.material.bricks_layered
 
 print('minibase examples')
 import example.minibase.circle

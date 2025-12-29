@@ -1,19 +1,54 @@
 # Material
 
 - [Material](#material)
-  - [center\_blocks](#center_blocks)
+  - [Bricks Layered](#bricks-layered)
     - [parameters](#parameters)
-  - [make\_stones](#make_stones)
+  - [center\_blocks](#center_blocks)
     - [parameters](#parameters-1)
-  - [stucco\_brick\_blocks](#stucco_brick_blocks)
+  - [make\_stones](#make_stones)
     - [parameters](#parameters-2)
-  - [stacked\_wave\_form\_map](#stacked_wave_form_map)
+  - [stucco\_brick\_blocks](#stucco_brick_blocks)
     - [parameters](#parameters-3)
-  - [uneven\_blocks](#uneven_blocks)
+  - [stacked\_wave\_form\_map](#stacked_wave_form_map)
     - [parameters](#parameters-4)
-  - [uneven\_centered\_blocks](#uneven_centered_blocks)
+  - [uneven\_blocks](#uneven_blocks)
     - [parameters](#parameters-5)
+  - [uneven\_centered\_blocks](#uneven_centered_blocks)
+    - [parameters](#parameters-6)
 
+
+---
+
+## Bricks Layered
+
+### parameters
+
+``` python
+import cadquery as cq
+from cqterrain.material import BricksLayered
+
+bp_bricks = BricksLayered()
+bp_bricks.length = 30
+bp_bricks.width = 25
+bp_bricks.height = 60
+bp_bricks.rows = 4
+bp_bricks.columns = 3
+bp_bricks.layers = 5
+bp_bricks.spacing = .7
+bp_bricks.spacing_z = 0
+bp_bricks.tile_padding = 2
+bp_bricks.make()
+
+ex_bricks = bp_bricks.build()
+
+show_object(ex_bricks)
+```
+
+![](image/material/05.png)
+
+* [source](../src/cqterrain/material/BricksLayered.py)
+* [example](../example/material/bricks_layered.py)
+* [stl](../stl/material_bricks_layered.stl)
 
 ---
 
