@@ -1,6 +1,9 @@
 ## Main wip
 
 ## 3.5.5
+* Update to cadqueryhelper version 1.7.3
+
+## 3.5.5
 * Added material BricksLayered
 
 ## 3.5.4
