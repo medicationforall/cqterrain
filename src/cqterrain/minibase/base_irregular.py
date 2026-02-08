@@ -15,7 +15,7 @@
 
 import cadquery as cq
 from . import circle
-from cadqueryhelper import irregular_grid
+from cadqueryhelper.grid import irregular_grid
 import random
 from typing import Callable
 

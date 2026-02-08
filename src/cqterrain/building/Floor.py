@@ -14,7 +14,8 @@
 
 import cadquery as cq
 import math
-from cadqueryhelper import shape, grid, Base
+from cadqueryhelper import Base
+from cadqueryhelper.grid import grid
 from typing import Callable
 
 

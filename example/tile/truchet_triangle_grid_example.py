@@ -1,7 +1,7 @@
 import cadquery as cq
 import random
 from cqterrain import tile
-from cadqueryhelper import randomized_rotation_grid, scheme_grid, rotate_grid
+from cadqueryhelper.grid import randomized_rotation_grid, scheme_grid, rotate_grid
 
 #-----------------------
 # Tile

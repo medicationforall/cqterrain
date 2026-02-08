@@ -15,7 +15,8 @@
 import cadquery as cq
 import math
 from typing import Callable
-from cadqueryhelper import series, Base
+from cadqueryhelper import Base
+from cadqueryhelper.grid import series
 
 def _make_side_rail(
         width:float, 

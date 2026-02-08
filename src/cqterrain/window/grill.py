@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import cadquery as cq
-from cadqueryhelper import grid
+from cadqueryhelper.grid import grid
 
 def grill(
         length:float = 20,

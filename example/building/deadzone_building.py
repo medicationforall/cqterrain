@@ -1,8 +1,8 @@
 import cadquery as cq
-from cadqueryhelper import series, shape
+from cadqueryhelper.grid import series
 from cqterrain.building import Building, Room
 from cqterrain import tile, window
-from cqterrain.door import TiledDoor, HeavyDoor
+from cqterrain.door import HeavyDoor
 
 render_floor = False
 cq_editor_show= False

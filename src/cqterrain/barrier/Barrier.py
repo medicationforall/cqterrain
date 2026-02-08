@@ -14,7 +14,8 @@
 
 import cadquery as cq
 import math
-from cadqueryhelper import shape, series
+from cadqueryhelper import shape
+from cadqueryhelper.grid import series
 
 def jersey_shape(
     width:float = 10,

@@ -13,7 +13,8 @@
 # limitations under the License.
 
 import cadquery as cq
-from cadqueryhelper import grid, Base
+from cadqueryhelper import Base
+from cadqueryhelper.grid import grid
 import math
 
 class Wall(Base):

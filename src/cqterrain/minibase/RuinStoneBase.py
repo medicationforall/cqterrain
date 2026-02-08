@@ -1,5 +1,6 @@
 import cadquery as cq
-from cadqueryhelper import Base, irregular_grid
+from cadqueryhelper import Base
+from cadqueryhelper.grid import irregular_grid
 from typing import Literal, Callable
 import random
 from . import rectangle,circle,slot,ellipse,hexagon

@@ -13,7 +13,7 @@
 
 import cadquery as cq
 import math
-from cadqueryhelper import series
+from cadqueryhelper.grid import series
 
 def slot(
 length:float = 10,

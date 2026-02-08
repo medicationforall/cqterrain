@@ -1,6 +1,6 @@
 import cadquery as cq
 from cqterrain.tile import truchet_circle
-from cadqueryhelper import randomized_rotation_grid
+from cadqueryhelper.grid import randomized_rotation_grid
 
 example_tile = truchet_circle(
     length=20,

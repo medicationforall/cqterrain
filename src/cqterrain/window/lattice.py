@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import cadquery as cq
-from cadqueryhelper import grid
+from cadqueryhelper.grid import grid
 import math
 
 def lattice(

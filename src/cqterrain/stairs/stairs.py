@@ -14,7 +14,7 @@
 
 import cadquery as cq
 from cadqueryhelper import shape
-from cadqueryhelper import series
+from cadqueryhelper.grid import series
 import math
 
 

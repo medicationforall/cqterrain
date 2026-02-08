@@ -14,7 +14,6 @@
 
 import cadquery as cq
 from cadqueryhelper import Base
-from cadqueryhelper.shape import ring
 from typing import Literal, Tuple
 import math
 

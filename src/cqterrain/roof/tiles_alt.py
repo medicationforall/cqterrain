@@ -14,7 +14,7 @@
 
 import cadquery as cq
 import math
-from cadqueryhelper import grid
+from cadqueryhelper.grid import grid
 
 def tiles_alt(
         tile:cq.Workplane, 

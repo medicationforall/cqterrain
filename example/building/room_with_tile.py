@@ -1,5 +1,4 @@
 import cadquery as cq
-from cadqueryhelper import grid
 from cqterrain.building import Floor, Room
 from cqterrain import tile
 

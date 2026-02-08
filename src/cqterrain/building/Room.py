@@ -12,7 +12,8 @@
 # See the License for the specific language governing permissions and
 
 import cadquery as cq
-from cadqueryhelper import series, shape, Base
+from cadqueryhelper import shape, Base
+from cadqueryhelper.grid import series
 from typing import Callable
 from . import Floor
 from . import Wall

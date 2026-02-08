@@ -1,5 +1,5 @@
 import cadquery as cq
-from cadqueryhelper import randomized_rotation_grid
+from cadqueryhelper.grid import randomized_rotation_grid
 from cqterrain import tile
 
 triangle_tile = tile.truchet_triangle(

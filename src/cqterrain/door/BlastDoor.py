@@ -13,7 +13,8 @@
 # limitations under the License.
 
 import cadquery as cq
-from cadqueryhelper import Base, series
+from cadqueryhelper import Base
+from cadqueryhelper.grid import series
 
 class BlastDoor(Base):
     def __init__(self):

@@ -1,5 +1,6 @@
 import cadquery as cq
-from cadqueryhelper import series, shape
+from cadqueryhelper import shape
+from cadqueryhelper.grid import series
 from cqterrain.building import Room, Building
 
 ex = Room(

@@ -13,7 +13,8 @@
 # limitations under the License.
 
 import cadquery as cq
-from cadqueryhelper import Base, series, grid, irregular_grid, shape
+from cadqueryhelper import Base, shape
+from cadqueryhelper.grid import series, grid, irregular_grid
 import math
 from typing import Callable
 
