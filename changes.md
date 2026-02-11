@@ -3,6 +3,11 @@
 ## 3.6.0
 * Update to cadqueryhelper version 2.0.5
 * Updated cadqueryhelper import paths that reference grid components.
+* Added floor ModPattern
+* Added minibase BasaltBase
+* Added minibase PointGridBase
+* Update floor documentation
+* Refactored the minibase documentation
 
 ## 3.5.6
 * Update to cadqueryhelper version 1.7.3

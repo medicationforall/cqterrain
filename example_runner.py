@@ -63,6 +63,9 @@ import example.floor.round_brick_floor
 import example.floor.round_brick_floor_alt
 import example.floor.wood_floor
 import example.floor.wood_floor_struct
+import example.floor.mod_pattern
+import example.floor.mod_pattern_interlock
+import example.floor.mod_pattern_interlock_random
 
 print('greeble examples')
 import example.greeble.gothic_one
@@ -84,10 +87,12 @@ import example.minibase.circle
 import example.minibase.circle_uneven
 import example.minibase.circle_wood
 import example.minibase.circle_irregular
+import example.minibase.basalt_base
 import example.minibase.ellipse
 import example.minibase.ellipse_uneven
 import example.minibase.ellipse_wood
 import example.minibase.ellipse_irregular
+import example.minibase.point_grid_base
 import example.minibase.rectangle
 import example.minibase.rectangle_uneven
 import example.minibase.rectangle_wood

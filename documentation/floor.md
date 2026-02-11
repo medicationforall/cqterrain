@@ -1,12 +1,180 @@
 # Floor
 
 - [Floor](#floor)
+  - [Mod Pattern](#mod-pattern)
+    - [parameters](#parameters)
+    - [Mod Pattern Interlock](#mod-pattern-interlock)
+    - [Mod Pattern Interlock Random](#mod-pattern-interlock-random)
   - [Round Brick Floor](#round-brick-floor)
-    - [Parameters](#parameters)
+    - [parameters](#parameters-1)
     - [Advanced Example](#advanced-example)
   - [Wood Floor Struct](#wood-floor-struct)
-    - [Parameters](#parameters-1)
+    - [parameters](#parameters-2)
     - [Wood Floor example](#wood-floor-example)
+
+---
+
+## Mod Pattern
+
+### parameters
+* length: float
+* width: float
+* height: tuple[float,float,float]|float
+* render_points: bool
+* debug: bool
+* x_spacing: list[float]
+* y_spacing: list[float]
+* row_x_mod: list[int]
+* row_x_offset: list[float]
+* randomize_points: bool
+* shift_x: tuple[float,float,float]
+* shift_y: tuple[float,float,float]
+* seed: str
+* x_stretch: int
+* y_stretch: int
+* taper: tuple[float,float,float]|float|None
+* offset: tuple[float,float,float]|float|None
+* grid_offset_x: float
+* grid_offset_y: float
+* column_pad: int
+* row_pad: int
+* interlock_cells: bool
+* start: int
+* top_end_index: int
+* bottom_start_index: int
+* top_cap_index: int
+
+``` python
+import cadquery as cq
+from cqterrain.floor import ModPattern
+
+bp_hex = ModPattern()
+bp_hex.x_spacing = [5,10]
+bp_hex.y_spacing = [5]
+bp_hex.row_x_mod = [0,1]
+bp_hex.row_x_offset = [0,-2.5]
+
+bp_hex.x_stretch = 1
+bp_hex.y_stretch = 1
+
+bp_hex.taper = 10
+bp_hex.offset = -.25
+bp_hex.render_points = False
+
+bp_hex.debug = False
+bp_hex.column_pad = 1
+bp_hex.row_pad = 0
+bp_hex.grid_offset_x = -1.25 - 4
+bp_hex.grid_offset_y = 0
+
+bp_hex.make()
+
+ex_hex_outline = bp_hex.build_outline()
+ex_hex = bp_hex.build()
+
+show_object(ex_hex)
+```
+
+![](image/floor/05.png)
+
+
+* [source](../src/cqterrain/floor/ModPattern.py)
+* [example](../example/floor/mod_pattern.py)
+* [stl](../stl/floor_mod_pattern.stl)
+
+### Mod Pattern Interlock
+
+``` python
+import cadquery as cq
+from cqterrain.floor import ModPattern
+
+bp_hex = ModPattern()
+bp_hex.x_spacing = [5,10]
+bp_hex.y_spacing = [5]
+bp_hex.row_x_mod = [0,1]
+bp_hex.row_x_offset = [0,-2.5]
+
+bp_hex.x_stretch = 1
+bp_hex.y_stretch = 1
+
+bp_hex.taper = 10
+bp_hex.offset = -.25
+bp_hex.render_points = False
+
+bp_hex.debug = False
+bp_hex.column_pad = 1
+bp_hex.row_pad = 2
+bp_hex.grid_offset_x = -1.25 - 4
+bp_hex.grid_offset_y = 5
+
+bp_hex.interlock_cells = True
+bp_hex.start = 1
+bp_hex.top_end_index = 3
+bp_hex.bottom_start_index = 2
+bp_hex.top_cap_index = 3
+
+bp_hex.make()
+
+ex_hex_outline = bp_hex.build_outline()
+ex_hex = bp_hex.build()
+
+show_object(ex_hex)
+```
+
+![](image/floor/06.png)
+
+* [example](../example/floor/mod_pattern_interlock.py)
+* [stl](../stl/floor_mod_pattern_interlock.stl)
+
+### Mod Pattern Interlock Random
+
+``` pattern
+import cadquery as cq
+from cqterrain.floor import ModPattern
+
+bp_hex = ModPattern()
+bp_hex.x_spacing = [5,10]
+bp_hex.y_spacing = [5]
+bp_hex.row_x_mod = [0,1]
+bp_hex.row_x_offset = [0,-2.5]
+
+bp_hex.randomize_points = True
+bp_hex.shift_x = (-2,2,.5)
+bp_hex.shift_y = (-2,2,.5)
+bp_hex.seed = 'test'
+
+bp_hex.x_stretch = 1
+bp_hex.y_stretch = 1
+
+bp_hex.taper = 10
+bp_hex.offset = -.25
+bp_hex.render_points = False
+
+bp_hex.debug = False
+bp_hex.column_pad = 1
+bp_hex.row_pad = 3
+bp_hex.grid_offset_x = -1.25 - 4
+bp_hex.grid_offset_y = 5
+
+bp_hex.interlock_cells = True
+bp_hex.start = 1
+bp_hex.top_end_index = 3
+bp_hex.bottom_start_index = 2
+bp_hex.top_cap_index = 3
+
+bp_hex.make()
+
+ex_hex_outline = bp_hex.build_outline()
+ex_hex = bp_hex.build()
+
+show_object(ex_hex)
+```
+
+![](image/floor/07.png)
+
+* [example](../example/floor/mod_pattern_interlock_random.py)
+* [stl](../stl/floor_mod_pattern_interlock_random.stl)
+
 
 ---
 
@@ -14,7 +182,7 @@
 
 Round Brick / Stone Pattern
 
-### Parameters
+### parameters
 * diameter:float
 * height:float
 * rows:int
@@ -86,7 +254,7 @@ show_object(combined)
 
 ## Wood Floor Struct
 
-### Parameters
+### parameters
 * length: float
 * width: float
 * height: float

@@ -86,6 +86,7 @@ class RuinStoneBase(Base):
         ]
 
         #shapes
+        self.outline:cq.Workplane|None = None
         self.minibase:cq.Workplane|None = None
         self.top:cq.Workplane|None = None
         self.top_pattern :cq.Workplane|None = None
