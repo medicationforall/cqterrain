@@ -1,5 +1,13 @@
 ## Main wip
 
+## 3.6.1
+* Fix ModPattern points render to use offsets
+* BasaltBase fix a sticky parameter that was setting ModPattern debug to always False.
+* ModPattern Added parameters
+  * enforce_even_columns:bool = True
+  * enforce_even_rows:bool = True
+  * These are important for interlock operations to have an even number and rows and columns
+
 ## 3.6.0
 * Update to cadqueryhelper version 2.0.5
 * Updated cadqueryhelper import paths that reference grid components.

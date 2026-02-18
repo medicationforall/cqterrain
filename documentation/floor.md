@@ -38,6 +38,8 @@
 * grid_offset_y: float
 * column_pad: int
 * row_pad: int
+* enforce_even_columns: bool = True - Makes sure the final column count is even this is important for interlock operations
+* enforce_even_rows: bool = True - Makes sure the final row count is even this is important for interlock operations
 * interlock_cells: bool
 * start: int
 * top_end_index: int

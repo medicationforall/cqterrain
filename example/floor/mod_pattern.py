@@ -17,6 +17,8 @@ bp_hex.render_points = False
 bp_hex.debug = False
 bp_hex.column_pad = 1
 bp_hex.row_pad = 0
+bp_hex.enforce_even_columns = True
+bp_hex.enforce_even_rows = True
 bp_hex.grid_offset_x = -1.25 - 4
 bp_hex.grid_offset_y = 0
 

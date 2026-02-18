@@ -46,5 +46,4 @@ class BasaltBase(PointGridBase):
         self.bp_grid.length = length
         self.bp_grid.width = width
         self.bp_grid.seed = self.seed
-        self.bp_grid.debug = False
         self.bp_grid.make()

@@ -40,6 +40,8 @@ class ModPattern(Base):
         
         self.column_pad:int = 0
         self.row_pad:int = 0
+        self.enforce_even_columns:bool = True
+        self.enforce_even_rows:bool = True
         
         #interlock
         self.interlock_cells:bool = False
@@ -71,7 +73,11 @@ class ModPattern(Base):
             
             index += 1
             
-        return columns + self.column_pad
+        column_count = columns + self.column_pad
+
+        if self.enforce_even_columns and column_count % 2 == 1:
+            column_count += 1 
+        return column_count
     
     def calculate_rows(self):
         index = 1
@@ -87,7 +93,11 @@ class ModPattern(Base):
             index += 1
             #log(f'width {width}, index {index}')
             
-        return rows + self.row_pad
+        row_count = rows + self.row_pad
+
+        if self.enforce_even_rows and row_count % 2 == 1:
+            row_count += 1 
+        return row_count
         
     def make_outline(self):
 
@@ -199,6 +209,7 @@ class ModPattern(Base):
                 part.pushPoints(self.stream)
                 .box(1,1,1)
                 .translate((-self.length/2,self.width/2,0))
+                .translate((self.grid_offset_x,self.grid_offset_y,0))
             )
         
         if self.grid:
@@ -214,7 +225,7 @@ class ModPattern(Base):
                 height:float = self.height
             
             if self.debug:
-                part = part.add(self.outline.translate((0,0,height/2)))
+                part = part.add(self.outline.translate((0,0,0)))
             else:
                 part = part.intersect(self.outline.translate((0,0,height/2)))
         

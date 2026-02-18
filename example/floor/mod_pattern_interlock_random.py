@@ -22,6 +22,8 @@ bp_hex.render_points = False
 bp_hex.debug = False
 bp_hex.column_pad = 1
 bp_hex.row_pad = 3
+bp_hex.enforce_even_columns = True
+bp_hex.enforce_even_rows = True
 bp_hex.grid_offset_x = -1.25 - 4
 bp_hex.grid_offset_y = 5
 
@@ -32,7 +34,6 @@ bp_hex.bottom_start_index = 2
 bp_hex.top_cap_index = 3
 
 bp_hex.make()
-
 ex_hex_outline = bp_hex.build_outline()
 ex_hex = bp_hex.build()
 
