@@ -1,5 +1,8 @@
 ## Main wip
 
+## 3.6.2
+* Update to cadqueryhelper version 2.0.6
+
 ## 3.6.1
 * Fix ModPattern points render to use offsets
 * BasaltBase fix a sticky parameter that was setting ModPattern debug to always False.
