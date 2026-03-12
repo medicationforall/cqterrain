@@ -1,5 +1,8 @@
 ## Main wip
 
+## 3.7.1
+* Update to cadqueryhelper version 2.1.1
+
 ## 3.7.0
 * Update to cadqueryhelper version 2.1.0
   * cadquery 2.7.0
