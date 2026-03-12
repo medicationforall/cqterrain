@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-version = "3.7.2"
+version = "3.8.0"
 name = "cqterrain"
 description = "Generate 3d models of buildings / terrain using CadQuery"
 
@@ -11,7 +11,7 @@ authors = [
   { name="James Adams", email="inklink28@gmail.com" },
 ]
 
-readme = "README.md"
+readme = "PACKAGE_README.md"
 license = "Apache-2.0"
 
 classifiers = [
@@ -21,7 +21,7 @@ classifiers = [
 
 requires-python = ">=3.10"
 dependencies = [
-'cadqueryhelper @ git+https://github.com/medicationforall/cadqueryhelper@2.1.2'
+'cadqueryhelper==2.2.0'
 ]
 
 
