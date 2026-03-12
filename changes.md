@@ -1,5 +1,9 @@
 ## Main wip
 
+## 3.7.2
+* Update to cadqueryhelper version 2.1.2
+* Modified pyproject.toml to to fix setuptools deprecations warnings hanging the build.
+
 ## 3.7.1
 * Update to cadqueryhelper version 2.1.1
 
