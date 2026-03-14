@@ -12,7 +12,7 @@ Helper Libary to Generate 3d models of greebles, buildings, and terrain using [C
 * [CadQuery 2.x](https://github.com/CadQuery/cadquery)
 * [cadqueryhelper](https://github.com/medicationforall/cadqueryhelper)
 
-## Example Projects
+## Projects Using This Library
 * [Jersey Barrier Set](https://miniforall.com/jerseybarriers)
 * [Pipe Terrain Set](https://miniforall.com/pipeterrain)
 * [Shieldwall Terrain Set](https://miniforall.com/shieldwall)

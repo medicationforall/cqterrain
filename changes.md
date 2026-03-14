@@ -1,5 +1,9 @@
 ## Main wip
 
+## 3.8.1
+* Updated README.md
+  * Added pypi install directions
+
 ## 3.8.0
 * Update to cadqueryhelper version 2.2.0
 * Testing for packaging and deploying to pypi.

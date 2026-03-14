@@ -36,14 +36,17 @@ Helper Libary to Generate 3d models of greebles, buildings, and terrain using [C
     * stones
     * support
 
+
 ## Changes
 * [Changelog](./changes.md)
+
 
 ## Dependencies
 * [CadQuery 2.x](https://github.com/CadQuery/cadquery)
 * [cadqueryhelper](https://github.com/medicationforall/cadqueryhelper)
 
-## Projects
+
+## Projects Using This Library
 * [Jersey Barrier Set](https://miniforall.com/jerseybarriers)
 * [Pipe Terrain Set](https://miniforall.com/pipeterrain)
 * [Shieldwall Terrain Set](https://miniforall.com/shieldwall)
@@ -52,7 +55,15 @@ Helper Libary to Generate 3d models of greebles, buildings, and terrain using [C
 ---
 
 ## Installation
-To install CQ Terrain directly from GitHub, run the following `pip` command:
+
+Pip install from Pypi https://pypi.org/project/cqterrain/
+
+    pip install cqterrain
+
+
+**OR**
+
+To install cqterrain directly from GitHub, run the following `pip` command:
 
 	pip install git+https://github.com/medicationforall/cqterrain
 
