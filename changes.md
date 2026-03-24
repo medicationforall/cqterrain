@@ -1,5 +1,13 @@
 ## Main wip
 
+## 3.8.2
+* ruin
+  * Added rectangle
+  * Added ruin_rectangle
+  * Added ruin_rectangle_random
+  * Added ruin_three_wall_section
+  * Added three_wall_section
+
 ## 3.8.1
 * Updated README.md
   * Added pypi install directions
