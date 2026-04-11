@@ -68,6 +68,7 @@ import example.floor.mod_pattern_interlock
 import example.floor.mod_pattern_interlock_random
 
 print('greeble examples')
+import example.greeble.cap_greeble
 import example.greeble.gothic_one
 import example.greeble.vent
 import example.greeble.spokedWheel

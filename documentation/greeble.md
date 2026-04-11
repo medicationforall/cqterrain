@@ -1,16 +1,67 @@
 # Greebles
 
 - [Greebles](#greebles)
+  - [Cap Greeble](#cap-greeble)
   - [Circuit Glyph](#circuit-glyph)
-    - [Parameters](#parameters)
-    - [Example two](#example-two)
-    - [Example three](#example-three)
   - [Gothic One](#gothic-one)
-    - [Parameters](#parameters-1)
   - [Spoked Wheel](#spoked-wheel)
-    - [Parameters](#parameters-2)
   - [Vent](#vent)
-    - [Parameters](#parameters-3)
+
+---
+
+## Cap Greeble
+
+
+### parameters
+* diameter: float 
+* teeth: int
+* rotate_teeth: int
+* body_height: float
+* teeth_diameter: float
+* chamfer: float
+* interior_height: float
+* interior_diameter: float
+* interior_cut_diameter: float
+* bars_count: int
+* bar_length: float
+* bar_diameter: float
+* inset_distance: float
+* bar_shift: float
+* bar_shift_z: float
+
+
+``` python
+import cadquery as cq
+from cqterrain.greeble import cap_greeble
+
+result = cap_greeble(
+    diameter = 28, 
+    teeth = 14,
+    rotate_teeth = 20,
+    body_height = 3,
+    teeth_diameter = 3,
+    chamfer = 2,
+    interior_height = 2,
+    interior_diameter = 4,
+    interior_cut_diameter = 5,
+    bars_count = 6,
+    bar_length = 6,
+    bar_diameter = 2,
+    inset_distance = 2,
+    bar_shift = 1,
+    bar_shift_z = 2.4
+)
+
+show_object(result)
+```
+
+![](image/greeble/08.png)<br />
+
+
+* [source](../src/cqterrain/greeble/cap_greeble.py)
+* [example](../example/greeble/cap_greeble.py)
+* [stl](../stl/greeble_cap_greeble.stl)
+
 
 
 ---
@@ -19,7 +70,7 @@
 Takes a collection of points, draws a line between each point. 
 Renders a cq.Workplane at each point specified.
 
-### Parameters
+### parameters
 * length: float
 * width: float
 * height: float
@@ -58,7 +109,7 @@ show_object(ex_glyph)
 * [stl](../stl/greeble_circuit_glyph_one.stl)
 
 
-### Example two 
+### example two 
 ``` python
 import cadquery as cq
 from cqterrain.greeble import CircuitGlyph 
@@ -92,7 +143,7 @@ show_object(ex_glyph.translate((0,0,0)))
 * [example](../example/greeble/glyph_greeble_two.py)
 * [stl](../stl/greeble_circuit_glyph_two.stl)
 
-### Example three
+### example three
 ``` python
 import cadquery as cq
 from cqterrain.greeble import CircuitGlyph 
@@ -129,7 +180,7 @@ show_object(ex_glyph)
 
 Design is mirrored on both sides.
 
-### Parameters
+### parameters
 * length: float
 * width: float
 * height: float
@@ -168,7 +219,8 @@ result = gothic_one(
 ---
 
 ## Spoked Wheel
-### Parameters
+
+### parameters
 * radius: float
 * height: float
 * frame: float
@@ -205,7 +257,7 @@ result = greeble.spoked_wheel(
 
 ## Vent
 
-### Parameters
+### parameters
 * length: float
 * width: float
 * height: float
