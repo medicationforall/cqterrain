@@ -70,11 +70,14 @@ import example.floor.mod_pattern_interlock_random
 print('greeble examples')
 import example.greeble.cap_greeble
 import example.greeble.gothic_one
-import example.greeble.vent
-import example.greeble.spokedWheel
+import example.greeble.fan_blade
+import example.greeble.fan_housing
+import example.greeble.fan_industrial
 import example.greeble.glyph_greeble_one
 import example.greeble.glyph_greeble_two
 import example.greeble.glyph_greeble_three
+import example.greeble.spokedWheel
+import example.greeble.vent
 
 print('material examples')
 import example.material.stones

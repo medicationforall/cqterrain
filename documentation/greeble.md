@@ -3,6 +3,9 @@
 - [Greebles](#greebles)
   - [Cap Greeble](#cap-greeble)
   - [Circuit Glyph](#circuit-glyph)
+  - [Fan Blade](#fan-blade)
+  - [Fan Housing](#fan-housing)
+  - [Fan Industrial](#fan-industrial)
   - [Gothic One](#gothic-one)
   - [Spoked Wheel](#spoked-wheel)
   - [Vent](#vent)
@@ -174,6 +177,160 @@ show_object(ex_glyph)
 
 * [example](../example/greeble/glyph_greeble_three.py)
 * [stl](../stl/greeble_circuit_glyph_three.stl)
+---
+
+## Fan Blade
+Fan Blade Inherits from Base class
+
+### parameters
+* diameter: float
+* height: float
+* cylinder_height: float
+* cylinder_diameter: float
+* blade_width: float
+* blade_rotate: float
+* blade_count: int
+* debug: bool
+* shift_rotate: float
+* shift_translate: float
+
+``` python
+import cadquery as cq
+from cqterrain.greeble import FanBlade
+
+bp_fan = FanBlade()
+
+bp_fan.diameter = 15
+bp_fan.height = 5
+bp_fan.cylinder_height = 2.5
+bp_fan.cylinder_diameter = 5
+bp_fan.blade_width = 1
+bp_fan.blade_rotate = 23
+bp_fan.blade_count = 3
+bp_fan.debug = False
+bp_fan.shift_rotate = 10
+bp_fan.shift_translate = .5
+
+bp_fan.make()
+
+ex_fan = bp_fan.build()
+show_object(ex_fan)
+```
+
+![](image/greeble/09.png)<br />
+
+* [source](../src/cqterrain/greeble/FanBlade.py)
+* [example](../example/greeble/fan_blade.py)
+* [stl](../stl/greeble_fan_blade.stl)
+
+---
+
+## Fan Housing
+Circular Fan Housing Inherits from Base class
+
+## parameters
+self.diameter:f loat
+self.height: float
+self.housing_inner_diameter: float
+self.housing_wall_cut_width: float
+self.housing_wall_height: float
+self.housing_wall_chamfer: float
+self.render_fins: bool
+self.fin_length: float
+self.fin_width: float
+self.fin_count: int
+
+``` python
+import cadquery as cq
+from cqterrain.greeble import FanHousing
+
+bp_fan = FanHousing()
+
+bp_fan.diameter = 10
+bp_fan.height = 5
+
+#housing
+bp_fan.housing_inner_diameter = 2
+bp_fan.housing_wall_cut_width = 1
+bp_fan.housing_wall_height = 1
+bp_fan.housing_wall_chamfer = 0.499
+
+#fin
+bp_fan.render_fins = True
+bp_fan.fin_length = 0.5
+bp_fan.fin_width = 0.5
+bp_fan.fin_count = 3
+
+bp_fan.make()
+
+ex_fan = bp_fan.build()
+show_object(ex_fan)
+```
+
+![](image/greeble/10.png)<br />
+
+* [source](../src/cqterrain/greeble/FanHousing.py)
+* [example](../example/greeble/fan_housing.py)
+* [stl](../stl/greeble_fan_housing.stl)
+
+---
+
+## Fan Industrial
+
+### parameters
+* length: float
+* width: float
+* height: float
+* diameter: float
+* housing_inner_diameter: float
+* fan_cylinder_diameter: float
+* fin_width: float
+* fin_length: float
+* fin_count: int
+* housing_wall_cut_width: float
+* housing_wall_height: float
+* blade_count: int
+* shift_rotate: float
+* blade_width: float
+* blade_rotate: float
+
+### blueprints
+* bp_housing:Base = [FanHousing](#fan-housing)
+* bp_fan:Base = [FanBlade](#fan-blade)
+
+``` python
+import cadquery as cq
+from cqterrain.greeble import FanIndustrial
+
+bp_fan = FanIndustrial()
+bp_fan.length = 30
+bp_fan.width = 25
+bp_fan.height = 20
+bp_fan.diameter = 40
+bp_fan.housing_inner_diameter = 4
+bp_fan.fan_cylinder_diameter = 10
+bp_fan.fin_width = 1.5
+bp_fan.fin_length = 1.5
+bp_fan.fin_count = 6
+bp_fan.housing_wall_cut_width = 2
+bp_fan.housing_wall_height = 3
+bp_fan.blade_count = 14
+bp_fan.shift_rotate = 10
+bp_fan.blade_width = 3
+bp_fan.blade_rotate = 25
+
+bp_fan.make()
+
+ex_fan = bp_fan.build()
+show_object(ex_fan)
+```
+
+![](image/greeble/11.png)<br />
+
+* [source](../src/cqterrain/greeble/FanIndustrial.py)
+* [example](../example/greeble/fan_industrial.py)
+* [stl](../stl/greeble_fan_industrial.stl)
+
 ---
 
 ## Gothic One

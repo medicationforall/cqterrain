@@ -1,5 +1,11 @@
 ## Main wip
 
+# 3.8.4
+* greeble 
+  * Added FanHousing
+  * Added FanBlade
+  * Added FanIndustrial
+
 ## 3.8.3
 * Added greeble cap_greeble method.
 
