@@ -50,13 +50,16 @@ import example.damage.uneven_spline_plane_risky
 import example.damage.uneven_spline_plane_grid
 
 print('door example')
-import example.door.door
-import example.door.pull_handle
-import example.door.tiled_door
-import example.door.heavy_door
 import example.door.blastDoor
+import example.door.door
+import example.door.door_two
+import example.door.door_double
+import example.door.frame
 import example.door.hatch
+import example.door.heavy_door
+import example.door.pull_handle
 import example.door.splitDoor
+import example.door.tiled_door
 
 print('floor')
 import example.floor.round_brick_floor
@@ -216,6 +219,8 @@ import example.window.frame
 import example.window.grill
 import example.window.lattice
 import example.window.lattice_fancy
+import example.window.shutter
+import example.window.shutter_window
 
 print('Walkway Examples')
 import example.walkway.walkway

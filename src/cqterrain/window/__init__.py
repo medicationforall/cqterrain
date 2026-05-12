@@ -7,3 +7,6 @@ from .grill import grill
 from .industrial import industrial
 from .cinquefoil import cinquefoil
 from .cinquefoil_frame import cinquefoil_frame
+
+from .Shutter import Shutter
+from .ShutterWindow import ShutterWindow

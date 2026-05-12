@@ -2,19 +2,15 @@
 
 - [Door](#door)
   - [Blast Door](#blast-door)
-    - [parameters](#parameters)
   - [Door](#door-1)
-    - [parameters](#parameters-1)
+  - [Door Double](#door-double)
+  - [Door Two](#door-two)
+  - [Frame](#frame)
   - [Hatch](#hatch)
-    - [parameters](#parameters-2)
   - [Heavy Door](#heavy-door)
-    - [parameters](#parameters-3)
   - [Pull Handle](#pull-handle)
-    - [parameters](#parameters-4)
   - [Split Door](#split-door)
-    - [parameters](#parameters-5)
   - [Tiled Door](#tiled-door)
-    - [parameters](#parameters-6)
     - [method callbacks](#method-callbacks)
 
 
@@ -105,6 +101,150 @@ show_object(result)
 * [source](../src/cqterrain/door/Door.py)
 * [example](../example/door/door.py)
 * [stl](../stl/door.stl)
+
+---
+## Door Double
+
+### parameters
+* length: float
+* width: float
+* height: float
+* frame_width: float
+* chamfer: float
+* cut_chamfer: float
+* window_length: float
+* window_height: float
+* window_z_translate: float
+
+``` python
+import cadquery as cq
+from  cqterrain.door import DoorDouble
+
+bp_door = DoorDouble()
+bp_door.length = 60
+bp_door.width = 3
+bp_door.height = 40
+
+bp_door.frame_width = 3
+bp_door.chamfer = 5
+bp_door.cut_chamfer = 3.5
+
+bp_door.window_length = 6
+bp_door.window_height = 3
+bp_door.window_z_translate = 30
+
+bp_door.make()
+result = bp_door.build()
+
+show_object(result)
+```
+
+![](image/door/10.png)
+
+* [source](../src/cqterrain/door/DoorDouble.py)
+* [example](../example/door/door_double.py)
+* [stl](../stl/door_double.stl)
+
+---
+## Door Two
+
+### parameters
+* length: float
+* width: float
+* height: float
+* greeble_length: float
+* greeble_width: float
+* greeble_height: float
+* greeble_inner_height: float
+* greeble_z_translate: float
+* chamfer: tuple[float|None,float|None]
+* side_chamfer: float|None
+* render_window: bool
+* window_length: float
+* window_width: float
+* window_height: float
+* window_frame_width: float
+* window_z_translate: float
+* hinge_offset: float
+* hinge_chamfer: float
+
+``` python
+import cadquery as cq
+from  cqterrain.door  import DoorTwo
+
+bp_door = DoorTwo()
+
+bp_door.length = 30
+bp_door.width = 2
+bp_door.height = 40
+
+bp_door.greeble_length = 5
+bp_door.greeble_width = 3
+bp_door.greeble_height = 12
+bp_door.greeble_inner_height = 4
+bp_door.greeble_z_translate = -3
+
+bp_door.chamfer = (3.5,3.5)
+bp_door.side_chamfer = .5
+
+bp_door.render_window = True
+bp_door.window_length = 6
+bp_door.window_width = 3
+bp_door.window_height = 3
+bp_door.window_frame_width = 1
+bp_door.window_z_translate = 30
+
+bp_door.hinge_offset = 3
+bp_door.hinge_chamfer = 1
+
+bp_door.make()
+result = bp_door.build()
+
+show_object(result)
+```
+
+![](image/door/08.png)
+
+* [source](../src/cqterrain/door/DoorTwo.py)
+* [example](../example/door/door_two.py)
+* [stl](../stl/door_two.stl)
+
+---
+
+## Frame
+* length: float
+* width: float
+* height: float
+* frame_width: float
+* chamfer: float
+* cut_chamfer: float
+
+### parameters
+
+``` python
+import cadquery as cq
+from  cqterrain.door import Frame
+
+bp_frame = Frame()
+bp_frame.length = 60
+bp_frame.width = 3
+bp_frame.height = 40
+
+bp_frame.frame_width = 3
+bp_frame.chamfer = 5
+bp_frame.cut_chamfer = 3.5
+
+bp_frame.make()
+result = bp_frame.build()
+
+show_object(result)
+```
+
+![](image/door/09.png)
+
+* [source](../src/cqterrain/door/Frame.py)
+* [example](../example/door/frame.py)
+* [stl](../stl/door_frame.stl)
 
 
 ---

@@ -5,6 +5,14 @@
   * Added FanHousing
   * Added FanBlade
   * Added FanIndustrial
+* door
+  * Added DoorTwo
+  * Added Frame
+  * Added DoubleDoor
+* window
+  * Added Shutter
+  * Added ShutterWindow
+  * Cleaned Window Examples
 
 ## 3.8.3
 * Added greeble cap_greeble method.

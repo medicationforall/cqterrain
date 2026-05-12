@@ -9,4 +9,5 @@ result = window.cinquefoil_frame(
     height=2
 )
 
+#show_object(result)
 cq.exporters.export(result,'stl/window_cinquefoil_frame.stl')

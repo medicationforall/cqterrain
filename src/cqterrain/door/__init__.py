@@ -5,3 +5,6 @@ from .HeavyDoor import HeavyDoor
 from .BlastDoor import BlastDoor
 from .Hatch import Hatch
 from .SplitDoor import SplitDoor
+from .DoorTwo import DoorTwo
+from .Frame import Frame
+from .DoorDouble import DoorDouble

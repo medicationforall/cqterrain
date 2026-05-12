@@ -12,4 +12,5 @@ result = window.casement(
     grill_height=1
 )
 
+#show_object(result)
 cq.exporters.export(result,'stl/window_casement.stl')

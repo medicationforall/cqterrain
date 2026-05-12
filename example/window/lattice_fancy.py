@@ -10,4 +10,6 @@ frame = window.frame()
 
 scene = cq.Workplane("XY").add(frame).add(lattice)
 
+
+#show_object(scene)
 cq.exporters.export(scene,'stl/window_lattice_fancy.stl')

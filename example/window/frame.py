@@ -8,4 +8,5 @@ result = window.frame(
     frame_width = 3
 )
 
+#show_object(result)
 cq.exporters.export(result,'stl/window_frame.stl')
