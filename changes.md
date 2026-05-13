@@ -9,6 +9,7 @@
   * Added DoorTwo
   * Added Frame
   * Added DoubleDoor
+  * Added DoorSingle
 * window
   * Added Shutter
   * Added ShutterWindow

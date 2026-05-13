@@ -1,7 +1,11 @@
 # cqterrain
 Helper Libary to Generate 3d models of greebles, buildings, and terrain using [CadQuery](https://cadquery.readthedocs.io/en/latest/intro.html).
 
-![](https://raw.githubusercontent.com/medicationforall/cqterrain/refs/heads/main/documentation/image/book/cover.png)
+---
+
+![Version 3.4.8](https://raw.githubusercontent.com/medicationforall/cqterrain/refs/heads/main/documentation/image/version/3.8.4.png)
+
+---
 
 ## Links
 * [README.md](https://github.com/medicationforall/cqterrain)

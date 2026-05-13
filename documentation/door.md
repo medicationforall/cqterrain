@@ -116,6 +116,10 @@ show_object(result)
 * window_height: float
 * window_z_translate: float
 
+### blueprints
+* bp_frame:Base = [Frame](#frame)
+* bp_door:Base = [DoorTwo](#door-two)
+
 ``` python
 import cadquery as cq
 from  cqterrain.door import DoorDouble
@@ -146,6 +150,55 @@ show_object(result)
 * [stl](../stl/door_double.stl)
 
 ---
+
+## Door Single
+
+### parameters
+* length: float
+* width: float
+* height: float
+* frame_width: float
+* cut_chamfer: float
+* side_chamfer: float|None
+* window_length: float 
+* window_height: float
+* window_z_translate: float
+
+### blueprints
+* bp_frame:Base = [Frame](#frame)
+* bp_door:Base = [DoorTwo](#door-two)
+
+``` python
+import cadquery as cq
+from  cqterrain.door import DoorSingle
+
+bp_door = DoorSingle()
+bp_door.length = 30
+bp_door.width = 3
+bp_door.height = 40
+
+bp_door.frame_width = 3
+bp_door.cut_chamfer = 3.5
+bp_door.side_chamfer = None
+
+bp_door.window_length = 6
+bp_door.window_height = 3
+bp_door.window_z_translate = 30
+
+bp_door.make()
+result = bp_door.build()
+
+show_object(result)
+```
+
+![](image/door/11.png)
+
+* [source](../src/cqterrain/door/DoorSingle.py)
+* [example](../example/door/door_single.py)
+* [stl](../stl/door_single.stl)
+
+---
+
 ## Door Two
 
 ### parameters

@@ -8,3 +8,4 @@ from .SplitDoor import SplitDoor
 from .DoorTwo import DoorTwo
 from .Frame import Frame
 from .DoorDouble import DoorDouble
+from .DoorSingle import DoorSingle
