@@ -184,6 +184,10 @@ import example.stairs.round.plain_stairs
 import example.stairs.round.ramp
 import example.stairs.industrial_stairs
 
+print('swivel examples')
+import example.swivel.swivel_base
+import example.swivel.swivel_top
+
 print('tile examples')
 import example.tile.apricorn
 import example.tile.basketweave
