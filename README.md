@@ -33,6 +33,7 @@ Helper Libary to Generate 3d models of greebles, buildings, and terrain using [C
   * [Shieldwall](documentation/shieldwall.md)
   * [Spool](documentation/spool.md)
   * [Stairs](documentation/stairs.md)
+  * [Swivel](documentation/swivel.md)
   * [Tile](documentation/tile.md)
   * [Window](documentation/window.md)
   * [Walkway](documentation/walkway.md)

@@ -185,8 +185,11 @@ import example.stairs.round.ramp
 import example.stairs.industrial_stairs
 
 print('swivel examples')
+import example.swivel.swivel
+import example.swivel.swivel_plate
 import example.swivel.swivel_base
 import example.swivel.swivel_top
+import example.swivel.turbine
 
 print('tile examples')
 import example.tile.apricorn

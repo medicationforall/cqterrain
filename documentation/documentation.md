@@ -19,6 +19,7 @@
 * [Shieldwall](shieldwall.md)
 * [Spool](spool.md)
 * [Stairs](stairs.md)
+* [Swivel](swivel.md)
 * [Tile](tile.md)
 * [Window](window.md)
 * [Walkway](walkway.md)
