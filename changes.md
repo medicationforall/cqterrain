@@ -9,6 +9,16 @@
  * Added Turbine
  * Added Swivel
    * Added example swivel_plate
+* door package
+  * door frame 
+    * Added parameter self.cut_height_mod
+    * Added calculate_cut_frame_height method
+    * Added calculate_cut_frame_length method
+  * Added PanelDoor
+  * Added GarageDoor
+* greeble package
+  * Added BottomClamps 
+  * Added Panel
 
 # 3.8.4
 * greeble 

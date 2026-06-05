@@ -26,11 +26,18 @@ class Frame(Base):
         self.frame_width:float = 3
         self.chamfer:float = 5
         self.cut_chamfer:float = 3.5
+        self.cut_height_mod:float = 0
         
         #shapes
         self.outline:cq.Workplane|None = None
         self.frame:cq.Workplane|None = None
         self.frame_cut:cq.Workplane|None = None
+        
+    def calculate_cut_frame_height(self)->float:
+        return self.height - self.frame_width + self.cut_height_mod
+    
+    def calculate_cut_frame_length(self)->float:
+        return self.length - self.frame_width*2
         
     def make_outline(self):
         outline = cq.Workplane("XY").box(
@@ -56,22 +63,30 @@ class Frame(Base):
         self.frame = frame
         
     def make_frame_cut(self):
-        length = self.length - self.frame_width*2
+        length = self.calculate_cut_frame_length()
         width = self.width
-        height = self.height - self.frame_width
+        height = self.calculate_cut_frame_height()
         frame_cut = (
             cq.Workplane("XY").box(
                 length,
-                width,
+                width+3,
                 height
             )
-            .faces("Z")
-            .edges("|Y")
-            .chamfer(self.cut_chamfer)
-            .translate((0,0,-self.frame_width/2))
         )
         
-        self.frame_cut = frame_cut
+        if self.cut_chamfer:
+            frame_cut = (
+                frame_cut
+                .faces("Z")
+                .edges("|Y")
+                .chamfer(self.cut_chamfer)
+            )
+        
+        z_translate = -self.height/2 + height/2
+        self.frame_cut = (
+            frame_cut
+            .translate((0,0,z_translate))#-self.frame_width/2))
+        )
         
     def make(self):
         super().make()

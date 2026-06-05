@@ -1,14 +1,64 @@
 # Greebles
 
-- [Greebles](#greebles)
-  - [Cap Greeble](#cap-greeble)
-  - [Circuit Glyph](#circuit-glyph)
-  - [Fan Blade](#fan-blade)
-  - [Fan Housing](#fan-housing)
-  - [Fan Industrial](#fan-industrial)
-  - [Gothic One](#gothic-one)
-  - [Spoked Wheel](#spoked-wheel)
-  - [Vent](#vent)
+## Index
+
+* [Cap Greeble](#cap-greeble)
+* [Circuit Glyph](#circuit-glyph)
+* [Fan Blade](#fan-blade)
+* [Fan Housing](#fan-housing)
+* [Fan Industrial](#fan-industrial)
+* [Gothic One](#gothic-one)
+* [Panel](#panel)
+* [Spoked Wheel](#spoked-wheel)
+* [Vent](#vent)
+
+---
+
+## BottomClamps
+* length: float
+* width: float
+* height: float
+* clamp_height: float
+* clamp_chamfer: float
+* clamp_count: int
+* clamp_width: float
+* clamp_bottom_length: float
+* clamp_top_length: float
+
+### parameters
+
+``` python
+import cadquery as cq
+from cqterrain.greeble import BottomClamps
+
+bp_clamps = BottomClamps()
+
+bp_clamps.length = 100
+bp_clamps.width = 8
+bp_clamps.height = 2
+
+bp_clamps.clamp_height = 7
+bp_clamps.clamp_chamfer = 1
+bp_clamps.clamp_count = 3
+bp_clamps.clamp_width = 8
+bp_clamps.clamp_bottom_length = 25
+bp_clamps.clamp_top_length = 10
+
+bp_clamps.make()
+
+ex_clamps = bp_clamps.build()
+
+show_object(ex_clamps)
+```
+
+![](image/greeble/12.png)<br />
+
+
+* [source](../src/cqterrain/greeble/BottomClamps.py)
+* [example](../example/greeble/bottom_clamps.py)
+* [stl](../stl/greeble_bottom_clamps.stl)
+
+
 
 ---
 
@@ -372,6 +422,46 @@ result = gothic_one(
 * [source](../src/cqterrain/greeble/gothic_one.py)
 * [example](../example/greeble/gothic_one.py)
 * [stl](../stl/greeble_gothic_one.stl)
+
+---
+
+## Panel
+
+### parameters
+* length: float
+* width: float
+* height: float
+* outer_height: float
+* frame: float
+* frame_depth: float
+
+``` python
+import cadquery as cq
+from cqterrain.greeble import Panel
+
+bp_panel = Panel()
+
+bp_panel.length = 8
+bp_panel.width = 6
+bp_panel.height = 35
+bp_panel.outer_height = 15
+
+bp_panel.frame = 1.5
+bp_panel.frame_depth = 1
+
+bp_panel.make()
+
+ex_panel = bp_panel.build()
+
+show_object(ex_panel)
+```
+
+![](image/greeble/13.png)<br />
+
+* [source](../src/cqterrain/greeble/Panel.py)
+* [example](../example/greeble/panel.py)
+* [stl](../stl/greeble_panel.stl)
+
 
 ---
 

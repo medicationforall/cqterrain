@@ -1,17 +1,20 @@
 # Door
 
-- [Door](#door)
-  - [Blast Door](#blast-door)
-  - [Door](#door-1)
-  - [Door Double](#door-double)
-  - [Door Two](#door-two)
-  - [Frame](#frame)
-  - [Hatch](#hatch)
-  - [Heavy Door](#heavy-door)
-  - [Pull Handle](#pull-handle)
-  - [Split Door](#split-door)
-  - [Tiled Door](#tiled-door)
-    - [method callbacks](#method-callbacks)
+## Index
+
+* [Blast Door](#blast-door)
+* [Door](#door-1)
+* [Door Double](#door-double)
+* [Door Two](#door-two)
+* [Frame](#frame)
+* [Garage Door](#garage-door)
+* [Hatch](#hatch)
+* [Heavy Door](#heavy-door)
+* [Panel Door](#panel-door)
+* [Pull Handle](#pull-handle)
+* [Split Door](#split-door)
+* [Tiled Door](#tiled-door)
+  * [method callbacks](#method-callbacks)
 
 
 ---
@@ -271,6 +274,7 @@ show_object(result)
 * frame_width: float
 * chamfer: float
 * cut_chamfer: float
+* cut_height_mod: float
 
 ### parameters
 
@@ -286,6 +290,7 @@ bp_frame.height = 40
 bp_frame.frame_width = 3
 bp_frame.chamfer = 5
 bp_frame.cut_chamfer = 3.5
+bp_frame.cut_height_mod = 0
 
 bp_frame.make()
 result = bp_frame.build()
@@ -299,6 +304,47 @@ show_object(result)
 * [example](../example/door/frame.py)
 * [stl](../stl/door_frame.stl)
 
+
+---
+
+## Garage Door
+
+### parameters
+* render_frame: bool
+* render_door: bool
+* render_clamps: bool
+* render_panel: bool
+
+### blueprints
+* bp_frame: [frame](#frame)
+* bp_door: [PanelDoor](#panel-door)
+* bp_clamps: [BottomClamps](./greeble.md#bottomclamps)
+* bp_panel: [Panel](./greeble.md#panel)
+
+
+``` python
+import cadquery as cq
+from cqterrain.door import GarageDoor
+
+bp_door = GarageDoor()
+
+bp_door.render_frame:bool = True
+bp_door.render_door:bool = True
+bp_door.render_clamps:bool = True
+bp_door.render_panel:bool = True
+
+bp_door.make()
+
+ex_door = bp_door.build()
+
+show_object(ex_door)
+```
+
+![](image/door/13.png)
+
+* [source](../src/cqterrain/door/GarageDoor.py)
+* [example](../example/door/garage_door.py)
+* [stl](../stl/door_garage_door.stl)
 
 ---
 
@@ -415,6 +461,61 @@ show_object(ex_door)
 * [source](../src/cqterrain/door/HeavyDoor.py)
 * [example](../example/door/heavy_door.py)
 * [stl](../stl/door_heavy_door.stl)
+
+---
+
+## Panel Door
+
+### parameters
+* length: float
+* width: float
+* height: float
+* panel_count: int
+* render_windows: bool
+* window_count: int
+* window_length: float
+* window_height: float
+* window_frame: float
+* window_frame_width: float
+* render_rollers: bool
+* roller_length: float
+* roller_height: float
+
+``` python
+import cadquery as cq
+from cqterrain.door import PanelDoor
+
+bp_door = PanelDoor()
+
+bp_door.length = 100
+bp_door.width = 5
+bp_door.height = 52
+
+bp_door.panel_count = 3
+
+bp_door.render_windows = True
+bp_door.window_count = 2
+bp_door.window_length = 12
+bp_door.window_height = 6
+bp_door.window_frame = 1.5
+bp_door.window_frame_width = 1
+
+bp_door.render_rollers = True
+bp_door.roller_length = 3
+bp_door.roller_height = 4
+
+bp_door.make()
+
+ex_door = bp_door.build()
+
+show_object(ex_door)
+```
+
+![](image/door/12.png)
+
+* [source](../src/cqterrain/door/PanelDoor.py)
+* [example](../example/door/panel_door.py)
+* [stl](../stl/door_panel_door.stl)
 
 ---
 

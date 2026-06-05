@@ -61,6 +61,8 @@ import example.door.heavy_door
 import example.door.pull_handle
 import example.door.splitDoor
 import example.door.tiled_door
+import example.door.panel_door
+import example.door.garage_door
 
 print('floor')
 import example.floor.round_brick_floor
@@ -82,6 +84,8 @@ import example.greeble.glyph_greeble_two
 import example.greeble.glyph_greeble_three
 import example.greeble.spokedWheel
 import example.greeble.vent
+import example.greeble.bottom_clamps
+import example.greeble.panel
 
 print('material examples')
 import example.material.stones

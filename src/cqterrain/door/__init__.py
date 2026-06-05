@@ -9,3 +9,6 @@ from .DoorTwo import DoorTwo
 from .Frame import Frame
 from .DoorDouble import DoorDouble
 from .DoorSingle import DoorSingle
+from .PanelDoor import PanelDoor
+
+from .GarageDoor import GarageDoor

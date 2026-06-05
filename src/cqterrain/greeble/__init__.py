@@ -7,3 +7,5 @@ from .cap_greeble import cap_greeble
 from .FanBlade import FanBlade
 from .FanHousing import FanHousing
 from .FanIndustrial import FanIndustrial
+from .BottomClamps import BottomClamps
+from .Panel import Panel

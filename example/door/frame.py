@@ -9,6 +9,7 @@ bp_frame.height = 40
 bp_frame.frame_width = 3
 bp_frame.chamfer = 5
 bp_frame.cut_chamfer = 3.5
+bp_frame.cut_height_mod = 0
 
 bp_frame.make()
 result = bp_frame.build()
