@@ -9,3 +9,4 @@ from .FanHousing import FanHousing
 from .FanIndustrial import FanIndustrial
 from .BottomClamps import BottomClamps
 from .Panel import Panel
+from .Dish import Dish

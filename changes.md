@@ -19,6 +19,7 @@
 * greeble package
   * Added BottomClamps 
   * Added Panel
+  * Added Dish
 
 # 3.8.4
 * greeble 

@@ -4,6 +4,7 @@
 
 * [Cap Greeble](#cap-greeble)
 * [Circuit Glyph](#circuit-glyph)
+* [Dish](#dish)
 * [Fan Blade](#fan-blade)
 * [Fan Housing](#fan-housing)
 * [Fan Industrial](#fan-industrial)
@@ -227,6 +228,86 @@ show_object(ex_glyph)
 
 * [example](../example/greeble/glyph_greeble_three.py)
 * [stl](../stl/greeble_circuit_glyph_three.stl)
+---
+
+## Dish
+
+### parameters
+* length: float
+* width: float
+* height: float
+* short_length: float|None
+* rotate: float
+* diameter: float
+* outer_diameter: float
+* render_connector: bool
+* connector_diameter: float
+* connector_length: float
+* connector_cylinder_diameter: float
+* connector_cylinder_length: float
+* connector_height:float
+* dish_render: bool
+* dish_z_translate: float
+* render_mount: bool
+* mount_length: float
+* render_collector: bool
+* collector_horn_height: float
+* collector_horn_diameter: float
+* collector_arm_length: float
+* collector_arm_width: float
+* collector_arm_height: float
+* collector_arm_rotate: float
+* collector_z_translate: float
+
+
+``` python
+import cadquery as cq
+from cqterrain.greeble import Dish
+
+bp_dish = Dish()
+
+bp_dish.length = 40
+bp_dish.width = 23
+bp_dish.height = 2
+bp_dish.short_length = None
+bp_dish.rotate = 0
+bp_dish.diameter = 28
+bp_dish.outer_diameter = 70
+
+bp_dish.render_connector = True
+bp_dish.connector_diameter = 5
+bp_dish.connector_length = 2
+bp_dish.connector_cylinder_diameter = 3
+bp_dish.connector_cylinder_length = 4
+bp_dish.connector_height = 4
+
+bp_dish.dish_render = True
+bp_dish.dish_z_translate = 0.2
+
+bp_dish.render_mount = True
+bp_dish.mount_length = 6
+
+bp_dish.render_collector = True
+bp_dish.collector_horn_height = 5
+bp_dish.collector_horn_diameter = 4
+bp_dish.collector_arm_length = 2
+bp_dish.collector_arm_width = 2
+bp_dish.collector_arm_height = 14
+bp_dish.collector_arm_rotate = -37
+bp_dish.collector_z_translate = 15.9
+
+bp_dish.make()
+ex_dish = bp_dish.build()
+
+show_object(ex_dish)
+```
+
+![](image/greeble/14.png)<br />
+
+* [source](../src/cqterrain/greeble/Dish.py)
+* [example](../example/greeble/dish.py)
+* [stl](../stl/greeble_dish.stl)
+
 ---
 
 ## Fan Blade

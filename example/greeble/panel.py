@@ -15,5 +15,5 @@ bp_panel.make()
 
 ex_panel = bp_panel.build()
 
-show_object(ex_panel)
+#show_object(ex_panel)
 cq.exporters.export(ex_panel, 'stl/greeble_panel.stl')

@@ -86,6 +86,7 @@ import example.greeble.spokedWheel
 import example.greeble.vent
 import example.greeble.bottom_clamps
 import example.greeble.panel
+import example.greeble.dish
 
 print('material examples')
 import example.material.stones
