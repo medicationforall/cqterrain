@@ -12,6 +12,7 @@ class DoorSingle(Base):
         self.height:float = 40
 
         self.frame_width:float = 3
+        self.frame_internal_width:float = 3
         self.cut_chamfer:float = 3.5
         self.side_chamfer:float|None = None
         
@@ -32,18 +33,10 @@ class DoorSingle(Base):
     def calculate_internal_height(self):
         return self.height - self.frame_width
         
-    def make_outline(self):
-        outline = cq.Workplane("XY").box(
-            self.length,
-            self.width,
-            self.height
-        )
-        
-        self.outline = outline
-        
     def make_frame(self):
         self.bp_frame.length = self.length
-        self.bp_frame.width = self.frame_width
+        self.bp_frame.width = self.frame_internal_width
+        self.bp_frame.frame_width = self.frame_width
         self.bp_frame.height = self.height
         
         self.bp_frame.make()
@@ -64,7 +57,6 @@ class DoorSingle(Base):
         
     def make(self):
         super().make()
-        self.make_outline()
         self.make_frame()
         self.make_door()
         
@@ -73,10 +65,14 @@ class DoorSingle(Base):
         
         part = cq.Workplane("XY")
         
-        if self.outline:
-            part = part.add(self.outline)
+        if self.bp_frame:
+            self.bp_frame.width = self.width
+            self.bp_frame.make()
+            frame = self.bp_frame.build_outline()
+            part = part.union(frame)
         
-        return part
+        z_translate = self.height/2
+        return part.translate((0,0,z_translate))
         
     def build(self)->cq.Workplane:
         super().build()

@@ -45,7 +45,7 @@ class ShutterWindow(Base):
             self.length,
             self.width,
             self.height
-        )
+        ).faces(">Z").edges("|Y").chamfer(self.frame_width);
         
         self.outline = outline
         

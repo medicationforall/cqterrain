@@ -160,6 +160,7 @@ show_object(result)
 * length: float
 * width: float
 * height: float
+* bp_door.frame_internal_width: float
 * frame_width: float
 * cut_chamfer: float
 * side_chamfer: float|None
@@ -180,6 +181,7 @@ bp_door.length = 30
 bp_door.width = 3
 bp_door.height = 40
 
+bp_door.frame_internal_width = 3
 bp_door.frame_width = 3
 bp_door.cut_chamfer = 3.5
 bp_door.side_chamfer = None

@@ -1,6 +1,14 @@
 ## Main wip
 
-# 3.8.5
+## 3.8.6
+* Fix ShutterWindow outline
+* door DoorSingle 
+  * Added frame_internal_width parameter
+  * Fixed outline
+* door Frame
+  * Fix Frame outline to reflect chamfer
+
+## 3.8.5
 * Updated README.md
 * Updated documentation.md
 * Added swivel package
@@ -21,7 +29,7 @@
   * Added Panel
   * Added Dish
 
-# 3.8.4
+## 3.8.4
 * greeble 
   * Added FanHousing
   * Added FanBlade

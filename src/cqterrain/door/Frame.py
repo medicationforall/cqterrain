@@ -40,10 +40,15 @@ class Frame(Base):
         return self.length - self.frame_width*2
         
     def make_outline(self):
-        outline = cq.Workplane("XY").box(
-            self.length,
-            self.width,
-            self.height
+        outline = (
+            cq.Workplane("XY").box(
+                self.length,
+                self.width,
+                self.height
+            )
+            .faces("Z")
+            .edges("|Y")
+            .chamfer(self.chamfer)
         )
         
         self.outline = outline
