@@ -11,6 +11,7 @@
   * Added BaseWall
 * floor
   * Added TileFloor
+* Added license blocks
 
 ## 3.8.5
 * Updated README.md
