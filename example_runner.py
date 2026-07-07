@@ -65,13 +65,14 @@ import example.door.panel_door
 import example.door.garage_door
 
 print('floor')
-import example.floor.round_brick_floor
-import example.floor.round_brick_floor_alt
-import example.floor.wood_floor
-import example.floor.wood_floor_struct
-import example.floor.mod_pattern
 import example.floor.mod_pattern_interlock
 import example.floor.mod_pattern_interlock_random
+import example.floor.mod_pattern
+import example.floor.round_brick_floor
+import example.floor.round_brick_floor_alt
+import example.floor.tile_floor
+import example.floor.wood_floor
+import example.floor.wood_floor_struct
 
 print('greeble examples')
 import example.greeble.cap_greeble
@@ -239,6 +240,9 @@ print('Walkway Examples')
 import example.walkway.walkway
 import example.walkway.walkway_irregular
 import example.walkway.walkway_tile
+
+print('Wall Examples')
+import example.wall.base_wall
 
 print('misc ')
 import example.board

@@ -1,16 +1,11 @@
 # Floor
 
-- [Floor](#floor)
-  - [Mod Pattern](#mod-pattern)
-    - [parameters](#parameters)
-    - [Mod Pattern Interlock](#mod-pattern-interlock)
-    - [Mod Pattern Interlock Random](#mod-pattern-interlock-random)
-  - [Round Brick Floor](#round-brick-floor)
-    - [parameters](#parameters-1)
-    - [Advanced Example](#advanced-example)
-  - [Wood Floor Struct](#wood-floor-struct)
-    - [parameters](#parameters-2)
-    - [Wood Floor example](#wood-floor-example)
+  * [Mod Pattern](#mod-pattern)
+  * [Mod Pattern Interlock](#mod-pattern-interlock)
+  * [Mod Pattern Interlock Random](#mod-pattern-interlock-random)
+  * [Round Brick Floor](#round-brick-floor)
+  * [Tile Floor](#tile-floor)
+  * [Wood Floor Struct](#wood-floor-struct)
 
 ---
 
@@ -84,7 +79,9 @@ show_object(ex_hex)
 * [example](../example/floor/mod_pattern.py)
 * [stl](../stl/floor_mod_pattern.stl)
 
-### Mod Pattern Interlock
+---
+
+## Mod Pattern Interlock
 
 ``` python
 import cadquery as cq
@@ -128,7 +125,9 @@ show_object(ex_hex)
 * [example](../example/floor/mod_pattern_interlock.py)
 * [stl](../stl/floor_mod_pattern_interlock.stl)
 
-### Mod Pattern Interlock Random
+---
+
+## Mod Pattern Interlock Random
 
 ``` pattern
 import cadquery as cq
@@ -251,6 +250,51 @@ show_object(combined)
 * [example](../example/floor/round_brick_floor_alt.py)
 * [stl](../stl/floor_roundBrickFloor_alt.stl)
 
+
+---
+
+## Tile Floor
+
+### parameters
+* length: float
+* width: float
+* height: float
+* tile_length: float
+* tile_width: float
+* tile_method: Callable[[float,float,float],cq.Workplane]
+* count_overflow: tuple[int,int]
+* tile_spacing: tuple[float,float]
+
+``` python
+import cadquery as cq
+from cqterrain.floor import TileFloor
+from cqterrain import tile
+
+bp_floor = TileFloor()
+
+bp_floor.length = 100
+bp_floor.width = 50
+bp_floor.height = 4
+
+bp_floor.tile_length = 25
+bp_floor.tile_width = 25
+bp_floor.tile_method = tile.bolt_panel #Callable[[float,float,float],cq.Workplane]
+bp_floor.count_overflow = (0,0) #tuple[int,int]
+bp_floor.tile_spacing = (.5,.5) #tuple[float,float]
+
+bp_floor.make()
+ex_floor = bp_floor.build()
+ex_outline = bp_floor.build_outline()
+
+show_object(ex_floor)
+#show_object(ex_outline)
+```
+
+![](image/floor/08.png)<br />
+
+* [source](../src/cqterrain/floor/TileFloor.py)
+* [example](../example/floor/tile_floor.py)
+* [stl](../stl/floor_tile_floor.stl)
 
 ---
 

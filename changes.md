@@ -7,6 +7,10 @@
   * Fixed outline
 * door Frame
   * Fix Frame outline to reflect chamfer
+* Added wall package
+  * Added BaseWall
+* floor
+  * Added TileFloor
 
 ## 3.8.5
 * Updated README.md
