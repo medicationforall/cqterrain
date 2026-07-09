@@ -1,17 +1,20 @@
 ## Main wip
 
 ## 3.8.6
-* Fix ShutterWindow outline
-* door DoorSingle 
-  * Added frame_internal_width parameter
-  * Fixed outline
-* door Frame
-  * Fix Frame outline to reflect chamfer
+* Added missing license blocks
 * Added wall package
   * Added BaseWall
-* floor
+* door package
+  * door DoorSingle 
+    * Added frame_internal_width parameter
+    * Fixed outline
+  * door Frame
+    * Fix Frame outline to reflect chamfer
+* floor package
   * Added TileFloor
-* Added license blocks
+  * Added FramedFloor
+* window package
+  * Fix ShutterWindow outline
 
 ## 3.8.5
 * Updated README.md

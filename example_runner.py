@@ -65,6 +65,7 @@ import example.door.panel_door
 import example.door.garage_door
 
 print('floor')
+import example.floor.framed_floor
 import example.floor.mod_pattern_interlock
 import example.floor.mod_pattern_interlock_random
 import example.floor.mod_pattern
