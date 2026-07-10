@@ -1,9 +1,13 @@
 ## Main wip
 
 ## 3.8.6
+* Updated README.md
+* Updated documentation.md
 * Added missing license blocks
 * Added wall package
   * Added BaseWall
+* Added segment package
+  * Added BaseSegment
 * door package
   * door DoorSingle 
     * Added frame_internal_width parameter

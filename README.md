@@ -3,7 +3,7 @@ Helper Libary to Generate 3d models of greebles, buildings, and terrain using [C
 
 ---
 
-![Version 3.8.5](./documentation/image/version/3.8.5.png)
+![Version 3.8.6](./documentation/image/version/3.8.6.png)
 
 ---
 
@@ -30,6 +30,7 @@ Helper Libary to Generate 3d models of greebles, buildings, and terrain using [C
   * [Pipe](documentation/pipe.md)
   * [Roof](documentation/roof.md)
   * [Ruin](documentation/ruin.md)
+  * [Segment](documentation/segment.md)
   * [Shieldwall](documentation/shieldwall.md)
   * [Spool](documentation/spool.md)
   * [Stairs](documentation/stairs.md)

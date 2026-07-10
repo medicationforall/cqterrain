@@ -151,6 +151,9 @@ import example.ruin.ruin_three_wall_section
 import example.ruin.three_wall_corner
 import example.ruin.three_wall_section
 
+print('segment examples')
+import example.segment.base_segment
+
 print('shieldwall examples')
 import example.shieldwall.arch_shape
 import example.shieldwall.archset
