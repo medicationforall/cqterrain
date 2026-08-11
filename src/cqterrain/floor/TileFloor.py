@@ -43,7 +43,7 @@ class TileFloor(Base):
             self.height
         )
         
-        self.outline = outline.translate((0,0,self.height/2))
+        self.outline = outline.translate((0,0,0))
         
     def make_tile(self):
         length = self.tile_length - self.tile_spacing[0]
@@ -105,4 +105,4 @@ class TileFloor(Base):
                 .intersect(self.outline.translate((0,0,0)))
             )
         
-        return part.translate((0,0,self.height/2))
+        return part.translate((0,0,0))

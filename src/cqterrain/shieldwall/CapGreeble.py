@@ -116,3 +116,8 @@ class CapGreeble(BaseGreeble):
                 .add(self.grill_set_internal)
             )
         return scene
+
+    def build_outline(self) -> cq.Workplane:
+        #super().build()
+        scene = cq.Workplane("XY").union(self.body)
+        return scene

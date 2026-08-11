@@ -17,6 +17,7 @@ from .hexagon_wood import hexagon_wood
 from .RuinStoneBase import RuinStoneBase
 from .PointGridBase import PointGridBase
 from .BasaltBase import BasaltBase
+from .IndustrialGreebleBase import IndustrialGreebleBase
 
 from .base_irregular import base_irregular 
 from .circle_irregular import circle_irregular

@@ -3,61 +3,41 @@
 Collection is minibase shapes with magnet cutouts. 
 The code for these is very simple most of these are just a loft operation.
 
-- [Minibase](#minibase)
-  - [make\_magnet\_outline](#make_magnet_outline)
-    - [parameters](#parameters)
-  - [Basic Bases](#basic-bases)
-    - [Circle](#circle)
-      - [parameters](#parameters-1)
-    - [Ellipse](#ellipse)
-      - [parameters](#parameters-2)
-    - [Hexagon](#hexagon)
-      - [parameters](#parameters-3)
-    - [Rectangle](#rectangle)
-      - [parameters](#parameters-4)
-    - [Slot](#slot)
-      - [parameters](#parameters-5)
-  - [Irregular Bases](#irregular-bases)
-    - [Circle Irregular](#circle-irregular)
-      - [parameters](#parameters-6)
-    - [Ellipse Irregular](#ellipse-irregular)
-      - [parameters](#parameters-7)
-    - [Hexagon Irregular](#hexagon-irregular)
-      - [parameters](#parameters-8)
-    - [Rectangle Irregular](#rectangle-irregular)
-      - [parameters](#parameters-9)
-    - [Slot Irregular](#slot-irregular)
-      - [parameters](#parameters-10)
-  - [Point Grid Bases](#point-grid-bases)
-    - [Point Grid Base](#point-grid-base)
-      - [parameters](#parameters-11)
-      - [blueprints](#blueprints)
-    - [Basalt Base](#basalt-base)
-      - [parameters](#parameters-12)
-  - [Ruin Stone Base](#ruin-stone-base)
-    - [parameters](#parameters-13)
-  - [Uneven Bases](#uneven-bases)
-    - [Circle Uneven](#circle-uneven)
-      - [parameters](#parameters-14)
-    - [Ellipse Uneven](#ellipse-uneven)
-      - [parameters](#parameters-15)
-    - [Hexagon Uneven](#hexagon-uneven)
-      - [parameters](#parameters-16)
-    - [Rectangle Uneven](#rectangle-uneven)
-      - [parameters](#parameters-17)
-    - [Slot Uneven](#slot-uneven)
-      - [parameters](#parameters-18)
-  - [Wood Bases](#wood-bases)
-    - [Circle Wood](#circle-wood)
-      - [parameters](#parameters-19)
-    - [Ellipse Wood](#ellipse-wood)
-      - [parameters](#parameters-20)
-    - [Hexagon Wood](#hexagon-wood)
-      - [parameters](#parameters-21)
-    - [Rectangle Wood](#rectangle-wood)
-      - [parameters](#parameters-22)
-    - [Slot Wood](#slot-wood)
-      - [parameters](#parameters-23)
+* [Minibase](#minibase)
+  * [make\_magnet\_outline](#make_magnet_outline)
+  * [Basic Bases](#basic-bases)
+    * [Circle](#circle)
+    * [Ellipse](#ellipse)
+    * [Hexagon](#hexagon)
+    * [Rectangle](#rectangle)
+    * [Slot](#slot)
+  * [Industrial Greeble Base](#industrial-greeble-base)
+    * [Circle Industrial](#circle-industrial)
+    * [Ellipse Industrial](#ellipse-industrial)
+    * [Hexagon Industrial](#hexagon-industrial)
+    * [Rectangle Industrial](#rectangle-industrial)
+  * [Irregular Bases](#irregular-bases)
+    * [Circle Irregular](#circle-irregular)
+    * [Ellipse Irregular](#ellipse-irregular)
+    * [Hexagon Irregular](#hexagon-irregular)
+    * [Rectangle Irregular](#rectangle-irregular)
+    * [Slot Irregular](#slot-irregular)
+  * [Point Grid Bases](#point-grid-bases)
+    * [Point Grid Base](#point-grid-base)
+    * [Basalt Base](#basalt-base)
+  * [Ruin Stone Base](#ruin-stone-base)
+  * [Uneven Bases](#uneven-bases)
+    * [Circle Uneven](#circle-uneven)
+    * [Ellipse Uneven](#ellipse-uneven)
+    * [Hexagon Uneven](#hexagon-uneven)
+    * [Rectangle Uneven](#rectangle-uneven)
+    * [Slot Uneven](#slot-uneven)
+  * [Wood Bases](#wood-bases)
+    * [Circle Wood](#circle-wood)
+    * [Ellipse Wood](#ellipse-wood)
+    * [Hexagon Wood](#hexagon-wood)
+    * [Rectangle Wood](#rectangle-wood)
+    * [Slot Wood](#slot-wood)
 
 
 ---
@@ -229,6 +209,208 @@ result = slot(
 * [example](../example/minibase/slot.py)
 * [stl](../stl/minibase_slot.stl)
   
+---
+
+## Industrial Greeble Base
+![](image/minibase/29.png)
+
+### parameters
+* length:float
+* width:float
+* height:float
+* diameter:float
+* diameter_y:float
+* taper:float
+* magnet_diameter:float
+* magnet_height:float
+* render_magnet:bool
+* base_type:Literal['rectangle','circle','slot','ellipse','hexagon']
+* uneven_height:float
+* peak_count:tuple[int,int]|int
+* segments:int
+* seed:str
+* overlap:float
+* min_height:float
+* passes_count:int
+* render_uneven: bool
+* detail_height: float
+* max_columns: int
+* max_rows: int
+* col_size: float
+* row_size: float
+* tile_styles: [Callable[float,float,float]]
+
+<br />
+
+* [source](../src/cqterrain/minibase/IndustrialGreebleBase.py)
+* [example](../example/minibase/minibase_group_industrial_greeble.py)
+* [stl](../stl/minibase_group_industrial_greeble.stl)
+
+---
+
+## Circle Industrial
+
+### parameters
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import IndustrialGreebleBase
+
+# circular Base
+bp_base = IndustrialGreebleBase()
+bp_base.base_type = "circle"
+bp_base.diameter = 50
+bp_base.seed = "test"
+bp_base.render_uneven = False
+bp_base.detail_height = 2
+bp_base.max_columns = 2
+bp_base.max_rows = 2
+bp_base.col_size = 10
+bp_base.row_size = 10
+
+bp_base.make()
+
+ex_base = bp_base.build()
+show_object(ex_base)
+```
+
+![](image/minibase/31.png)<br />
+
+* [example](../example/minibase/circle_industrial.py)
+* [stl](../stl/minibase_circle_industrial.stl)
+
+---
+
+## Ellipse Industrial
+
+### parameters
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import IndustrialGreebleBase
+
+# Ellipse Base
+bp_base = IndustrialGreebleBase()
+bp_base.base_type = "ellipse"
+bp_base.diameter = 52 
+bp_base.diameter_y = 90 
+bp_base.seed = f"ellipse_base"
+bp_base.render_uneven = False
+bp_base.detail_height = 2
+bp_base.max_columns = 2
+bp_base.max_rows = 2
+bp_base.col_size = 10
+bp_base.row_size = 10
+
+bp_base.make()
+ex_base = bp_base.build()
+show_object(ex_base)
+```
+
+![](image/minibase/30.png)<br />
+
+
+* [example](../example/minibase/ellipse_industrial.py)
+* [stl](../stl/minibase_ellipse_industrial.stl)
+
+---
+
+## Hexagaon Industrial
+
+### parameters
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import IndustrialGreebleBase
+
+# Hexagon Base
+bp_base = IndustrialGreebleBase()
+bp_base.base_type = "hexagon"
+bp_base.diameter = 30
+bp_base.seed = f"hexagon_test"
+bp_base.render_uneven = False
+bp_base.detail_height = 2
+bp_base.max_columns = 2
+bp_base.max_rows = 2
+bp_base.col_size = 10
+bp_base.row_size = 10
+
+bp_base.make()
+ex_base = bp_base.build()
+show_object(ex_base)
+```
+
+![](image/minibase/32.png)<br />
+
+* [example](../example/minibase/hexagon_industrial.py)
+* [stl](../stl/minibase_hexagon_industrial.stl)
+
+---
+
+## Rectangle Industrial
+
+### parameters
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import IndustrialGreebleBase
+
+# Rectangle Base
+bp_base = IndustrialGreebleBase()
+bp_base.base_type = "rectangle"
+bp_base.length = 40
+bp_base.width = 40
+bp_base.seed = f"rectangle_test"
+bp_base.render_uneven = False
+bp_base.detail_height = 2
+bp_base.max_columns = 2
+bp_base.max_rows = 2
+bp_base.col_size = 10
+bp_base.row_size = 10
+
+bp_base.make()
+ex_base = bp_base.build()
+show_object(ex_base)
+```
+
+![](image/minibase/33.png)<br />
+
+* [example](../example/minibase/rectangle_industrial.py)
+* [stl](../stl/minibase_rectangle_industrial.stl)
+
+---
+
+## Slot Industrial
+
+### parameters
+
+``` python
+import cadquery as cq
+from cqterrain.minibase import IndustrialGreebleBase
+
+# Slot Base
+bp_base = IndustrialGreebleBase()
+bp_base.base_type = "slot"
+bp_base.length = 50
+bp_base.width = 24 
+bp_base.seed = f"slot_test"
+bp_base.render_uneven = False
+bp_base.detail_height = 2
+bp_base.max_columns = 2
+bp_base.max_rows = 2
+bp_base.col_size = 10
+bp_base.row_size = 10
+
+bp_base.make()
+ex_base = bp_base.build()
+show_object(ex_base)
+```
+
+![](image/minibase/34.png)<br />
+
+* [example](../example/minibase/slot_industrial.py)
+* [stl](../stl/minibase_slot_industrial.stl)
+
 ---
 
 ## Irregular Bases

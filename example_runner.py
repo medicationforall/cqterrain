@@ -102,30 +102,43 @@ import example.minibase.circle
 import example.minibase.circle_uneven
 import example.minibase.circle_wood
 import example.minibase.circle_irregular
+import example.minibase.circle_industrial
+
 import example.minibase.basalt_base
 import example.minibase.ellipse
 import example.minibase.ellipse_uneven
 import example.minibase.ellipse_wood
 import example.minibase.ellipse_irregular
+import example.minibase.ellipse_irregular
+import example.minibase.ellipse_industrial
+
 import example.minibase.point_grid_base
 import example.minibase.rectangle
 import example.minibase.rectangle_uneven
 import example.minibase.rectangle_wood
 import example.minibase.rectangle_irregular
+import example.minibase.rectangle_industrial
+
 import example.minibase.slot
 import example.minibase.slot_uneven
 import example.minibase.slot_wood
 import example.minibase.slot_irregular
+import example.minibase.slot_industrial
+
 import example.minibase.hexagon
 import example.minibase.hexagon_uneven
 import example.minibase.hexagon_wood
 import example.minibase.hexagon_irregular
+import example.minibase.hexagon_industrial
+
 import example.minibase.minibase_group
 import example.minibase.minibase_group_uneven
 import example.minibase.minibase_group_wood
 import example.minibase.minibase_group_irregular
-import example.minibase.ruin_stone_base
+import example.minibase.minibase_group_industrial_greeble
 import example.minibase.minibase_group_ruin
+
+import example.minibase.ruin_stone_base
 
 print('pipe examples')
 import example.pipe.pipe_corrugated

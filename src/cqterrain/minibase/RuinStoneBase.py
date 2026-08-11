@@ -76,6 +76,7 @@ class RuinStoneBase(Base):
         
         self.base_type:Literal['rectangle','circle','slot','ellipse','hexagon'] = "circle"
         
+        self.render_uneven:bool = True
         self.uneven_height:float = 4
         self.peak_count:tuple[int,int]|int = (9,10)
         self.segments:int = 6
@@ -266,7 +267,10 @@ class RuinStoneBase(Base):
         super().make()
         self.make_outline()
         self.make_minibase()
-        self.make_uneven()
+
+        if self.render_uneven:
+            self.make_uneven()
+
         self.make_irregular()
         
     def build_outline(self):
@@ -285,11 +289,10 @@ class RuinStoneBase(Base):
         
         part = cq.Workplane("XY")
         
-        
         if  self.minibase:
             part = part.add(self.minibase.translate((0,0,self.height/2)))
             
-        if self.uneven_plane and self.top:
+        if self.render_uneven and self.uneven_plane and self.top:
             combined_pattern = (
                 cq.Workplane("XY")
                 .union(self.top.translate((0,0,self.height/2)))

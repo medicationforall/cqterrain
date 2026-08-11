@@ -1,5 +1,14 @@
 ## Main wip
 
+## 3.8.7
+* Fix TileFloor placement
+* CapGreeble added build_outline method
+* minibase
+  * RuinStoneBase added render_uneven flag
+  * cleaned up minibase documentation
+  * Added IndustrialGreebleBase
+
+
 ## 3.8.6
 * Updated README.md
 * Updated documentation.md
