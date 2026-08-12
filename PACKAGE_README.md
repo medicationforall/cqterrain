@@ -3,7 +3,7 @@ Helper Libary to Generate 3d models of greebles, buildings, and terrain using [C
 
 ---
 
-![Version 3.8.6](https://raw.githubusercontent.com/medicationforall/cqterrain/refs/heads/main/documentation/image/version/3.8.6.png)
+![Version 3.8.7](https://raw.githubusercontent.com/medicationforall/cqterrain/refs/heads/main/documentation/image/version/3.8.7.png)
 
 ---
 
