@@ -1,5 +1,9 @@
 ## Main wip
 
+## 3.8.8
+* Added corrugated tile.
+* Cleaned up tile index
+
 ## 3.8.7
 * Fix TileFloor placement
 * CapGreeble added build_outline method

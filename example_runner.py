@@ -223,6 +223,7 @@ import example.tile.carton2
 import example.tile.chamfer_frame
 import example.tile.charge
 import example.tile.conduit
+import example.tile.corrugated
 import example.tile.glyph
 import example.tile.octagon_with_dots
 import example.tile.plain

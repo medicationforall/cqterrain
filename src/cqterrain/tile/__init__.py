@@ -21,5 +21,6 @@ from .truchet_circle import truchet_circle
 from .truchet_circle_two import truchet_circle_two
 from .truchet_circle_three import truchet_circle_three
 from .dwarfStar import dwarf_star
+from .corrugated import corrugated
 
 from .tile_plate import TilesPlate
