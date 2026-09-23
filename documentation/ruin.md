@@ -6,8 +6,10 @@
 * [Corner](#corner)
 * [Rectangle](#rectangle)
 * [Ruin Corner](#ruin-corner)
+* [Ruin Corner Random](#ruin-corner-random)
 * [Ruin Rectangle](#ruin-rectangle)
-* [Ruin Rectangle Random](#ruin-rectangle_random)
+* [Ruin Rectangle Random](#ruin-rectangle-random)
+* [Ruin Segment Random](#ruin-segment-random)
 * [Ruin Three Wall Corner](#ruin-three-wall-corner)
 * [Ruin Three Wall Section](#ruin-three-wall-section)
 * [Three Wall Corner](#three-wall-corner)
@@ -72,6 +74,7 @@ show_object(ex_base)
 ---
 
 ## Ruin Corner
+Ruin corner with defined list of points including coordinates.
 
 ### parameters
 * length: float
@@ -102,6 +105,44 @@ show_object(result)
 * [source](../src/cqterrain/ruin/ruin_corner.py)
 * [example](../example/ruin/ruin_corner.py)
 * [stl](../stl/ruin_ruin_corner.stl)
+
+---
+
+## Ruin Corner Random
+Ruined corner with psuedo random distribution of points. 
+
+### parameters
+* length: float
+* width: float
+* height: float
+* points: int
+* debug: bool
+* shift: tuple[float, float, float] # min, max, step
+* seed: str
+
+``` python
+import cadquery as cq
+from cqterrain.ruin import ruin_corner_random
+
+
+result = ruin_corner_random(
+    length = 50, 
+    width = 50, 
+    height = 10, 
+    points = 7,
+    debug = False,
+    shift = (-4,5,1),
+    seed = "pokey"
+)
+
+show_object(result)
+```
+
+![](image/ruin/10.png)
+
+* [source](../src/cqterrain/ruin/ruin_corner_random.py)
+* [example](../example/ruin/ruin_corner_random.py)
+* [stl](../stl/ruin_corner_random.stl)
 
 ---
 
@@ -172,6 +213,43 @@ show_object(ex_ruin)
 * [source](../src/cqterrain/ruin/ruin_rectangle_random.py)
 * [example](../example/ruin/ruin_rectangle_random.py)
 * [stl](../stl/ruin_rectangle_random.stl)
+
+---
+
+## Ruin Segment Random
+Two randomly derived corners and a mid section.
+
+### parameters
+* length: float 
+* width: float 
+* height: float
+* points: tuple[int, int, int]
+* debug: bool
+* shift: tuple[float, float, float]
+* seed: str
+
+``` python
+import cadquery as cq
+from cqterrain.ruin import ruin_segment_random
+
+result = ruin_segment_random(
+    length = 75, 
+    width = 50, 
+    height = 10, 
+    points = (7,7,7),
+    debug = False,
+    shift = (-2,4,1),
+    seed = "test"
+)
+
+show_object(result)
+```
+
+![](image/ruin/11.png)
+
+* [source](../src/cqterrain/ruin/ruin_segment_random.py)
+* [example](../example/ruin/ruin_segment_random.py)
+* [stl](../stl/ruin_segment_random.stl)
 
 ---
 

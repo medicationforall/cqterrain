@@ -1,5 +1,10 @@
 ## Main wip
 
+## 3.8.9
+* Added Ruin Corner Random
+* Added Ruin Segment Random
+
+
 ## 3.8.8
 * Added corrugated tile.
 * Cleaned up tile index

@@ -157,10 +157,12 @@ print('ruin examples')
 import example.ruin.corner
 import example.ruin.rectangle
 import example.ruin.ruin_corner
+import example.ruin.ruin_corner_random
 import example.ruin.ruin_rectangle
 import example.ruin.ruin_rectangle_random
 import example.ruin.ruin_three_wall_corner
 import example.ruin.ruin_three_wall_section
+import example.ruin.ruin_segment_random
 import example.ruin.three_wall_corner
 import example.ruin.three_wall_section
 

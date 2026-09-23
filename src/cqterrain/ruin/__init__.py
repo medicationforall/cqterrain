@@ -2,8 +2,10 @@ from .corner import corner
 from .rectangle import rectangle
 from .three_wall_section import three_wall_section
 from .ruin_corner import ruin_corner
+from .ruin_corner_random import ruin_corner_random
 from .three_wall_corner import three_wall_corner
 from .ruin_three_wall_corner import ruin_three_wall_corner
 from .ruin_rectangle import ruin_rectangle
 from .ruin_rectangle_random import ruin_rectangle_random
 from .ruin_three_wall_section import ruin_three_wall_section
+from .ruin_segment_random import ruin_segment_random
